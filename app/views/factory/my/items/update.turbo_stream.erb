@@ -1,2 +1,2 @@
 <%= turbo_stream.update 'dialog', partial: 'factory/productions/dialog' %>
-<%= turbo_stream.replace "production_#{@trade_item.good_id}", partial: 'factory/productions/_base/production', locals: { model: @trade_item.good } %>
+<%= turbo_stream.replace "production_#{@trade_item.good_id}", partial: 'factory/productions/production', locals: { model: @trade_item.good } %>
