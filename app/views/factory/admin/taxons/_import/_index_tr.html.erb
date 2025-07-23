@@ -1,5 +1,5 @@
 <tr id="tr_<%= model.id %>" data-controller="tree-remote show" data-tree-remote-target="item" data-action="mouseenter->show#show mouseleave->show#hide">
-  <%= yield %>
+
   <td>
     <div data-show-target="item" class="visibility-hidden">
       <%= button_to({ controller: 'products', action: 'show', id: model.id }, aria: { label: t('.products.show.title') }, class: 'button is-small is-rounded is-light') do %>
@@ -7,6 +7,6 @@
       <% end %>
     </div>
   </td>
-</tr>
+
 
 <%= render partial: 'production', layout: 'production_tr', collection: model.productions, as: :model %>

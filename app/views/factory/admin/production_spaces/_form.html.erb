@@ -1,21 +1,22 @@
 <div id="station_id" class="field is-horizontal">
-<%= f.collection_select(
-      :station_id,
-      @stations,
-      :id,
-      :name,
-      {
-        include_blank: true,
-        all: { select: nil }
-      },
-      {
-        data: {
-          controller: 'common',
-          common_url_value: url_for(action: 'rooms'),
-          action: 'common#postInput'
-        }
+<%=
+  f.collection_select(
+    :station_id,
+    @stations,
+    :id,
+    :name,
+    {
+      include_blank: true,
+      all: { select: nil }
+    },
+    {
+      data: {
+        controller: 'common',
+        common_url_value: url_for(action: 'rooms'),
+        action: 'common#postInput'
       }
-    )
+    }
+  )
 %>
 </div>
 <div id="room_id"></div>

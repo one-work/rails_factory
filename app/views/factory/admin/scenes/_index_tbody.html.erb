@@ -30,3 +30,11 @@
     <%= render partial: 'cart', locals: { model: model } %>
   </div>
 </td>
+<td>
+  <div data-show-target="item" class="visibility-hidden">
+    <%= link_to({ controller: 'produce_plans', scene_id: model.id }, class: 'button is-small is-rounded is-info') do %>
+      <i class="fa-solid fa-hammer"></i>
+      <span class="ml-1"><%= t('.produce_plans.index.title') %></span>
+    <% end %>
+  </div>
+</td>

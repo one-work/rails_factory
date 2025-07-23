@@ -1,6 +1,6 @@
 <% if model.productions_count > 1 %>
 <tr id="tr_<%= model.id %>" class="background-light">
-  <%= yield %>
-</tr>
+
+
 <% end %>
 <%= render partial: 'production', layout: 'production_tr', collection: model.productions, as: :model %>

@@ -34,3 +34,34 @@
     </p>
   <% end %>
 </td>
+<td>
+  <div data-show-target="item" class="visibility-hidden">
+    <%= button_to({ action: 'show', id: model.id, taxon_id: model.taxon_id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-circle-info text-info"></i>
+    <% end %>
+    <%= button_to({ action: 'edit', id: model.id, taxon_id: model.taxon_id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-pencil text-link"></i>
+    <% end %>
+    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, disabled: model.productions_count > 0, aria: { label: t('.destroy.title') }, form: { data: { turbo_confirm: t('.destroy.confirm') } }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-trash text-danger"></i>
+    <% end %>
+  </div>
+  <div data-show-target="item" class="visibility-hidden">
+    <%= button_to({ action: 'edit_image', id: model.id, taxon_id: model.taxon_id }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-pencil text-link"></i>
+      <span class="ml-1"><%= t('.edit_image.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'product_components', product_id: model.id }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-tree"></i>
+      <span class="ml-1"><%= t('.product_components.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'fits', product_id: model.id }, class: 'button is-small is-rounded is-light') do %>
+      <span><%= model.fits_count %></span>
+      <span class="ml-1"><%= t('.fits.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'productions', product_id: model.id }, class: 'button is-small is-rounded is-light') do %>
+      <span><%= model.productions_count %></span>
+      <span class="ml-1"><%= t('.productions.index.title') %></span>
+    <% end %>
+  </div>
+</td>
