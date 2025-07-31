@@ -1,5 +1,5 @@
 <div id="tr_<%= model.id %>" class="media">
-  <%= link_to({ controller: '/me/home', auth_token: current_authorized_token.id, **model.admin_url_options(request) }, class: 'media-content') do %>
+  <%= link_to({ controller: '/me/home', auth_token: Current.session.id, **model.admin_url_options(request) }, class: 'media-content') do %>
     <%= yield %>
   <% end %>
   <div class="media-right">
