@@ -1,7 +1,7 @@
 <div class="menu-list">
   <%= link_to({ controller: 'factory/admin/home' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: 'menu-item') do %>
     <div>
-      <i class="fa-solid fa-fw fa-store"></i>
+      <%= svg_tag 'store', class: 'icon' %>
       <span><%= t('factory.admin.title') %></span>
     </div>
   <% end %>
