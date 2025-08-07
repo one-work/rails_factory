@@ -2,11 +2,11 @@
   <%= yield %>
   <td>
     <div data-show-target="item" class="has-inline-centered visibility-hidden">
-      <%= button_to({ action: 'show', id: model.id }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
+      <%= button_to({ action: 'show', id: model.id }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
         <span class="ml-1"><%= t('.show.title') %></span>
       <% end %>
-      <%= button_to({ controller: 'product_provides', action: 'create' }, params: { product_provide: { provide_id: model.id } }, class: 'button is-small is-rounded is-light') do %>
+      <%= button_to({ controller: 'product_provides', action: 'create' }, params: { product_provide: { provide_id: model.id } }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-cart-flatbed text-success"></i>
         <span class="ml-1"><%= t('.product_provides.create.title') %></span>
       <% end %>

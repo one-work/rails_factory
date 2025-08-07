@@ -2,14 +2,14 @@
 
   <td>
     <div data-show-target="item" class="has-inline-centered visibility-hidden">
-      <%= button_to({ controller: 'production_provides', action: 'show', id: model.id }, aria: { label: t('.production_provides.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
+      <%= button_to({ controller: 'production_provides', action: 'show', id: model.id }, aria: { label: t('.production_provides.show.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
       <% end %>
-      <%= button_to({ controller: 'production_provides', action: 'edit', id: model.id }, aria: { label: t('.production_provides.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-pencil text-link"></i>
+      <%= button_to({ controller: 'production_provides', action: 'edit', id: model.id }, aria: { label: t('.production_provides.edit.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'pencil', class: 'icon text-link' %>
       <% end %>
-      <%= button_to({ controller: 'production_provides', action: 'destroy', id: model.id }, method: :delete, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-        <i class="fa-solid fa-trash text-danger"></i>
+      <%= button_to({ controller: 'production_provides', action: 'destroy', id: model.id }, method: :delete, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
+        <%= svg_tag 'trash', class: 'icon text-danger' %>
         <span class="ml-1"><%= t('.production_provides.destroy.title') %></span>
       <% end %>
     </div>

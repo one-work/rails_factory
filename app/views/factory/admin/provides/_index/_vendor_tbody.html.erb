@@ -1,7 +1,7 @@
 <td><%= model.name %></td>
 <td><%= model.client_organ_id %></td>
 <td>
-  <%= button_to({ action: 'create' }, params: { 'provide[provider_id]': model.client_organ_id }, class: 'button is-small is-rounded is-light') do %>
+  <%= button_to({ action: 'create' }, params: { 'provide[provider_id]': model.client_organ_id }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-plus text-success"></i>
     <span class="pl-1"><%= t('.create.title') %></span>
   <% end %>

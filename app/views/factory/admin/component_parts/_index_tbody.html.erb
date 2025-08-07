@@ -9,8 +9,8 @@
 <td><%= model.min %></td>
 <td><%= model.max %></td>
 <td>
-  <%= button_to({ action: 'destroy', id: model.id }, method: :delete, form: { data: { turbo_confirm: t('.destroy.confirm') } }, class: 'button is-small is-rounded is-light') do %>
-    <i class="fa-solid fa-trash text-danger"></i>
+  <%= button_to({ action: 'destroy', id: model.id }, method: :delete, form: { data: { turbo_confirm: t('.destroy.confirm') } }, class: 'button is-small is-borderless') do %>
+    <%= svg_tag 'trash', class: 'icon text-danger' %>
     <span class="ml-1"><%= t('.destroy.title') %></span>
   <% end %>
 </td>

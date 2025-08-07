@@ -13,16 +13,16 @@
   <% end %>
 </td>
 <td>
-  <%= link_to({ controller: 'production_plans', action: 'show', production_id: model.production_id, id: model.id }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'production_plans', action: 'show', production_id: model.production_id, id: model.id }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-barcode-scan"></i>
     <span class="ml-1"><%= t('.production_plans.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'production_items', production_id: model.production_id, produce_on: model.produce_on }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'production_items', production_id: model.production_id, produce_on: model.produce_on }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-barcode-scan"></i>
     <span class="ml-1">生产明细</span>
     <span class="text-grey">（<%= model.production_items_count %>）</span>
   <% end %>
-  <%= link_to({ controller: 'trade_items', production_id: model.production_id, produce_on: model.produce_on }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'trade_items', production_id: model.production_id, produce_on: model.produce_on }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-bag-shopping text-info"></i>
     <span class="ml-1">订单明细</span>
     <span class="text-grey">（<%= model.trade_items_count %>）</span>

@@ -6,7 +6,7 @@
   <ul>
     <li class="<%= active_helper(taxons: ['show', 'edit'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxons', action: 'show', id: @taxon.id }) do %>
-        <i class="fa-solid fa-circle-info"></i>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
         <span class="ml-1"><%= t('.taxons.show.title') %></span>
       <% end %>
     </li>

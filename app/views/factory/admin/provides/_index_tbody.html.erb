@@ -6,7 +6,7 @@
     <span><%= model.provider.name %></span>
   </div>
 <% else %>
-  <%= button_to({ action: 'invite', id: model.id }, class: 'button is-small is-rounded is-light') do %>
+  <%= button_to({ action: 'invite', id: model.id }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-user-plus text-primary"></i>
     <span class="ml-1"><%= t('.invite.title') %></span>
   <% end %>

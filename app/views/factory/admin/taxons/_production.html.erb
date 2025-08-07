@@ -17,11 +17,11 @@
 <td>
 <% if @imported_production_ids.include?(model.id) %>
   <i class="fa-solid fa-check text-success"></i>
-  <%= button_to({ action: 'prune' }, method: :delete, params: { production_id: model.id }, aria: { label: t('factory.in.taxons.prune.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= button_to({ action: 'prune' }, method: :delete, params: { production_id: model.id }, aria: { label: t('factory.in.taxons.prune.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-times text-danger"></i>
   <% end %>
 <% else %>
-  <%= button_to({ action: 'copy' }, params: { production_id: model.id }, aria: { label: t('factory.in.taxons.copy.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= button_to({ action: 'copy' }, params: { production_id: model.id }, aria: { label: t('factory.in.taxons.copy.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-tractor text-success"></i>
   <% end %>
 <% end %>
