@@ -7,7 +7,6 @@
   <% end %>
   <div class="pl-4">
     <%= link_to t('factory.admin.taxons.index.title'), { controller: 'factory/admin/taxons' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: ['taxon/products', 'taxons', 'taxon_components', 'productions', 'part_providers', 'production_plans', 'production_items'], item: 'menu-item', active: 'menu-item is-active') %>
-    <%= link_to t('factory.admin.products.index.title'), { controller: 'factory/admin/products' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: ['products', 'taxons', 'taxon_components', 'productions', 'part_providers', 'production_plans', 'production_items'], item: 'menu-item', active: 'menu-item is-active') %>
     <%= link_to t('factory.admin.produce_on.index.title'), { controller: 'factory/admin/produce_on' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'produce_on', item: 'menu-item', active: 'menu-item is-active') %>
   </div>
 </div>
