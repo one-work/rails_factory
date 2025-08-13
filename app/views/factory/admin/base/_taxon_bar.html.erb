@@ -18,37 +18,38 @@
     </li>
     <li class="<%= active_helper(controller: 'taxon/productions', action: 'index', taxon_id: @taxon.id, active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/productions', action: 'index', taxon_id: @taxon.id }) do %>
-        <i class="fa-solid fa-eye"></i>
+        <%= svg_tag 'eye' %>
         <span class="ml-1"><%= t('factory.admin.taxon.productions.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'taxon_components', active: 'is-active') %>">
       <%= link_to({ controller: 'taxon_components', taxon_id: @taxon.id }) do %>
-        <i class="fa-solid fa-cubes"></i>
+        <%= svg_tag 'cubes' %>
         <span class="ml-1"><%= t('.taxon_components.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(products: ['buy'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/products', action: 'buy', taxon_id: @taxon.id }) do %>
-        <i class="fa-solid fa-store"></i>
+        <%= svg_tag 'store' %>
         <span class="ml-1"><%= t('.products.buy.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(taxons: ['import'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxons', action: 'import', id: @taxon.id }) do %>
-        <i class="fa-solid fa-sign-in-alt"></i>
+        <%= svg_tag 'right-to-bracket' %>
         <span class="ml-1"><%= t('factory.admin.taxons.import.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'provides', active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/provides', taxon_id: @taxon.id }) do %>
         <i class="fa-solid fa-building"></i>
+        <%= svg_tag 'building' %>
         <span class="ml-1"><%= t('factory.admin.taxon.provides.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controller: 'taxon/productions', action: 'provides', taxon_id: @taxon.id, active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/productions', action: 'provides', taxon_id: @taxon.id }) do %>
-        <i class="fa-solid fa-eye"></i>
+        <%= svg_tag 'eye' %>
         <span class="ml-1"><%= t('factory.admin.taxon.productions.provides.title') %></span>
       <% end %>
     </li>
