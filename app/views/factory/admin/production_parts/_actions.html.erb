@@ -3,7 +3,7 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'text-danger', form: { class: 'cell weui-actionsheet__cell_warn' }) do %>
-  <%= svg_tag 'trash', class: 'icon' %>
+  <%= svg_tag 'trash' %>
   <span><%= t('.destroy.title') %></span>
 <% end %>
 <%= link_to({ controller: 'production_items', production_plan_id: model.id }, class: 'cell has-column-centered') do %>
