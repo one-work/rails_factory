@@ -1,6 +1,6 @@
 <div data-controller="mini-program" class="box as-bar">
   <%= link_to({ action: 'index', taxon_id: @production.taxon_id }, class: 'px-4') do %>
-    <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+    <%= svg_tag 'angle-left' %>
   <% end %>
   <div class="weui-title"><%= @production.title %></div>
   <%= button_to({ action: 'actions' }, class: 'px-4') do %>
