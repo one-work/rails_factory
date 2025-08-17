@@ -1,4 +1,6 @@
 regular:
+  - angle-left
+  - angle-right
   - bars
   - building
   - cubes

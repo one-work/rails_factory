@@ -13,8 +13,8 @@
         <%= render partial: 'cart_item', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: 'trade/my/items' } %>
       <% end %>
       <%= link_to({ controller: 'trade/my/carts', action: 'show', id: @cart.id }, class: 'button is-small is-primary is-radius') do %>
-        <span class="pr-1"><%= t('trade.my.carts.show.title') %></span>
-        <i class="fa-solid fa-angle-right"></i>
+        <span class="mr-1"><%= t('trade.my.carts.show.title') %></span>
+        <%= svg_tag 'angle-right' %>
       <% end if @cart %>
     </div>
   </div>
