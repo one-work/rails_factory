@@ -22,7 +22,7 @@
       <div class="tags has-addons display-inline-flex mb-0">
         <span class="tag"><%= item.provide.name %></span>
         <%= button_to({ controller: 'factory/in/items', action: 'update', id: item.id }, method: :patch, params: { item: { organ_id: nil, provide_id: nil } }, form: { class: 'tag is-danger' }) do %>
-          <i class="fa-solid fa-times"></i>
+          <%= svg_tag 'xmark' %>
         <% end %>
       </div>
     <% end %>

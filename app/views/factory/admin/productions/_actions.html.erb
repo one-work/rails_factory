@@ -12,8 +12,8 @@
 <% end %>
 <% if model.default %>
   <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': false }, class: 'text-danger has-column-centered', form: { class: 'cell' }) do %>
-    <i class="fa-solid fa-times"></i>
-    <span>主显产品</span>
+    <%= svg_tag 'xmark' %>
+    <span class="ml-1">主显产品</span>
   <% end %>
 <% else %>
   <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': true }, class: 'text-success has-column-centered', form: { class: 'cell' }) do %>
@@ -23,8 +23,8 @@
 <% end %>
 <% if model.enabled %>
   <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': false }, class: 'text-danger has-column-centered', form: { class: 'cell' }) do %>
-    <i class="fa-solid fa-times"></i>
-    <span>下架</span>
+    <%= svg_tag 'xmark' %>
+    <span class="ml-1">下架</span>
   <% end %>
 <% else %>
   <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': true }, class: 'text-success has-column-centered', form: { class: 'cell' }) do %>
