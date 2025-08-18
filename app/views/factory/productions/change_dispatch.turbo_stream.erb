@@ -1,18 +1,1 @@
-<%= turbo_stream.append 'body' do %>
-  <%= render layout: 'modal' do %>
-    <div class="fixed-grid has-3-cols">
-      <div class="grid gap-2 as-actions">
-      <% Trade::Item.options_i18n(:dispatch).each do |text, value| %>
-        <%= link_to({ action: 'index', dispatch: value }, class: 'cell has-column-centered') do %>
-          <% if value.to_s == params[:dispatch] %>
-            <i class="fa-solid fa-check text-success"></i>
-          <% else %>
-            <i class="fa-solid fa-right-left text-info"></i>
-          <% end %>
-          <strong class="text-black"><%= text %></strong>
-      <% end %>
-      <% end %>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+<%= turbo_stream.append 'body', partial: 'dispatch_modal', layout: 'modal' %>
