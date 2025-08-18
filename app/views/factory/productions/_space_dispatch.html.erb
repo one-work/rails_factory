@@ -1,11 +1,11 @@
 <% if params[:dispatch].present? %>
   <%= button_to({ action: 'change_dispatch', **params.permit(:dispatch, :desk_id) }) do %>
     <span class="mr-1"><%= Trade::Cart.enum_i18n(:dispatch, params[:dispatch]) %></span>
-    <i class="fa-solid fa-right-left"></i>
+    <%= svg_tag 'right-left' %>
   <% end %>
 <% else %>
   <%= button_to({ action: 'change_dispatch', dispatch: current_organ.dispatch, **params.permit(:desk_id) }) do %>
     <span class="mr-1"><%= current_organ.dispatch_i18n %></span>
-    <i class="fa-solid fa-right-left"></i>
+    <%= svg_tag 'right-left' %>
   <% end %>
 <% end %>

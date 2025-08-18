@@ -1,10 +1,15 @@
 regular:
   - angle-left
   - angle-right
+  - bag-shopping
   - bars
   - building
+  - chair
+  - chevron-right
   - cubes
   - eye
+  - location-dot
   - store
+  - right-left
   - right-to-bracket
   - tree

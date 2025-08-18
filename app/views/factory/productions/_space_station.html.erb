@@ -1,11 +1,11 @@
 <div class="box radiusless flex justify-content-space-between mb-0">
   <div>
-    <i class="fa-solid fa-location-dot text-grey"></i>
-    <span class="pl-1"><%= @station.content %></span>
+    <%= svg_tag 'location-dot' %>
+    <span class="ml-1"><%= @station.content %></span>
   </div>
   <div>
     <%= link_to({ controller: '/space/stations' }) do %>
-      <i class="fa-solid fa-chevron-right"></i>
+      <%= svg_tag 'chevron-right' %>
     <% end %>
   </div>
 </div>
