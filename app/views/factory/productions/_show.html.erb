@@ -1,4 +1,4 @@
-<% if @production.parts.present? || @production.product.product_parts_count > 0 || @production.taxon.taxon_components_count.to_i > 0 %>
+<% if @production.taxon.customizable %>
   <%= render partial: 'dialog_form', locals: { production: @production } %>
 <% elsif @production.brothers.enabled.count > 1 %>
   <%= render 'card_brothers' %>
