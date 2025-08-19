@@ -13,7 +13,7 @@
     <% end %>
   <% end %>
   <%= button_to({ action: 'part', id: model.id }, data: { show_target: 'item' }, aria: { label: t('factory.admin.productions.part.title') }, class: 'visibility-hidden') do %>
-    <i class="fa-solid fa-sm fa-cube text-grey"></i>
+    <%= svg_tag 'cubes' %>
   <% end %>
 </td>
 <td>

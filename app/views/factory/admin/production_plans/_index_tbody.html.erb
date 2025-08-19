@@ -20,7 +20,7 @@
       <%= svg_tag 'circle-info', class: 'icon text-info' %>
     <% end %>
     <%= link_to({ controller: 'productions', product_plan_id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-cube"></i>
+      <%= svg_tag 'cubes' %>
     <% end if false %>
     <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
       <%= svg_tag 'pencil', class: 'icon text-link' %>

@@ -17,7 +17,7 @@
     <% end %>
   <% end %>
   <%= button_to({ action: 'part', id: model.id }, data: { show_target: 'item' }, class: 'visibility-hidden') do %>
-    <i class="fa-solid fa-sm fa-cube text-grey"></i>
+    <%= svg_tag 'cubes' %>
     <span class="ml-1 text-grey size-7"><%= t('.productions.part.title') %></span>
   <% end %>
 </div>
