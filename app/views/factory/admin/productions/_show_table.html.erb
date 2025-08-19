@@ -33,8 +33,8 @@
       </div>
     <% end %>
     </div>
-    <%= button_to({ action: 'card' }, data: { turbo_frame: 'modal', show_target: 'item' }, aria: { label: t('.card.title') }) do %>
-      <i class="fa-solid fa-pencil fa-sm text-grey"></i>
+    <%= button_to({ action: 'card' }, data: { show_target: 'item' }, aria: { label: t('.card.title') }) do %>
+      <%= svg_tag 'pencil' %>
     <% end %>
   </dd>
 </div>
@@ -49,8 +49,8 @@
       </div>
     <% end %>
     </div>
-    <%= button_to({ action: 'wallet' }, data: { turbo_frame: 'modal', show_target: 'item' }, aria: { label: t('.wallet.title') }) do %>
-      <i class="fa-solid fa-pencil fa-sm text-grey"></i>
+    <%= button_to({ action: 'wallet' }, data: { show_target: 'item' }, aria: { label: t('.wallet.title') }) do %>
+      <%= svg_tag 'pencil' %>
     <% end %>
   </dd>
 </div>

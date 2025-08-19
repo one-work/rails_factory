@@ -5,7 +5,7 @@
 <div>
   <%= @production.rent_unit %>
   <%= button_to({ controller: 'rentables', action: 'edit' }) do %>
-    <i class="fa-solid fa-pencil"></i>
+    <%= svg_tag 'pencil' %>
     <span><%= t('trade.admin.rentables.edit.title') %></span>
   <% end if false %>
 </div>

@@ -3,7 +3,7 @@
 <td id="inline_<%= model.id %>_planned_count" style="width: 150px">
   <span><%= model.planned_count %></span>
   <%= button_to({ controller: 'production_plans', action: 'inline', production_id: model.production_id, id: model.id }, params: { field: 'planned_count', field_type: 'number_field' }, form: { data: { show_target: 'item' }, class: 'button_to visibility-hidden' }) do %>
-    <i class="fa-solid fa-pencil text-grey"></i>
+    <%= svg_tag 'pencil' %>
   <% end %>
 </td>
 <td>

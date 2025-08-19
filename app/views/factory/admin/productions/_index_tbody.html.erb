@@ -38,7 +38,7 @@
   </div>
   <div data-show-target="item" class="visibility-hidden">
     <%= button_to({ action: 'card', id: model.id }, class: 'button is-small is-light') do %>
-      <i class="fa-solid fa-pencil fa-sm text-grey"></i>
+      <%= svg_tag 'pencil' %>
       <span class="ml-1"><%= t('.card.title') %></span>
     <% end %>
   </div>

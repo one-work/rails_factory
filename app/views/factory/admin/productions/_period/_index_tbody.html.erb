@@ -42,8 +42,8 @@
     </div>
   <% end %>
   </div>
-  <%= link_to({ action: 'card', id: model.id }, data: { turbo_frame: 'modal', show_target: 'item' }, aria: { label: t('factory.admin.productions.card.title') }) do %>
-    <i class="fa-solid fa-pencil fa-sm text-grey"></i>
+  <%= button_to({ action: 'card', id: model.id }, data: { show_target: 'item' }, aria: { label: t('factory.admin.productions.card.title') }) do %>
+    <%= svg_tag 'pencil' %>
   <% end %>
 </td>
 <td>
