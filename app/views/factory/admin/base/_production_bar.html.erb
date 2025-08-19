@@ -3,37 +3,37 @@
   <ul>
     <li class="<%= active_helper(productions: ['show', 'edit'], active: 'is-active') %>">
       <%= link_to({ controller: 'factory/admin/productions', action: 'show', product_id: @production.product_id, id: @production.id }) do %>
-        <i class="fa-solid fa-info-circle"></i>
+        <%= svg_tag 'circle-info' %>
         <span class="ml-1"><%= t('.productions.show.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'production_parts', active: 'is-active') %>">
       <%= link_to({ controller: 'production_parts', production_id: @production.id }) do %>
-        <i class="fa-solid fa-folder-tree text-primary"></i>
+        <%= svg_tag 'folder-tree' %>
         <span class="ml-1"><%= t('.production_parts.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'production_plans', active: 'is-active') %>">
       <%= link_to({ controller: 'production_plans', production_id: @production.id }) do %>
-        <i class="fa-solid fa-hammer text-info"></i>
+        <%= svg_tag 'hammer' %>
         <span class="ml-1"><%= t('.production_plans.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'production_items', active: 'is-active') %>">
       <%= link_to({ controller: 'production_items', production_id: @production.id }) do %>
-        <i class="fa-solid fa-list text-primary"></i>
+        <%= svg_tag 'list' %>
         <span class="ml-1"><%= t('.production_items.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controller: 'production/provides', active: 'is-active') %>">
       <%= link_to({ controller: 'production/provides', production_id: @production.id }) do %>
-        <i class="fa-solid fa-building text-primary"></i>
+        <%= svg_tag 'building' %>
         <span class="ml-1"><%= t('factory.admin.production.provides.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'purchase_items', active: 'is-active') %>">
       <%= link_to({ controller: 'purchase_items', production_id: @production.id }) do %>
-        <i class="fa-solid fa-shop text-success"></i>
+        <%= svg_tag 'shop' %>
         <span class="ml-1"><%= t('.purchase_items.index.title') %></span>
       <% end %>
     </li>

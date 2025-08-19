@@ -21,4 +21,10 @@
     <label data-action="click->input#check"></label>
   <% end %>
 </th>
+<th>
+  <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :customizable, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
+    <label data-action="click->input#check"></label>
+  <% end %>
+</th>
 <td><%= render partial: 'index_tr_actions', locals: { model: model } %></td>

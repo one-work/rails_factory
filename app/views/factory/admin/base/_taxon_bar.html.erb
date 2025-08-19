@@ -22,12 +22,14 @@
         <span class="ml-1"><%= t('factory.admin.taxon.productions.index.title') %></span>
       <% end %>
     </li>
-    <li class="<%= active_helper(controllers: 'taxon_components', active: 'is-active') %>">
-      <%= link_to({ controller: 'taxon_components', taxon_id: @taxon.id }) do %>
-        <%= svg_tag 'cubes' %>
-        <span class="ml-1"><%= t('.taxon_components.index.title') %></span>
-      <% end %>
-    </li>
+    <% if @taxon.customizable %>
+      <li class="<%= active_helper(controllers: 'taxon_components', active: 'is-active') %>">
+        <%= link_to({ controller: 'taxon_components', taxon_id: @taxon.id }) do %>
+          <%= svg_tag 'cubes' %>
+          <span class="ml-1"><%= t('.taxon_components.index.title') %></span>
+        <% end %>
+      </li>
+    <% end %>
     <li class="<%= active_helper(products: ['buy'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/products', action: 'buy', taxon_id: @taxon.id }) do %>
         <%= svg_tag 'store' %>

@@ -3,3 +3,4 @@
 <%= f.file_field :logo %>
 <%= f.file_field :logo_color %>
 <%= f.collection_select :scene_id, @scenes, :id, :title if @scenes.present? %>
+<%= f.check_box :customizable %>

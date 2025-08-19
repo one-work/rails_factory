@@ -59,6 +59,7 @@ zh:
         partial: 可作为配件
         products_count: 产品数
         provides_count: 供应商数量
+        customizable: 可定制
         enabled: 上架
         nav: 单独菜单
       factory/part_taxon_provider:

@@ -139,6 +139,7 @@ module Factory
         :parent_id,
         :parent_ancestors,
         :enabled,
+        :customizable,
         :nav,
         :factory_taxon_id,
         :scene_id

@@ -10,25 +10,27 @@
     </li>
     <li class="<%= active_helper(controllers: 'productions', active: 'is-active') %>">
       <%= link_to({ controller: 'productions', action: 'index', product_id: @product.id }) do %>
-        <i class="fa-solid fa-clone"></i>
+        <%= svg_tag 'clone' %>
         <span class="ml-1"><%= t('.productions.index.title') %></span>
       <% end %>
     </li>
-    <li class="<%= active_helper(controllers: 'product_components', active: 'is-active') %>">
-      <%= link_to({ controller: 'product_components', product_id: @product.id }) do %>
-        <i class="fa-solid fa-cubes"></i>
-        <span class="ml-1"><%= t('.product_components.index.title') %></span>
-      <% end %>
-    </li>
+    <% if @product.taxon.customizable %>
+      <li class="<%= active_helper(controllers: 'product_components', active: 'is-active') %>">
+        <%= link_to({ controller: 'product_components', product_id: @product.id }) do %>
+          <%= svg_tag 'cubes' %>
+          <span class="ml-1"><%= t('.product_components.index.title') %></span>
+        <% end %>
+      </li>
+    <% end %>
     <li class="<%= active_helper(controllers: 'fits', active: 'is-active') %>">
       <%= link_to({ controller: 'fits', product_id: @product.id }) do %>
-        <i class="fa-solid fa-cogs"></i>
+        <%= svg_tag 'gears' %>
         <span class="ml-1"><%= t('.fits.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controller: 'product/provides', check_parameters: false, active: 'is-active') %>">
       <%= link_to({ controller: 'product/provides', product_id: @product.id }) do %>
-        <i class="fa-solid fa-building"></i>
+        <%= svg_tag 'building' %>
         <span class="ml-1"><%= t('factory.admin.product.provides.index.title') %></span>
       <% end %>
     </li>
