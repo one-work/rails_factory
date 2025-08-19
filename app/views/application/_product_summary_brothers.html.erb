@@ -1,7 +1,7 @@
 <dl id="product_summary_<%= production.product_id %>" class="as-show is-fullwidth px-0 is-interval">
 <% cart.find_items(production.brother_ids, good_type: production.base_class_name, **options).each do |item| %>
   <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.good_id == production.id ? '#eee' : 'auto' %>">
-    <dt><%= production.name %></dt>
+    <dt><%= item.good.name %></dt>
     <dd class="text-right">
       <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params, good_id: item.good_id), cart: @cart, item_con: item_con } %>
     </dd>
