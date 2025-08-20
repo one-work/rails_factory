@@ -3,7 +3,6 @@
     <%= link_to(current_state.referer, class: 'px-4') do %>
       <%= svg_tag 'angle-left' %>
     <% end %>
-  <% else %>
   <% end %>
   <div class="weui-title flex-direction-column">
     <div>
@@ -14,5 +13,4 @@
       <span class="text-weight-semibold"><%= @scene&.title %></span>
     </div>
   </div>
-  <%= render 'space_dispatch' %>
 </div>
