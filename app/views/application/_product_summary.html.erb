@@ -15,7 +15,7 @@
       </ul>
     </dt>
     <dd class="text-right">
-      <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params, good_id: item.good_id), cart: @cart, item_con: item_con } %>
+      <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params, good_id: item.good_id), cart: @cart, item_con: item_con, renew: { "product_summary_#{production.product_id}" => 'product_summary' } } %>
     </dd>
   </div>
 <% end %>
