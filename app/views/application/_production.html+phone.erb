@@ -3,7 +3,7 @@
     <%= image_tag model.product.logo.variant(:thumb).url, class: 'image is-64x64' if model.product.logo.attached? %>
   <% end %>
   <div class="media-content as-body overflow-x-hidden">
-    <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey-dark truncate') do %>
+    <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey-dark truncate display-block') do %>
       <% if model.product.brand %><span class="tag is-light is-danger"><%= model.product.brand&.name %></span><% end %>
       <span><%= model.title %></span>
     <% end %>
