@@ -4,7 +4,7 @@
   <ul>
     <li class="<%= active_helper(products: ['show', 'edit'], active: 'is-active') %>">
       <%= link_to({ controller: 'products', action: 'show', id: @product.id }) do %>
-        <%= svg_tag 'circle-info', class: 'icon text-info' %>
+        <%= svg_tag 'circle-info' %>
         <span class="ml-1"><%= t('.products.show.title') %></span>
       <% end %>
     </li>
@@ -28,7 +28,7 @@
         <span class="ml-1"><%= t('.fits.index.title') %></span>
       <% end %>
     </li>
-    <li class="<%= active_helper(controller: 'product/provides', check_parameters: false, active: 'is-active') %>">
+    <li class="<%= active_helper(controller: 'product/provides', product_id: @product.id, check_parameters: false, active: 'is-active') %>">
       <%= link_to({ controller: 'product/provides', product_id: @product.id }) do %>
         <%= svg_tag 'building' %>
         <span class="ml-1"><%= t('factory.admin.product.provides.index.title') %></span>
