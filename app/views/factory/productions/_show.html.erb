@@ -1,3 +1,4 @@
+<%= render 'dispatch_modal' %>
 <% if @production.taxon.customizable %>
   <%= render partial: 'dialog_form', locals: { production: @production } %>
 <% elsif @production.brothers.enabled.count > 1 %>

@@ -6,7 +6,7 @@
       <p class="modal-card-title"><%= @production.product.name %></p>
       <span style="width: 1.25rem"></span>
     </header>
-    <div id="production_modal_body" class="modal-card-body">
+    <div id="production_modal_body" class="modal-card-body is-narrow">
       <%= yield %>
     </div>
     <% if @production.taxon.customizable %>

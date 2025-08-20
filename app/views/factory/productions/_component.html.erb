@@ -1,9 +1,9 @@
-<div data-id="<%= component.id %>" class="box">
-  <strong>
+<div data-id="<%= component.id %>" class="box is-narrow">
+  <div class="text-grey">
     <span><%= component.name %></span>
     <span class="size-7"><%= component.select_str %></span>
-  </strong>
-  <div data-controller="custom" class="buttons are-small no-disabled pt-4">
+  </div>
+  <div data-controller="custom" class="buttons are-small no-disabled pt-3">
   <% if component.multiple %>
     <%= render partial: 'component_part_number', collection: component_parts, as: :component_part, locals: { component: component } %>
   <% else %>
