@@ -2,7 +2,7 @@
   <div class="level-left p-3">
     <%= link_to({ controller: 'trade/my/carts', action: 'show', id: @cart.id }, class: 'has-column-centered') do %>
       <div class="right-badge">
-        <i class="fa-solid fa-fw fa-xl fa-cart-shopping"></i>
+        <%= svg_tag 'cart-shopping', class: 'icon is-medium' %>
         <span class="weui-badge"><%= @cart.items.count %></span>
       </div>
     <% end if @cart %>
