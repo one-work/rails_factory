@@ -2,8 +2,8 @@
   <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'media-left as-logo') do %>
     <%= image_tag model.product.logo.variant(:thumb).url, class: 'image is-64x64' if model.product.logo.attached? %>
   <% end %>
-  <div class="media-content as-body">
-    <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey-dark') do %>
+  <div class="media-content as-body overflow-x-hidden">
+    <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey-dark truncate') do %>
       <% if model.product.brand %><span class="tag is-light is-danger"><%= model.product.brand&.name %></span><% end %>
       <span><%= model.title %></span>
     <% end %>
