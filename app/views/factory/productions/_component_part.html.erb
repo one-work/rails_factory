@@ -8,11 +8,11 @@
       <%= svg_tag 'xmark', class: 'icon is-small ml-1' %>
     <% end %>
   </span>
-  <%= hidden_field_tag "production_parts_attributes[][component_id]", component_part.component_id, form: 'edit_custom', id: nil %>
+  <%= hidden_field_tag 'production_parts_attributes[][component_id]', component_part.component_id, form: 'edit_custom', id: nil %>
   <% if component.only_one? %>
-    <%= radio_button_tag "production_parts_attributes[][part_id]", component_part.part_id, @production.part_ids.include?(component_part.part_id), data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id }, class: 'display-none', id: "part_#{component_part.part_id}", form: 'edit_custom' %>
+    <%= radio_button_tag 'production_parts_attributes[][part_id]', component_part.part_id, @production.part_ids.include?(component_part.part_id), data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id }, class: 'display-none', id: "part_#{component_part.part_id}", form: 'edit_custom' %>
   <% else %>
-    <%= hidden_field_tag "production_parts_attributes[][part_id]", component_part.part_id, form: 'edit_custom', data: { part_taxon_id: component_part.part.taxon_id }, id: nil if @production.part_ids.include?(component_part.part_id) && component.disabled?(@production.part_ids, component_part.part_id) %>
-    <%= check_box_tag "production_parts_attributes[][part_id]", component_part.part_id, @production.part_ids.include?(component_part.part_id), disabled: component.disabled?(@production.part_ids, component_part.part_id), data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id }, class: 'display-none', id: "part_#{component_part.part_id}", form: 'edit_custom' %>
+    <%= hidden_field_tag 'production_parts_attributes[][part_id]', component_part.part_id, form: 'edit_custom', data: { part_taxon_id: component_part.part.taxon_id }, id: nil if @production.part_ids.include?(component_part.part_id) && component.disabled?(@production.part_ids, component_part.part_id) %>
+    <%= check_box_tag 'production_parts_attributes[][part_id]', component_part.part_id, @production.part_ids.include?(component_part.part_id), disabled: component.disabled?(@production.part_ids, component_part.part_id), data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id }, class: 'display-none', id: "part_#{component_part.part_id}", form: 'edit_custom' %>
   <% end %>
 </label>

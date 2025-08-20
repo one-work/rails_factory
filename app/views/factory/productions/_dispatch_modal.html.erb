@@ -1,14 +1,15 @@
 <div class="fixed-grid has-3-cols">
   <div class="grid gap-2 as-actions">
   <% Trade::Item.options_i18n(:dispatch).each do |text, value| %>
-    <%= link_to({ action: 'index', dispatch: value }, class: 'cell button is-fullwidth has-column-centered') do %>
+    <label class="cell button is-fullwidth has-column-centered">
       <% if value.to_s == params[:dispatch] %>
         <%= svg_tag 'check', class: 'icon text-success' %>
       <% else %>
         <%= svg_tag 'right-left', class: 'icon text-info' %>
       <% end %>
-      <strong class="text-black"><%= text %></strong>
-    <% end %>
+      <p class="text-black"><%= text %></p>
+      <%= radio_button_tag "production_parts_attributes[][part_id]", component_part.part_id, @production.part_ids.include?(component_part.part_id), class: 'display-none', form: 'edit_custom' %>
+    </label>
   <% end %>
   </div>
 </div>
