@@ -10,7 +10,7 @@
 <div class="button_tos is-column">
   <% model.production_parts.sort_by(&:part_id).each do |production_part| %>
     <%= button_to({ controller: 'production_parts', action: 'show', production_id: production_part.production_id, id: production_part.id }, class: 'text-info') do %>
-      <span><%= production_part.part.name %></span>
+      <span><%= production_part.part.word %></span>
       <span>x</span>
       <span><%= production_part.number %></span>
       <span class="ml-1"><%= production_part.part.price.to_money.format.html_safe %></span>
@@ -18,7 +18,7 @@
   <% end %>
   <%= button_to({ action: 'part', id: model.id }, data: { show_target: 'item' }, class: 'visibility-hidden') do %>
     <%= svg_tag 'cubes' %>
-    <span class="ml-1 text-grey size-7"><%= t('.productions.part.title') %></span>
+    <span class="text-grey size-7 ml-1"><%= t('.productions.part.title') %></span>
   <% end %>
 </div>
 </td>
