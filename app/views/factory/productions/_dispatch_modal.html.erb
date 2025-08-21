@@ -1,15 +1,17 @@
 <div class="fixed-grid has-3-cols">
   <div data-controller="custom" class="grid gap-2 as-actions">
   <% Trade::Item.options_i18n(:dispatch).each do |text, value| %>
-    <label class="cell button is-fullwidth has-column-centered">
-      <% if value.to_s == params[:dispatch] %>
-        <%= svg_tag 'check', class: 'icon text-success' %>
-      <% else %>
-        <%= svg_tag 'right-left', class: 'icon text-info' %>
-      <% end %>
-      <p class="text-black"><%= text %></p>
+    <div class="cell">
       <%= radio_button_tag 'dispatch', value, value.to_s == params[:dispatch], data: { action: 'custom#toggleOn' }, class: 'display-none', form: 'edit_custom' %>
-    </label>
+      <label for="dispatch_<%= value %>" class="button is-fullwidth">
+        <% if value.to_s == params[:dispatch] %>
+          <%= svg_tag 'check', class: 'icon text-success' %>
+        <% else %>
+          <%= svg_tag 'right-left', class: 'icon text-info' %>
+        <% end %>
+        <p class="text-black"><%= text %></p>
+      </label>
+    </div>
   <% end %>
   </div>
 </div>
