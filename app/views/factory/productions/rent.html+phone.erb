@@ -4,7 +4,7 @@
 
 <%= render 'station' if params[:station_id].present? || params[:desk_id].present? %>
 
-<%= render 'filter_form' %>
+<%= render 'filter_bar' %>
 <div class="weui-menu">
   <%= render 'menu' unless @produce_plan %>
   <div
