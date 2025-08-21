@@ -3,15 +3,14 @@
   <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.good_id == production.id ? '#eee' : 'auto' %>">
     <dt class="truncate flex-shrink-1">
       <ul class="media-info display-inline-flex">
-        <li><%= item.good_name %></li>
-        <% item.good.production_parts.includes(:part).each do |production_part| %>
-          <li>
-            <span><%= production_part.part.name %></span>
-            <% if production_part.number.to_i > 1 %>
-              <span>x <%= production_part.number %></span>
-            <% end %>
-          </li>
-        <% end %>
+      <% item.good.production_parts.includes(:part).each do |production_part| %>
+        <li>
+          <span><%= production_part.part.word %></span>
+          <% if production_part.number.to_i > 1 %>
+            <span>x <%= production_part.number %></span>
+          <% end %>
+        </li>
+      <% end %>
       </ul>
     </dt>
     <dd class="text-right flex-shrink-0">
