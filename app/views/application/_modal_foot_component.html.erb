@@ -1,5 +1,4 @@
 <footer id="production_modal_foot" class="modal-card-foot flex-direction-column">
-  <%= render partial: 'product_summary', locals: { production: @production, cart: @cart, item_con: item_con, options: {} } %>
   <div class="flex justify-content-space-between align-items-center is-fullwidth">
     <div>
       <p class="text-danger"><%= @production.price.to_money.format.html_safe %></p>
@@ -16,6 +15,7 @@
     </div>
     <%= render partial: 'cart_item_add', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: item_con, renew: { "product_summary_#{@production.product_id}" => 'product_summary' } } %>
   </div>
+  <%= render partial: 'product_summary', locals: { production: @production, cart: @cart, item_con: item_con, options: {} } %>
   <div class="flex justify-content-center align-items-center is-fullwidth mt-2">
     <button data-action="click->modal#close" class="button is-small is-rounded is-primary">确认</button>
   </div>
