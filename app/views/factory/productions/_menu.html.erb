@@ -1,5 +1,5 @@
 <div class="column is-narrow px-0 pb-0 flex">
-  <div class="menu is-sticky as-wrap">
+  <div class="menu is-sticky as-wrap background-white">
     <div class="menu-list">
     <% @taxons.each do |taxon| %>
       <%= link_to({ taxon_id: taxon.id.to_s == params[:taxon_id] ? nil : taxon.id, **params.permit(:station_id, :desk_id, :dispatch) }, class: active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active')) do %>
