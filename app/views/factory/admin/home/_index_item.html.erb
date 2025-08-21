@@ -4,7 +4,7 @@
     <span><%= t('factory.admin.taxons.index.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'products' }, class: 'media') do %>
@@ -13,7 +13,7 @@
     <span><%= t('factory.admin.products.index.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'scenes' }, class: 'media') do %>
@@ -22,7 +22,7 @@
     <span><%= t('factory.admin.scenes.index.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
 <%= link_to({ controller: 'taxons' }, class: 'media') do %>
@@ -31,6 +31,6 @@
     <span><%= t('factory.admin.factory_taxons.index.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
