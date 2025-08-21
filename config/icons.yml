@@ -22,4 +22,5 @@ regular:
   - right-left
   - right-to-bracket
   - tree
+  - up-right-and-down-left-from-center
   - xmark

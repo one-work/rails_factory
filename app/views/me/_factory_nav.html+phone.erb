@@ -1,12 +1,12 @@
 <%= link_to({ controller: 'factory/admin/products' }, class: 'cell has-column-centered') do %>
   <div class="text-primary">
-    <i class="fa-solid fa-fw fa-xl fa-folder-tree"></i>
+    <%= svg_tag 'folder-tree', class: 'icon is-medium' %>
   </div>
   <div class="size-7 text-grey mt-1"><%= t('factory.admin.products.index.title') %></div>
 <% end %>
 <%= link_to({ controller: 'factory/productions', host: current_organ.host }, class: 'cell has-column-centered') do %>
   <div class="text-primary">
-    <i class="fa-solid fa-fw fa-xl fa-up-right-and-down-left-from-center"></i>
+    <%= svg_tag 'up-right-and-down-left-from-center', class: 'icon is-medium' %>
   </div>
   <span class="size-7 text-grey mt-1">预览商店</span>
 <% end %>
