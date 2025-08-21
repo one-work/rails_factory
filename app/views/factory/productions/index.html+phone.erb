@@ -5,13 +5,14 @@
 <% end %>
 
 <%= render 'filter_form' %>
-<div class="weui-menu">
+
+<div class="columns is-mobile mb-0 flex-grow-1">
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
     data-page-debug-value="true"
     data-action="touchmove->page#move:passive"
-    class="weui-menu-content"
+    class="column overflow-x-hidden"
   >
     <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/my/items' } %>
     <% if @productions.blank? %>

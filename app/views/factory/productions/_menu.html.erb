@@ -1,12 +1,14 @@
-<div class="weui-menu-sidebar">
-  <div class="columns is-variable m-0 flex flex-direction-column is-sticky">
-  <% @taxons.each do |taxon| %>
-    <%= link_to({ taxon_id: taxon.id.to_s == params[:taxon_id] ? nil : taxon.id, **params.permit(:station_id, :desk_id, :dispatch) }, class: active_helper(taxon_id: taxon.id, item: 'column is-primary px-2', active: 'column is-primary px-2 background-white')) do %>
-      <% if taxon.logo.attached? %>
-        <div class="weui-grid__icon"><%= image_tag taxon.logo %></div>
+<div class="column is-narrow px-0 pb-0">
+  <div class="menu is-sticky is-fullheight">
+    <div class="menu-list">
+    <% @taxons.each do |taxon| %>
+      <%= link_to({ taxon_id: taxon.id.to_s == params[:taxon_id] ? nil : taxon.id, **params.permit(:station_id, :desk_id, :dispatch) }, class: active_helper(taxon_id: taxon.id, item: 'column is-primary px-2', active: 'column is-primary px-2 background-white')) do %>
+        <% if taxon.logo.attached? %>
+          <div class="weui-grid__icon"><%= image_tag taxon.logo %></div>
+        <% end %>
+        <p class="<%= active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active') %>" style="width: 4em"><%= taxon.name %></p>
       <% end %>
-      <p class="<%= active_helper(taxon_id: taxon.id, item: 'weui-grid__label', active: 'weui-grid__label text-success') %>" style="width: 4em"><%= taxon.name %></p>
     <% end %>
-  <% end %>
+    </div>
   </div>
 </div>
