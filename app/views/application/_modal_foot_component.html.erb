@@ -5,7 +5,7 @@
       <ul class="media-info display-inline-flex text-grey">
         <% @production.production_parts.includes(:part).each do |production_part| %>
           <li>
-            <span><%= production_part.part.name %></span>
+            <span><%= production_part.part.word %></span>
             <% if production_part.number.to_i > 1 %>
               <span>x <%= production_part.number %></span>
             <% end %>
