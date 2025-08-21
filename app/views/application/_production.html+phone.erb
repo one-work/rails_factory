@@ -11,12 +11,12 @@
     <% end %>
     <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey size-0_9 display-block mt-1') do %>
       <%= model.product.description %>
-    <% end %>
+    <% end if model.product.description.present? %>
     <% if model.parts.present? %>
       <ul class="media-info mt-1">
         <% model.parts.group_by(&->(i){ i.taxon_id }).each do |_, parts| %>
           <% parts.each_with_index do |part, _| %>
-            <li><%= part.title %></li>
+            <li class="truncate"><%= part.title %></li>
           <% end %>
         <% end %>
       </ul>
