@@ -1,12 +1,12 @@
-<div class="column is-narrow px-0 pb-0">
-  <div class="menu is-sticky is-fullheight">
+<div class="column is-narrow px-0 pb-0 flex">
+  <div class="menu is-sticky as-wrap">
     <div class="menu-list">
     <% @taxons.each do |taxon| %>
-      <%= link_to({ taxon_id: taxon.id.to_s == params[:taxon_id] ? nil : taxon.id, **params.permit(:station_id, :desk_id, :dispatch) }, class: active_helper(taxon_id: taxon.id, item: 'column is-primary px-2', active: 'column is-primary px-2 background-white')) do %>
+      <%= link_to({ taxon_id: taxon.id.to_s == params[:taxon_id] ? nil : taxon.id, **params.permit(:station_id, :desk_id, :dispatch) }, class: active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active')) do %>
         <% if taxon.logo.attached? %>
           <div class="weui-grid__icon"><%= image_tag taxon.logo %></div>
         <% end %>
-        <p class="<%= active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active') %>" style="width: 4em"><%= taxon.name %></p>
+        <p style="width: 4em"><%= taxon.name %></p>
       <% end %>
     <% end %>
     </div>
