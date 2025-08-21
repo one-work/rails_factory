@@ -1,9 +1,9 @@
 <% disabled = component.disabled?(@production.part_ids, component_part.part_id) %>
 <div data-controller="modify" data-modify-submit-value="true" data-modify-step-value="1" class="button is-fullwidth justify-content-space-between is-light">
   <div>
-    <span><%= component_part.part.name %></span>
+    <span><%= component_part.part.word %></span>
     <% if component_part.part.price.to_d > 0 %>
-      <span class="ml-1 text-danger"><%= component_part.part.price.to_money.format.html_safe %></span>
+      <span class="text-danger ml-1"><%= component_part.part.price.to_money.format.html_safe %></span>
     <% end %>
     <%= hidden_field_tag 'production_parts_attributes[][component_id]', component_part.component_id, form: 'edit_custom', id: nil %>
   </div>

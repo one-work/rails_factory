@@ -1,8 +1,8 @@
 <label class="button overflow-x-hidden <%= @production.part_ids.include?(component_part.part_id) ? 'is-success' : 'is-light' %>" for="part_<%= component_part.part_id %>"<%= component.disabled?(@production.part_ids, component_part.part_id) ? ' disabled' : '' %>>
-  <span class="truncate"><%= component_part.part.title %></span>
+  <span class="truncate"><%= component_part.part.word %></span>
   <span class="flex-shrink-0">
     <% if component_part.part.price.to_d > 0 %>
-      <span class="ml-1 text-danger"><%= component_part.part.price.to_money.format.html_safe %></span>
+      <span class="text-danger ml-1"><%= component_part.part.price.to_money.format.html_safe %></span>
     <% end %>
     <% if component.cancelable?(@production.part_ids, component_part.part_id) %>
       <%= svg_tag 'xmark', class: 'icon is-small ml-1' %>
