@@ -1,0 +1,10 @@
+<div class="fixed-grid has-3-cols">
+  <div class="grid gap-2 as-actions">
+  <% Trade::Item.options_i18n(:dispatch).each do |text, value| %>
+    <%= button_to({ action: 'show', id: @production.id }, params: { dispatch: value }, class: "cell is-fullwidth #{value.to_s == params[:dispatch] ? 'button is-link' : 'button'}") do %>
+      <%= svg_tag 'check', class: 'icon is-small' %>
+      <p class="text-black"><%= text %></p>
+    <% end %>
+  <% end %>
+  </div>
+</div>
