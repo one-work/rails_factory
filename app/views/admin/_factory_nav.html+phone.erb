@@ -5,26 +5,26 @@
       <span class="size-7 has-border-left-primary"><%= t('factory.admin.title') %></span>
     </div>
     <%= link_to({ controller: '/factory/productions' }, class: 'size-7') do %>
-      <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+      <%= svg_tag 'up-right-and-down-left-from-center' %>
       <span>预览商店</span>
     <% end %>
   </div>
   <div class="columns is-4-mobile flex is-vcentered is-centered m-0">
     <%= link_to({ controller: 'factory/admin/products' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <i class="fa-solid fa-fw fa-xl fa-folder-tree"></i>
+        <%= svg_tag 'folder-tree' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('factory.admin.products.index.title') %></div>
     <% end %>
     <%= link_to({ controller: 'factory/admin/scenes' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <i class="fa-solid fa-fw fa-xl fa-lightbulb"></i>
+        <%= svg_tag 'lightbulb' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('factory.admin.scenes.index.title') %></div>
     <% end %>
     <%= link_to({ controller: 'factory/admin/brands' }, class: 'column has-column-centered') do %>
       <div class="text-primary">
-        <i class="fa-solid fa-fw fa-xl fa-copyright"></i>
+        <%= svg_tag 'copyright' %>
       </div>
       <div class="text-grey size-7 mt-1"><%= t('factory.admin.brands.index.title') %></div>
     <% end %>
