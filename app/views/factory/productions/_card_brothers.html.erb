@@ -1,8 +1,10 @@
-<div class="p-4 buttons are-small">
+<%= render 'dispatch_modal' %>
+
+<div class="buttons are-small">
 <% @production.brothers.enabled.each do |brother| %>
   <%= button_to({ id: brother.id }, class: brother.id.to_s == params[:id] ? 'button is-primary' : 'button') do %>
     <span><%= brother.name %></span>
     <span class="pl-2"><%= brother.price.to_money.format.html_safe %></span>
-<% end %>
+  <% end %>
 <% end %>
 </div>
