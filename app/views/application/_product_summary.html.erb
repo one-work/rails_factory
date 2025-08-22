@@ -1,6 +1,6 @@
 <dl id="product_summary_<%= production.product_id %>" class="as-show is-fullwidth px-0 is-interval">
 <% cart.find_items(production.brother_ids, good_type: production.base_class_name, **options).each do |item| %>
-  <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.good_id == production.id ? '#eee' : 'auto' %>">
+  <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.good_id == production.id && item.dispatch == params[:dispatch] ? '#eee' : 'auto' %>">
     <dt class="truncate flex-shrink-1">
       <ul class="media-info display-inline-flex">
       <% item.good.production_parts.includes(:part).each do |production_part| %>
