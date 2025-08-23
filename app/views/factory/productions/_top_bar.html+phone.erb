@@ -1,16 +1,13 @@
+<% if params[:produce_on].present? %>
 <div class="box as-bar">
-  <% if current_state %>
-    <%= link_to(current_state.referer, class: 'px-4') do %>
-      <%= svg_tag 'angle-left' %>
-    <% end %>
-  <% end %>
   <div class="weui-title flex-direction-column">
     <div>
       <span class="text-weight-semibold"><%= params[:produce_on] %></span>
-      <span><%= params[:produce_on].to_date.to_fs(:week) if params[:produce_on].present? %></span>
+      <span><%= params[:produce_on].to_date.to_fs(:week) %></span>
     </div>
     <div>
       <span class="text-weight-semibold"><%= @scene&.title %></span>
     </div>
   </div>
 </div>
+<% end %>
