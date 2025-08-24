@@ -2,7 +2,7 @@
 <%= render 'index_actions' %>
 
 <%= render layout: 'index_table' do %>
-  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @productions, as: :model, cached: ->(production){ [production, current_member.cache] } %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @productions, as: :model, cached: ->(production) { cache_with_model(production) } %>
 <% end %>
 
 <%= paginate @productions %>
