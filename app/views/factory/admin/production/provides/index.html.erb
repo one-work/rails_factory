@@ -4,7 +4,7 @@
 
 <%= render layout: 'index_table' do %>
   <tbody id="tbody">
-    <%= render partial: 'factory/admin/production_provides/index_tbody', layout: 'factory/admin/production_provides/index_tr', collection: @production_provides, as: :model %>
+    <%= render partial: 'factory/admin/production_provides/index_tbody', layout: 'index_tr', collection: @production_provides, as: :model %>
   </tbody>
   <tbody>
     <%= render partial: 'provide_tbody', layout: 'provide_tr', collection: @provides, as: :model %>

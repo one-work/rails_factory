@@ -25,7 +25,7 @@
         <span class="ml-1"><%= t('.production_items.index.title') %></span>
       <% end %>
     </li>
-    <li class="<%= active_helper(controller: 'production/provides', active: 'is-active') %>">
+    <li class="<%= active_helper(controller: 'production/provides', production_id: @production.id, active: 'is-active') %>">
       <%= link_to({ controller: 'production/provides', production_id: @production.id }) do %>
         <%= svg_tag 'building' %>
         <span class="ml-1"><%= t('factory.admin.production.provides.index.title') %></span>
@@ -39,32 +39,32 @@
     </li>
     <li class="<%= active_helper(controllers: 'production_spaces', active: 'is-active') %>">
       <%= link_to({ controller: 'production_spaces', production_id: @production.id }) do %>
-        <i class="fa-solid fa-laptop text-info"></i>
+        <%= svg_tag 'laptop' %>
         <span class="ml-1"><%= t('.production_spaces.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'stock_logs', active: 'is-active') %>">
       <%= link_to({ controller: 'stock_logs', production_id: @production.id }) do %>
-        <i class="fa-solid fa-clock-rotate-left text-info"></i>
+        <%= svg_tag 'clock-rotate-left' %>
         <span class="ml-1"><%= t('.stock_logs.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'trade_items', active: 'is-active') %>">
       <%= link_to({ controller: 'trade_items', production_id: @production.id }) do %>
-        <i class="fa-solid fa-shopping-cart text-info"></i>
+        <%= svg_tag 'cart-shopping' %>
         <span class="ml-1"><%= t('.trade_items.index.title') %></span>
       <% end %>
     </li>
     <li>
       <%= link_to({ controller: 'rent_charges', production_id: @production.id }) do %>
-        <i class="fa-solid fa-clock-rotate-left text-danger"></i>
+        <%= svg_tag 'clock-rotate-left' %>
         <span class="ml-1"><%= t('.rent_charges.index.title') %></span>
         <span class="ml-1"><%= @production.rent_charges_count %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'addresses', active: 'is-active') %>">
       <%= link_to({ controller: 'addresses', production_id: @production.id }) do %>
-        <i class="fa-solid fa-map-marker-alt text-warning"></i>
+        <%= svg_tag 'location-dot' %>
         <span class="ml-1"><%= t('.addresses.index.title') %></span>
       <% end %>
     </li>

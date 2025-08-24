@@ -52,7 +52,7 @@
       <span class="ml-1"><%= t('.edit_image.title') %></span>
     <% end %>
     <%= link_to({ controller: 'product_components', product_id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-tree"></i>
+      <%= svg_tag 'tree' %>
       <span class="ml-1"><%= t('.product_components.index.title') %></span>
     <% end %>
     <%= link_to({ controller: 'fits', product_id: model.id }, class: 'button is-small is-borderless') do %>

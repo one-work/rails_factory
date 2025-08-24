@@ -4,10 +4,12 @@ regular:
   - bag-shopping
   - bars
   - building
+  - cart-shopping
   - chair
   - check
   - chevron-right
   - circle-info
+  - clock-rotate-left
   - clone
   - copyright
   - cubes
@@ -15,6 +17,7 @@ regular:
   - folder-tree
   - gears
   - hammer
+  - laptop
   - lightbulb
   - list
   - location-dot
