@@ -4,7 +4,7 @@
 <%= render layout: 'index_table' do %>
   <% @products.group_by(&:taxon).each do |taxon, products| %>
     <%= render partial: 'taxon_tbody', locals: { taxon: taxon, size: products.size + 1 } %>
-    <%= render partial: 'index_tbody', layout: 'index_tr', collection: products, as: :model, cached: ->(product) { cache_with_model(product) } %>
+    <%= render partial: 'index_tbody', layout: 'index_tr', collection: products, as: :model, cached: cache_with_model %>
   <% end %>
 <% end %>
 
