@@ -3,10 +3,9 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ controller: 'productions', product_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-clone"></i>
-  <%= svg_tag 'clone' %>
   <div>
-    <span><%= t('factory.admin.productions.index.title') %></span>
-    <span class="tag"><%= model.productions_count %></span>
+    <%= svg_tag 'clone' %>
+    <span class="ml-1"><%= model.productions_count %></span>
   </div>
+  <span><%= t('factory.admin.productions.index.title') %></span>
 <% end %>
