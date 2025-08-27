@@ -28,6 +28,7 @@ regular:
   - store
   - right-left
   - right-to-bracket
+  - trash
   - tree
   - up-right-and-down-left-from-center
   - xmark

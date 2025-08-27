@@ -16,7 +16,7 @@
 <td>
   <div data-show-target="item" class="has-inline-centered visibility-hidden">
     <%= button_to({ controller: 'production_provides', action: 'show', id: model.id }, aria: { label: t('.production_provides.show.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'circle-info', class: 'icon text-info' %>
+      <%= svg_tag 'eye', class: 'icon text-info' %>
     <% end %>
     <%= button_to({ controller: 'production_provides', action: 'edit', id: model.id }, aria: { label: t('.production_provides.edit.title') }, class: 'button is-small is-borderless') do %>
       <%= svg_tag 'pencil', class: 'icon text-link' %>
