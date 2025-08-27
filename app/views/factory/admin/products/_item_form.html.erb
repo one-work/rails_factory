@@ -10,8 +10,8 @@
     <%= ef.number_field :profit_price %>
     <%= ef.check_box :enabled, label: '上架' %>
     <span class="field has-addons has-addons-middle">
-      <i class="fa-solid fa-lg fa-plus-circle" data-action="click->field#add" style="cursor: pointer"></i>
-      <i class="fa-solid fa-lg fa-minus-circle ml-2" data-action="click->field#remove" style="cursor: pointer"></i>
+      <%= svg_tag 'plus', data: { action: 'click->field#add' }, class: 'icon clickable' %>
+      <%= svg_tag 'minus', data: { action: 'click->field#remove' }, class: 'icon clickable ml-2' %>
     </span>
   </div>
 </div>
