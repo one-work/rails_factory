@@ -7,7 +7,7 @@
       <%= f.hidden_field :provider_id, data: { typer_target: 'value' } %>
       <div class="control has-icons-left">
         <%= search_field_tag 'name-like', nil, class: 'input', placeholder: '搜索', autocomplete: 'off', data: { typer_target: 'input' } %>
-        <span class="icon is-left"><i class="fa-solid fa-search"></i></span>
+        <%= svg_tag 'magnifying-glass' %>
       </div>
       <div data-typer-target="content" class="panel" id="providers_content"></div>
     </div>
