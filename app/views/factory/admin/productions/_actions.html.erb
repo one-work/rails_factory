@@ -3,11 +3,11 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ controller: 'production_plans', production_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-clock"></i>
+  <%= svg_tag 'clock' %>
   <span><%= t('.production_plans.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'production_items', production_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-list"></i>
+  <%= svg_tag 'list' %>
   <span><%= t('.production_items.index.title') %></span>
 <% end %>
 <% if model.default %>
@@ -28,7 +28,7 @@
   <% end %>
 <% else %>
   <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': true }, class: 'text-success has-column-centered', form: { class: 'cell' }) do %>
-    <i class="fa-solid fa-check"></i>
+    <%= svg_tag 'check' %>
     <span>上架</span>
   <% end %>
 <% end %>

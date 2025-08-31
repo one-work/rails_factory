@@ -3,6 +3,6 @@
   <%= f.hidden_field :produced_at, value: Time.current.to_fs(:local) %>
   <%= f.submit '新增', class: 'button is-fullwidth' %>
 <% end %>
-<%= form_with theme: nil, model: @production_item, url: { action: 'batch' }, class: 'button_to' do |f| %>
+<%= form_with theme: nil, model: @production_item, url: { action: 'batch_new' }, class: 'button_to' do |f| %>
   <%= f.submit '批量新增', class: 'button is-fullwidth' %>
 <% end %>
