@@ -52,7 +52,7 @@ module Factory
       cpcl = BaseCpcl.new
       cpcl.text production.name
       cpcl.text code
-      cpcl.right_qrcode(enter_url)
+      cpcl.qrcode_right(enter_url)
       cpcl.render
     end
 
