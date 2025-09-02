@@ -1,6 +1,8 @@
 regular:
   - angle-left
   - angle-right
+  - arrow-down
+  - arrow-up
   - bag-shopping
   - bars
   - building
@@ -17,6 +19,7 @@ regular:
   - ellipsis-vertical
   - eye
   - folder-tree
+  - gear
   - gears
   - hammer
   - laptop

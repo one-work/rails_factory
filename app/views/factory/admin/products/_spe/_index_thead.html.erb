@@ -2,7 +2,7 @@
   <p>
     <span><%= Factory::Product.human_attribute_name(:name) %></span>
     <%= link_to({ controller: 'com/panel/blob_defaults', action: 'add', record_class: 'Product', name: 'logo' }, data: { turbo_frame: 'modal' }, aria: { label: '默认图片' }) do %>
-      <i class="fa-solid fa-cog"></i>
+      <%= svg_tag 'gear' %>
     <% end %>
   </p>
   <p><%= Factory::Product.human_attribute_name(:description) %></p>
