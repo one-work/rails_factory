@@ -49,10 +49,10 @@ module Factory
     end
 
     def to_cpcl
-      cpcl = BaseCpcl.new
-      cpcl.text production.name
+      cpcl = BaseCpcl.new(width: 76, height: 44)
+      cpcl.text production.word
       cpcl.text code
-      cpcl.qrcode_right(enter_url)
+      cpcl.qrcode_right(enter_url, y: 64)
       cpcl.render
     end
 
