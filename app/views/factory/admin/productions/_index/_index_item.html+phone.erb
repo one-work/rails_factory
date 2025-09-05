@@ -6,13 +6,13 @@
 <% if model.default %>
   <div class="tags has-addons mb-0 mr-2">
     <span class="tag mb-1"><%= Factory::Production.human_attribute_name(:default) %></span>
-    <span class="tag is-primary mb-1"><i class="fa-solid fa-check"></i></span>
+    <span class="tag is-primary mb-1"><%= svg_tag 'check' %></span>
   </div>
 <% end %>
 <% if model.enabled %>
   <div class="tags has-addons">
     <span class="tag mb-1"><%= Factory::Production.human_attribute_name(:enabled) %></span>
-    <span class="tag is-primary mb-1"><i class="fa-solid fa-check"></i></span>
+    <span class="tag is-primary mb-1"><%= svg_tag 'check' %></span>
   </div>
 <% end %>
 </div>

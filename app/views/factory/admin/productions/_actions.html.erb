@@ -17,7 +17,7 @@
   <% end %>
 <% else %>
   <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': true }, class: 'text-success has-column-centered', form: { class: 'cell' }) do %>
-    <i class="fa-solid fa-check"></i>
+    <%= svg_tag 'check' %>
     <span>主显产品</span>
   <% end %>
 <% end %>
