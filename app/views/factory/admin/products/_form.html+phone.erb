@@ -2,6 +2,6 @@
 <%= f.collection_select :brand_id, @brands, :id, :name, include_blank: true if @brands.present? %>
 <%= f.file_field :logo %>
 <%= f.text_area :description %>
-<%= f.fields :product_hosts do |ef| %>
-  <%= ef.hidden_field :organ_id, value: current_organ.id %>
+<%= f.fields :productions, all: { normal: nil, checkbox: nil }, wrap: { input: 'field > control', checkbox: 'field flex-shrink-0 has-block-centered > control > label.checkbox' }, before_wrap: { checkbox: nil }, label: nil, placeholder: true do |ef| %>
+  <%= render partial: 'item_form', locals: { ef: ef } %>
 <% end %>
