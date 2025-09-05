@@ -1,4 +1,3 @@
-<% if role_permit?(business: 'factory', namespace: 'admin') %>
 <div class="box is-padding-less">
   <div class="box-header">
     <div>
@@ -9,25 +8,26 @@
       <span class="ml-1">预览商店</span>
     <% end %>
   </div>
-  <div class="columns is-4-mobile flex is-vcentered is-centered m-0">
-    <%= link_to({ controller: 'factory/admin/products' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <%= svg_tag 'folder-tree', class: 'icon is-medium' %>
-      </div>
-      <div class="text-grey size-7 mt-1"><%= t('factory.admin.products.index.title') %></div>
-    <% end %>
-    <%= link_to({ controller: 'factory/admin/scenes' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <%= svg_tag 'lightbulb', class: 'icon is-medium' %>
-      </div>
-      <div class="text-grey size-7 mt-1"><%= t('factory.admin.scenes.index.title') %></div>
-    <% end %>
-    <%= link_to({ controller: 'factory/admin/brands' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <%= svg_tag 'copyright', class: 'icon is-medium' %>
-      </div>
-      <div class="text-grey size-7 mt-1"><%= t('factory.admin.brands.index.title') %></div>
-    <% end %>
+  <div class="fixed-grid has-4-cols is-shadow p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'factory/admin/products' }, class: 'cell has-column-centered') do %>
+        <div class="text-primary">
+          <%= svg_tag 'folder-tree', class: 'icon is-medium' %>
+        </div>
+        <div class="text-grey size-7 mt-1"><%= t('factory.admin.products.index.title') %></div>
+      <% end %>
+      <%= link_to({ controller: 'factory/admin/scenes' }, class: 'cell has-column-centered') do %>
+        <div class="text-primary">
+          <%= svg_tag 'lightbulb', class: 'icon is-medium' %>
+        </div>
+        <div class="text-grey size-7 mt-1"><%= t('factory.admin.scenes.index.title') %></div>
+      <% end %>
+      <%= link_to({ controller: 'factory/admin/brands' }, class: 'cell has-column-centered') do %>
+        <div class="text-primary">
+          <%= svg_tag 'copyright', class: 'icon is-medium' %>
+        </div>
+        <div class="text-grey size-7 mt-1"><%= t('factory.admin.brands.index.title') %></div>
+      <% end %>
+    </div>
   </div>
 </div>
-<% end %>
