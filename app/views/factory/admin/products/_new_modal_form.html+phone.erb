@@ -1,0 +1,9 @@
+<%= form_with theme: 'phone_modal', model: @product, scope: :product, url: { action: 'create' } do |f| %>
+  <%= render 'modal_header' %>
+  <section class="modal-card-body">
+    <%= render 'error_messages', target: f.object %>
+    <%= f.collection_select :taxon_id, @taxons, :id, :name if @taxons.present? %>
+    <%= render partial: 'form', locals: { f: f } %>
+  </section>
+  <%= f.submit %>
+<% end %>

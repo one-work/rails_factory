@@ -1,13 +1,3 @@
-<div class="field is-horizontal" data-controller="field" data-field-index-value="<%= ef.index %>">
-  <% if ef.index == 0 %>
-    <%= ef.label :productions %>
-  <% else %>
-    <label class="field-label"></label>
-  <% end %>
-  <div class="field-body">
-    <%= ef.text_field :name %>
-    <%= ef.number_field :cost_price %>
-    <%= ef.number_field :profit_price %>
-    <%= ef.check_box :enabled, label: '上架' %>
-  </div>
-</div>
+<%= ef.number_field :cost_price %>
+<%= ef.number_field :profit_price %>
+<%= ef.check_box :enabled, label: '上架' %>
