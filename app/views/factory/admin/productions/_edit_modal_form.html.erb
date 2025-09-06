@@ -2,22 +2,7 @@
   <%= render 'modal_header' %>
   <section class="modal-card-body">
     <%= render 'error_messages', target: f.object if f.object.errors.present? %>
-    <div class="field is-horizontal">
-      <%= f.label :name %>
-      <div class="field-body">
-        <div class="field has-addons">
-          <div class="control">
-            <div class="button is-static"><%= @product.name %></div>
-          </div>
-          <%= f.text_field :name, label: nil, all: { normal: nil }, wrap: { input: 'control' } %>
-        </div>
-      </div>
-    </div>
-    <%= f.number_field :cost_price, step: 0.01, data: { total_target: 'reduce', action: 'total#updateReduce' }, disabled: f.object.str_part_ids.present? %>
-    <%= f.number_field :profit_price, step: 0.01, data: { total_target: 'profit', action: 'total#updateProfit' } %>
-    <%= f.number_field :price, data: { total_target: 'total', action: 'total#updateTotal' } %>
-    <%= f.text_field :link %>
-    <%= f.number_field :step %>
+    <%= render partial: 'form', locals: { f: f } %>
   </section>
   <%= f.submit %>
 <% end %>
