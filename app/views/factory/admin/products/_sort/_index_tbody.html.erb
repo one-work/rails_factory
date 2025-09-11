@@ -1,4 +1,4 @@
-<td><i class="fa-solid fa-fw fa-bars text-grey is-drawable"></i></td>
+<td><%= svg_tag 'bars', class: 'icon is-small text-grey is-drawable' %></td>
 <td>
   <%= link_to({ controller: 'productions', product_id: model.id }, text: true, class: 'is-several') do %>
     <%= image_tag model.logo.variant(resize_to_limit: [32, 32]), class: 'image is-32x32' if model.logo.attached? %>
