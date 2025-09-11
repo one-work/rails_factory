@@ -1,6 +1,6 @@
 <td>
   <div class="is-several">
-    <i class="fa-solid fa-fw fa-bars text-grey is-drawable"></i>
+    <%= svg_tag 'bars', class: 'icon is-small text-grey is-drawable' %>
     <%= image_tag model.logo.variant(resize_to_limit: [80, 80]), class: 'image is-32x32' if model.logo.attached? %>
     <%= link_to({ controller: 'productions', product_id: model.id }, aria: { label: t('factory.admin.productions.index.title') }, text: true) do %>
       <span><%= model.name %></span>
