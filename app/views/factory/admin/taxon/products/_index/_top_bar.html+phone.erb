@@ -4,7 +4,9 @@
   <% end %>
   <div class="weui-title">
     <span><%= @taxon.name %></span>
-    <span class="tag ml-1"><%= @taxon.scene.title %></span>
+    <% if @taxon.scene %>
+      <span class="tag ml-1"><%= @taxon.scene.title %></span>
+    <% end %>
   </div>
   <i class="px-5"></i>
 </div>
