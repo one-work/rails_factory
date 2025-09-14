@@ -40,3 +40,5 @@ light:
   - tree
   - up-right-and-down-left-from-center
   - xmark
+regular:
+  - angle-left
