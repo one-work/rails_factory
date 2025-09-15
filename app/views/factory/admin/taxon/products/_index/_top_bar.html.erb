@@ -1,6 +1,13 @@
-<%= render 'top_bar_layout' do %>
-  <span><%= @taxon.name %></span>
-  <% if @taxon.scene %>
-    <span class="tag ml-1"><%= @taxon.scene.title %></span>
-  <% end %>
+<%= render 'top_bar_left' do %>
+  <div class="weui-title">
+    <span><%= @taxon.name %></span>
+    <% if @taxon.scene %>
+      <span class="tag ml-1"><%= @taxon.scene.title %></span>
+    <% end %>
+  </div>
+  <div>
+    <%= button_to({ controller: 'taxons', action: 'preview' }, class: 'button is-borderless') do %>
+      <%= svg_tag 'ellipsis-vertical' %>
+    <% end %>
+  </div>
 <% end %>
