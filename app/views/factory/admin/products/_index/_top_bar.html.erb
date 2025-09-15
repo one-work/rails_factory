@@ -1,0 +1,8 @@
+<%= render 'top_bar_left' do %>
+  <div class="weui-title"><%= t('.title') %></div>
+  <div>
+    <%= button_to({ controller: 'taxons', action: 'preview' }, class: 'button is-borderless') do %>
+      <%= svg_tag 'ellipsis-vertical' %>
+    <% end %>
+  </div>
+<% end %>
