@@ -102,6 +102,8 @@ zh:
       taxons:
         index:
           title: 类别
+        preview:
+          title: 类别
         all:
           title: 管理分类
         new:
