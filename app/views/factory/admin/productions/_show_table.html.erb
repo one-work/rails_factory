@@ -1,10 +1,10 @@
 <div>
   <dt><%= Factory::Production.human_attribute_name(:name) %></dt>
-  <dd><%= @production.name %></dd>
+  <dd class="truncate"><%= @production.name %></dd>
 </div>
 <div>
   <dt><%= Factory::Production.human_attribute_name(:title) %></dt>
-  <dd><%= @production.title %></dd>
+  <dd class="truncate"><%= @production.title %></dd>
 </div>
 <div>
   <dt><%= Factory::Production.human_attribute_name(:state) %></dt>
@@ -24,7 +24,7 @@
 </div>
 <div>
   <dt><%= Factory::Production.human_attribute_name(:card_price) %></dt>
-  <dd>
+  <dd class="truncate">
     <div>
     <% @production.card_price.each do |key, value| %>
       <div class="tags has-addons is-tag-price control mb-0">
@@ -40,7 +40,7 @@
 </div>
 <div>
   <dt><%= Factory::Production.human_attribute_name(:wallet_price) %></dt>
-  <dd>
+  <dd class="truncate">
     <div>
     <% @production.wallet_price.each do |key, value| %>
       <div class="tags has-addons is-tag-price control mb-0">
