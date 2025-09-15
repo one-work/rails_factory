@@ -1,5 +1,5 @@
 <div class="box as-bar">
-  <%= link_to({ controller: 'products', taxon_id: @product.taxon_id }, class: 'px-4') do %>
+  <%= link_to({ controller: 'taxon/products', taxon_id: @product.taxon_id }, class: 'px-4') do %>
     <%= svg_tag 'angle-left', kind: 'regular' %>
   <% end %>
   <div class="weui-title flex-direction-column">
