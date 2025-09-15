@@ -1,0 +1,6 @@
+<%= render 'top_bar_layout' do %>
+  <span><%= @taxon.name %></span>
+  <% if @taxon.scene %>
+    <span class="tag ml-1"><%= @taxon.scene.title %></span>
+  <% end %>
+<% end %>

@@ -4,5 +4,5 @@
 </div>
 <div>
   <dt><%= Factory::Brand.human_attribute_name(:logo) %></dt>
-  <dt><%= image_tag @brand.logo, class: 'image' if @brand.logo.attached? %></dd>
+  <dd><%= image_tag @brand.logo, class: 'image' if @brand.logo.attached? %></dd>
 </div>
