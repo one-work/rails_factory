@@ -109,7 +109,7 @@ zh:
         all:
           title: 管理分类
         new:
-          title: 添加本店分类
+          title: 添加分类
         import:
           title: 从上游导入
       production_spaces:
