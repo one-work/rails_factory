@@ -1,3 +1,1 @@
-<%= f.fields :factory_settings, model: OpenStruct.new(f.object.factory_settings) do |pf| %>
-  <%= pf.select :dispatch, options_for_select(Trade::Item.options_i18n(:dispatch), pf.object.dispatch), label:'dd' %>
-<% end %>
+<%= f.select :dispatch, options_for_select(Trade::Item.options_i18n(:dispatch), pf.object.dispatch) %>

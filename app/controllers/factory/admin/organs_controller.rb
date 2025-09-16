@@ -9,7 +9,7 @@ module Factory
 
     def organ_params
       params.fetch(:organ, {}).permit(
-        factory_settings: {}
+        :dispatch
       )
     end
 

@@ -1,6 +1,4 @@
-<% Hash(@organ.factory_settings).each do |k, v| %>
 <div>
-  <dt><%= Org::Organ.human_attribute_name(k) %></dt>
-  <dd><%= v %></dd>
+  <dt><%= Org::Organ.human_attribute_name(:dispatch) %></dt>
+  <dd><%= @organ.dispatch_i18n %></dd>
 </div>
-<% end %>
