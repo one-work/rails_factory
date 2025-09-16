@@ -4,15 +4,17 @@
 <div class="mt-1 flex">
 <% if model.default %>
   <div class="tags has-addons mb-0 mr-2">
-    <span class="tag mb-1"><%= Factory::Production.human_attribute_name(:default) %></span>
-    <span class="tag is-primary mb-1"><%= svg_tag 'check' %></span>
+    <span class="tag"><%= Factory::Production.human_attribute_name(:default) %></span>
+    <span class="tag is-primary"><%= svg_tag 'check' %></span>
   </div>
 <% end %>
-<% if model.enabled %>
-  <div class="tags has-addons">
-    <span class="tag mb-1"><%= Factory::Production.human_attribute_name(:enabled) %></span>
-    <span class="tag is-primary mb-1"><%= svg_tag 'check' %></span>
-  </div>
-<% end %>
+<div class="tags has-addons">
+  <span class="tag"><%= model.enabled_i18n %></span>
+  <% if model.enabled %>
+    <span class="tag is-primary"><%= svg_tag 'check' %></span>
+  <% else %>
+    <span class="tag is-danger"><%= svg_tag 'xmark' %></span>
+  <% end %>
 </div>
-<p class="text-danger"><%= model.price.to_money.format.html_safe %></p>
+</div>
+<p class="text-danger mt-1"><%= model.price.to_money.format.html_safe %></p>

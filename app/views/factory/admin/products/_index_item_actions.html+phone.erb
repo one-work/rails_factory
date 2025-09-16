@@ -1,5 +1,10 @@
 <div id="tr_<%= model.id %>" class="media">
-  <%= link_to({ controller: 'productions', product_id: model.id }, class: 'media-content') do %>
+  <% if model.logo.attached? %>
+    <div class="media-left">
+      <%= image_tag model.logo.variant(resize_to_limit: [32, 32]), class: 'image is-32x32' %>
+    </div>
+  <% end %>
+  <%= link_to({ controller: 'productions', product_id: model.id }, text: true, class: 'media-content') do %>
     <%= yield %>
   <% end %>
   <div class="media-right">
