@@ -80,6 +80,8 @@ zh:
           title: 产品
         all:
           title: 产品
+        new:
+          title: 添加商品
         show:
           title: 产品详情
         buy:

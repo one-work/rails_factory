@@ -1,3 +1,22 @@
+<div class="media as-boxed">
+  <div class="media-content">
+    <div class="tags">
+    <% @taxons.each do |taxon| %>
+      <%= link_to taxon.name, { controller: 'taxon/products', taxon_id: taxon.id }, class: 'tag' %>
+    <% end %>
+    </div>
+  </div>
+  <div class="media-right">
+    <%= button_to({ controller: 'taxons', action: 'new' }, class: 'button is-small is-rounded is-primary') do %>
+      <%= svg_tag 'plus' %>
+      <span><%= t('.taxons.new.title') %></span>
+    <% end %>
+    <%= button_to({ controller: 'taxons', action: 'preview' }, class: '') do %>
+      <%= svg_tag 'ellipsis-vertical' %>
+    <% end %>
+  </div>
+</div>
+
 <%= render layout: 'index_list' do %>
   <%= render partial: 'index_item', layout: 'index_item_actions', collection: @products, as: :model %>
 <% end %>
