@@ -1,4 +1,9 @@
 <div>
   <dt><%= Org::Organ.human_attribute_name(:dispatch) %></dt>
-  <dd class="has-select"><%= @organ.dispatch_i18n %></dd>
+  <dd>
+    <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'select_enum' }) do %>
+      <%= @organ.dispatch_i18n %>
+      <%= svg_tag 'chevron-right' %>
+    <% end %>
+  </dd>
 </div>
