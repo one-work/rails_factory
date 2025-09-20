@@ -9,3 +9,7 @@
   </div>
   <span><%= t('factory.admin.productions.index.title') %></span>
 <% end %>
+<%= link_to({ action: 'edit_image' }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'image' %>
+  <span><%= t('.edit_image.title') %></span>
+<% end %>

@@ -110,7 +110,7 @@ Rails.application.routes.draw do
             patch :move_lower
             patch :move_higher
             patch :reorder
-            post :edit_image
+            match :edit_image, via: [:get, :post]
           end
         end
         resources :provides, controller: 'taxon/provides' do
@@ -166,7 +166,7 @@ Rails.application.routes.draw do
           get :buy
         end
         member do
-          post :edit_image
+          match :edit_image, via: [:get, :post]
         end
         resources :product_components
         resources :productions do

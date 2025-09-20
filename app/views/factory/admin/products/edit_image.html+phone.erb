@@ -1,0 +1,8 @@
+<%= form_with theme: 'weui', model: @product, url: { action: 'update' } do |f| %>
+  <section class="modal-card-body">
+    <%= render 'error_messages', target: f.object %>
+    <%= render 'com/attachments/file_upload', target: f.object.covers, f: f %>
+    <%= render 'com/attachments/file_upload', target: f.object.images, f: f %>
+  </section>
+  <%= f.submit %>
+<% end %>
