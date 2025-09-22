@@ -8,7 +8,7 @@
     </th>
     <th class="text-centered">
       <%= link_to({ controller: 'trade/in/orders', action: 'cart', current_cart_id: @cart.id, **params.permit!.slice('factory_taxon_id') }, class: 'button is-success') do %>
-        <i class="fa-solid fa-credit-card"></i>
+        <%= svg_tag 'credit-card' %>
         <span class="pl-1"><%= t('factory.in.orders.new.title') %></span>
       <% end %>
     </th>

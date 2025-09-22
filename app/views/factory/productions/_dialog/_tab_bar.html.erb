@@ -4,7 +4,7 @@
   </div>
   <div class="column is-half">
     <%= link_to({ controller: 'trade/my/carts', action: 'show' }, class: 'weui-btn weui-btn_mini weui-btn_primary') do %>
-      <i class="fa-solid fa-cart-shopping"></i>
+      <%= svg_tag 'cart-shopping' %>
       <span>去购物车</span>
       <%= svg_tag 'angle-right' %>
     <% end %>
