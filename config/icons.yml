@@ -9,8 +9,11 @@ light:
   - cart-shopping
   - chair
   - check
+  - chevron-left
   - chevron-right
   - circle-info
+  - circle-minus
+  - circle-plus
   - clock
   - clock-rotate-left
   - clone
@@ -27,6 +30,7 @@ light:
   - laptop
   - lightbulb
   - list
+  - list-timeline
   - list-tree
   - location-dot
   - magnifying-glass

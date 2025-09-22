@@ -1,18 +1,18 @@
 <% scene_automatic = @scene_automatics.find(&->(i){ i.scene_id == model.id }) %>
 <%= button_to({ controller: 'scene_automatics', action: 'update', scene_id: model.id, id: scene_automatic.id }, method: :patch, params: { 'scene_automatic[advance_days]': scene_automatic.advance_days - 1 }, class: 'mr-1') do %>
-  <i class="fa-solid fa-circle-minus fa-xl text-grey"></i>
+  <%= svg_tag 'circle-minus' %>
 <% end if scene_automatic && scene_automatic.advance_days > 1 %>
 <%= button_to({ controller: 'scene_automatics', action: 'destroy', scene_id: model.id, id: scene_automatic.id }, method: :delete, class: 'mr-1') do %>
-  <i class="fa-solid fa-circle-minus fa-xl text-grey"></i>
+  <%= svg_tag 'circle-minus' %>
 <% end if scene_automatic && scene_automatic.advance_days <= 1 %>
 <%= form_with(theme: nil, scope: 'scene_automatic', url: { controller: 'scene_automatics', action: 'update', scene_id: model.id, id: scene_automatic.id }, method: :patch, data: { controller: 'input' }) do |f| %>
   <%= f.number_field :advance_days, value: scene_automatic.advance_days, data: { action: 'change->input#form' }, class: 'background-light text-centered', style: 'width: 30px' %>
 <% end if scene_automatic %>
 <%= form_with theme: nil, url: { controller: 'scene_automatics', action: 'create', scene_id: model.id }, class: 'ml-1 button_to' do |f| %>
   <%= button_tag do %>
-    <i class="fa-solid fa-circle-plus fa-xl text-grey"></i>
+    <%= svg_tag 'circle-plus', class: 'icon' %>
   <% end %>
 <% end unless scene_automatic %>
 <%= button_to({ controller: 'scene_automatics', action: 'update', scene_id: model.id, id: scene_automatic.id }, method: :patch, params: { 'scene_automatic[advance_days]': scene_automatic.advance_days + 1 }, class: 'ml-1') do %>
-  <i class="fa-solid fa-circle-plus fa-xl text-dark-grey"></i>
+  <%= svg_tag 'circle-plus', class: 'icon' %>
 <% end if scene_automatic %>

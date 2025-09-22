@@ -23,7 +23,7 @@
       <div class="column is-half align-self-center">
       <% if @prev_plan %>
         <%= link_to({ produce_on: @prev_plan.produce_on, scene_id: params[:scene_id] }, class: 'flex align-items-center') do %>
-          <i class="fa-solid fa-chevron-left text-info"></i>
+          <%= svg_tag 'chevron-left' %>
           <span class="text-info">前一天</span>
           <span class="text-grey size-7 pl-1 flex flex-direction-column align-items-center">
             <span><%= @prev_plan.produce_on %></span>
@@ -32,7 +32,7 @@
         <% end %>
       <% else %>
         <div>
-          <i class="fa-solid fa-chevron-left text-grey"></i>
+          <%= svg_tag 'chevron-left' %>
           <span>前一天</span>
           <span class="text-grey size-7">没有了</span>
         </div>
@@ -46,13 +46,13 @@
             <span><%= @next_plan.produce_on %></span>
             <span><%= @next_plan.produce_on.to_fs(:week) %></span>
           </span>
-          <i class="fa-solid fa-chevron-right text-info pl-1"></i>
+          <%= svg_tag 'chevron-right' %>
         <% end %>
       <% else %>
         <div class="text-right">
           <span>后一天</span>
           <span class="text-grey size-7">没有了</span>
-          <i class="fa-solid fa-chevron-right text-grey"></i>
+          <%= svg_tag 'chevron-right' %>
         </div>
       <% end %>
       </div>

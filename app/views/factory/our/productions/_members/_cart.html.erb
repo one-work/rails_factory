@@ -4,13 +4,13 @@
       <%= f.hidden_field :number, value: item.number - 1 %>
       <%= f.hidden_field :current_cart_id, value: @cart.id %>
       <%= button_tag do %>
-        <i class="fa-solid fa-circle-minus fa-xl text-grey"></i>
+        <%= svg_tag 'circle-minus' %>
       <% end %>
     <% end if item.number > 1 %>
   </div>
   <div class="control">
     <%= button_to({ controller: 'trade/our/items', action: 'destroy', id: item.id }, method: :delete, params: { current_cart_id: @cart.id }, class: 'mr-1') do %>
-      <i class="fa-solid fa-circle-minus fa-xl text-grey"></i>
+      <%= svg_tag 'circle-minus' %>
     <% end if item.number <= 1 %>
   </div>
   <div class="control">
@@ -24,7 +24,7 @@
       <%= f.hidden_field :number, value: item.number + 1 %>
       <%= f.hidden_field :current_cart_id, value: @cart.id %>
       <%= button_to do %>
-        <i class="fa-solid fa-circle-plus fa-xl text-dark-grey"></i>
+        <%= svg_tag 'circle-plus', class: 'icon' %>
       <% end %>
     <% end %>
   </div>

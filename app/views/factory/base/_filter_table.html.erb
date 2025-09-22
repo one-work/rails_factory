@@ -9,7 +9,7 @@
             <span><%= @produce_plan.produce_on - 1 %></span>
             <span><%= (@produce_plan.produce_on - 1).to_fs(:week) %></span>
           </span>
-          <i class="fa-solid fa-chevron-left text-info pl-1"></i>
+          <%= svg_tag 'chevron-left' %>
         <% end %>
       <% end %>
       <div class="button is-primary">
@@ -23,7 +23,7 @@
             <span><%= @produce_plan.produce_on + 1 %></span>
             <span><%= (@produce_plan.produce_on + 1).to_fs(:week) %></span>
           </span>
-          <i class="fa-solid fa-chevron-right text-info pl-1"></i>
+          <%= svg_tag 'chevron-right' %>
         <% end %>
       <% end %>
     </td>

@@ -9,6 +9,6 @@
   <%= f.hidden_field :member_id, value: member.id %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
   <%= button_tag do %>
-    <i class="fa-solid fa-circle-plus fa-xl text-grey"></i>
+    <%= svg_tag 'circle-plus', class: 'icon' %>
   <% end %>
 <% end %>

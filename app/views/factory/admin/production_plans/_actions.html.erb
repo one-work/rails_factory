@@ -7,7 +7,7 @@
   <span><%= t('.destroy.title') %></span>
 <% end %>
 <%= link_to({ controller: 'production_items', production_plan_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-regular fa-list-timeline"></i>
+  <%= svg_tag 'list-timeline' %>
   <span><%= t('factory.admin.production_items.index.title') %></span>
   <span class="text-grey">（<%= model.production_items_count %>）</span>
 <% end %>
