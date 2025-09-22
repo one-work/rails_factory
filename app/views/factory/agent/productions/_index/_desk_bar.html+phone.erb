@@ -1,9 +1,6 @@
-<div class="box as-bar">
-  <%= link_to({ controller: 'space/admin/desks', action: 'all' }, class: 'px-4') do %>
-    <%= svg_tag 'angle-left' %>
-  <% end %>
-  <div class="weui-title"><span><%= @desk.name %></span></div>
+<%= render layout: 'top_bar_left' do %>
+  <div class="weui-title"><%= @desk.name %></div>
   <%= button_to({ controller: '/space/desks', action: 'change', station_id: @desk.room.station_id }, form: { class: 'px-4' }) do %>
     <%= svg_tag 'chevron-right' %>
   <% end %>
-</div>
+<% end %>
