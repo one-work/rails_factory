@@ -1,4 +1,4 @@
-<div class="box as-bar">
+<div class="as-bar">
   <% if params[:desk_id] %>
     <%= link_to({ controller: 'space/admin/desks', action: 'all' }, class: 'px-4') do %>
       <%= svg_tag 'angle-left' %>
@@ -8,7 +8,7 @@
       <%= svg_tag 'angle-left' %>
     <% end %>
   <% end %>
-  <div class="weui-title flex-direction-column">
+  <div class="bar-title flex-direction-column">
   <% if params[:desk_id] %>
     <div><span><%= @desk.name %></span></div>
   <% elsif params[:scene_id] || params[:produce_on] %>

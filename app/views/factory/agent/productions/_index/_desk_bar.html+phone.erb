@@ -1,5 +1,5 @@
 <%= render layout: 'top_bar_left' do %>
-  <div class="weui-title"><%= @desk.name %></div>
+  <div class="bar-title"><%= @desk.name %></div>
   <%= button_to({ controller: '/space/desks', action: 'change', station_id: @desk.room.station_id }, form: { class: 'px-4' }) do %>
     <%= svg_tag 'chevron-right' %>
   <% end %>
