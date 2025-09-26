@@ -25,7 +25,7 @@ zh:
     agent:
       productions:
         index:
-          title: 商品列表
+          title: 开单
     admin:
       title: 进销存/生产
       home:

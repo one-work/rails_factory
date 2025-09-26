@@ -1,6 +1,8 @@
 <%= link_to({ controller: 'factory/admin/products' }, class: 'cell has-column-centered') do %>
-  <div class="text-primary">
-    <%= svg_tag 'list-tree', class: 'icon is-medium' %>
-  </div>
+  <%= svg_tag 'list-tree', class: 'icon is-medium text-primary' %>
   <div class="size-7 text-grey mt-1"><%= t('factory.admin.products.index.title') %></div>
+<% end %>
+<%= link_to({ controller: 'factory/agent/productions' }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'person-chalkboard', class: 'icon is-medium text-primary' %>
+  <div class="size-7 text-grey mt-1"><%= t('factory.agent.productions.index.title') %></div>
 <% end %>

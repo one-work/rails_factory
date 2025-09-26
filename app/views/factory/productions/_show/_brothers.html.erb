@@ -1,5 +1,5 @@
 <div class="box">
-  <div class="box-body">选择型号</div>
+  <div class="box-header">选择型号</div>
   <div class="p-4 buttons are-small" data-controller="custom" data-custom-only-value="<%# taxon_component.only_one? %>">
   <% @production.brothers.enabled.each do |brother| %>
     <%= link_to({ id: brother.id }, data: { controller: 'scroll', action: 'scroll#preserve' }, class: active_helper(id: brother.id, item: 'button', active: 'button is-primary')) do %>
