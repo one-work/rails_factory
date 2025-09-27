@@ -64,7 +64,6 @@ module Factory
     end
 
     def set_cart
-      logger.debug '--------------------------in agent products'
       @cart = Trade::Cart.get_cart(params, agent_id: current_member.id, **default_params)
     end
 
