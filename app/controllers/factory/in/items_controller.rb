@@ -24,7 +24,7 @@ module Factory
 
     private
     def item_params
-      params.fetch(:item, {}).permit(
+      params.permit(
         :good_type,
         :good_id,
         :number,
