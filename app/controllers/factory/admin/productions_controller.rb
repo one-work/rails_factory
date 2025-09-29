@@ -56,7 +56,7 @@ module Factory
     end
 
     def print_data
-      render json: @production_item.to_cpcl.bytes
+      render json: @production.to_cpcl.bytes
     end
 
     private
