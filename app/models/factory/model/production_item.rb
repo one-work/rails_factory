@@ -52,7 +52,7 @@ module Factory
       QrcodeHelper.code_png(enter_url, border_modules: 0, fill: 'pink')
     end
 
-    def to_cpcl(qr = BaseCpcl.new(width: 70, height: 44))
+    def to_cpcl(qr = BaseCpcl.new)
       qr.text production.word
       qr.text code
       qr.qrcode_right(enter_url)
