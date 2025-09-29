@@ -178,7 +178,6 @@ module Factory
     def to_cpcl(qr = BaseCpcl.new)
       qr.text word
       qr.qrcode_right(enter_url)
-      qr.render
       qr
     end
 
