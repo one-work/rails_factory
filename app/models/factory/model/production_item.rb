@@ -37,7 +37,11 @@ module Factory
     end
 
     def enter_url
-      Rails.application.routes.url_for(controller: 'factory/me/production_items', action: 'qrcode', id: self.id)
+      Rails.application.routes.url_for(
+        controller: 'factory/me/production_items',
+        action: 'qrcode',
+        id: self.id
+      )
     end
 
     def qrcode_enter_url
@@ -48,20 +52,12 @@ module Factory
       QrcodeHelper.code_png(enter_url, border_modules: 0, fill: 'pink')
     end
 
-    def to_cpcl
-      cpcl = BaseCpcl.new(width: 70, height: 44)
-      cpcl.text production.word
-      cpcl.text code
-      cpcl.qrcode_right(enter_url)
-      cpcl.render
-    end
-
-    def to_tspl
-      ts = BaseTspl.new
-      ts.text production.name, x: 20
-      ts.text code, x: 20
-      ts.qrcode(enter_url)
-      ts.render
+    def to_cpcl(qr = BaseCpcl.new(width: 70, height: 44))
+      qr.text production.word
+      qr.text code
+      qr.qrcode_right(enter_url)
+      qr.render
+      qr
     end
 
     def to_pdf
@@ -77,8 +73,9 @@ module Factory
     end
 
     def print
+      qr = BaseTspl.new
       production.organ.device.print(
-        data: to_tspl
+        data: to_cpcl(qr)
       )
     end
 
