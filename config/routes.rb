@@ -182,6 +182,7 @@ Rails.application.routes.draw do
             patch :update_wallet
             patch :provide
             post :edit_stock
+            get :print_data
           end
         end
         resources :fits
