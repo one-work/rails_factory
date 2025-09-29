@@ -167,6 +167,21 @@ module Factory
       self.save!
     end
 
+    def enter_url
+      Rails.application.routes.url_for(
+        controller: 'factory/productions',
+        action: 'show',
+        id: self.id
+      )
+    end
+
+    def to_cpcl(qr = BaseCpcl.new(width: 70, height: 44))
+      qr.text word
+      qr.qrcode_right(enter_url)
+      qr.render
+      qr
+    end
+
     def init_default
       self.default = true if self.brothers.blank?
     end

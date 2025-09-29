@@ -135,6 +135,7 @@ Rails.application.routes.draw do
             match :wallet, via: [:get, :post]
             patch :update_wallet
             patch :provide
+            get :print_data
           end
         end
         resources :taxon_provides

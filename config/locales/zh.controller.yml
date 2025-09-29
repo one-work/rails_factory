@@ -161,6 +161,8 @@ zh:
           title: 成本价格
         wallet:
           title: 积分兑换
+        print_data:
+          title: 蓝牙打印标签
       production_parts:
         index:
           title: 物料清单

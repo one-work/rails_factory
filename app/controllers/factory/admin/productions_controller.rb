@@ -3,7 +3,7 @@ module Factory
     before_action :set_product, except: [:taxon], if: -> { params[:product_id].present? }
     before_action :set_production, only: [
       :show, :edit, :update, :refresh, :destroy, :actions,
-      :part, :update_part, :price, :card, :update_card, :wallet, :update_wallet, :edit_stock
+      :part, :update_part, :price, :card, :update_card, :wallet, :update_wallet, :edit_stock, :print_data
     ]
     before_action :set_new_production, only: [:new, :create]
     before_action :set_taxon, only: [:taxon]
@@ -53,6 +53,10 @@ module Factory
     end
 
     def import
+    end
+
+    def print_data
+      render json: @production_item.to_cpcl.bytes
     end
 
     private
