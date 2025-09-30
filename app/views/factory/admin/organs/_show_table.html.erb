@@ -7,3 +7,15 @@
     <% end %>
   </dd>
 </div>
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:share_logo) %></dt>
+  <dd>
+    <% if @organ.share_logo.attached? %>
+      <%= image_tag @organ.share_logo, class: 'image is-64x64' %>
+    <% else %>
+      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field' }) do %>
+        <%= svg_tag 'chevron-right' %>
+      <% end %>
+    <% end %>
+  </dd>
+</div>
