@@ -2,7 +2,7 @@
   <i class="fa-solid fa-hand"></i>
   <span>自己点餐</span>
 <% end %>
-<%= link_to({ controller: 'carts', action: 'list', scene_id: params[:scene_id], produce_on: params[:produce_on] }, class: 'cell weui-actionsheet__cell_warn') do %>
+<%= link_to({ controller: 'carts', action: 'list', scene_id: params[:scene_id], produce_on: params[:produce_on] }, class: 'cell has-column-centered') do %>
   <i class="fa-solid fa-hand-holding"></i>
   <span>帮同事点餐</span>
 <% end %>

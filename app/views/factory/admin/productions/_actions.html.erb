@@ -11,23 +11,23 @@
   <span><%= t('.production_items.index.title') %></span>
 <% end %>
 <% if model.default %>
-  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': false }, class: 'text-danger has-column-centered', form: { class: 'cell' }) do %>
+  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': false }, form: { class: 'cell has-column-centered' }) do %>
     <%= svg_tag 'xmark' %>
     <span>主显产品</span>
   <% end %>
 <% else %>
-  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': true }, class: 'text-success has-column-centered', form: { class: 'cell' }) do %>
+  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': true }, form: { class: 'cell has-column-centered' }) do %>
     <%= svg_tag 'check' %>
     <span>主显产品</span>
   <% end %>
 <% end %>
 <% if model.enabled %>
-  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': false }, class: 'text-danger has-column-centered', form: { class: 'cell' }) do %>
+  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': false }, form: { class: 'cell has-column-centered' }) do %>
     <%= svg_tag 'xmark' %>
     <span>下架</span>
   <% end %>
 <% else %>
-  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': true }, class: 'text-success has-column-centered', form: { class: 'cell' }) do %>
+  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': true }, form: { class: 'cell has-column-centered' }) do %>
     <%= svg_tag 'check' %>
     <span>上架</span>
   <% end %>
