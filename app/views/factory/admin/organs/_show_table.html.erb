@@ -11,7 +11,9 @@
   <dt><%= Org::Organ.human_attribute_name(:share_logo) %></dt>
   <dd>
     <% if @organ.share_logo.attached? %>
-      <%= image_tag @organ.share_logo, class: 'image is-64x64' %>
+      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', theme: 'default' }) do %>
+        <%= image_tag @organ.share_logo, class: 'image is-64x64' %>
+      <% end %>
     <% else %>
       <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', theme: 'default' }) do %>
         <%= svg_tag 'chevron-right' %>
