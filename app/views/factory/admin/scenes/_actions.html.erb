@@ -2,11 +2,11 @@
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
-<%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, form: { class: 'cell has-column-centered' }) do %>
+<%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'trash' %>
   <span><%= t('.destroy.title') %></span>
 <% end %>
 <%= link_to({ controller: 'produce_plans', scene_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-hammer"></i>
-  <span><%= t('factory.admin.produce_plans.index.title') %></span>
+  <%= svg_tag 'hammer' %>
+  <span><%= t('.produce_plans.index.title') %></span>
 <% end %>

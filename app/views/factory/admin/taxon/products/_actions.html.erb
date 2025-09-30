@@ -7,11 +7,11 @@
   <span><%= model.productions_count %></span>
   <span><%= t('factory.admin.productions.index.title') %></span>
 <% end %>
-<%= button_to({ action: 'move_higher', id: model.id }, method: :patch, form: { class: 'cell has-column-centered' }) do %>
+<%= button_to({ action: 'move_higher', id: model.id }, method: :patch, class: 'cell has-column-centered') do %>
   <%= svg_tag 'arrow-up' %>
   <span>上移一位</span>
 <% end %>
-<%= button_to({ action: 'move_lower', id: model.id }, method: :patch, form: { class: 'cell has-column-centered' }) do %>
+<%= button_to({ action: 'move_lower', id: model.id }, method: :patch, class: 'cell has-column-centered') do %>
   <%= svg_tag 'arrow-down' %>
   <span>下移一位</span>
 <% end %>
