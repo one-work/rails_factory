@@ -1,16 +1,14 @@
-<div class="fixed-grid has-5-cols">
-  <div class="grid">
-    <%= link_to({ controller: 'factory/panel/factory_taxons' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['factory_taxons', 'factory_providers'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
-      <span><%= t('factory.panel.factory_taxons.index.title') %></span>
-    <% end %>
-    <%= link_to({ controller: 'factory/panel/unifiers' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['unifiers'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
-      <span><%= t('factory.panel.unifiers.index.title') %></span>
-    <% end %>
-    <%= link_to({ controller: 'factory/panel/brands' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['brands', 'serials'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
-      <span><%= t('factory.panel.brands.index.title') %></span>
-    <% end %>
-    <%= link_to({ controller: 'factory/panel/scenes' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['scenes'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
-      <span><%= t('factory.panel.scenes.index.title') %></span>
-    <% end %>
-  </div>
+<div class="grid">
+  <%= link_to({ controller: 'factory/panel/factory_taxons' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['factory_taxons', 'factory_providers'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('factory.panel.factory_taxons.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'factory/panel/unifiers' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['unifiers'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('factory.panel.unifiers.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'factory/panel/brands' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['brands', 'serials'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('factory.panel.brands.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'factory/panel/scenes' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['scenes'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('factory.panel.scenes.index.title') %></span>
+  <% end %>
 </div>
