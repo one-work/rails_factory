@@ -1,15 +1,14 @@
 <div>
   <dt><%= Org::Organ.human_attribute_name(:dispatch) %></dt>
-  <dd>
+  <dd class="has-select">
     <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'select_enum' }) do %>
-      <%= @organ.dispatch_i18n %>
-      <%= svg_tag 'chevron-right' %>
+      <span><%= @organ.dispatch_i18n %></span>
     <% end %>
   </dd>
 </div>
 <div>
   <dt><%= Org::Organ.human_attribute_name(:share_logo) %></dt>
-  <dd>
+  <dd class="has-select">
     <% if @organ.share_logo.attached? %>
       <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', partial: 'edit_inline_submit' }) do %>
         <%= image_tag @organ.share_logo, class: 'image is-64x64' %>
