@@ -11,11 +11,11 @@
   <dt><%= Org::Organ.human_attribute_name(:share_logo) %></dt>
   <dd>
     <% if @organ.share_logo.attached? %>
-      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', theme: 'default' }) do %>
+      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', partial: 'edit_inline_submit' }) do %>
         <%= image_tag @organ.share_logo, class: 'image is-64x64' %>
       <% end %>
     <% else %>
-      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', theme: 'default' }) do %>
+      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', partial: 'edit_inline_submit' }) do %>
         <%= svg_tag 'chevron-right' %>
       <% end %>
     <% end %>
