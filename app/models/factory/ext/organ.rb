@@ -23,7 +23,8 @@ module Factory
     end
 
     def share_logo_url
-      "#{share_logo.url}!/fw/500"
+      ActiveStorage::Current.url_options ||= { host: ENV['HOST'] }
+      share_logo.url
     end
 
     def dispatch_i18n
