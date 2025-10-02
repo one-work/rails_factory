@@ -14,7 +14,7 @@ module Factory
     end
 
     def generate_share_logo
-      app = OneAi::App.first
+      app = OneAi::DoubaoApp.first
       if app
         r = app.image(organ.name)
         share_logo.url_sync(r[0]['url'])
