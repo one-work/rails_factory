@@ -1,0 +1,5 @@
+<% if params[:station_id].present? %>
+  <%= render 'space_station' %>
+<% elsif params[:desk_id].present? %>
+  <%= render 'space_desk' %>
+<% end %>

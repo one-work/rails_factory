@@ -1,11 +1,8 @@
-<div class="box radiusless flex justify-content-space-between mb-0">
-  <div>
+<div class="as-bar">
+  <i class="px-5"></i>
+  <div class="bar-title">
     <%= svg_tag 'chair' %>
     <span class="ml-1"><%= @desk.content %></span>
   </div>
-  <div>
-    <%= button_to({ controller: '/space/desks', action: 'change', station_id: @desk.room.station_id }) do %>
-      <%= svg_tag 'chevron-right' %>
-    <% end %>
-  </div>
+  <div class="px-5"></div>
 </div>
