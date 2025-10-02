@@ -13,6 +13,14 @@ module Factory
       has_one_attached :share_logo  # 门店预览图，宽高比为 5: 4
     end
 
+    def generate_share_logo
+      app = OneAi::App.first
+      if app
+        r = app.image(organ.name)
+        share_logo.url_sync(r[0]['url'])
+      end
+    end
+
     def dispatch_i18n
       Trade::Item.enum_i18n(:dispatch, dispatch)
     end
@@ -22,11 +30,11 @@ module Factory
     end
 
     def nearest_produce_plans
-      Factory::ProducePlan.includes(:scene).default_where(organ_id: self.id).effective.order(produce_on: :asc)
+      ProducePlan.includes(:scene).default_where(organ_id: self.id).effective.order(produce_on: :asc)
     end
 
     def init_provider
-      ft = Factory::FactoryTaxon.first
+      ft = FactoryTaxon.first
       pt = ft.taxons.build(organ_id: id)
       pt.scene_id = ft.scene_id
       pt.name = ft.name
