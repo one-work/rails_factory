@@ -21,6 +21,10 @@ module Factory
       end
     end
 
+    def share_logo_url
+      "#{share_logo.url}!/fw/500"
+    end
+
     def dispatch_i18n
       Trade::Item.enum_i18n(:dispatch, dispatch)
     end
