@@ -15,7 +15,7 @@
       <% end %>
     <% else %>
       <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', partial: 'edit_inline_submit' }) do %>
-        <%= svg_tag 'chevron-right' %>
+        <span>上传门店图</span>
       <% end %>
     <% end %>
   </dd>
