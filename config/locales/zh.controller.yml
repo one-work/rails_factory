@@ -89,7 +89,7 @@ zh:
         edit_image:
           title: 产品图片
         scan:
-          title: 扫码添加
+          title: 条形码识别
       product_components:
         index:
           title: 产品组成
