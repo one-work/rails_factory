@@ -168,6 +168,7 @@ Rails.application.routes.draw do
         collection do
           get :buy
           post :scan
+          post :manual
         end
         member do
           match :edit_image, via: [:get, :post]

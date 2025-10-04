@@ -2,7 +2,7 @@ module Factory
   class Admin::ProductsController < Admin::BaseController
     before_action :set_brands, only: [:new, :create, :edit, :update]
     before_action :set_product, only: [:show, :edit, :update, :destroy, :reorder, :actions, :part, :edit_image]
-    before_action :set_new_product, only: [:new, :create, :scan]
+    before_action :set_new_product, only: [:new, :create, :scan, :manual]
     before_action :set_taxons, only: [:index, :buy, :new, :create, :edit, :update]
     before_action :set_cart, only: [:buy]
 
@@ -34,6 +34,11 @@ module Factory
       ).default_where(q_params).order(position: :asc).page(params[:page])
     end
 
+    def new
+      @product.productions.build
+      @product.taxon = Taxon.default_where(default_params).new
+    end
+
     def scan
       type, code = params[:result].split(',')
       barcode = Barcode.find_by(gtin: code)
@@ -45,9 +50,8 @@ module Factory
       end
     end
 
-    def new
-      @product.productions.build
-      @product.taxon = Taxon.default_where(default_params).new
+    def manual
+
     end
 
     def edit
