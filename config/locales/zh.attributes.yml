@@ -16,6 +16,7 @@ zh:
         profit_margin: 利润率
         min_price: 最低价
         max_price: 最高价
+        manual: 说明书
       factory/product_part_taxon:
         min_select: 最低选择数
         max_select: 最多选择数

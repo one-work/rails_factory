@@ -41,7 +41,7 @@ module Factory
         @product.name = barcode.name
         @product.productions.build(price: barcode.price)
       else
-        @product.productions.build
+        render :scan_blank
       end
     end
 
@@ -90,6 +90,7 @@ module Factory
         :specialty,
         :taxon_id,
         :base_price,
+        :manual,
         :taxon_ancestors,
         part_ids: [],
         covers: [],

@@ -1,0 +1,8 @@
+<%= form_with theme: 'modal', model: @product, scope: :product, url: { action: 'update' } do |f| %>
+  <%= render 'modal_header' %>
+  <section class="modal-card-body">
+    <%= render 'error_messages', target: f.object %>
+    <%= render 'com/attachments/list_edit', target: f.object.manual, f: f %>
+  </section>
+  <%= f.submit %>
+<% end %>

@@ -47,6 +47,7 @@ module Factory
       has_one_attached :logo do |attachable|
         attachable.variant :thumb, resize_to_limit: [64, 64], preprocessed: true
       end
+      has_one_attached :manual
       has_many_attached :covers
       has_many_attached :images
 
