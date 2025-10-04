@@ -35,7 +35,8 @@ module Factory
     end
 
     def scan
-      barcode = Barcode.find_by(gtin: params[:result])
+      type, code = params[:result].split(',')
+      barcode = Barcode.find_by(gtin: code)
       if barcode
         @product.name = barcode.name
         @product.productions.build(price: barcode.price)
