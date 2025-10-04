@@ -39,7 +39,7 @@ module Factory
       barcode = Barcode.find_by(gtin: code)
       if barcode
         @product.name = barcode.name
-        @product.productions.build(price: barcode.price)
+        @product.productions.build(cost_price: barcode.price)
       else
         render :scan_blank
       end
