@@ -89,3 +89,5 @@ zh:
       factory/stock_log:
         stock: 当前库存
         amount: 变动数量
+      org/organ:
+        share_logo: 门店图
