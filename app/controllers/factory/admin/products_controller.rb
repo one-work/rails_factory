@@ -40,6 +40,8 @@ module Factory
       if barcode
         @product.name = barcode.name
         @product.productions.build(price: barcode.price)
+      else
+        @product.productions.build
       end
     end
 
