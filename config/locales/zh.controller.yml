@@ -81,7 +81,7 @@ zh:
         all:
           title: 产品
         new:
-          title: 添加商品
+          title: 手动添加
         show:
           title: 产品详情
         buy:
