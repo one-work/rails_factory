@@ -1,6 +1,6 @@
 <%= f.collection_select :parent_id, @taxons, :id, :name, include_blank: true if @taxons.present? %>
 <%= f.text_field :name, autofocus: true %>
-<%= f.file_field :logo %>
-<%= f.file_field :logo_color %>
+<%= render 'com/attachments/list_field', target: f.object.logo, f: f %>
+<%= render 'com/attachments/list_field', target: f.object.logo_color, f: f %>
 <%= f.collection_select :scene_id, @scenes, :id, :title if @scenes.present? %>
 <%= f.check_box :customizable %>

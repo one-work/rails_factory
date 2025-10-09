@@ -1,6 +1,6 @@
 <%= f.collection_select :brand_id, @brands, :id, :name, include_blank: true if @brands.present? %>
 <%= f.text_field :name, required: true, autofocus: true %>
-<%= f.file_field :logo %>
+<%= render 'com/attachments/list_field', target: f.object.logo, f: f %>
 <%= f.text_area :description %>
 <%= f.number_field :base_price %>
 <%= f.number_field :profit_margin, step: 0.01 %>

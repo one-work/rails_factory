@@ -1,2 +1,2 @@
 <%= f.text_field :name, autofocus: true %>
-<%= f.file_field :logo %>
+<%= render 'com/attachments/list_field', target: f.object.logo, f: f %>

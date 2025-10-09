@@ -1,5 +1,5 @@
 <%= f.text_field :title %>
-<%= f.file_field :logo %>
+<%= render 'com/attachments/list_field', target: f.object.logo, f: f %>
 <%= f.number_field :book_start_days %>
 <div class="field is-horizontal">
   <%= f.label :book_start_at %>
