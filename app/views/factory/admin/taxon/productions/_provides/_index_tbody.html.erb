@@ -19,3 +19,11 @@
     </tbody>
   </table>
 </td>
+<td>
+  <div data-show-target="item" class="visibility-hidden">
+    <%= button_to({ controller: 'production_provides', action: 'new', production_id: model.id }, class: 'button is-small is-borderless') do %>
+      <%= svg_tag 'pencil' %>
+      <span class="ml-1"><%= t('.production_provides.new.title') %></span>
+    <% end %>
+  </div>
+</td>
