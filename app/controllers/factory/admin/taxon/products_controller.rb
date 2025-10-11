@@ -35,7 +35,7 @@ module Factory
     end
 
     def new
-      @product.productions.build
+      @product.productions.build(enabled: true)
     end
 
     def edit
