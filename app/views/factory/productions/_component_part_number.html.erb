@@ -1,5 +1,5 @@
 <% disabled = component.disabled?(@production.part_ids, component_part.part_id) %>
-<div data-controller="modify" data-modify-submit-value="true" data-modify-step-value="1" class="button is-fullwidth justify-content-space-between is-light">
+<div data-controller="modify" data-modify-submit-value="true" data-modify-step-value="1" class="flex justify-content-space-between background-light px-3 py-1 mt-2">
   <div>
     <span><%= component_part.part.word %></span>
     <% if component_part.part.price.to_d > 0 %>
@@ -10,23 +10,23 @@
   <div class="has-v-centered">
   <% if @production.part_ids.include?(component_part.part_id) %>
     <% if @production.parts_hash[component_part.part_id].number > 1 %>
-      <button data-action="modify#minus" class="button_to mr-1" style="width: 1.5em">
+      <button data-action="modify#minus" class="button_to mr-1">
         <%= svg_tag 'minus', class: 'icon text-grey' %>
       </button>
       <%= hidden_field_tag 'production_parts_attributes[][part_id]', component_part.part_id, form: 'edit_custom', id: nil %>
     <% else %>
-      <label class="button_to" style="width: 1.5em">
+      <label class="button_to mr-1">
         <%= svg_tag 'minus', class: "icon #{disabled ? 'text-grey-lighter' : 'text-grey'}" %>
         <%= check_box_tag 'production_parts_attributes[][part_id]', component_part.part_id, true, disabled: disabled, data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id }, id: nil, class: 'display-none', form: 'edit_custom' %>
       </label>
     <% end %>
     <%= number_field_tag 'production_parts_attributes[][number]', @production.parts_hash[component_part.part_id].number, data: { action: 'change->input#form focus->input#blank', modify_target: 'input' }, form: 'edit_custom', class: 'text-centered', style: 'width: 3em' %>
-    <button data-action="modify#plus" class="button_to ml-1" style="width: 1.5em">
+    <button data-action="modify#plus" class="button_to ml-1">
       <%= svg_tag 'plus', class: "icon #{disabled ? 'text-grey-lighter' : 'text-grey'}" %>
     </button>
   <% else %>
     <%= hidden_field_tag 'production_parts_attributes[][number]', component_part.min, form: 'edit_custom', id: nil %>
-    <label class="button_to" style="width: 1.5em">
+    <label class="button_to ml-1">
       <%= svg_tag 'plus', class: "icon #{disabled ? 'text-grey-lighter' : 'text-grey'}" %>
       <%= check_box_tag 'production_parts_attributes[][part_id]', component_part.part_id, false, disabled: disabled, data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id }, id: nil, class: 'display-none', form: 'edit_custom' %>
     </label>

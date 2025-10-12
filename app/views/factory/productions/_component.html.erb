@@ -3,11 +3,13 @@
     <span><%= component.name %></span>
     <span class="size-7"><%= component.select_str %></span>
   </div>
-  <div data-controller="custom" class="buttons are-small no-disabled pt-3">
   <% if component.multiple %>
-    <%= render partial: 'component_part_number', collection: component_parts, as: :component_part, locals: { component: component } %>
+    <div data-controller="custom" class="no-disabled">
+      <%= render partial: 'component_part_number', collection: component_parts, as: :component_part, locals: { component: component } %>
+    </div>
   <% else %>
-    <%= render partial: 'component_part', collection: component_parts, as: :component_part, locals: { component: component } %>
+    <div data-controller="custom" class="buttons are-small no-disabled mt-3">
+      <%= render partial: 'component_part', collection: component_parts, as: :component_part, locals: { component: component } %>
+    </div>
   <% end %>
-  </div>
 </div>
