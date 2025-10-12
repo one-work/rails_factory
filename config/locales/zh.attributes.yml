@@ -63,6 +63,9 @@ zh:
         customizable: 可定制
         enabled: 上架
         nav: 单独菜单
+      factory/taxon_component:
+        min_select: 选择范围（最小）
+        max_select: 选择范围（最大）
       factory/part_taxon_provider:
         provider_id: 供应商
       factory/production_plan:
