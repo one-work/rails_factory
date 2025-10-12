@@ -1,5 +1,5 @@
-<div class="flex-grow-0 px-0 pb-0 flex" style="margin-left: -0.75rem">
-  <div class="menu is-sticky as-wrap background-white">
+<div class="flex" style="margin-left: -0.75rem">
+  <div class="menu is-sticky as-side background-white">
     <div class="menu-list">
     <% @taxons.each do |taxon| %>
       <%= link_to({ taxon_id: taxon.id.to_s == params[:taxon_id] ? nil : taxon.id, **params.permit(:station_id, :desk_id, :dispatch) }, class: active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active')) do %>
