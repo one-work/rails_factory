@@ -4,7 +4,7 @@
     <%= render partial: 'cart_item_add', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: item_con, renew: { "product_summary_#{@production.product_id}" => 'product_summary_brothers' } } %>
   </div>
   <%= render partial: 'product_summary_brothers', locals: { production: @production, cart: @cart, item_con: item_con, options: {} } %>
-  <div class="flex justify-content-center align-items-center is-fullwidth mt-2">
+  <div class="flex justify-content-center align-items-center is-fullwidth">
     <button data-action="click->modal#close" class="button is-small is-rounded is-primary">确认</button>
   </div>
 </footer>
