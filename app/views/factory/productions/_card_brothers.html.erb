@@ -1,5 +1,8 @@
 <%= render 'dispatch_modal' %>
 
-<div id="card_brothers" class="buttons are-small">
-  <%= render partial: 'card_brother', collection: @production.brothers.enabled, as: :brother %>
+<div class="box is-padding-less">
+  <div class="box-header">规格</div>
+  <div id="card_brothers" class="buttons are-small p-3">
+    <%= render partial: 'card_brother', collection: @production.brothers.enabled, as: :brother %>
+  </div>
 </div>

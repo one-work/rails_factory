@@ -1,2 +1,2 @@
 <%= turbo_stream.update 'card_brothers', partial: 'card_brother', collection: @production.brothers.enabled, as: :brother %>
-<%= turbo_stream.replace 'production_modal_foot', partial: 'modal_foot_component', locals: { production: @production, item_con: "trade/#{params[:namespace].presence || 'my'}/items" } %>
+<%= turbo_stream.replace 'production_modal_foot', partial: 'modal_foot_brothers', locals: { production: @production, item_con: "trade/#{params[:namespace].presence || 'my'}/items" } %>
