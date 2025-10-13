@@ -9,7 +9,7 @@
   <% end %>
 <% else %>
   <% if cart %>
-    <%= render partial: 'cart_item_big', locals: { item: cart.init_cart_item(params, good_id: model.id), cart: cart, item_con: item_con } %>
+    <%= render partial: 'cart_item_big', locals: { item: cart.init_cart_item(params, good_id: model.id), cart: cart, item_con: item_con, renew: { "product_cart_#{model.product_id}" => 'production_cart' } } %>
   <% end %>
 <% end %>
 </div>

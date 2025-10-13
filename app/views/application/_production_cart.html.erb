@@ -1,7 +1,7 @@
 <div id="product_cart_<%= model.product_id %>" class="level right-badge">
 <% if model.product.productions_count > 1 || model.product.product_parts_count > 0 || model.taxon&.taxon_components_count.to_i > 0 %>
   <% items = cart&.find_items(model.product.production_ids, dispatch: params[:dispatch].presence || current_organ.dispatch, **params.permit(:produce_on, :scene_id)) %>
-  <%= button_to({ controller: defined?(productions_con) ? productions_con : controller_path, action: 'show', id: model.id }, params: { dispatch: params[:dispatch].presence || current_organ.dispatch, **params.permit(:desk_id, :station_id).compact_blank }, class: 'button is-small is-rounded is-primary') do %>
+  <%= button_to({ controller: 'factory/productions', action: 'show', id: model.id }, params: { dispatch: params[:dispatch].presence || current_organ.dispatch, **params.permit(:desk_id, :station_id).compact_blank }, class: 'button is-small is-rounded is-primary') do %>
     <span>选规格</span>
   <% end %>
   <% if items.present? %>
