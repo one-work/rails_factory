@@ -2,7 +2,7 @@
 <td><%= model.production.price.to_money.format.html_safe %></td>
 <td id="inline_<%= model.id %>_planned_count" style="width: 150px">
   <span><%= model.planned_count %></span>
-  <%= button_to({ controller: 'production_plans', action: 'inline', production_id: model.production_id, id: model.id }, params: { field: 'planned_count', field_type: 'number_field' }, form: { data: { show_target: 'item' }, class: 'button_to visibility-hidden' }) do %>
+  <%= button_to({ controller: 'production_plans', action: 'inline', production_id: model.production_id, id: model.id }, params: { field: 'planned_count', field_type: 'inline_form/number_field' }, form: { data: { show_target: 'item' }, class: 'button_to visibility-hidden' }) do %>
     <%= svg_tag 'pencil' %>
   <% end %>
 </td>

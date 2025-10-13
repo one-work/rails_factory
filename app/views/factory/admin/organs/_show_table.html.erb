@@ -1,7 +1,7 @@
 <div>
   <dt><%= Org::Organ.human_attribute_name(:dispatch) %></dt>
   <dd class="has-select">
-    <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'select_enum' }) do %>
+    <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'inline_form/select_enum' }) do %>
       <span><%= @organ.dispatch_i18n %></span>
     <% end %>
   </dd>
@@ -10,13 +10,26 @@
   <dt><%= Org::Organ.human_attribute_name(:share_logo) %></dt>
   <dd class="has-select">
     <% if @organ.share_logo.attached? %>
-      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', partial: 'edit_inline_submit' }) do %>
+      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'inline_form/file_field', partial: 'edit_inline_submit' }) do %>
         <%= image_tag @organ.share_logo, class: 'image is-64x64' %>
       <% end %>
     <% else %>
-      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'file_field', partial: 'edit_inline_submit' }) do %>
+      <%= button_to({ action: 'inline' }, params: { field: 'share_logo', field_type: 'inline_form/file_field', partial: 'edit_inline_submit' }) do %>
         <span>上传门店图</span>
       <% end %>
+    <% end %>
+  </dd>
+</div>
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:dispatches) %></dt>
+  <dd>
+    <div class="tags">
+    <% @organ.dispatches.each do |dispatch| %>
+      <span class="tag"><%= dispatch %></span>
+    <% end %>
+    </div>
+    <%= button_to({ action: 'inline' }, params: { field: 'dispatches', field_type: 'checkboxes_dispatches_field' }) do %>
+      <span>支持配送方式</span>
     <% end %>
   </dd>
 </div>
