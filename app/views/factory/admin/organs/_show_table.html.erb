@@ -28,7 +28,7 @@
       <span class="tag"><%= dispatch %></span>
     <% end %>
     </div>
-    <%= button_to({ action: 'inline' }, params: { field: 'dispatches', field_type: 'checkboxes_dispatches_field' }) do %>
+    <%= button_to({ action: 'inline' }, params: { field: 'dispatches', field_type: 'checkboxes_dispatches_field', partial: 'edit_inline_submit' }) do %>
       <span>支持配送方式</span>
     <% end %>
   </dd>
