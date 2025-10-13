@@ -1,5 +1,5 @@
 <% disabled = component.disabled?(@production.part_ids, component_part.part_id) %>
-<div data-controller="modify" data-modify-submit-value="true" data-modify-step-value="1" class="flex justify-content-space-between background-light px-3 py-1 mt-2">
+<div data-controller="modify" data-modify-submit-value="true" data-modify-step-value="1" class="flex justify-content-space-between background-light px-3 py-1 mt-2 radius-small">
   <div>
     <span><%= component_part.part.word %></span>
     <% if component_part.part.price.to_d > 0 %>
