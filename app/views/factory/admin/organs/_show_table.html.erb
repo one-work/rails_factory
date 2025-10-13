@@ -25,7 +25,7 @@
   <dd>
     <div class="tags">
     <% @organ.dispatches.each do |dispatch| %>
-      <span class="tag"><%= dispatch %></span>
+      <span class="tag"><%= Trade::Item.enum_i18n(:dispatch, dispatch) %></span>
     <% end %>
     </div>
     <%= button_to({ action: 'inline' }, params: { field: 'dispatches', field_type: 'checkboxes_dispatches_field', partial: 'edit_inline_submit' }) do %>
