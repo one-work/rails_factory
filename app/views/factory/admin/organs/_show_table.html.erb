@@ -23,13 +23,13 @@
 <div>
   <dt><%= Org::Organ.human_attribute_name(:dispatches) %></dt>
   <dd>
-    <div class="tags">
-    <% @organ.dispatches.each do |dispatch| %>
-      <span class="tag"><%= Trade::Item.enum_i18n(:dispatch, dispatch) %></span>
-    <% end %>
+    <div class="tags justify-content-flex-end">
+      <% @organ.dispatches.each do |dispatch| %>
+        <span class="tag"><%= Trade::Item.enum_i18n(:dispatch, dispatch) %></span>
+      <% end %>
+      <%= button_to({ action: 'inline' }, params: { field: 'dispatches', field_type: 'checkboxes_dispatches_field', partial: 'edit_inline_submit' }, class: 'tag is-primary') do %>
+        <%= svg_tag 'chevron-right' %>
+      <% end %>
     </div>
-    <%= button_to({ action: 'inline' }, params: { field: 'dispatches', field_type: 'checkboxes_dispatches_field', partial: 'edit_inline_submit' }) do %>
-      <span>支持配送方式</span>
-    <% end %>
   </dd>
 </div>
