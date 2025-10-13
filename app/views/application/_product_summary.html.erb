@@ -14,7 +14,7 @@
       </ul>
     </dt>
     <dd class="text-right flex-shrink-0">
-      <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params.permit(:xx), dispatch: item.dispatch, good_id: item.good_id), cart: @cart, item_con: item_con, renew: { "product_summary_#{model.product_id}" => 'product_summary' } } %>
+      <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params.permit(:xx), dispatch: item.dispatch, good_id: item.good_id), cart: @cart, item_con: item_con, renew: { "product_summary_#{model.product_id}" => 'product_summary', "product_cart_#{@production.product_id}" => 'production_cart' } } %>
     </dd>
   </div>
 <% end %>

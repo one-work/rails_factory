@@ -13,7 +13,7 @@
       <% end %>
       </ul>
     </div>
-    <%= render partial: 'cart_item_add', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: item_con, renew: { "product_summary_#{@production.product_id}" => 'product_summary' } } %>
+    <%= render partial: 'cart_item_add', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: item_con, renew: { "product_summary_#{@production.product_id}" => 'product_summary', "product_cart_#{@production.product_id}" => 'production_cart' } } %>
   </div>
   <%= render partial: 'product_summary', locals: { model: @production, cart: @cart, item_con: item_con, options: {} } %>
   <div class="flex justify-content-center align-items-center is-fullwidth mt-2">
