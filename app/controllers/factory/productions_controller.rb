@@ -6,7 +6,7 @@ module Factory
     before_action :set_taxons, only: [:index, :rent]
     before_action :set_production, only: [:show, :dialog, :actions]
     before_action :set_scene, only: [:index, :nav], if: -> { params[:produce_on].present? && params[:scene_id].present? }
-    before_action :set_cart, only: [:index, :nav, :show, :create_dialog]
+    before_action :set_cart, only: [:index, :nav, :show, :dialog, :create_dialog]
     before_action :set_rent_cart, only: [:rent]
     before_action :require_user, only: [:index, :show]
 
@@ -67,7 +67,6 @@ module Factory
     end
 
     def change_dispatch
-
     end
 
     def show

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       member do
         post :list
         patch :create_dialog
-        put :dialog
+        patch :dialog
       end
       resources :product_plans, only: [:index, :show]
     end
