@@ -2,7 +2,7 @@
 <% if items.present? %>
 <dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth px-0 is-interval">
 <% items.each do |item| %>
-  <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.good_id == model.id && item.dispatch == params[:dispatch] ? '#eee' : 'auto' %>">
+  <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.good_id == refer_options['refer_id'] ? '#eee' : 'auto' %>">
     <dt class="truncate flex-shrink-1">
       <ul class="media-info display-inline-flex">
       <% item.good.production_parts.includes(:part).each do |production_part| %>
@@ -16,7 +16,18 @@
       </ul>
     </dt>
     <dd class="text-right flex-shrink-0">
-      <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params.permit(:xx), dispatch: item.dispatch, good_id: item.good_id), cart: @cart, item_con: item_con, renew: { "product_summary_#{model.product_id}" => 'product_summary', "product_cart_#{model.product_id}" => 'production_cart' } } %>
+      <%=
+        render(
+          partial: 'cart_item_new',
+          locals: {
+            item: @cart.init_cart_item(params.permit(:xx), dispatch: item.dispatch, good_id: item.good_id),
+            cart: @cart,
+            item_con: item_con,
+            renew: { "product_summary_#{model.product_id}" => 'product_summary', "product_cart_#{model.product_id}" => 'production_cart' },
+            refer_options: refer_options
+          }
+        )
+      %>
     </dd>
   </div>
 <% end %>
