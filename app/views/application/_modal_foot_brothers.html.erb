@@ -1,9 +1,31 @@
 <footer id="production_modal_foot" class="modal-card-foot flex-direction-column">
   <div class="flex justify-content-space-between align-items-center is-fullwidth">
     <p class="text-danger"><%= @production.price.to_money.format.html_safe %></p>
-    <%= render partial: 'cart_item_add', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: item_con, renew: { "product_summary_#{@production.product_id}" => 'product_summary_brothers', "product_cart_#{@production.product_id}" => 'production_cart' } } %>
+    <%=
+      render(
+        partial: 'cart_item_add',
+        locals: {
+          item: @cart.init_cart_item(params, good_id: @production.id),
+          cart: @cart,
+          item_con: item_con,
+          renew: { "product_summary_#{@production.product_id}" => 'product_summary_brothers', "product_cart_#{@production.product_id}" => 'production_cart' },
+          refer_options: { 'refer_id' => @production.id }
+        }
+      )
+    %>
   </div>
-  <%= render partial: 'product_summary_brothers', locals: { model: @production, cart: @cart, item_con: item_con, options: {}, refer_options: { 'refer_id' => @production.id } } %>
+  <%=
+    render(
+      partial: 'product_summary_brothers',
+      locals: {
+        model: @production,
+        cart: @cart,
+        item_con: item_con,
+        options: {},
+        refer_options: { 'refer_id' => @production.id }
+      }
+    )
+  %>
   <div class="flex justify-content-center align-items-center is-fullwidth">
     <button data-action="click->modal#close" class="button is-rounded is-light">确认</button>
   </div>

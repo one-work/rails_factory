@@ -15,9 +15,31 @@
         </ul>
       <% end %>
     </div>
-    <%= render partial: 'cart_item_add', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: item_con, renew: { "product_summary_#{@production.product_id}" => 'product_summary', "product_cart_#{@production.product_id}" => 'production_cart' } } %>
+    <%=
+      render(
+        partial: 'cart_item_add',
+        locals: {
+          item: @cart.init_cart_item(params, good_id: @production.id),
+          cart: @cart,
+          item_con: item_con,
+          renew: { "product_summary_#{@production.product_id}" => 'product_summary', "product_cart_#{@production.product_id}" => 'production_cart' },
+          refer_options: { 'refer_id' => @production.id }
+        }
+      )
+    %>
   </div>
-  <%= render partial: 'product_summary', locals: { model: @production, cart: @cart, item_con: item_con, options: {}, refer_options: { 'refer_id' => @production.id } } %>
+  <%=
+    render(
+      partial: 'product_summary',
+      locals: {
+        model: @production,
+        cart: @cart,
+        item_con: item_con,
+        options: {},
+        refer_options: { 'refer_id' => @production.id }
+      }
+    )
+  %>
   <div class="flex justify-content-center align-items-center is-fullwidth mt-2">
     <button data-action="click->modal#close" class="button is-rounded is-light">确认</button>
   </div>
