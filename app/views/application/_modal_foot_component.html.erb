@@ -1,4 +1,16 @@
 <footer id="production_modal_foot" class="modal-card-foot flex-direction-column">
+  <%=
+    render(
+      partial: 'product_summary',
+      locals: {
+        model: @production,
+        cart: @cart,
+        item_con: item_con,
+        options: {},
+        refer_options: { 'refer_id' => @production.id }
+      }
+    )
+  %>
   <div class="flex justify-content-space-between align-items-center is-fullwidth">
     <div>
       <p class="text-danger"><%= @production.price.to_money.format.html_safe %></p>
@@ -28,18 +40,6 @@
       )
     %>
   </div>
-  <%=
-    render(
-      partial: 'product_summary',
-      locals: {
-        model: @production,
-        cart: @cart,
-        item_con: item_con,
-        options: {},
-        refer_options: { 'refer_id' => @production.id }
-      }
-    )
-  %>
   <div class="flex justify-content-center align-items-center is-fullwidth">
     <button data-action="click->modal#close" class="button is-rounded is-light">确认</button>
   </div>
