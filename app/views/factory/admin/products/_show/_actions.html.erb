@@ -1,0 +1,15 @@
+<%= button_to({ action: 'edit' }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'pencil', class: 'icon' %>
+  <span><%= t('.edit.title') %></span>
+<% end %>
+<%= link_to({ controller: 'productions', product_id: model.id }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'clone', class: 'icon' %>
+  <span>
+    <span><%= t('.productions.index.title') %></span>
+    <span><%= model.productions_count %></span>
+  </span>
+<% end %>
+<%= link_to({ action: 'edit_image' }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'image', class: 'icon' %>
+  <span><%= t('.edit_image.title') %></span>
+<% end %>
