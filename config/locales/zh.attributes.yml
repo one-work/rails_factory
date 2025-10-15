@@ -94,4 +94,6 @@ zh:
         stock: 当前库存
         amount: 变动数量
       org/organ:
+        dispatches: 支持交付方式
+        dispatch: 默认交付方式
         share_logo: 门店图
