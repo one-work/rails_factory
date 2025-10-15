@@ -1,5 +1,7 @@
+<% items = cart.find_items(model.brother_ids, good_type: model.base_class_name, **options) %>
+<% if items.present? %>
 <dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth px-0 is-interval">
-<% cart.find_items(model.brother_ids, good_type: model.base_class_name, **options).each do |item| %>
+<% items.each do |item| %>
   <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.good_id == model.id && item.dispatch == params[:dispatch] ? '#eee' : 'auto' %>">
     <dt class="truncate flex-shrink-1">
       <ul class="media-info display-inline-flex">
@@ -19,3 +21,4 @@
   </div>
 <% end %>
 </dl>
+<% end %>
