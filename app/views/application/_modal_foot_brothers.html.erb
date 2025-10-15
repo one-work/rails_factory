@@ -12,7 +12,10 @@
     )
   %>
   <div class="flex justify-content-space-between align-items-center is-fullwidth">
-    <p class="text-danger"><%= @production.price.to_money.format.html_safe %></p>
+    <div>
+      <span class="text-grey"><%= @production.name %></span>
+      <span class="text-danger ml-1"><%= @production.price.to_money.format.html_safe %></span>
+    </div>
     <%=
       render(
         partial: 'cart_item_add',
