@@ -1,4 +1,7 @@
-<%= button_to({ action: 'dialog', id: brother.id }, method: :patch, class: brother.id == @production.id ? 'button is-primary' : 'button') do %>
-  <span><%= brother.name %></span>
-  <span class="pl-2"><%= brother.price.to_money.format.html_safe %></span>
-<% end %>
+<div class="cell is-fullwidth is-checked">
+  <label  class="<%= brother.id == @production.id ? 'button is-fullwidth is-primary' : 'button is-fullwidth' %>">
+    <%= radio_button_tag 'target_id', brother.id, brother.id == @production.id, data: { action: 'custom#submit' }, class: 'display-none', form: 'edit_custom' %>
+    <span><%= brother.name %></span>
+    <span class="pl-2"><%= brother.price.to_money.format.html_safe %></span>
+  </label>
+</div>

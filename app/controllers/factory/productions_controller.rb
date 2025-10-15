@@ -4,7 +4,7 @@ module Factory
     before_action :set_station, only: [:index, :show]
     before_action :set_produce_plans, only: [:index, :plan]
     before_action :set_taxons, only: [:index, :rent]
-    before_action :set_production, only: [:show, :dialog, :actions]
+    before_action :set_production, only: [:show, :actions]
     before_action :set_scene, only: [:index, :nav], if: -> { params[:produce_on].present? && params[:scene_id].present? }
     before_action :set_cart, only: [:index, :nav, :show, :dialog, :create_dialog]
     before_action :set_rent_cart, only: [:rent]
@@ -73,6 +73,8 @@ module Factory
     end
 
     def dialog
+      from_production = Production.find params[:id]
+      @production = from_production.brothers.find params[:target_id]
     end
 
     def create_dialog

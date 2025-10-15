@@ -1,8 +1,11 @@
+<%= form_with model: @production, url: { action: 'dialog' }, id: 'edit_custom' do %>
+<% end %>
+
 <%= render 'dispatch_modal' %>
 
 <div class="box is-padding-less">
   <div class="box-header">规格</div>
-  <div id="card_brothers" class="buttons are-small p-3">
+  <div id="card_brothers" data-controller="custom" class="grid gap-2 p-3">
     <%= render partial: 'card_brother', collection: @production.brothers.enabled, as: :brother %>
   </div>
 </div>
