@@ -2,11 +2,11 @@ module Factory
   class Agent::ProductionsController < ProductionsController
     include Controller::Agent
     before_action :set_produce_plans, only: [:index, :plan]
-    before_action :set_production, only: [:show, :list]
+    before_action :set_production, only: [:show, :dialog, :list]
     before_action :set_card_templates, only: [:index]
     before_action :set_scene, only: [:index], if: -> { params[:scene_id].present? }
     before_action :set_desk, only: [:index], if: -> { params[:desk_id].present? }
-    before_action :set_cart, only: [:index, :nav, :show, :create_dialog]
+    before_action :set_cart, only: [:index, :nav, :show, :dialog, :create_dialog]
 
     def index
       params.with_defaults! per: 20
