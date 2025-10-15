@@ -1,4 +1,4 @@
-<dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth px-0 is-interval">
+<dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth p-0 is-interval">
 <% cart.find_items(model.brother_ids, good_type: model.base_class_name, **options).each do |item| %>
   <div data-id="<%= item.id %>" style="background-color: <%= item.good_id == refer_options['refer_id'] ? '#eee' : 'auto' %>">
     <dt class="truncate flex-shrink-1">
