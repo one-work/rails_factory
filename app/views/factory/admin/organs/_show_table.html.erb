@@ -1,9 +1,7 @@
 <div>
-  <dt><%= Org::Organ.human_attribute_name(:dispatch) %></dt>
-  <dd class="has-select">
-    <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'inline_form/select_enum' }) do %>
-      <span><%= @organ.dispatch_i18n %></span>
-    <% end %>
+  <dt><%= Org::Organ.human_attribute_name(:name) %></dt>
+  <dd>
+    <%= text_field_tag 'organ[name]', @organ.name, class: 'input', form: 'show-form', data: { single_input_target: 'input' } %>
   </dd>
 </div>
 <div>
@@ -31,5 +29,13 @@
         <%= svg_tag 'chevron-right' %>
       <% end %>
     </div>
+  </dd>
+</div>
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:dispatch) %></dt>
+  <dd class="has-select">
+    <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'inline_form/select_enum' }) do %>
+      <span><%= @organ.dispatch_i18n %></span>
+    <% end %>
   </dd>
 </div>
