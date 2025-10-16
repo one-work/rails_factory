@@ -36,7 +36,7 @@ module Factory
 
     def new
       @product.productions.build(enabled: true)
-      @product.taxon = Taxon.default_where(default_params).new
+      @product.taxon ||= Taxon.default_where(default_params).new
     end
 
     def scan
