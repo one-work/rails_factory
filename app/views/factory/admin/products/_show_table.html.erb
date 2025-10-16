@@ -26,9 +26,7 @@
   <dt><%= Factory::Product.human_attribute_name(:images) %></dt>
   <dd>
     <div class="flex">
-    <% @product.images.each do |image| %>
-      <%= image_tag image, class: 'image is-128x128 mr-4' %>
-    <% end %>
+      <%= render 'com/attachments/list', target: @product.images %>
     </div>
   </dd>
 </div>
