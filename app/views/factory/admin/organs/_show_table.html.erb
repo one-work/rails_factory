@@ -31,7 +31,7 @@
 <div>
   <dt><%= Org::Organ.human_attribute_name(:dispatch) %></dt>
   <dd>
-    <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'inline_form/select_enum' }, form: { class: 'has-select' }) do %>
+    <%= button_to({ action: 'inline' }, params: { field: 'dispatch', field_type: 'select_enum_dispatch' }, form: { class: 'has-select' }) do %>
       <span><%= @organ.dispatch_i18n %></span>
     <% end %>
   </dd>

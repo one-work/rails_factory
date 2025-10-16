@@ -1,0 +1,10 @@
+<div data-controller="input-select" class="panel is-fullwidth">
+  <%= f.hidden_field name, data: { input_select_target: 'input' } %>
+  <% Trade::Item.options_i18n_for_collection(:dispatch).each do |dispatch| %>
+    <% if @organ.dispatches.include?(dispatch.value) %>
+      <div data-action="click->input-select#select" data-value="<%= dispatch.value %>" class="<%= f.object.public_send(name) == dispatch.value ? 'panel-block is-active' : 'panel-block'%>">
+        <span><%= dispatch.name %></span>
+      </div>
+    <% end %>
+  <% end %>
+</div>
