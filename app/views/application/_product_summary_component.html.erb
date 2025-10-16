@@ -3,15 +3,15 @@
   <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.attributes.slice('good_id', 'dispatch') == refer_options.slice('good_id', 'dispatch') ? '#eee' : 'auto' %>">
     <dt class="truncate flex-shrink-1">
       <ul class="media-info display-inline-flex">
-      <% item.good.production_parts.includes(:part).each do |production_part| %>
-        <li>
-          <span><%= production_part.part.word %></span>
-          <span>x</span>
-          <span><%= production_part.number %></span>
-        </li>
-      <% end %>
+        <% item.good.production_parts.includes(:part).each do |production_part| %>
+          <li>
+            <span><%= production_part.part.word %></span>
+            <span>x</span>
+            <span><%= production_part.number %></span>
+          </li>
+        <% end %>
+        <li class="text-danger"><%= item.dispatch_i18n %></li>
       </ul>
-      <span class="tag"><%= item.dispatch_i18n %></span>
     </dt>
     <dd class="text-right flex-shrink-0">
       <%=
