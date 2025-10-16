@@ -1,6 +1,6 @@
 <dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth p-0 is-interval">
 <% cart.find_items(model.brother_ids, good_type: model.base_class_name, **options).each do |item| %>
-  <div data-id="<%= item.id %>" style="background-color: <%= item.good_id == refer_options['refer_id'] ? '#eee' : 'auto' %>">
+  <div data-id="<%= item.id %>" style="background-color: <%= item.attributes.slice('good_id', 'dispatch') == refer_options.slice('good_id', 'dispatch') ? '#eee' : 'auto' %>">
     <dt class="truncate flex-shrink-1">
       <span><%= item.good.name %></span>
       <span class="tag"><%= item.dispatch_i18n %></span>

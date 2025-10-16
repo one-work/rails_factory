@@ -1,2 +1,2 @@
-<%= turbo_stream.update 'production_modal_body', partial: 'dialog_form', locals: { production: @production } %>
+<%= turbo_stream.update 'production_modal_body', partial: 'card_component', locals: { production: @production } %>
 <%= turbo_stream.replace 'production_modal_foot', partial: 'modal_foot_component', locals: { production: @production, item_con: "trade/#{params[:namespace].presence || 'my'}/items" } %>

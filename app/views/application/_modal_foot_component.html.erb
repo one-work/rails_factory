@@ -1,13 +1,13 @@
 <footer id="production_modal_foot" class="modal-card-foot flex-direction-column">
   <%=
     render(
-      partial: 'product_summary',
+      partial: 'product_summary_component',
       locals: {
         model: @production,
         cart: @cart,
         item_con: item_con,
         options: {},
-        refer_options: { 'refer_id' => @production.id }
+        refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch].presence || current_organ.dispatch }
       }
     )
   %>
@@ -34,8 +34,8 @@
           item: @cart.init_cart_item(params, good_id: @production.id),
           cart: @cart,
           item_con: item_con,
-          renew: { "product_summary_#{@production.product_id}" => 'product_summary', "product_cart_#{@production.product_id}" => 'production_cart' },
-          refer_options: { 'refer_id' => @production.id }
+          renew: { "product_summary_#{@production.product_id}" => 'product_summary_component', "product_cart_#{@production.product_id}" => 'production_cart' },
+          refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch].presence || current_organ.dispatch }
         }
       )
     %>

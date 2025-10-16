@@ -7,7 +7,7 @@
         cart: @cart,
         item_con: item_con,
         options: {},
-        refer_options: { 'refer_id' => @production.id }
+        refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch].presence || current_organ.dispatch }
       }
     )
   %>
@@ -24,7 +24,7 @@
           cart: @cart,
           item_con: item_con,
           renew: { "product_summary_#{@production.product_id}" => 'product_summary_brothers', "product_cart_#{@production.product_id}" => 'production_cart' },
-          refer_options: { 'refer_id' => @production.id }
+          refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch].presence || current_organ.dispatch }
         }
       )
     %>
