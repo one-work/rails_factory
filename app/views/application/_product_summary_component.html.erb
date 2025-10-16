@@ -6,12 +6,12 @@
       <% item.good.production_parts.includes(:part).each do |production_part| %>
         <li>
           <span><%= production_part.part.word %></span>
-          <% if production_part.number.to_i > 1 %>
-            <span>x <%= production_part.number %></span>
-          <% end %>
+          <span>x</span>
+          <span><%= production_part.number %></span>
         </li>
       <% end %>
       </ul>
+      <span class="tag"><%= item.dispatch_i18n %></span>
     </dt>
     <dd class="text-right flex-shrink-0">
       <%=
