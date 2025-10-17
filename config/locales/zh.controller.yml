@@ -105,9 +105,9 @@ zh:
           title: 产品组成
       taxons:
         index:
-          title: 类别
+          title: 管理分类
         preview:
-          title: 类别
+          title: 分类
         all:
           title: 管理分类
         new:
