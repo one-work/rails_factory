@@ -7,6 +7,10 @@
       <%= svg_tag 'plus', class: 'icon is-small text-primary' %>
       <span class="text-primary mt-1"><%= t('.taxons.new.title') %></span>
     <% end %>
+    <%= link_to({ controller: 'taxons' }, class: 'menu-item has-column-centered display-flex background-white') do %>
+      <%= svg_tag 'ellipsis', class: 'icon is-small text-primary' %>
+      <span class="text-primary mt-1">更多</span>
+    <% end %>
     <div class="background-white flex-grow-1"></div>
   </div>
 </div>
