@@ -75,7 +75,6 @@ module Factory
 
     def set_cart
       @cart = Trade::Cart.get_cart(params, member_organ_id: current_client.organ_id, **default_form_params)
-      logger.debug "\e[35m  Organ Cart: #{@cart.id} #{@cart.error_text}  \e[0m"
     end
 
     def set_items
