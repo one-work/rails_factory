@@ -70,7 +70,7 @@ module Factory
 
     def _prefixes
       super do |pres|
-        pres + ['factory/in/productions', "factory/in/productions/_#{params[:action]}", 'factory/in/productions/_base']
+        pres + ['factory/in/productions', "factory/in/productions/_#{params[:action]}"]
       end
     end
 
