@@ -1,6 +1,6 @@
 <div class="menu as-side is-sticky" style="margin-left: -0.75rem">
   <div class="menu-list flex flex-direction-column">
-    <% Factory::FactoryTaxon.all.each do |taxon| %>
+    <% @taxons.each do |taxon| %>
       <%= link_to({ taxon_id: taxon.id == params[:taxon_id] ? nil : taxon.id, **params.permit(:scene_id, :produce_on) }, data: { turbo_action: 'replace' }, class: active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active')) do %>
         <%= image_tag taxon.logo, class: 'image is-24x24 display-inline-block' if taxon.logo.attached? %>
         <p style="width: 4em"><%= taxon.name %></p>

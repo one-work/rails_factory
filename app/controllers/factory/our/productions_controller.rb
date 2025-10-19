@@ -13,7 +13,7 @@ module Factory
       q_params = {}
       q_params.merge! default_params
       q_params.merge! production_plans: { produce_on: params[:produce_on], scene_id: params[:scene_id] } if params[:produce_on] && params[:scene_id]
-      q_params.merge! params.permit('name-like', :factory_taxon_id)
+      q_params.merge! params.permit('name-like', :taxon_id)
 
       @productions = Production.includes(:parts, :production_plans, product: { logo_attachment: :blob }).default_where(q_params).default.order(id: :desc).page(params[:page]).per(params[:per])
     end
@@ -70,7 +70,7 @@ module Factory
     end
 
     def set_factory_taxon
-      @factory_taxon = FactoryTaxon.find params[:factory_taxon_id]
+      #@factory_taxon = FactoryTaxon.find params[:factory_taxon_id]
     end
 
     def set_cart
@@ -83,7 +83,7 @@ module Factory
 
     def _prefixes
       super do |pres|
-        pres + ['factory/in/productions', "factory/in/productions/_#{params[:action]}", 'factory/in/productions/_base']
+        pres + ['factory/in/productions', "factory/in/productions/_#{params[:action]}"]
       end
     end
 
