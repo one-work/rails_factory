@@ -1,6 +1,7 @@
 module Factory
   module Controller::Our
     extend ActiveSupport::Concern
+    include Org::Controller::Our
 
     included do
       before_action :require_client

@@ -6,10 +6,10 @@
     data-controller="page"
     data-page-debug-value="true"
     data-action="touchmove->page#move:passive"
-    class="weui-menu-content"
+    class="flex-grow-1 ml-3"
   >
-    <div class="flex-grow-1 ml-3">
-      <%= render partial: 'production', collection: @productions, as: :model, locals: { item_con: 'trade/mem/items' } %>
+    <div>
+      <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/our/items' } %>
       <%= render 'loading' %>
       <% if @productions.total_pages == @productions.current_page %>
         <%= render 'no_more' %>
