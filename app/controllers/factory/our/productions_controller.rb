@@ -5,7 +5,7 @@ module Factory
     before_action :set_production, only: [:show, :list]
     before_action :set_card_templates, only: [:index]
     before_action :set_scene, only: [:index, :members], if: -> { params[:scene_id].present? }
-    before_action :set_cart, only: [:index, :members]
+    before_action :set_cart, only: [:index, :members, :nav, :show, :dialog, :create_dialog]
     before_action :set_members_production, only: [:members]
     before_action :set_items, only: [:members]
 
