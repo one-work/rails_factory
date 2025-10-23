@@ -2,7 +2,7 @@
   <%= render partial: 'covers', locals: { model: @production.product } %>
 <% end %>
 
-<div class="box is-border mt-3" style="z-index: 3">
+<div class="box is-padding-less mt-3" style="z-index: 3">
   <div class="p-4">
     <div><%= @production.name %></div>
     <% unless @production.presell %>
@@ -40,7 +40,7 @@
 </div>
 
 <% if @production.product.images.present? %>
-<div class="box is-border">
+<div class="box is-padding-less">
   <% @production.product.images.each do |image| %>
     <%= image_tag image, class: 'image is-fullwidth' -%>
   <% end %>
