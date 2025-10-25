@@ -24,7 +24,7 @@ module Factory
           @productions = @produce_plan.productions.includes(:organ, :parts, product: [:brand, { logo_attachment: :blob }]).page(params[:page]).per(params[:per])
         end
       else
-        @productions = Production.includes(:taxon, :parts, :organ, product: [:brand, { logo_attachment: { blob: { variant_records: { image_attachment: :blob }}}}]).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
+        @productions = Production.includes(:taxon, :parts, :organ, product: [:brand, { logo_attachment: { blob: { variant_records: { image_attachment: :blob }}}}]).list.default_where(q_params).order(position: :asc).page(params[:page]).per(6)
       end
     end
 

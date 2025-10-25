@@ -4,8 +4,7 @@
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
-    data-page-debug-value="true"
-    data-action="touchmove->page#move:passive"
+    data-page-url-value="<%= url_for(action: 'index') %>"
     class="flex-grow-1 ml-3 overflow-x-hidden"
   >
     <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/my/items' } %>
@@ -14,10 +13,9 @@
     <% elsif @productions.total_pages <= @productions.current_page %>
       <%= render 'no_more' %>
     <% elsif @productions.total_pages > @productions.current_page %>
-      <%= render 'loading' %>
+      <%= render partial: 'loading', locals: { all: @productions } %>
       <%= render 'tip' %>
     <% end %>
-    <%= render 'paginator' %>
   </div>
 </div>
 
