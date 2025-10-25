@@ -10,17 +10,12 @@
   >
     <div>
       <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/our/items' } %>
-      <%= render 'page_loading' %>
-      <% if @productions.total_pages == @productions.current_page %>
-        <%= render 'page_no_more' %>
-      <% elsif @productions.blank? %>
-        <%= render 'blank' %>
+      <% if @productions.blank? %>
+        <%= render 'page_blank' %>
       <% else %>
-        <%= render 'tip' %>
+        <%= render partial: 'page_loading', locals: { all: @productions} %>
       <% end %>
     </div>
-
-    <%= render 'paginator' %>
   </div>
 </div>
 <div class="display-none"></div>
