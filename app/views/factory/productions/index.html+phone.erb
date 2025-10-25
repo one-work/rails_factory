@@ -9,12 +9,11 @@
   >
     <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/my/items' } %>
     <% if @productions.blank? %>
-      <%= render 'blank' %>
+      <%= render 'page_blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
-      <%= render 'no_more' %>
+      <%= render 'page_no_more' %>
     <% elsif @productions.total_pages > @productions.current_page %>
-      <%= render partial: 'loading', locals: { all: @productions } %>
-      <%= render 'tip' %>
+      <%= render partial: 'page_loading', locals: { all: @productions } %>
     <% end %>
   </div>
 </div>

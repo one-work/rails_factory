@@ -1,9 +1,4 @@
-<%= turbo_stream.replace 'container' do %>
+<%= turbo_stream.replace 'page_loading' do %>
   <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: "trade/#{params.fetch(:namespace, 'my')}/items" } %>
-  <%= render partial: 'loading', locals: { all: @productions } %>
-<% end %>
-<% if @productions.total_pages == @productions.current_page %>
-  <%= turbo_stream.replace 'tip', partial: 'no_more' %>
-<% else %>
-  <%= turbo_stream.replace 'tip', partial: 'tip' %>
+  <%= render partial: 'page_loading', locals: { all: @productions } %>
 <% end %>

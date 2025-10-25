@@ -10,9 +10,9 @@
   >
     <div>
       <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/our/items' } %>
-      <%= render 'loading' %>
+      <%= render 'page_loading' %>
       <% if @productions.total_pages == @productions.current_page %>
-        <%= render 'no_more' %>
+        <%= render 'page_no_more' %>
       <% elsif @productions.blank? %>
         <%= render 'blank' %>
       <% else %>
