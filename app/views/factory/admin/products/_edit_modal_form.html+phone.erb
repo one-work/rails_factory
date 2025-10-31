@@ -1,0 +1,8 @@
+<%= form_with theme: 'phone_modal', model: @product, url: { action: 'update' } do |f| %>
+  <%= render 'modal_header' %>
+  <div class="modal-card-body">
+    <%= f.collection_select :taxon_id, @taxons, :id, :name %>
+    <%= render partial: 'form', locals: { f: f } %>
+  </div>
+  <%= f.submit %>
+<% end %>
