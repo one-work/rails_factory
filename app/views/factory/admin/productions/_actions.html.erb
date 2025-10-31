@@ -11,12 +11,12 @@
   <span><%= t('.production_items.index.title') %></span>
 <% end %>
 <% if model.default %>
-  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': false }, class: 'cell has-column-centered') do %>
-    <%= svg_tag 'xmark' %>
+  <%= button_to({ action: 'refresh', id: model.id }, method: :patch, params: { 'production[default]': false }, class: 'cell has-column-centered') do %>
+    <%= svg_tag 'xmark', class: 'icon is-small is-danger' %>
     <span>主显产品</span>
   <% end %>
 <% else %>
-  <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[default]': true }, class: 'cell has-column-centered') do %>
+  <%= button_to({ action: 'refresh', id: model.id }, method: :patch, params: { 'production[default]': true }, class: 'cell has-column-centered') do %>
     <%= svg_tag 'check' %>
     <span>主显产品</span>
   <% end %>
