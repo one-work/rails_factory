@@ -20,6 +20,8 @@ zh:
         rent_unit:
           months: 月
           years: 年
+        default:
+          true: 主显商品
         enabled:
           true: 已上架
           false: 未上架

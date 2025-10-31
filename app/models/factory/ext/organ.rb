@@ -24,7 +24,7 @@ module Factory
 
     def share_logo_url
       ActiveStorage::Current.url_options ||= {}
-      ActiveStorage::Current.url_options.merge! host: ENV['HOST']
+      ActiveStorage::Current.url_options.merge! host: ENV['HOST'] || 'localhost:3000'
       share_logo.url
     end
 
