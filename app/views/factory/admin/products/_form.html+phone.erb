@@ -1,4 +1,4 @@
-<%= f.text_field :name, required: true, autofocus: true %>
+<%= f.text_field :name, required: true %>
 <%= f.collection_select :brand_id, @brands, :id, :name, include_blank: true if @brands.present? %>
 <%= render partial: 'com/attachments/list_field', locals: { target: f.object.logo, f: f } %>
 <%= f.fields :productions, model: @product.production, all: { normal: 'field', checkbox: 'field' }, wrap: { input: 'control' }, before_wrap: { checkbox: nil } do |ef| %>
