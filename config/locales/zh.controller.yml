@@ -165,6 +165,8 @@ zh:
           title: 积分兑换
         print_data:
           title: 蓝牙打印标签
+        new:
+          title: 添加型号
       production_parts:
         index:
           title: 物料清单
