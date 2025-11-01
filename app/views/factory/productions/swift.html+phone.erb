@@ -3,7 +3,7 @@
 <div
   data-controller="page"
   data-page-url-value="<%= url_for(action: 'swift') %>"
-  class="flex-grow-1 overflow-x-hidden"
+  class="flex-grow-1 overflow-x-hidden flex flex-direction-column"
 >
   <%= render partial: 'production', collection: @productions, as: :model %>
   <% if @productions.blank? %>
