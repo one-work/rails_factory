@@ -1,54 +1,45 @@
-<div id="production_<%= model.id %>" data-controller="common" class="media as-boxed">
-  <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'media-left as-logo') do %>
-    <%= image_tag model.product.logo.variant(:thumb).url, class: 'image is-64x64' %>
-  <% end if model.product.logo.attached? %>
-  <div class="media-content as-body overflow-x-hidden">
-    <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey-dark truncate display-block') do %>
-      <% if model.product.brand %>
-        <span class="tag is-light is-danger"><%= model.product.brand&.name %></span>
-      <% end %>
-      <span><%= model.title %></span>
+<%= form_with model: @order, url: { controller: "trade/#{params.fetch(:namespace, 'my')}/orders", action: 'create' }, class: 'cell as-boxed' do |f| %>
+  <%= f.fields :items do |ef| %>
+    <%= ef.hidden_field :good_type, value: model.base_class_name %>
+    <%= ef.hidden_field :good_id, value: model.id %>
+    <%= ef.hidden_field :status, value: 'ordered' %>
+  <% end %>
+  <%= button_tag class: 'button is-borderless flex-direction-column is-fullwidth p-3' do %>
+  <div>
+    <% if model.product.brand %>
+      <span class="tag is-light is-danger"><%= model.product.brand&.name %></span>
     <% end %>
-    <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey size-0_9 display-block mt-1') do %>
-      <%= model.product.description %>
-    <% end if model.product.description.present? %>
-    <% if model.parts.present? %>
-      <ul class="media-info mt-1">
-        <% model.parts.group_by(&->(i){ i.taxon_id }).each do |_, parts| %>
-          <% parts.each_with_index do |part, _| %>
-            <li class="truncate"><%= part.title %></li>
-          <% end %>
-        <% end %>
-      </ul>
-    <% end %>
-    <% r = model.card_price_min(@cart) %>
-    <% if @cart && r.present? %>
-      <% if r[:checked] %>
-      <div class="has-block-space-between mt-1">
-        <div class="has-inline-centered">
-          <div class="tags has-addons is-price control m-0">
-            <div class="tag is-light text-danger"><%= r[:price].to_money.format.html_safe %></div>
-            <div class="tag is-danger">
-              <span style="padding-left: 1px"><%= r[:name] %></span>
-              <i class="fa-solid fa-badge-check"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% else %>
-        <div class="has-block-space-between mt-1">
-          <div class="tags has-addons is-price control m-0">
-            <div class="tag is-light"><%= r[:price].to_money.format.html_safe %></div>
-            <div class="tag is-success"><%= r[:name] %></div>
-          </div>
-        </div>
-      <% end %>
-    <% elsif !model.presell %>
-      <div class="has-block-space-between mt-1">
-        <div class="has-inline-centered">
-          <span class="text-danger"><%= model.price.to_money.format.html_safe %></span>
-        </div>
-      </div>
-    <% end %>
+    <span><%= model.title %></span>
   </div>
-</div>
+  <div><%= model.product.description %></div>
+  <% r = model.card_price_min(@cart) %>
+  <% if @cart && r.present? %>
+    <% if r[:checked] %>
+    <div class="has-block-space-between mt-1">
+      <div class="has-inline-centered">
+        <div class="tags has-addons is-price control m-0">
+          <div class="tag is-light text-danger"><%= r[:price].to_money.format.html_safe %></div>
+          <div class="tag is-danger">
+            <span style="padding-left: 1px"><%= r[:name] %></span>
+            <i class="fa-solid fa-badge-check"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% else %>
+      <div class="has-block-space-between mt-1">
+        <div class="tags has-addons is-price control m-0">
+          <div class="tag is-light"><%= r[:price].to_money.format.html_safe %></div>
+          <div class="tag is-success"><%= r[:name] %></div>
+        </div>
+      </div>
+    <% end %>
+  <% elsif !model.presell %>
+    <div class="has-block-space-between mt-1">
+      <div class="has-inline-centered">
+        <span class="text-danger"><%= model.price.to_money.format.html_safe %></span>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+<% end %>

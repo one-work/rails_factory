@@ -32,6 +32,8 @@ module Factory
 
     def swift
       index
+      @order = current_user.orders.build
+      @order.items.build
     end
 
     def nav
