@@ -11,10 +11,12 @@ module Factory
     before_action :require_user, only: [:index, :show]
 
     def index
-      q_params = {
-        taxon_id: Taxon.default_where(default_params).where(nav: false).pluck(:id)
-      }
+      q_params = {}
       q_params.merge! default_params
+
+      taxon_ids = Taxon.default_where(default_params).where(nav: false).pluck(:id)
+      q_params.merge! taxon_id: taxon_ids if taxon_ids.present?
+
       q_params.merge! params.permit(:taxon_id, :factory_taxon_id, 'word-like')
 
       if @produce_plan
@@ -24,7 +26,7 @@ module Factory
           @productions = @produce_plan.productions.includes(:organ, :parts, product: [:brand, { logo_attachment: :blob }]).page(params[:page]).per(params[:per])
         end
       else
-        @productions = Production.includes(:taxon, :parts, :organ, product: [:brand, { logo_attachment: { blob: { variant_records: { image_attachment: :blob }}}}]).list.default_where(q_params).order(position: :asc).page(params[:page]).per(6)
+        @productions = Production.includes(:taxon, :parts, :organ, product: [:brand, { logo_attachment: { blob: { variant_records: { image_attachment: :blob }}}}]).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
       end
     end
 
