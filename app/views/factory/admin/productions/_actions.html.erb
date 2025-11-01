@@ -12,7 +12,7 @@
 <% end %>
 <% if model.default %>
   <%= button_to({ action: 'refresh', id: model.id }, method: :patch, params: { 'production[default]': false }, class: 'cell has-column-centered') do %>
-    <%= svg_tag 'xmark', class: 'icon is-small is-danger' %>
+    <%= svg_tag 'xmark', class: 'icon is-small text-danger' %>
     <span>主显产品</span>
   <% end %>
 <% else %>
@@ -23,7 +23,7 @@
 <% end %>
 <% if model.enabled %>
   <%= button_to({ action: 'update', id: model.id }, method: :patch, params: { 'production[enabled]': false }, class: 'cell has-column-centered') do %>
-    <%= svg_tag 'xmark' %>
+    <%= svg_tag 'xmark', class: 'icon is-small text-danger' %>
     <span>下架</span>
   <% end %>
 <% else %>
