@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :productions, only: [:index, :create, :show] do
       collection do
         get :nav
+        get :swift
         get :rent
         get :members
         post :scene

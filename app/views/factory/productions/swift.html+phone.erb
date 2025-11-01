@@ -1,0 +1,16 @@
+<%= render partial: 'filter_bar', locals: { name: 'word-like' } %>
+
+<div
+  data-controller="page"
+  data-page-url-value="<%= url_for(action: 'swift') %>"
+  class="flex-grow-1 overflow-x-hidden"
+>
+  <%= render partial: 'production', collection: @productions, as: :model %>
+  <% if @productions.blank? %>
+    <%= render 'page_blank' %>
+  <% elsif @productions.total_pages <= @productions.current_page %>
+    <%= render 'page_no_more' %>
+  <% elsif @productions.total_pages > @productions.current_page %>
+    <%= render partial: 'page_loading', locals: { all: @productions } %>
+  <% end %>
+</div>

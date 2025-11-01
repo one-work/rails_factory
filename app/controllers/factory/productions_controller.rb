@@ -30,6 +30,10 @@ module Factory
       end
     end
 
+    def swift
+      index
+    end
+
     def nav
       q_params = {}
       q_params.merge! default_params
