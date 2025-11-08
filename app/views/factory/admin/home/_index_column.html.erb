@@ -1,38 +1,38 @@
 <p class="size-7 text-grey mb-1">商品</p>
 <div class="grid">
-  <%= link_to({ controller: 'factory/admin/taxons' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth flex-direction-column') do %>
+  <%= link_to({ controller: 'factory/admin/taxons' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth flex-direction-column') do %>
     <span class="text-grey"><%= @taxon_count %></span>
     <span><%= t('factory.admin.taxons.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'factory/admin/products' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['products', 'taxons', 'taxon_components', 'productions', 'part_providers', 'production_plans', 'production_items'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+  <%= link_to({ controller: 'factory/admin/products' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: ['products', 'taxons', 'taxon_components', 'productions', 'part_providers', 'production_plans', 'production_items'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
     <span><%= t('factory.admin.products.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'factory/admin/products', action: 'buy' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+  <%= link_to({ controller: 'factory/admin/products', action: 'buy' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
     <span><%= t('factory.admin.products.buy.title') %></span>
   <% end %>
 </div>
 <p class="size-7 text-grey mb-1">生产</p>
 <div class="grid">
-  <%= link_to({ controller: 'factory/admin/produce_plans' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth flex-direction-column') do %>
+  <%= link_to({ controller: 'factory/admin/produce_plans' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth flex-direction-column') do %>
     <span><%= t('factory.admin.produce_plans.index.title') %></span>
   <% end %>
 </div>
 <p class="size-7 text-grey mb-1">上下游</p>
 <div class="grid">
-  <%= link_to({ controller: 'factory/admin/provides' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+  <%= link_to({ controller: 'factory/admin/provides' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
     <span><%= t('factory.admin.provides.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'factory/admin/brands' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+  <%= link_to({ controller: 'factory/admin/brands' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
     <span><%= t('factory.admin.brands.index.title') %></span>
   <% end %>
 </div>
 <p class="size-7 text-grey mb-1">设置</p>
 <div class="grid">
-  <%= link_to({ controller: 'factory/admin/scenes' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth flex-direction-column') do %>
+  <%= link_to({ controller: 'factory/admin/scenes' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth flex-direction-column') do %>
     <span class="text-grey"><%= @scene_count %></span>
     <span><%= t('factory.admin.scenes.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'factory/admin/organs', action: 'show' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+  <%= link_to({ controller: 'factory/admin/organs', action: 'show' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
     <span><%= t('factory.admin.organs.show.title') %></span>
   <% end %>
 </div>
