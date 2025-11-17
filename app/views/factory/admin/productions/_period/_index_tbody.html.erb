@@ -47,22 +47,18 @@
   <% end %>
 </td>
 <td>
-  <%= form_with theme: nil, model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :default, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-    <label data-action="click->input#check"></label>
+  <%= form_with theme: 'switch', model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :default, data: { action: 'input#submit' }, id: nil %>
   <% end %>
-  <%= form_with theme: nil, model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :presell, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-    <label data-action="click->input#check"></label>
+  <%= form_with theme: 'switch', model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :presell, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
 <td>
-  <%= form_with theme: nil, model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :enabled, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-    <label data-action="click->input#check"></label>
+  <%= form_with theme: 'switch', model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :enabled, data: { action: 'input#submit' }, id: nil %>
   <% end %>
-  <%= form_with theme: nil, model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :automatic, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-    <label data-action="click->input#check"></label>
+  <%= form_with theme: 'switch', model: model, scope: :production, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :automatic, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>

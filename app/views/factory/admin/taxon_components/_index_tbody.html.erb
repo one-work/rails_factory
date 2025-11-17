@@ -6,9 +6,8 @@
 </td>
 <td class="text-grey"><%= model.select_str %></td>
 <td>
-  <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :multiple, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-    <label data-action="click->input#check"></label>
+  <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :multiple, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
 <td><%= link_to model.component_parts_count, { controller: 'component_parts', component_id: model.id } %></td>
