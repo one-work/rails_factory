@@ -1,6 +1,6 @@
-<div class="flex flex-grow-1 mt-3">
+<div class="flex flex-grow-1">
   <%= render 'menu_taxon' %>
-  <div class="flex-grow-1 ml-3">
+  <div class="flex-grow-1 ml-3 mt-3">
     <%= render layout: 'index_list' do %>
       <%= render partial: 'index_item', layout: 'index_item_actions', collection: @products, as: :model %>
     <% end %>
