@@ -15,6 +15,7 @@ module Factory
       params.fetch(:organ, {}).permit(
         :name,
         :dispatch,
+        :print_note,
         :share_logo,
         dispatches: []
       )

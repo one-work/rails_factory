@@ -36,3 +36,7 @@
     <% end %>
   </dd>
 </div>
+<div>
+  <dt><%= Org::Organ.human_attribute_name(:print_note) %></dt>
+  <dd><%= simple_format(@organ.print_note) %></dd>
+</div>
