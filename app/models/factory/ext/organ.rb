@@ -13,7 +13,11 @@ module Factory
 
       has_one_attached :share_logo, service: :local  # 门店预览图，宽高比为 5: 4
 
-      after_save :generate_share_logo, if: :saved_change_to_name?
+      after_save :generate_share_logo_later, if: :saved_change_to_name?
+    end
+
+    def generate_share_logo_later
+      OrganShareLogoJob.perform_later(self)
     end
 
     def generate_share_logo
