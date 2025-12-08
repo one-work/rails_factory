@@ -34,6 +34,8 @@ zh:
       organs:
         show:
           title: 系统设置
+        share_code:
+          title: 门店小程序
       taxon:
         products:
           index:

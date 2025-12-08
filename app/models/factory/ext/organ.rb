@@ -12,6 +12,7 @@ module Factory
       has_many :providers, through: :provides
 
       has_one_attached :share_logo, service: :local  # 门店预览图，宽高比为 5: 4
+      has_one_attached :share_code
 
       after_save :generate_share_logo_later, if: :saved_change_to_name?
     end
@@ -32,6 +33,17 @@ module Factory
       ActiveStorage::Current.url_options ||= {}
       ActiveStorage::Current.url_options.merge! host: ENV['HOST'] || 'localhost:3000'
       share_logo.url
+    end
+
+    def generate_share_code
+      url = URI.encode_www_form_component URI::HTTPS.build(host: host, path: '/factory/productions').to_s
+      app = Wechat::ProgramAgency.global.take
+      r = app.api.get_wxacode("/pages/index/index?url=#{url}")
+      begin
+        self.share_code.attach io: r, filename: 'share_code.png'
+      rescue => e
+      end
+      r
     end
 
     def dispatch_i18n

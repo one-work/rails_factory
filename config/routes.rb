@@ -92,6 +92,7 @@ Rails.application.routes.draw do
       end
       resource :organ do
         post :ai_generate
+        get :share_code
       end
       resources :brands
       resources :taxons do

@@ -6,6 +6,9 @@ module Factory
       @organ.generate_share_logo
     end
 
+    def share_code
+    end
+
     private
     def set_organ
       @organ = current_organ
