@@ -11,7 +11,7 @@ module Factory
       has_many :provides, class_name: 'Factory::Provide', dependent: :destroy_async
       has_many :providers, through: :provides
 
-      has_one_attached :share_logo, service: :local  # 门店预览图，宽高比为 5: 4
+      has_one_attached :share_logo  # 门店预览图，宽高比为 5: 4
       has_one_attached :share_code
 
       after_save :generate_share_logo_later, if: :saved_change_to_name?
