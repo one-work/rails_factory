@@ -3,7 +3,7 @@
   <section class="modal-card-body">
     <p class="text-grey text-centered">条形码匹配失败，请拍摄说明书由 AI 识别</p>
     <%= render 'error_messages', target: f.object %>
-    <%= render partial: 'com/attachments/list_edit', locals: { target: f.object.manual, f: f } %>
+    <%= render partial: 'com/attachments/list_field_simple', locals: { target: f.object.manual, f: f } %>
   </section>
   <%= f.submit %>
 <% end %>
