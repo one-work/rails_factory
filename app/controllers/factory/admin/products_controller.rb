@@ -51,7 +51,6 @@ module Factory
     end
 
     def manual
-
     end
 
     def edit
