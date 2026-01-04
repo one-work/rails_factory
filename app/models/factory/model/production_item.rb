@@ -29,11 +29,11 @@ module Factory
     end
 
     def init_code
-      self.code ||= UidHelper.nsec_uuid(production&.qr_code)
+      self.code ||= UidUtil.nsec_uuid(production&.qr_code)
     end
 
     def qrcode_url
-      QrcodeHelper.data_url(code)
+      QrcodeUtil.data_url(code)
     end
 
     def enter_url
@@ -45,11 +45,11 @@ module Factory
     end
 
     def qrcode_enter_url
-      QrcodeHelper.data_url(enter_url)
+      QrcodeUtil.data_url(enter_url)
     end
 
     def qrcode_enter_png
-      QrcodeHelper.code_png(enter_url, border_modules: 0, fill: 'pink')
+      QrcodeUtil.code_png(enter_url, border_modules: 0, fill: 'pink')
     end
 
     def to_cpcl(qr = BaseCpcl.new)
