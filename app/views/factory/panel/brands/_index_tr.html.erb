@@ -1,0 +1,6 @@
+<%=
+  tr_tag(
+    model,
+    { href: url_for(controller: 'serials', brand_id: model.id), icon: 'sitemap', title: t('.serials.index.title'), position: 0 }
+  ) { yield }
+%>

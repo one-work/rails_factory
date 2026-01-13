@@ -1,0 +1,9 @@
+<%=
+  tr_tag(
+    model,
+    { href: url_for(controller: 'production_spaces', production_id: model.id), icon: 'pencil', title: t('.production_spaces.index.title'), position: 1 },
+    { action: url_for(action: 'wallet', id: model.id), icon: 'pencil', title: t('.wallet.title'), position: 1 },
+    { action: url_for(action: 'edit_stock', id: model.id), icon: 'pencil', title: t('.edit_stock.title'), position: 1 },
+    { href: url_for(controller: 'production/provides', production_id: model.id), icon: 'building', title: t('.production_provides.index.title'), position: 2 }
+  ) { yield }
+%>
