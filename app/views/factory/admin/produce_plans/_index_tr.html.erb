@@ -1,0 +1,6 @@
+<%=
+  tr_tag(
+    model,
+    { href: url_for(action: 'products', id: model.id), icon: 'cart-flatbed', title: t('.produce_plans.products.title') }
+  ) { yield }
+%>

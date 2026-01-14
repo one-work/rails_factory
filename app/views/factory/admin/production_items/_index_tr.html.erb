@@ -1,0 +1,6 @@
+<button class="button is-small is-borderless" data-controller="print" data-print-url-value="<%= url_for(controller: 'production_items', action: 'pdf', id: model.id) %>" data-action="print#doPrint">
+  <i class="fa-solid fa-print text-success"></i>
+</button>
+<%= button_to({ action: 'print', id: model.id }, method: :patch, aria: { label: t('.print.title') }, data: { turbo_confirm: t('.print.confirm') }, class: 'button is-small is-borderless') do %>
+  <i class="fa-solid fa-print text-success"></i>
+<% end %>
