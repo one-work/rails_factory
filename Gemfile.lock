@@ -147,7 +147,6 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
-    amazing_print (2.0.0)
     base64 (0.3.0)
     bcrypt (3.1.21)
     bigdecimal (3.3.1)
@@ -362,7 +361,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  amazing_print
   debug
   pg
   propshaft
@@ -391,7 +389,6 @@ CHECKSUMS
   activerecord (8.1.0) sha256=cacfc779cc551444543ebc6021831676c185da336979606e7478d03a18d23288
   activestorage (8.1.0) sha256=15cca5966bb39fed926ebb5bd03ec2cacf8ca3fe2de84fb50faa31ba317ab2ac
   activesupport (8.1.0) sha256=d4adf40725be7bbc2a16936a6cf41b175a46ba0c5ccdb703ea4ed7c8801e070a
-  amazing_print (2.0.0) sha256=2e36aba46ac78d37ed27ca0e2056afe3583183bb5c64f157c246b267355e5d6a
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcrypt (3.1.21) sha256=5964613d750a42c7ee5dc61f7b9336fb6caca429ba4ac9f2011609946e4a2dcf
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218

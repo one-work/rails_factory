@@ -14,7 +14,6 @@ gem 'rails_trade', path: '../rails_trade'
 gem 'rails_notice', path: '../rails_notice'
 gem 'rails_space', path: '../rails_space'
 
-gem 'amazing_print'
 group :development, :test do
   gem 'debug'
   gem 'sdoc'
