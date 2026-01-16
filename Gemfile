@@ -7,12 +7,12 @@ gem 'pg'
 gem 'puma'
 gem 'propshaft'
 
-gem 'rails_com', github: 'work-design/rails_com'
-gem 'rails_design', github: 'work-design/rails_design'
-gem 'rails_auth', github: 'work-design/rails_auth'
-gem 'rails_trade', github: 'work-design/rails_trade'
-gem 'rails_notice', github: 'work-design/rails_notice'
-gem 'rails_space', github: 'work-design/rails_space'
+gem 'rails_com', path: '../rails_com'
+gem 'rails_ui', path: '../rails_ui'
+gem 'rails_auth', path: '../rails_auth'
+gem 'rails_trade', path: '../rails_trade'
+gem 'rails_notice', path: '../rails_notice'
+gem 'rails_space', path: '../rails_space'
 
 gem 'amazing_print'
 group :development, :test do
