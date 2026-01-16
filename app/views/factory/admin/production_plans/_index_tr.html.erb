@@ -1,0 +1,6 @@
+<%=
+  tr_tag(
+    model,
+    { href: url_for(controller: 'productions', product_plan_id: model.id), icon: 'cubes', enable: false }
+  ) { yield }
+%>

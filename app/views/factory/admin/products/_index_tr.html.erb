@@ -1,0 +1,9 @@
+<%=
+  tr_tag(
+    model,
+    { action: url_for(action: 'edit_image', id: model.id, taxon_id: model.taxon_id), icon: 'pencil', title: t('.edit_image.title') },
+    { href: url_for(controller: 'product_components', product_id: model.id), icon: 'tree', title: t('.product_components.index.title') },
+    { href: url_for(controller: 'fits', product_id: model.id), title: t('.fits.index.title'), count: model.fits_count },
+    { href: url_for(controller: 'productions', product_id: model.id), title: t('.productions.index.title'), count: model.productions_count }
+  ) { yield }
+%>
