@@ -46,6 +46,7 @@ light:
   - trash
   - tree
   - up-right-and-down-left-from-center
+  - user-plus
   - xmark
 regular:
   - angle-left
