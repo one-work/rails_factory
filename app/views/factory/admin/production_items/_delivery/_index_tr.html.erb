@@ -1,0 +1,17 @@
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(action: 'update_delivery', id: model.id),
+      icon: 'list',
+      title: t('.update_delivery.title'),
+      confirm: t('.update_delivery.confirm')
+    },
+    {
+      action: url_for(action: 'print', id: model.id),
+      icon: 'print',
+      title: t('.print.title')
+    },
+    icons: ['show']
+  ) { yield }
+%>
