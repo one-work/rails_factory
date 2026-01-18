@@ -1,0 +1,23 @@
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(controller: 'product_provides', action: 'show', taxon_id: model.product.taxon_id, id: model.id),
+      icon: 'eye',
+      title: t('.show.title')
+    },
+    {
+      action: url_for(controller: 'product_provides', action: 'edit', taxon_id: model.product.taxon_id, id: model.id),
+      icon: 'pencil',
+      title: t('.edit.title')
+    },
+    {
+      action: url_for(controller: 'product_provides', action: 'destroy', taxon_id: model.product.taxon_id, id: model.id),
+      method: :delete,
+      icon: 'trash',
+      title: t('.destroy.title'),
+      confirm: t('.destroy.confirm')
+    },
+    icons: []
+  ) { yield }
+%>
