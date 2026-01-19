@@ -1,28 +1,26 @@
-<div data-show-target="item" class="visibility-hidden">
-  <%= button_to({ action: 'show', id: model.id, product_id: model.product_id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'circle-info' %>
-  <% end %>
-  <%= button_to({ action: 'edit', id: model.id, product_id: model.product_id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'pencil' %>
-  <% end %>
-</div>
-<div data-show-target="item" class="visibility-hidden">
-  <%= link_to({ controller: 'production_plans', production_id: model.id }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'list' %>
-    <span class="ml-1"><%= t('.production_plans.index.title') %></span>
-  <% end %>
-  <%= link_to({ controller: 'production_items', production_id: model.id }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'list' %>
-    <span class="ml-1"><%= t('.production_items.index.title') %></span>
-  <% end %>
-</div>
-<div data-show-target="item" class="visibility-hidden">
-  <%= link_to({ controller: 'trade_items', production_id: model.id }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'cart-shopping' %>
-    <span class="ml-1"><%= t('.trade_items.index.title') %></span>
-  <% end %>
-  <%= link_to({ controller: 'addresses', production_id: model.id }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'location-dot' %>
-    <span class="ml-1"><%= t('.addresses.index.title') %></span>
-  <% end %>
-</div>
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(controller: 'production_plans', production_id: model.id),
+      icon: 'list',
+      title: t('.production_plans.index.title')
+    },
+    {
+      href: url_for(controller: 'production_items', production_id: model.id),
+      icon: 'list',
+      title: t('.production_items.index.title')
+    },
+    {
+      href: url_for(controller: 'trade_items', production_id: model.id),
+      icon: 'cart-shopping',
+      title: t('.trade_items.index.title')
+    },
+    {
+      href: url_for(controller: 'addresses', production_id: model.id),
+      icon: 'location-dot',
+      title: t('.addresses.index.title')
+    },
+    icons: ['show', 'edit']
+  ) { yield }
+%>

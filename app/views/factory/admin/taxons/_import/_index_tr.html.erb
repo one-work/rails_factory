@@ -1,12 +1,17 @@
-<tr id="tr_<%= model.id %>" data-controller="tree-remote show" data-tree-remote-target="item">
-
-  <td>
-    <div data-show-target="item" class="visibility-hidden">
-      <%= button_to({ controller: 'products', action: 'show', id: model.id }, aria: { label: t('.products.show.title') }, class: 'button is-small is-borderless') do %>
-        <%= svg_tag 'eye', class: 'icon text-info' %>
-      <% end %>
-    </div>
-  </td>
-
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(controller: 'products', action: 'show', id: model.id),
+      icon: 'eye',
+      title: t('.products.show.title'),
+      data: {
+        controller: 'show tree-remote',
+        tree_remote_target: 'item'
+      }
+    },
+    icons: []
+  ) { yield }
+%>
 
 <%= render partial: 'production', layout: 'production_tr', collection: model.productions, as: :model %>
