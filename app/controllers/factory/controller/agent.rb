@@ -7,7 +7,6 @@ module Factory
     include Com::Controller::Admin
 
     included do
-      layout 'agent'
       before_action :require_org_member
       before_action :require_role
     end
