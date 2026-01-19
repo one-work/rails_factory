@@ -1,0 +1,12 @@
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(controller: 'taxon_provides', action: 'create'),
+      params: { taxon_provide: { provide_id: model.id } },
+      icon: 'cart-flatbed',
+      title: t('.taxon_provides.create.title')
+    },
+    icons: ['show']
+  ) { yield }
+%>

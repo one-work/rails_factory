@@ -11,7 +11,7 @@
 <td><%= link_to model.products_count, { controller: 'taxon/products', taxon_id: model.id } %></td>
 <td><%= @count_hash[model.id] if @count_hash %></td>
 <td>
-  <%= link_to({ controller: 'taxon/provides', taxon_id: model.id }, aria: { label: t('.taxon.provides.index.title') }) do %>
+  <%= link_to({ controller: 'taxon/provides', taxon_id: model.id }) do %>
     <span><%= model.provides_count %></span>
   <% end %>
 </td>
