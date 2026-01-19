@@ -23,6 +23,10 @@ module Factory
       @item = @production.items.find(params[:id])
     end
 
+    def model_klass
+      Trade::RentCharge
+    end
+
     def model_name
       'rentable'
     end
