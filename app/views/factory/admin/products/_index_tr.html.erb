@@ -4,7 +4,8 @@
     {
       action: url_for(action: 'edit_image', id: model.id, taxon_id: model.taxon_id),
       icon: 'pencil',
-      title: t('.edit_image.title')
+      title: t('.edit_image.title'),
+      position: 0
     },
     {
       href: url_for(controller: 'product_components', product_id: model.id),
