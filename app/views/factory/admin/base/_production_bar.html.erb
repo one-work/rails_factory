@@ -1,4 +1,8 @@
-<h2 class="title text-centered"><%= @production.title %></h2>
+<h2 class="title text-centered">
+  <%= svg_tag 'clone', class: 'icon is-medium text-primary' %>
+  <span><%= @production.title %></span>
+</h2>
+
 <div class="tabs is-centered mb-3">
   <ul>
     <li class="<%= active_helper(productions: ['show', 'edit'], active: 'is-active') %>">

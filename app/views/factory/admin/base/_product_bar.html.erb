@@ -1,4 +1,7 @@
-<h2 class="title text-centered"><%= @product.name %></h2>
+<h2 class="title text-centered">
+  <%= svg_tag 'gift', class: 'icon is-medium text-primary' %>
+  <span><%= @product.name %></span>
+</h2>
 
 <div class="tabs is-centered mb-3">
   <ul>
