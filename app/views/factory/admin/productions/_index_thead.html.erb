@@ -1,4 +1,4 @@
-<th colspan="2">
+<th colspan="<%= @product.taxon.customizable ? 2 : 1 %>">
   <p><%= Factory::Production.human_attribute_name(:name) %></p>
 </th>
 <th class="text-right">

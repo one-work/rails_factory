@@ -6,6 +6,7 @@
     </p>
   <% end %>
 </td>
+<% if @product.taxon.customizable %>
 <td>
 <div class="button_tos is-column">
   <% model.production_parts.sort_by(&:part_id).each do |production_part| %>
@@ -21,6 +22,7 @@
     <span class="text-grey size-7 ml-1"><%= t('.productions.part.title') %></span>
   <% end %>
 </div>
+<% end %>
 </td>
 <td class="text-right">
   <div><%= model.cost_price.to_money.format.html_safe %></div>
