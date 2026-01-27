@@ -27,7 +27,7 @@ module Factory
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
-      belongs_to :product, counter_cache: true, touch: true
+      belongs_to :product, counter_cache: true, touch: true, optional: true
       belongs_to :product_host, optional: true
       belongs_to :taxon, optional: true
       belongs_to :factory_taxon, optional: true
@@ -87,6 +87,7 @@ module Factory
     end
 
     def title
+      return unless product
       if name.present?
         "#{product.name}（#{name}）"
       else
@@ -95,11 +96,11 @@ module Factory
     end
 
     def compute_min_max_price
-      product.compute_min_max_later
+      product.compute_min_max_later if product
     end
 
     def compute_profit_price
-      if product.profit_margin
+      if product&.profit_margin
         self.profit_price = self.cost_price * product.profit_margin
       end
     end
