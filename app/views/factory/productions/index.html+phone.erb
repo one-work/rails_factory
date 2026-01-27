@@ -20,6 +20,7 @@
 
 <%= render 'taxon' if @produce_plan %>
 
+<% if current_organ %>
 <div
   class="display-none"
   data-controller="wx-share"
@@ -29,3 +30,4 @@
   data-wx-share-image-value="<%= current_organ.logo.url %>"
 >
 </div>
+<% end %>
