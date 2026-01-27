@@ -19,7 +19,7 @@ module Factory
       q_params.merge! default_params
       q_params.merge! params.permit(:name)
 
-      @taxons = Taxon.default_where(q_params).order(position: :asc).page(params[:page])
+      @taxons = Taxon.default_where(q_params).roots.order(position: :asc).page(params[:page])
       @count_hash = Factory::Production.default_where(default_params).where(enabled: true).group(:taxon_id).count
     end
 
