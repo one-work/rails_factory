@@ -1,7 +1,7 @@
 <%= form_with model: @production, url: { action: 'dialog' }, id: 'edit_custom' do %>
 <% end %>
 
-<%= render 'dispatch_modal' %>
+<%= render partial: 'dispatch_modal', locals: { production: @production } %>
 
 <div class="box is-padding-less">
   <div class="box-header">规格</div>

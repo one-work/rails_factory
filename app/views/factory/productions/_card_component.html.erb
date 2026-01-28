@@ -1,7 +1,7 @@
 <%= form_with model: production, url: { action: 'create_dialog' }, id: 'edit_custom' do %>
 <% end %>
 
-<%= render 'dispatch_modal' %>
+<%= render partial: 'dispatch_modal', locals: { production: production } %>
 
 <% production.same_component_parts.includes(:component, :part).group_by(&:component).each do |component, component_parts| %>
   <%= render partial: 'component', locals: { component: component, component_parts: component_parts } %>

@@ -1,7 +1,7 @@
 <div data-controller="custom" class="grid gap-2 as-actions">
-<% current_organ.dispatches.each do |value| %>
+<% production.organ.dispatches.each do |value| %>
   <div class="cell is-fullwidth is-checked">
-    <%= radio_button_tag 'dispatch', value, value.to_s == (params[:dispatch].presence || current_organ.dispatch), data: { action: 'custom#submit' }, class: 'display-none', form: 'edit_custom' %>
+    <%= radio_button_tag 'dispatch', value, value.to_s == (params[:dispatch].presence || production.organ.dispatch), data: { action: 'custom#submit' }, class: 'display-none', form: 'edit_custom' %>
     <label for="dispatch_<%= value %>" class="button is-fullwidth">
       <%= svg_tag 'check', class: 'icon is-small' %>
       <p class="text-black"><%= Trade::Item.enum_i18n(:dispatch, value) %></p>
