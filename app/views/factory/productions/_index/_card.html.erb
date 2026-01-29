@@ -6,7 +6,7 @@
   </div>
   <div class="card-content text-centered">
     <h2 class="title text-danger"><%= model.price.to_money.format.html_safe %></h2>
-    <%= link_to model.name, { action: 'show', id: model.id } %>
+    <%= link_to model.title, { action: 'show', id: model.id }, class: 'text-dark' %>
   </div>
   <div class="card-footer py-2">
     <%= yield %>
