@@ -62,7 +62,7 @@ module Factory
 
       scope :enabled, -> { where(enabled: true) }
       scope :default, -> { where(default: true) }
-      scope :list, -> { where(enabled: true, default: true) }
+      scope :list, -> { where(enabled: true, default: true, product: { published: true }) }
       scope :automatic, -> { where(automatic: true) }
 
       paginates_per 20
