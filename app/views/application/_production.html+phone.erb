@@ -1,6 +1,8 @@
 <div id="production_<%= model.id %>" data-controller="common" class="media as-boxed">
   <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'media-left as-logo') do %>
-    <%= image_tag model.product.logo.variant(:thumb).url, class: 'image is-64x64' %>
+    <figure class="image is-64x64">
+      <%= image_tag model.product.logo.variant(:thumb).url, loading: 'lazy' %>
+    </figure>
   <% end if model.product.logo.attached? %>
   <div class="media-content as-body overflow-x-hidden">
     <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'text-grey-dark truncate display-block') do %>
