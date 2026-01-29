@@ -65,6 +65,8 @@ module Factory
       scope :list, -> { where(enabled: true, default: true) }
       scope :automatic, -> { where(automatic: true) }
 
+      paginates_per 20
+
       validates :str_part_ids, uniqueness: { scope: :product_id }, allow_blank: true
 
       before_validation :sync_word, if: -> { name_changed? || new_record? }
