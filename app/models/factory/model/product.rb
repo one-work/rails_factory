@@ -18,6 +18,7 @@ module Factory
       attribute :profit_margin, :decimal, precision: 4, scale: 2, default: 0
       attribute :min_price, :decimal
       attribute :max_price, :decimal
+      attribute :enable_reorder, :boolean, default: true, comment: '在某些场景下（如大批量数据导入），不需要同步'
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
@@ -59,7 +60,7 @@ module Factory
       before_save :sync_from_taxon, if: -> { taxon_id_changed? }
       after_save :sync_taxon, if: -> { saved_change_to_taxon_id? }
       after_update :set_specialty, if: -> { specialty? && saved_change_to_specialty? }
-      after_save_commit :sync_position_later, if: -> { saved_change_to_position? }
+      after_save_commit :sync_position_later, if: -> { saved_change_to_position? && enable_reorder? }
     end
 
     def profit_margin_str
