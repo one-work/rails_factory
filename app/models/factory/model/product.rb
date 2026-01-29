@@ -60,6 +60,7 @@ module Factory
       before_save :sync_from_taxon, if: -> { taxon_id_changed? }
       after_save :sync_taxon, if: -> { saved_change_to_taxon_id? }
       after_update :set_specialty, if: -> { specialty? && saved_change_to_specialty? }
+      after_update :set_published, if: -> { saved_change_to_published? }
       after_save_commit :sync_position_later, if: -> { saved_change_to_position? && enable_reorder? }
     end
 
@@ -102,6 +103,14 @@ module Factory
 
     def set_specialty
       self.class.where.not(id: self.id).where(organ_id: self.organ_id).update_all(specialty: false)
+    end
+
+    def set_published
+      if published
+        productions.where(enabled: nil).update_all(enabled: true)
+      else
+        productions.where(enabled: true).update_all(enabled: nil)
+      end
     end
 
     def sync_taxon

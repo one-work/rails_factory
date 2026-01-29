@@ -11,7 +11,7 @@ module Factory
       attribute :profit_price, :decimal, comment: '利润'
       attribute :str_part_ids, :string, index: true
       attribute :default, :boolean, default: false
-      attribute :enabled, :boolean, default: false
+      attribute :enabled, :boolean, comment: '是否上架，注意空值是有意义的，当随着 SPU 下架则设置为空值，上架设置为True'
       attribute :automatic, :boolean, default: false
       attribute :presell, :boolean, default: false, comment: '预售'
       attribute :link, :string
@@ -62,7 +62,7 @@ module Factory
 
       scope :enabled, -> { where(enabled: true) }
       scope :default, -> { where(default: true) }
-      scope :list, -> { where(enabled: true, default: true, product: { published: true }) }
+      scope :list, -> { where(enabled: true, default: true) }
       scope :automatic, -> { where(automatic: true) }
 
       paginates_per 20
