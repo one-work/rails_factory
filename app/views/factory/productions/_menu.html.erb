@@ -1,4 +1,4 @@
-<div class="menu is-sticky as-side flex-shrink-0" style="margin-left: -0.75rem; overflow-y:scroll">
+<div class="menu is-sticky as-side flex-shrink-0" style="margin-left: -0.75rem">
   <div class="menu-list flex flex-direction-column">
     <% @taxons.each do |taxon| %>
       <%= link_to({ taxon_id: taxon.id == params[:taxon_id] ? nil : taxon.id, **params.permit(:station_id, :desk_id, :dispatch) }, data: { turbo_action: 'replace' }, class: active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active')) do %>

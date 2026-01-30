@@ -4,6 +4,7 @@
     data-controller="page"
     data-page-url-value="<%= url_for(action: 'index') %>"
     class="flex-grow-1 ml-3 overflow-x-hidden"
+    style="scrollbar-width: none">
   >
     <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/my/items' } %>
     <% if @productions.blank? %>
