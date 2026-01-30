@@ -27,5 +27,9 @@ module Factory
       @taxons = Taxon.default_where(default_params)
     end
 
+    def set_production
+      @production = Production.find(params[:id])
+    end
+
   end
 end
