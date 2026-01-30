@@ -57,14 +57,13 @@ module Factory
       has_many :downstream_provides, class_name: 'ProductionProvide', foreign_key: :upstream_production_id
 
       accepts_nested_attributes_for :production_parts, allow_destroy: true, reject_if: ->(attributes){ attributes.slice('part_id').blank? }
-      #has_one_attached :logo
-      delegate :logo, to: :product
 
       scope :enabled, -> { where(enabled: true) }
       scope :default, -> { where(default: true) }
       scope :list, -> { where(enabled: true, default: true) }
       scope :automatic, -> { where(automatic: true) }
 
+      has_one_attached :logo
       paginates_per 20
 
       validates :str_part_ids, uniqueness: { scope: :product_id }, allow_blank: true
@@ -77,11 +76,12 @@ module Factory
       after_update :set_default, if: -> { default? && saved_change_to_default? }
       after_update :set_enabled, if: -> { saved_change_to_enabled? }
       after_save :compute_min_max_price, if: -> { saved_change_to_price? }
+      after_save :init_logo, if: -> { saved_change_to_product_id? && product }
       after_save :sync_log, if: -> { saved_change_to_stock? }
     end
 
     def init_logo
-      self.logo.attach product.logo_blob if product
+      self.logo.attach product.logo_blob unless logo.attached?
     end
 
     def sync_word
