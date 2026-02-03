@@ -4,8 +4,7 @@
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
-    data-page-debug-value="true"
-    data-action="touchmove->page#move:passive"
+    data-page-url-value="<%= url_for(action: 'index') %>"
     class="flex-grow-1 ml-3 overflow-x-hidden"
   >
     <%= render partial: 'production_cart', layout: 'card', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/agent/items' } %>
