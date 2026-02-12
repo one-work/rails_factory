@@ -171,7 +171,7 @@ module Factory
     end
 
     def enter_url
-      Rails.application.routes.url_for(
+      Rails.app.routes.url_for(
         controller: 'factory/productions',
         action: 'show',
         id: self.id

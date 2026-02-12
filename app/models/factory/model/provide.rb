@@ -30,7 +30,7 @@ module Factory
     end
 
     def invite_url
-      Rails.application.routes.url_for(
+      Rails.app.routes.url_for(
         controller: 'factory/board/organs',
         invite_token: invite_token,
         host: (organ.provider || organ).host
