@@ -3,7 +3,7 @@
   <p class="weui-grid__label <%= scene.id == params[:scene_id] ? 'text-success' : 'text-grey' %>"><%= scene.title %></p>
   <p class="size-7">
     <span>预定截止：</span>
-    <time><%= extra_distance_date(params[:produce_on]) %></time>
+    <time><%= distance_date(params[:produce_on]) %></time>
     <time><%= scene.book_finish_at.to_fs(:time) %></time>
   </p>
   <p class="size-7">

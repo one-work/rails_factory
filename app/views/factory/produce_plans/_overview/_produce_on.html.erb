@@ -1,7 +1,7 @@
 <div class="column is-one-third">
   <%= link_to({ controller: 'productions', scene_id: scene.id, produce_on: date }, form: { class: 'button_column' }, disabled: !scene.bookable?(date), class: 'button is-outlined is-success is-block') do %>
     <div class="header text-weight-semibold" style="font-size: 18px">
-      <span><%= extra_distance_date(date) %></span>
+      <span><%= distance_date(date) %></span>
       <span><%= date.to_fs(:week) %></span>
     </div>
     <div class="description"><%= date.to_fs %></div>

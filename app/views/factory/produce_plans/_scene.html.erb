@@ -1,7 +1,7 @@
 <%= link_to({ controller: '/factory/productions', scene_id: scene.id, produce_on: produce_on }, class: 'column is-half-mobile text-grey') do %>
   <p class="size-7 text-centered">
     <span>预定截止：</span>
-    <span><%= extra_distance_date(produce_on) %></span>
+    <span><%= distance_date(produce_on) %></span>
     <time><%= scene.book_finish_at.to_fs(:time) %></time>
   </p>
   <p class="size-7 text-centered">

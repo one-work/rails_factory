@@ -3,7 +3,7 @@
     <p class="size-7">
       <span>预定截止：</span>
       <span class="<%= scene.bookable?(produce_on) ? 'text-success' : 'text-danger' %>">
-        <span><%= extra_distance_date(produce_on) %></span>
+        <span><%= distance_date(produce_on) %></span>
         <time><%= scene.book_finish_at.to_fs(:time) %></time>
       </span>
     </p>

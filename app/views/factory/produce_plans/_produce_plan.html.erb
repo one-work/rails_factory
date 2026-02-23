@@ -2,7 +2,7 @@
   <div class="column_box py-3">
     <p class="size-7 text-centered">
       <span>预定截止：</span>
-      <span><%= extra_distance_date(model.produce_on) %></span>
+      <span><%= distance_date(model.produce_on) %></span>
       <time><%= model.scene.book_finish_at.to_fs(:time) %></time>
     </p>
     <p class="size-7 text-centered">
