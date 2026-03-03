@@ -1,14 +1,15 @@
-<tr id="tr_<%= model.id %>" data-controller="show" data-url="<%= url_for(action: 'reorder', id: model.id) %>" data-id="<%= model.id %>">
-
-  <td>
-    <div data-show-target="item" class="visibility-hidden">
-      <%= link_to({ controller: 'fits', product_id: model.id }, aria: { label: t('factory.admin.fits.index.title') }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-gears"></i>
-        <span class="pl-1"><%= model.fits_count %></span>
-      <% end %>
-      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-        <%= svg_tag 'pencil', class: 'icon text-link' %>
-      <% end %>
-    </div>
-  </td>
-
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(controller: 'fits', product_id: model.id),
+      icon: 'gears',
+      title: t('.fits.index.title')
+    },
+    data: {
+      url: url_for(action: 'reorder', id: model.id),
+      id: model.id
+    },
+    icons: ['edit']
+  ) { yield }
+%>
