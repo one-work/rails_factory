@@ -7,5 +7,5 @@
 <% elsif referer_eql? controller_path, 'edit' %>
   <%= turbo_stream.replace "box", partial: 'show', locals: { model: @taxon } %>
 <% else %>
-  <%= turbo_stream.append 'body', partial: 'visit', locals: { url: url_for(action: 'index') } %>
+  <%= turbo_stream.apend_body partial: 'visit', locals: { url: url_for(action: 'index') } %>
 <% end %>

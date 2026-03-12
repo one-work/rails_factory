@@ -2,9 +2,9 @@
   <%= turbo_stream.replace "tr_#{params[:id]}", partial: 'index_tbody', layout: 'index_tr', locals: { model: @production_plan } %>
   <%= turbo_stream.remove 'modal' %>
 <% elsif referer_eql? controller_path, 'edit' %>
-  <%= turbo_stream.append 'body', partial: 'visit', locals: { url: url_for(action: 'show') } %>
+  <%= turbo_stream.apend_body partial: 'visit', locals: { url: url_for(action: 'show') } %>
 <% elsif referer_controller == 'factory/admin/produce_plans' %>
   <%= turbo_stream.update "tr_#{@production_plan.id}", partial: "#{referer_path}/index_tbody", locals: { model: @production_plan } %>
 <% else %>
-  <%= turbo_stream.append 'body', partial: 'visit' %>
+  <%= turbo_stream.apend_body partial: 'visit' %>
 <% end %>
