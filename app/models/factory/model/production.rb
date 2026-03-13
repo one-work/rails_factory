@@ -5,6 +5,8 @@ module Factory
     included do
       attribute :name, :string
       attribute :word, :string, comment: '搜索关键词'
+      attribute :sku, :string, index: true, default: -> { SecureRandom.hex }
+      attribute :spu, :string, index: true
       attribute :qr_code, :string
       attribute :price, :decimal
       attribute :cost_price, :decimal, comment: '成本价'

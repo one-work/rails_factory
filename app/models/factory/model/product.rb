@@ -6,7 +6,7 @@ module Factory
       attribute :name, :string
       attribute :description, :string
       attribute :qr_prefix, :string
-      attribute :sku, :string, index: true
+      attribute :spu, :string, index: true
       attribute :published, :boolean, default: true
       attribute :specialty, :boolean, default: false
       attribute :base_price, :decimal
