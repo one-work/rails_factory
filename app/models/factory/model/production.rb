@@ -124,6 +124,7 @@ module Factory
     def sync_from_product
       self.taxon_id = product.taxon_id
       self.organ_id = product.organ_id
+      self.spu = product.spu
     end
 
     def parts_hash
