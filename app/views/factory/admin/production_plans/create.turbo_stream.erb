@@ -2,5 +2,5 @@
   <%= turbo_stream.prepend 'tbody', partial: 'index_tbody', layout: 'index_tr', locals: { model: defined?(model) ? model : instance_variable_get("@#{model_name}") } %>
   <%= turbo_stream.remove 'modal' %>
 <% else %>
-  <%= turbo_stream.append_body partial: 'visit' %>
+  <%= turbo_stream.visit %>
 <% end %>

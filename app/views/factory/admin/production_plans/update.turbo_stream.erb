@@ -6,5 +6,5 @@
 <% elsif referer_controller == 'factory/admin/produce_plans' %>
   <%= turbo_stream.update "tr_#{@production_plan.id}", partial: "#{referer_path}/index_tbody", locals: { model: @production_plan } %>
 <% else %>
-  <%= turbo_stream.append_body partial: 'visit' %>
+  <%= turbo_stream.visit %>
 <% end %>
