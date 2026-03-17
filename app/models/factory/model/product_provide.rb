@@ -6,8 +6,9 @@ module Factory
 
     included do
       attribute :default, :boolean
+      attribute :ref, :string, comment: '用于数据迁移'
 
-      belongs_to :provide
+      belongs_to :provide, counter_cache: true
       belongs_to :product
 
       has_many :production_provides, as: :provide_config

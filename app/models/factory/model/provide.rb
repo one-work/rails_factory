@@ -5,6 +5,7 @@ module Factory
     included do
       attribute :name, :string
       attribute :invite_token, :string, default: -> { SecureRandom.uuid }
+      attribute :product_provides_count, :integer, default: 0
 
       belongs_to :organ, class_name: 'Org::Organ'
       belongs_to :provider, class_name: 'Org::Organ', optional: true
