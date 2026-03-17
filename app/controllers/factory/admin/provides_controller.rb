@@ -4,7 +4,7 @@ module Factory
     before_action :set_provide, only: [:show, :edit, :update, :destroy, :actions, :invite]
 
     def index
-      @provides = Provide.where(default_params).page(params[:page])
+      @provides = Provide.where(default_params).order(product_provides_count: :desc).page(params[:page])
     end
 
     def search
