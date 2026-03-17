@@ -152,6 +152,7 @@ Rails.application.routes.draw do
         member do
           match :invite, via: [:get, :post]
         end
+        resources :product_provides, controller: 'provide/product_provides'
       end
       resources :plans
       resources :scenes do

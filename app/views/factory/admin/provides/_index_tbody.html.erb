@@ -12,5 +12,5 @@
   <% end %>
 <% end %>
 </td>
-<td><%= model.product_provides_count %></td>
+<td><%= link_to model.product_provides_count, { controller: 'provide/product_provides', provide_id: model.id } %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
