@@ -1,3 +1,5 @@
 <td><%= model.product.name %></td>
+<td><%= model.min_price.to_money.format.html_safe %></td>
+<td><%= model.max_price.to_money.format.html_safe %></td>
 <td><%= model.product.taxon.name %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
