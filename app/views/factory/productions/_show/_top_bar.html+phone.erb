@@ -2,7 +2,7 @@
   <%= link_to({ action: 'index', taxon_id: @production.taxon_id }, class: 'px-4') do %>
     <%= svg_tag 'angle-left', kind: 'regular' %>
   <% end %>
-  <div class="bar-title"><%= @production.title %></div>
+  <div class="bar-title truncate"><%= @production.title %></div>
   <%= button_to({ action: 'actions' }, class: 'px-4') do %>
     <%= svg_tag 'ellipsis-vertical' %>
   <% end %>
