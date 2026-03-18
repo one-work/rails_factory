@@ -5,7 +5,7 @@ module Factory
     before_action :set_produce_plans, only: [:index, :plan]
     before_action :set_taxons, only: [:index, :rent]
     before_action :set_production, only: [:show, :actions]
-    before_action :set_scene, only: [:index, :nav], if: -> { params[:produce_on].present? && params[:scene_id].present? }
+    before_action :set_scene, only: [:nav], if: -> { params[:produce_on].present? && params[:scene_id].present? }
     before_action :set_cart, only: [:index, :nav, :show, :dialog, :create_dialog]
     before_action :set_rent_cart, only: [:rent]
     before_action :require_user, only: [:index, :show]
@@ -18,7 +18,7 @@ module Factory
       q_params.merge! taxon_id: taxon_ids if taxon_ids.present?
       q_params.merge! params.permit(:taxon_id, :factory_taxon_id, 'word-like')
 
-      @productions = Production.includes(
+      @productions = Production.json_filter_any('wallet_price', *@cart.custom_wallets.pluck(:code)).includes(
         :taxon,
         :parts,
         :organ,
