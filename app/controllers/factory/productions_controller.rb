@@ -16,17 +16,24 @@ module Factory
 
       taxon_ids = Taxon.default_where(default_params).where(nav: false).pluck(:id)
       q_params.merge! taxon_id: taxon_ids if taxon_ids.present?
-
       q_params.merge! params.permit(:taxon_id, :factory_taxon_id, 'word-like')
 
-      if @produce_plan
-        if @produce_plan.expired?
-          render 'expired'
-        else
-          @productions = @produce_plan.productions.includes(:organ, :parts, product: [:brand, { logo_attachment: :blob }]).page(params[:page]).per(params[:per])
-        end
+      @productions = Production.includes(
+        :taxon,
+        :parts,
+        :organ,
+        product: [
+          :brand,
+          { logo_attachment: { blob: { variant_records: { image_attachment: :blob } } } }
+        ]
+      ).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
+    end
+
+    def plan
+      if @produce_plan.expired?
+        render 'expired'
       else
-        @productions = Production.includes(:taxon, :parts, :organ, product: [:brand, { logo_attachment: { blob: { variant_records: { image_attachment: :blob }}}}]).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
+        @productions = @produce_plan.productions.includes(:organ, :parts, product: [:brand, { logo_attachment: :blob }]).page(params[:page]).per(params[:per])
       end
     end
 
