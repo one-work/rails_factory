@@ -9,7 +9,7 @@ module Factory
     def index
       q_params = {}
       q_params.merge! default_params
-      q_params.merge! params.permit(:taxon_id)
+      q_params.merge! params.permit(:taxon_id, :published, 'name-like')
 
       @products = Product.includes(
         :taxon,
@@ -80,6 +80,13 @@ module Factory
 
     def set_cart
       @cart = Trade::Cart.get_cart(params, member_organ_id: current_organ.id, purchasable: true)
+    end
+
+    def set_filter_columns
+      @filter_columns = set_filter_i18n(
+        'name-like' => { type: 'search', default: true },
+        'published' => { type: 'dropdown', default: true }
+      )
     end
 
     def product_params

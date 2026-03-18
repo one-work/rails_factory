@@ -1,6 +1,10 @@
 zh:
   activerecord:
     enum:
+      factory/product:
+        published:
+          true: 已上架
+          false: 未上架
       factory/product_plan:
         state:
           planned: 计划中

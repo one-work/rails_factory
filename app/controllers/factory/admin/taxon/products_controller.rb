@@ -10,7 +10,7 @@ module Factory
     def index
       q_params = {}
       q_params.merge! default_params
-      q_params.merge! params.permit(:name)
+      q_params.merge! params.permit(:published, 'name-like')
 
       @products = @taxon.products.includes(
         :brand,
@@ -24,9 +24,9 @@ module Factory
     def buy
       q_params = {}
       q_params.merge! default_params
-      q_params.merge! params.permit(:taxon_id, :name)
+      q_params.merge! params.permit(:published, 'name-like')
 
-      @products = Product.includes(
+      @products = @taxon.products.includes(
         :brand,
         productions: { production_provides: :provide },
         logo_attachment: :blob,
