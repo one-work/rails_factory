@@ -16,7 +16,7 @@ module Factory
         :brand,
         :product_components,
         :productions,
-        product_provide: :provide
+        product_provides: :provide
       ).default_where(q_params).order(position: :asc).page(params[:page])
     end
 
