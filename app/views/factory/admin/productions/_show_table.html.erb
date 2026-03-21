@@ -7,6 +7,14 @@
   <dd class="truncate"><%= @production.title %></dd>
 </div>
 <div>
+  <dt><%= Factory::Production.human_attribute_name(:spu) %></dt>
+  <dd><%= @production.spu %></dd>
+</div>
+<div>
+  <dt><%= Factory::Production.human_attribute_name(:sku) %></dt>
+  <dd><%= @production.sku %></dd>
+</div>
+<div>
   <dt><%= Factory::Production.human_attribute_name(:state) %></dt>
   <dd><%= @production.state_i18n %></dd>
 </div>
