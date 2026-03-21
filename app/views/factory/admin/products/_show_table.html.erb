@@ -3,6 +3,10 @@
   <dd><%= @product.name %></dd>
 </div>
 <div>
+  <dt><%= Factory::Product.human_attribute_name(:spu) %></dt>
+  <dd><%= @product.spu %></dd>
+</div>
+<div>
   <dt><%= Factory::Product.human_attribute_name(:logo) %></dt>
   <dd><%= image_tag @product.logo, class: 'image is-64x64' if @product.logo.attached? %></dd>
 </div>
