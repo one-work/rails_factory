@@ -110,7 +110,9 @@ module Factory
     end
 
     def compute_price
-      self.price = self.cost_price.to_d + self.profit_price.to_d
+      if cost_price.to_d > 0 && profit_price.to_d > 0
+        self.price = self.cost_price + self.profit_price
+      end
     end
 
     def disabled?(part_id)
