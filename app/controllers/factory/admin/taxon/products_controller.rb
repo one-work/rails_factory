@@ -12,12 +12,11 @@ module Factory
       q_params.merge! default_params
       q_params.merge! params.permit(:published, 'name-like')
 
-      @products = @taxon.products.includes(
+      @products = @taxon.products.with_attached_logo.includes(
         :brand,
         :product_components,
         :productions,
-        logo_attachment: :blob,
-        covers_attachments: :blob
+        product_provide: :provide
       ).default_where(q_params).order(position: :asc).page(params[:page])
     end
 

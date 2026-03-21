@@ -1,7 +1,7 @@
 <td>
-  <div class="is-several">
-    <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-24x24' if model.logo.attached? %>
-    <%= link_to({ controller: 'productions', product_id: model.id }, text: true) do %>
+  <div class="flex">
+    <%= image_tag model.logo.variant(resize_to_limit: [24, 24]).processed.url, class: 'image is-24x24' if model.logo.attached? %>
+    <%= link_to({ controller: 'productions', product_id: model.id }, text: true, class: 'ml-1 truncate') do %>
       <span class="text-grey-dark"><%= model.name %></span>
     <% end %>
   </div>
@@ -13,8 +13,8 @@
 <td><%= model.base_price.to_money.format.html_safe %></td>
 <td>
 <% model.productions[0..2].each do |production| %>
-  <p>
-    <span><%= production.name %></span>
+  <p class="flex">
+    <span class="truncate"><%= production.name %></span>
     <% if production.enabled %>
       <span class="tag is-success"><%= production.enabled_i18n %></span>
     <% end %>
@@ -45,12 +45,7 @@
   <% end %>
 </td>
 <td>
-  <%= link_to({ controller: 'product_components', product_id: model.id }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'tree' %>
-    <span class="ml-1"><%= t('.product_components.index.title') %></span>
-  <% end %>
-  <%= link_to({ controller: 'fits', product_id: model.id }, class: 'button is-small is-borderless') do %>
-    <span class="ml-1"><%= model.fits_count %></span>
-  <% end %>
+<% model.product_provides.each do |product_provide| %>
+  <p><%= product_provide.provide.name %></p>
+<% end %>
 </td>
-
