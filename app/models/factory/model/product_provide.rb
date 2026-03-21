@@ -11,6 +11,7 @@ module Factory
       belongs_to :provide, counter_cache: true
       belongs_to :product
 
+      has_many :productions, primary_key: :product_id, foreign_key: :product_id
       has_many :production_provides, as: :provide_config
 
       after_create_commit :automatic_production_provide

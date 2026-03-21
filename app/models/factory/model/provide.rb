@@ -14,6 +14,7 @@ module Factory
 
       has_many :production_provides, dependent: :destroy
       has_many :product_provides, dependent: :destroy
+      has_many :productions, through: :product_provides
       has_many :taxon_provides, dependent: :destroy
 
       accepts_nested_attributes_for :production_provides
