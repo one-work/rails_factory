@@ -78,6 +78,7 @@ zh:
         export_price: 出厂价
       factory/provide:
         provider_id: 供应商
+        product_provides_count: 供应数量
       factory/fit:
         part_brand_id: 适配品牌
         part_serial_id: 适配型号
