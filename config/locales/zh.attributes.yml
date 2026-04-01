@@ -20,6 +20,10 @@ zh:
       factory/product_part_taxon:
         min_select: 最低选择数
         max_select: 最多选择数
+      factory/product_component:
+        part_taxon_id: 部件类型
+        min_select: 最少选择
+        max_select: 最多选择
       factory/production:
         name: 型号
         cost_price: 采购价
