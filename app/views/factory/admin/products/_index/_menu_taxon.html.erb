@@ -1,4 +1,4 @@
-<div class="menu as-side" style="margin-left: -0.75rem">
+<div class="menu as-side mr-3" style="margin-left: -0.75rem">
   <div class="menu-list flex flex-direction-column">
     <% @taxons.each do |taxon| %>
       <%= link_to taxon.name, { controller: 'products', taxon_id: taxon.id }, class: active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active') %>
