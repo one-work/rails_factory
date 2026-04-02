@@ -17,6 +17,9 @@ zh:
         min_price: 最低价
         max_price: 最高价
         manual: 说明书
+        station_id: 站点
+        room_id: 仓库
+        desk_id: 工作台
       factory/product_part_taxon:
         min_select: 最低选择数
         max_select: 最多选择数
@@ -35,7 +38,17 @@ zh:
         presell: 预售
         enabled: 上架
         automatic: 自动上架
+        spu: 产品款型
+        sku: 单品编码
+        state: 产品状态
+        qr_code: 二维码
+        str_part_ids: 配件列表
         stock: 库存
+        link: 链接
+        step: 步进值
+      factory/production_part:
+        part_id: 配件
+        number: 数量
       factory/part:
         import_price: 进货价
         profit_price: 利润
@@ -75,6 +88,10 @@ zh:
       factory/production_plan:
         planned_count: 计划生产数
         production_items_count: 已生产数
+        produce_plan_id: 生产计划
+        produce_on: 生产日期
+        state: 状态
+        station_id: 站点
       factory/part_provider:
         provider_id: 供应商
         verified: 已验证
@@ -98,6 +115,9 @@ zh:
       factory/stock_log:
         stock: 当前库存
         amount: 变动数量
+        tag_str: 标记
+        source_type: 来源类型
+        source_id: 来源详情
       org/organ:
         dispatches: 支持交付方式
         dispatch: 默认交付方式
