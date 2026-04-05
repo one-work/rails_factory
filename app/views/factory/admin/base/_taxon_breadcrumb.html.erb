@@ -1,6 +1,6 @@
 <li><%= link_to t('.taxons.index.title'), { controller: 'taxons' } %></li>
 <li>
-  <div class="navbar-item has-dropdown is-hoverable">
+  <div class="navbar-item has-dropdown is-hoverable" style="padding-bottom: 20px;margin-bottom: -20px;">
     <%= link_to @taxon.name, { controller: 'taxons' }, class: 'navbar-link' %>
     <div class="navbar-dropdown is-right">
       <% @taxon.brothers.each do |taxon| %>

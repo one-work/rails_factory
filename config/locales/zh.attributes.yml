@@ -20,6 +20,8 @@ zh:
         station_id: 站点
         room_id: 仓库
         desk_id: 工作台
+        published: 上架状态
+        productions: 产品类型
       factory/product_part_taxon:
         min_select: 最低选择数
         max_select: 最多选择数
@@ -27,6 +29,9 @@ zh:
         part_taxon_id: 部件类型
         min_select: 最少选择
         max_select: 最多选择
+        select_str: 选择规则
+        product_parts_count: 部件数量
+        multiple: 可多选
       factory/production:
         name: 型号
         cost_price: 采购价
@@ -46,9 +51,13 @@ zh:
         stock: 库存
         link: 链接
         step: 步进值
+        productions: 产品类型
       factory/production_part:
         part_id: 配件
         number: 数量
+      factory/production_provide:
+        provider_id: 供应商
+        provide_id: 供应商
       factory/part:
         import_price: 进货价
         profit_price: 利润
@@ -98,7 +107,7 @@ zh:
         selected: 已选择
         export_price: 出厂价
       factory/provide:
-        provider_id: 供应商
+        provide_id: 供应记录编号
         product_provides_count: 供应数量
       factory/fit:
         part_brand_id: 适配品牌
