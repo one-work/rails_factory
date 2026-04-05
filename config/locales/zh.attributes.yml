@@ -52,12 +52,18 @@ zh:
         link: 链接
         step: 步进值
         productions: 产品类型
+        product_id: 产品
+        specialty: 产品特性
       factory/production_part:
         part_id: 配件
         number: 数量
       factory/production_provide:
         provider_id: 供应商
         provide_id: 供应商
+      factory/product_provide:
+        product_id: 产品
+        min_price: 最低价格
+        max_price: 最高价格
       factory/part:
         import_price: 进货价
         profit_price: 利润
@@ -72,6 +78,7 @@ zh:
         deliver_start_at: 配送开始时间
         deliver_finish_at: 配送结束时间
         automatic: 自动生成
+        specialty: 专属场景
       factory/produce_plan:
         produce_on: 生产日期
         specialty: 主推
@@ -101,6 +108,8 @@ zh:
         produce_on: 生产日期
         state: 状态
         station_id: 站点
+        product_id: 产品
+        production_id: 产品类型
       factory/part_provider:
         provider_id: 供应商
         verified: 已验证
@@ -109,6 +118,8 @@ zh:
       factory/provide:
         provide_id: 供应记录编号
         product_provides_count: 供应数量
+        provider_id: 供应商
+        invite_url: 邀请链接
       factory/fit:
         part_brand_id: 适配品牌
         part_serial_id: 适配型号
