@@ -1,8 +1,8 @@
 <%= form_with theme: nil, model: @production_item, url: { action: 'create' } do |f| %>
   <%= f.hidden_field :qr_code %>
   <%= f.hidden_field :came_at, value: Time.current.to_fs(:local) %>
-  <%= f.submit '新增', class: 'button is-info' %>
+  <%= f.submit '新增', class: 'button is-rounded is-info' %>
 <% end %>
 <%= form_with theme: nil, model: @production_item, url: { action: 'batch' }, class: 'ml-2' do |f| %>
-  <%= f.submit '批量新增', class: 'button is-info' %>
+  <%= f.submit '批量新增', class: 'button is-rounded is-info' %>
 <% end %>

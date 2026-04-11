@@ -1,10 +1,10 @@
 <%= form_with theme: nil, model: @production_item, url: { action: 'create' } do |f| %>
   <%= f.hidden_field :qr_code %>
-  <%= f.submit '新增', class: 'button is-info' %>
+  <%= f.submit '新增', class: 'button is-rounded is-info' %>
 <% end %>
-<%= button_to({ action: 'batch_new' }, class: 'button is-info') do %>
+<%= button_to({ action: 'batch_new' }, class: 'button is-rounded is-info') do %>
   <span><%= t('.batch_new.title') %></span>
 <% end %>
-<%= button_to({ action: 'new' }, class: 'button is-primary') do %>
+<%= button_to({ action: 'new' }, class: 'button is-rounded is-primary') do %>
   <span><%= t('.new.title') %></span>
 <% end %>
