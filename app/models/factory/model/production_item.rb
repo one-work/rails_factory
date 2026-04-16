@@ -73,10 +73,9 @@ module Factory
     end
 
     def print
-      qr = BaseTspl.new
-      production.organ.device.print(
-        data: to_cpcl(qr)
-      )
+      production.organ.device.print(to_gid) do |pr|
+        to_cpcl(pr)
+      end
     end
 
     def sync_stock
