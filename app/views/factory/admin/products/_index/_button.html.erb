@@ -5,9 +5,9 @@
   data-report-url="<%= url_for(action: 'scan') %>"
 >
   <%= svg_tag 'plus' %>
-  <span class="ml-1"><%= t('.scan.title') %></span>
+  <span><%= t('.scan.title') %></span>
 </div>
 <%= button_to({ action: 'new' }, params: { 'product[taxon_id]': params[:taxon_id] }, class: 'button is-rounded is-info') do %>
   <%= svg_tag 'plus' %>
-  <span class="ml-1"><%= t('.new.title') %></span>
+  <span><%= t('.new.title') %></span>
 <% end %>
