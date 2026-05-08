@@ -18,15 +18,3 @@
 </div>
 
 <%= render 'taxon' if @produce_plan %>
-
-<% if current_organ %>
-<div
-  class="display-none"
-  data-controller="wx-share"
-  data-wx-share-title-value="<%= current_organ.name %>"
-  data-wx-share-desc-value="邀请您提前下单，到店即可享用美味"
-  data-wx-share-link-value="<%= url_for(controller: 'factory/productions', only_path: false) %>"
-  data-wx-share-image-value="<%= current_organ.logo.url %>"
->
-</div>
-<% end %>
