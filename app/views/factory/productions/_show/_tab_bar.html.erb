@@ -1,5 +1,5 @@
-<div class="level flex-direction-row is-safe-bottom" style="background-color: #f7f7f7">
-  <div class="level-left p-3">
+<div class="flex justify-content-space-around as-bottom">
+  <div>
     <%= link_to({ controller: 'trade/my/carts', action: 'show', id: @cart.id }, class: 'has-column-centered') do %>
       <div class="right-badge">
         <%= svg_tag 'cart-shopping', class: 'icon is-medium' %>
@@ -7,7 +7,7 @@
       </div>
     <% end if @cart %>
   </div>
-  <div class="level-right p-3">
+  <div>
   <% if @cart %>
     <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: 'trade/my/items' } %>
   <% end %>
