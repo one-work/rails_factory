@@ -1,6 +1,6 @@
 <% if referer_eql? controller_path, 'index' %>
   <%= turbo_stream.replace "tr_#{params[:id]}", partial: 'index_tbody', layout: 'index_tr', locals: { model: @production_plan } %>
-  <%= turbo_stream.remove 'modal' %>
+  <%= turbo_stream.remove 'modal_form' %>
 <% elsif referer_eql? controller_path, 'edit' %>
   <%= turbo_stream.append_body partial: 'visit', locals: { url: url_for(action: 'show') } %>
 <% elsif referer_controller == 'factory/admin/produce_plans' %>

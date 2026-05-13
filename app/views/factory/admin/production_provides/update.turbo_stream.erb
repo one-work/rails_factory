@@ -1,2 +1,2 @@
 <%= turbo_stream.replace "tr_#{params[:id]}", partial: 'index_tbody', layout: 'index_tr', locals: { model: @production_provide } %>
-<%= turbo_stream.remove 'modal' %>
+<%= turbo_stream.remove 'modal_form' %>
