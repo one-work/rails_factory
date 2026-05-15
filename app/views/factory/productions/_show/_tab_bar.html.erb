@@ -1,15 +1,15 @@
 <div class="flex justify-content-space-between as-bottom px-3">
+<% if @cart %>
   <div>
     <%= link_to({ controller: 'trade/my/carts', action: 'show', id: @cart.id }, class: 'has-column-centered') do %>
       <div class="right-badge">
         <%= svg_tag 'cart-shopping', class: 'icon is-medium' %>
         <span class="tag is-badge is-danger"><%= @cart.items.count %></span>
       </div>
-    <% end if @cart %>
+    <% end %>
   </div>
   <div>
-  <% if @cart %>
     <%= render partial: 'cart_item_new', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: 'trade/my/items' } %>
-  <% end %>
   </div>
+<% end %>
 </div>
