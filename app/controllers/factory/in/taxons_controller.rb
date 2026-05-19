@@ -11,7 +11,6 @@ module Factory
       @taxon = Taxon.find(params[:id])
     end
 
-
     def factory_taxon_params
       params.fetch(:factory_taxon, {}).permit(
         :name,
