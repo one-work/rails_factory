@@ -7,8 +7,8 @@
       <span>已绑定</span>
     <% else %>
       <%= button_to({ action: 'bind', id: model.id }, method: :patch, class: 'button is-small is-link') do %>
-        <i class="fa-solid fa-handshake"></i>
-        <span class="ml-1"><%= t('.bind.title') %></span>
+        <%= svg_tag 'handshake' %>
+        <span><%= t('.bind.title') %></span>
       <% end %>
     <% end %>
   </div>
