@@ -37,6 +37,14 @@
   </dd>
 </div>
 <div>
+  <dt><%= Org::Organ.human_attribute_name(:start_at) %></dt>
+  <dd>
+    <%= button_to({ action: 'inline' }, params: { field: 'start_at', field_type: 'inline_form/time_select' }, form: { class: 'has-select' }) do %>
+      <span><%= @organ.start_at.to_fs(:time) if @organ.start_at %></span>
+    <% end %>
+  </dd>
+</div>
+<div>
   <dt><%= Org::Organ.human_attribute_name(:print_note) %></dt>
   <dd><%= text_area_tag 'organ[print_note]', @organ.print_note, class: 'textarea', form: 'show-form', data: { single_input_target: 'input' } %></dd>
 </div>
