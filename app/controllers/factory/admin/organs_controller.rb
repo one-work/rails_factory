@@ -20,6 +20,8 @@ module Factory
         :dispatch,
         :print_note,
         :share_logo,
+        :start_at,
+        :finish_at,
         dispatches: []
       )
     end
