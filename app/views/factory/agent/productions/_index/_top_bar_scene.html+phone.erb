@@ -1,0 +1,15 @@
+
+
+
+
+  <% if params[:scene_id] || params[:produce_on] %>
+    <div>
+      <span class="text-weight-semibold"><%= params[:produce_on] %></span>
+      <span><%= params[:produce_on].to_date.to_fs(:week) if params[:produce_on].present? %></span>
+    </div>
+    <div>
+      <span class="text-weight-semibold"><%= @scene.title %></span>
+    </div>
+  <% end %>
+
+
