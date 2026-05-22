@@ -5,9 +5,7 @@
       <span class="tag ml-1"><%= @taxon.scene.title %></span>
     <% end %>
   </div>
-  <div>
-    <%= button_to({ controller: 'taxons', action: 'preview' }, class: 'px-4') do %>
-      <%= svg_tag 'ellipsis-vertical' %>
-    <% end %>
-  </div>
+  <%= button_to({ controller: 'taxons', action: 'preview' }, class: 'px-4') do %>
+    <%= svg_tag 'ellipsis-vertical' %>
+  <% end %>
 <% end %>
