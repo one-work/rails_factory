@@ -26,6 +26,8 @@ zh:
       productions:
         index:
           title: 开单
+        preview:
+          title: 选择座位
     admin:
       title: 进销存/生产
       home:
