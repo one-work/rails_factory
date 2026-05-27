@@ -53,6 +53,14 @@
   </dd>
 </div>
 <div>
+  <dt><%= Org::Organ.human_attribute_name(:geo) %></dt>
+  <dd>
+    <%= button_to({ action: 'inline' }, params: { field: 'geo', field_type: 'inline_form/geo_select' }, form: { class: 'has-select' }) do %>
+      <span><%= @organ.geo if @organ.geo %></span>
+    <% end %>
+  </dd>
+</div>
+<div>
   <dt><%= Org::Organ.human_attribute_name(:print_note) %></dt>
   <dd><%= text_area_tag 'organ[print_note]', @organ.print_note, class: 'textarea', form: 'show-form', data: { single_input_target: 'input' } %></dd>
 </div>

@@ -22,6 +22,7 @@ module Factory
         :share_logo,
         :start_at,
         :finish_at,
+        :geo,
         dispatches: []
       )
     end
