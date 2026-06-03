@@ -55,7 +55,7 @@
 <div>
   <dt><%= Org::Organ.human_attribute_name(:address) %></dt>
   <dd>
-    <%= button_to({ action: 'inline' }, params: { field_type: 'inline_form/geo_select' }, form: { class: 'has-select' }) do %>
+    <%= button_to({ action: 'inline' }, params: { field: 'address', field_type: 'inline_form/geo_select' }, form: { class: 'has-select' }) do %>
       <span><%= @organ.address %></span>
     <% end %>
   </dd>
