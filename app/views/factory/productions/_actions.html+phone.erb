@@ -1,13 +1,8 @@
 <div
   class="cell has-column-centered"
-  data-controller="mask wx-share"
-  data-mask-id-value="mask"
-  data-wx-share-title-value="<%= @production.name %>"
-  data-wx-share-desc-value="<%= @production.product.description %>>"
-  data-wx-share-link-value="<%= url_for(controller: '/factory/productions', action: 'show', id: @production.id, only_path: false) %>"
-  data-wx-share-image-value="<%= @production.logo.url %>"
-  data-action="click->mask#show click->wx-share#ready"
+  data-controller="mask"
+  data-action="click->mask#show"
 >
   <%= image_tag 'wx_moment.svg', class: 'image is-16x16 display-inline' %>
-  <span class="pl-1">分享</span>
+  <span>分享</span>
 </div>
