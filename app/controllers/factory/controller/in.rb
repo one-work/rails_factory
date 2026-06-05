@@ -19,8 +19,7 @@ module Factory
       }
       options.merge! client_id: nil, contact_id: nil if defined? RailsCrm
 
-      @cart = Trade::Cart.where(options).find_or_create_by(good_type: 'Factory::Production', aim: 'use')
-      @cart.compute_amount! unless @cart.fresh
+      @cart = Trade::Cart.get_cart(params, **options)
     end
 
   end

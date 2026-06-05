@@ -139,13 +139,15 @@ module Factory
     end
 
     def set_rent_cart
-      options = {}
-      options.merge! default_form_params
-
       if current_user
-        options.merge! user_id: current_user.id, member_id: nil, client_id: nil
-        @cart = Trade::Cart.where(options).find_or_create_by(good_type: 'Factory::Production', aim: 'rent')
-        @cart.compute_amount! unless @cart.fresh
+        @cart = Trade::Cart.get_cart(
+          params,
+          user_id: current_user.id,
+          member_id: nil,
+          client_id: nil,
+          aim: 'rent',
+          **default_form_params
+        )
       end
     end
 
