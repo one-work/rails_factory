@@ -18,7 +18,8 @@ module Factory
       q_params.merge! taxon_id: taxon_ids if taxon_ids.present?
       q_params.merge! params.permit(:taxon_id, :factory_taxon_id, 'word-like')
 
-      @productions = Production.json_filter_any('wallet_price', *@cart.custom_wallets.pluck(:code)).includes(
+      # json_filter_any('wallet_price', *@cart.custom_wallets.pluck(:code))
+      @productions = Production.includes(
         :taxon,
         :parts,
         :organ,
