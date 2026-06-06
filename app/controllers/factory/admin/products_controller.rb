@@ -13,6 +13,7 @@ module Factory
 
       @products = Product.includes(
         :taxon,
+        :production,
         :productions,
         :taxon_components,
         :product_components,

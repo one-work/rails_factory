@@ -1,4 +1,7 @@
-<p class="text-grey"><%= model.name %></p>
+<div class="text-grey"><%= model.name %></div>
+<% if model.production %>
+  <div class="text-danger"><%= model.production.price.to_money.format.html_safe %></div>
+<% end %>
 <div class="tags has-addons">
   <span class="tag is-primary is-light"><%= model.productions_count %></span>
   <span class="tag is-light text-grey">型号</span>
