@@ -11,7 +11,7 @@ zh:
         logo: 主图
         covers: 橱窗轮播图
         images: 商品描述图
-        productions_count: 型号数
+        productions_count: 规格数
         base_price: 基础价格
         profit_margin: 利润率
         min_price: 最低价
@@ -33,7 +33,7 @@ zh:
         product_parts_count: 部件数量
         multiple: 可多选
       factory/production:
-        name: 型号
+        name: 规格
         cost_price: 采购价
         profit_price: 利润
         price: 售价

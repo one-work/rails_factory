@@ -4,5 +4,5 @@
 <% end %>
 <div class="tags has-addons">
   <span class="tag is-primary is-light"><%= model.productions_count %></span>
-  <span class="tag is-light text-grey">型号</span>
+  <span class="tag is-light text-grey"><%= Factory::Production.human_attribute_name(:name) %></span>
 </div>

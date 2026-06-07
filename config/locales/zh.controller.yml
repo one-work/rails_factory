@@ -154,7 +154,7 @@ zh:
           title: 供应商管理
       productions:
         index:
-          title: 型号列表
+          title: 规格
         edit_stock:
           title: 管理库存
         card:
@@ -170,7 +170,7 @@ zh:
         print_data:
           title: 蓝牙打印标签
         new:
-          title: 添加型号
+          title: 添加规格
       production_parts:
         index:
           title: 物料清单
