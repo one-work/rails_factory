@@ -1,14 +1,12 @@
-<div class="box is-padding-less">
-  <div class="box-header">
-    <div>
-      <span class="size-7 has-border-left-primary"><%= t('factory.admin.title') %></span>
-    </div>
+<div class="card as-transparent">
+  <div class="card-header">
+    <span class="size-7 text-grey has-border-left-primary"><%= t('factory.admin.title') %></span>
     <%= link_to({ controller: '/factory/productions' }, class: 'size-7') do %>
       <%= svg_tag 'up-right-and-down-left-from-center' %>
-      <span class="ml-1">预览商店</span>
+      <span>预览商店</span>
     <% end %>
   </div>
-  <div class="fixed-grid has-4-cols is-shadow p-3">
+  <div class="card-content fixed-grid has-4-cols">
     <div class="grid">
       <%= link_to({ controller: 'factory/admin/products' }, class: 'cell has-column-centered') do %>
         <div class="text-primary">
