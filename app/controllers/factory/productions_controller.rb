@@ -90,7 +90,11 @@ module Factory
 
     def dialog
       from_production = Production.find params[:id]
-      @production = from_production.brothers.find params[:target_id]
+      if params[:target_id]
+        @production = from_production.brothers.find params[:target_id]
+      else
+        @production = from_production
+      end
     end
 
     def create_dialog
