@@ -6,7 +6,19 @@
     class="has-page-grow ml-3 overflow-x-hidden"
     style="scrollbar-width: none"
   >
-    <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/my/items' } %>
+    <%=
+      render(
+        partial: 'production_cart',
+        layout: 'production',
+        collection: @productions,
+        as: :model,
+        locals: {
+          cart: @cart,
+          item_con: 'trade/my/items'
+        }
+      )
+    %>
+
     <% if @productions.blank? %>
       <%= render 'page_blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
