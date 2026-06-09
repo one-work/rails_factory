@@ -1,6 +1,8 @@
-<div class="box is-padding-less">
-  <div class="box-header">规格</div>
-  <div id="card_brothers" data-controller="custom" class="grid gap-2 p-3">
+<div class="card as-narrow">
+  <div class="card-header">
+    <span class="size-7 text-grey">规格</span>
+  </div>
+  <div id="card_brothers" data-controller="custom" class="card-content grid gap-2">
     <%= render partial: 'card_brother', collection: @production.brothers.enabled, as: :brother %>
   </div>
 </div>
