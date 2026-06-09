@@ -1,0 +1,7 @@
+<% if params[:scene_id].present? || params[:produce_on].present? || params[:return_state].present? %>
+  <%= render 'top_bar' %>
+<% end %>
+
+<% if params[:station_id].present? %>
+  <%= render 'top_bar_station' %>
+<% end %>
