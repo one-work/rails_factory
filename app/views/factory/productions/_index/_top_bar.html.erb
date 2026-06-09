@@ -2,6 +2,4 @@
   <%= render 'top_bar_station' %>
 <% elsif params[:desk_id].present? %>
   <%= render 'top_bar_desk' %>
-<% elsif current_organ && current_organ.dispatches.size >= 2 %>
-  <%= render 'top_bar_dispatch' %>
 <% end %>
