@@ -23,7 +23,7 @@
       render(
         partial: 'cart_item_add',
         locals: {
-          item: @cart.init_cart_item(params, good_id: @production.id),
+          item: @cart.init_cart_item(params, good_id: @production.id, dispatch: params[:dispatch].presence || @production.organ.dispatch),
           cart: @cart,
           item_con: item_con,
           renew: {
