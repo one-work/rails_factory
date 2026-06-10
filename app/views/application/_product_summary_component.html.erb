@@ -1,6 +1,10 @@
 <dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth p-0 is-interval">
 <% cart.find_items(model.brother_ids, good_type: model.base_class_name, **options).each do |item| %>
-  <div data-id="<%= item.id %>" class="px-2" style="background-color: <%= item.attributes.slice('good_id', 'dispatch') == refer_options.slice('good_id', 'dispatch') ? '#eee' : 'auto' %>">
+  <div
+    data-id="<%= item.id %>"
+    class="radius-small px-2"
+    style="background-color: <%= item.attributes.slice('good_id', 'dispatch') == refer_options.slice('good_id', 'dispatch') ? '#eee' : 'auto' %>"
+  >
     <dt class="truncate flex-shrink-1">
       <ul class="media-info display-inline-flex">
         <% item.good.production_parts.includes(:part).each do |production_part| %>

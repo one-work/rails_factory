@@ -2,7 +2,7 @@
 <% cart.find_items(model.brother_ids, good_type: model.base_class_name, **options).each do |item| %>
   <div
     data-id="<%= item.id %>"
-    class="px-2"
+    class="px-2 radius-small"
     style="background-color: <%= item.attributes.slice('good_id', 'dispatch') == refer_options.slice('good_id', 'dispatch') ? '#eee' : 'auto' %>"
   >
     <dt class="truncate flex-shrink-1">
