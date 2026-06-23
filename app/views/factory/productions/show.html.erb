@@ -1,21 +1,35 @@
-<div class="column">
-  <%= render partial: 'covers', locals: { model: @production.product } %>
-</div>
-
-<div class="column">
-  <div class="box">
-    <h1 class="title"><%= @production.product.name %></h1>
-    <div class="text-danger text-bold">
-      <span><%= @production.price.to_money.format.html_safe %></span>
+<div class="column is-full">
+  <div class="columns">
+    <div class="column">
+      <%= render partial: 'covers', locals: { model: @production.product } %>
     </div>
-    <div class="flex mt-1">
-      <% if @cart %>
-        <%= render partial: 'cart_item', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: 'trade/my/items' } %>
-      <% end %>
-      <%= link_to({ controller: 'trade/my/carts', action: 'show', id: @cart.id }, class: 'button is-small is-primary is-radius') do %>
-        <span class="mr-1"><%= t('trade.my.carts.show.title') %></span>
-        <%= svg_tag 'angle-right' %>
-      <% end if @cart %>
+    <div class="column">
+      <div class="box">
+        <h1 class="title"><%= @production.product.name %></h1>
+        <div class="text-danger text-bold">
+          <span><%= @production.price.to_money.format.html_safe %></span>
+        </div>
+        <div class="flex mt-1">
+          <% if @cart %>
+            <%= render partial: 'cart_item', locals: { item: @cart.init_cart_item(params, good_id: @production.id), cart: @cart, item_con: 'trade/my/items' } %>
+          <% end %>
+          <%= link_to({ controller: 'trade/my/carts', action: 'show', id: @cart.id }, class: 'button is-small is-primary is-radius') do %>
+            <span class="mr-1"><%= t('trade.my.carts.show.title') %></span>
+            <%= svg_tag 'angle-right' %>
+          <% end if @cart %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-full">
+    <% if @production.product.images.present? %>
+      <div class="box is-padding-less">
+        <% @production.product.images.each do |image| %>
+          <%= image_tag image, class: 'image is-fullwidth' -%>
+        <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
