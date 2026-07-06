@@ -1,0 +1,4 @@
+Org::Organ:
+  factory/admin/taxons: ['index', 'new', 'create']
+  factory/admin/products: ['index', 'new', 'create']
+  factory/admin/productions: ['index', 'new', 'create']
