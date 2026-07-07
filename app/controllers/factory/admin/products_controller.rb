@@ -83,11 +83,11 @@ module Factory
       @cart = Trade::Cart.get_cart(params, member_organ_id: current_organ.id, purchasable: true)
     end
 
-    def set_filter_columns
-      @filter_columns = set_filter_i18n(
+    def filter_columns
+      {
         'name-like' => { type: 'search', default: true },
         'published' => { type: 'dropdown', default: true }
-      )
+      }
     end
 
     def product_params
