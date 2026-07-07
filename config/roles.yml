@@ -2,5 +2,6 @@ Org::Organ: &org
   factory/admin/taxons: all
   factory/admin/products: all
   factory/admin/productions: all
+  factory/admin/taxon/products: all
 Org::Member:
   <<: *org
