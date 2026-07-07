@@ -1,6 +1,6 @@
 Org::Organ: &org
-  factory/admin/taxons: ['index', 'new', 'create']
-  factory/admin/products: ['index', 'new', 'create']
-  factory/admin/productions: ['index', 'new', 'create']
+  factory/admin/taxons: all
+  factory/admin/products: all
+  factory/admin/productions: all
 Org::Member:
   <<: *org
