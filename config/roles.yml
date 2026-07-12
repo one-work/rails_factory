@@ -1,4 +1,5 @@
 Org::Organ: &org
+  factory/admin/organs: all
   factory/admin/taxons: all
   factory/admin/products: all
   factory/admin/productions: all
