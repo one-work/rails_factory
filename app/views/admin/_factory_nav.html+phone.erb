@@ -1,9 +1,16 @@
 <div class="card as-transparent">
   <div class="card-header">
     <span class="size-7 text-grey has-border-left-primary"><%= t('factory.admin.title') %></span>
-    <%= link_to({ controller: '/factory/productions', host: current_organ.host }, class: 'size-7') do %>
-      <%= svg_tag 'up-right-and-down-left-from-center' %>
-      <span>预览商店</span>
+    <% if request.variant.includes? :mini_program %>
+      <%= link_to({ controller: '/factory/productions', host: current_organ.mp_host }, class: 'size-7') do %>
+        <%= svg_tag 'up-right-and-down-left-from-center' %>
+        <span>预览商店</span>
+      <% end %>
+    <% else %>
+      <%= link_to({ controller: '/factory/productions', host: current_organ.host }, class: 'size-7') do %>
+        <%= svg_tag 'up-right-and-down-left-from-center' %>
+        <span>预览商店</span>
+      <% end %>
     <% end %>
   </div>
   <div class="card-content fixed-grid has-4-cols">
