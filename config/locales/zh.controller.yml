@@ -267,6 +267,9 @@ zh:
       home:
         index:
           title: 产品管理
+      organs:
+        index:
+          title: 门店
       factory_taxons:
         index:
           title: 分类
