@@ -1,6 +1,13 @@
 <%=
   tr_tag(
     model,
+    {
+      href: url_for(action: 'mock', id: model.id),
+      icon: 'hand-point-right',
+      title: t('.mock.title'),
+      target: '_blank',
+      position: 0
+    },
     icons: ['show', 'edit']
   ) { yield }
 %>

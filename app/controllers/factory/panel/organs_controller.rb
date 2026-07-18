@@ -1,5 +1,5 @@
 module Factory
-  class Panel::OrgansController < Panel::BaseController
+  class Panel::OrgansController < Org::Panel::OrgansController
 
     def index
       @organs = Organ.roots.page(params[:page])
