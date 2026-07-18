@@ -2,7 +2,7 @@ module Factory
   class Panel::OrgansController < Org::Panel::OrgansController
 
     def index
-      @organs = Organ.roots.page(params[:page])
+      @organs = Organ.includes(:provider).roots.page(params[:page])
     end
 
     private
