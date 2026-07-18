@@ -76,7 +76,7 @@ module Factory
       before_save :compute_price, if: -> { (changes.keys & ['cost_price', 'profit_price']).present? }
       before_create :init_default
       after_update :set_default, if: -> { default? && saved_change_to_default? }
-      after_update :set_enabled, if: -> { saved_change_to_enabled? }
+      after_save :set_enabled, if: -> { saved_change_to_enabled? }
       after_save :compute_min_max_price, if: -> { saved_change_to_price? }
       after_save :init_logo, if: -> { saved_change_to_product_id? && product }
       after_save :sync_log, if: -> { saved_change_to_stock? }
