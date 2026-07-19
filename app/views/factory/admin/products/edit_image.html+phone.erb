@@ -1,5 +1,5 @@
 <%= form_with theme: 'default_phone', model: @product, url: { action: 'update' } do |f| %>
-  <section class="modal-card-body">
+  <section id="modal-card-body" class="modal-card-body">
     <%= render 'error_messages', target: f.object %>
     <%= render 'com/attachments/list_field', target: f.object.covers, f: f %>
     <%= render 'com/attachments/list_field', target: f.object.images, f: f %>

@@ -1,6 +1,6 @@
 <%= form_with theme: 'inline', model: @production, url: { action: 'update_part' }, class: 'modal-card' do |f| %>
   <%= render 'modal_header' %>
-  <section id="modal_card_body" class="modal-card-body">
+  <section id="modal-card-body" class="modal-card-body">
     <%= render 'error_messages', target: f.object %>
     <%= render 'component_table' do %>
       <%= render partial: 'component_tbody', layout: 'component_tr', collection: @product.components, as: :component, locals: { f: f } %>

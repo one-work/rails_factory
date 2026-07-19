@@ -1,6 +1,6 @@
 <%= form_with theme: 'modal', model: @product_component, url: { action: 'update' }, data: { controller: 'equal' } do |f| %>
   <%= render 'modal_header' %>
-  <section class="modal-card-body">
+  <section id="modal-card-body" class="modal-card-body">
     <%= render 'error_messages', target: f.object %>
     <%= f.text_field :name %>
     <%= f.collection_select :part_taxon_id, @part_taxons, :id, :name %>
