@@ -45,9 +45,7 @@ module Factory
       accepts_nested_attributes_for :product_components, reject_if: :all_blank, allow_destroy: true
       accepts_nested_attributes_for :productions
 
-      has_one_attached :logo do |attachable|
-        attachable.variant :thumb, resize_to_limit: [64, 64], process: :later
-      end
+      has_one_attached :logo
       has_one_attached :manual
       has_many_attached :covers
       has_many_attached :images

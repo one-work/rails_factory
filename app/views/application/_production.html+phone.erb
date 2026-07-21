@@ -1,7 +1,7 @@
 <div id="production_<%= model.id %>" data-controller="common" class="media as-boxed">
   <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'media-left as-logo') do %>
     <figure class="image is-64x64">
-      <%= image_tag model.product.logo.variant(:thumb).url, loading: 'lazy' %>
+      <%= image_tag model.product.logo.variant(resize_to_limit: [64, 64]) %>
     </figure>
   <% end if model.product.logo.attached? %>
   <div class="media-content as-body overflow-x-hidden">
