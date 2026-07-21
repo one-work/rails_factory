@@ -4,7 +4,7 @@ module Factory
 
     included do
       attribute :production_enabled, :boolean
-      attribute :debug_enabled, :boolean
+      attribute :debug_enabled, :boolean, default: false
 
       has_many :factory_providers, class_name: 'Factory::FactoryProvider', foreign_key: :provider_id, dependent: :destroy_async
 
