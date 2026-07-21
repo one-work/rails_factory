@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.app.routes.draw do
   concern :productive do
     resources :productions, only: [:index, :create, :show] do
       collection do
