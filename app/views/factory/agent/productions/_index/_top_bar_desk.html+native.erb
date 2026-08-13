@@ -1,0 +1,7 @@
+<%=
+  button_to(
+    { controller: '/space/desks', action: 'change', con: 'factory/agent/productions', station_id: @desk.room.station_id },
+    form: { class: 'display-none', data: { controller: 'bridge-right-button', title: 'User' } }
+  ) do %>
+  <%= svg_tag 'ellipsis-vertical' %>
+<% end %>
