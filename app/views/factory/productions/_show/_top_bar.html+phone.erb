@@ -1,7 +1,7 @@
 <div data-controller="mini-program" class="as-bar">
-  <%= link_to({ action: 'index', taxon_id: @production.taxon_id }, class: 'px-4') do %>
-    <%= svg_tag 'angle-left', kind: 'regular' %>
-  <% end %>
+  <button data-controller="back" class="px-5">
+    <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
+  </button>
   <div class="bar-title truncate"><%= @production.title %></div>
   <%= button_to({ action: 'actions' }, class: 'px-4') do %>
     <%= svg_tag 'ellipsis-vertical' %>
