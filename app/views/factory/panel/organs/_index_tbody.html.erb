@@ -14,3 +14,4 @@
     <%= f.check_box :production_enabled, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
+<td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
