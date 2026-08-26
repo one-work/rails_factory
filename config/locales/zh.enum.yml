@@ -33,3 +33,7 @@ zh:
         provide_config_type:
           Factory::TaxonProvide: 品类供应商
           Factory::ProductProvide: 产品供应商
+      org/organ:
+        production_enabled:
+          true: 已上线
+          false: 未上线

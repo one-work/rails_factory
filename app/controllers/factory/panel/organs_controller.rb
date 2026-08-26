@@ -6,6 +6,13 @@ module Factory
     end
 
     private
+    def filter_columns
+      {
+        'production_enabled' => { type: 'dropdown', default: true },
+        'name' => 'search'
+      }
+    end
+
     def organ_params
       params.fetch(:organ, {}).permit(
         :production_enabled
