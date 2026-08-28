@@ -77,6 +77,7 @@ module Factory
       before_save :compute_profit_price, if: -> { (changes.keys & ['cost_price']).present? }
       before_save :compute_price, if: -> { (changes.keys & ['cost_price', 'profit_price']).present? }
       before_create :init_default
+      before_create :init_hot
       after_update :set_default, if: -> { default? && saved_change_to_default? }
       after_save :set_enabled, if: -> { saved_change_to_enabled? }
       after_save :compute_min_max_price, if: -> { saved_change_to_price? }
@@ -171,6 +172,10 @@ module Factory
 
     def init_default
       self.default = true if self.brothers.blank?
+    end
+
+    def init_hot
+      self.hot = true if self.class.where(organ_id: organ_id).count <= 4
     end
 
     def set_default

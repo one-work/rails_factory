@@ -11,7 +11,7 @@ module Factory
       has_many :provides, class_name: 'Factory::Provide', dependent: :destroy_async
       has_many :providers, through: :provides
       has_many :productions, class_name: 'Factory::Production'
-      has_many :top_productions, -> { includes(product: { logo_attachment: :blob }).default }, class_name: 'Factory::Production'
+      has_many :top_productions, -> { includes(product: { logo_attachment: :blob }).hot }, class_name: 'Factory::Production'
 
       has_one_attached :share_logo  # 门店预览图，宽高比为 5: 4
       has_one_attached :share_code
