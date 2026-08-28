@@ -16,6 +16,7 @@ module Factory
       attribute :enabled, :boolean, comment: '是否上架，注意空值是有意义的，当随着 SPU 下架则设置为空值，上架设置为True'
       attribute :automatic, :boolean, default: false
       attribute :presell, :boolean, default: false, comment: '预售'
+      attribute :hot, :boolean, comment: '推荐'
       attribute :link, :string
       attribute :position, :integer
       attribute :stock, :decimal
@@ -62,6 +63,7 @@ module Factory
 
       scope :enabled, -> { where(enabled: true) }
       scope :default, -> { where(default: true) }
+      scope :hot, -> { where(hot: true) }
       scope :list, -> { where(enabled: true, default: true) }
       scope :automatic, -> { where(automatic: true) }
 
