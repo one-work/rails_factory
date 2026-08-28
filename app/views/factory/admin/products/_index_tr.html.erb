@@ -21,6 +21,7 @@
       href: url_for(controller: 'productions', product_id: model.id),
       title: t('.productions.index.title'),
       count: model.productions_count
-    }
+    },
+    class: 'left-border'
   ) { yield }
 %>
