@@ -1,7 +1,11 @@
-<%=
-  button_to(
-    { action: 'preview' },
-    form: { class: 'display-none', data: { controller: 'bridge-right-button', title: 'User' } }
-  ) do %>
-  <%= svg_tag 'ellipsis-vertical' %>
-<% end %>
+<div class="as-bar">
+
+  <%=
+    button_to(
+      { action: 'preview' },
+      form: { class: 'display-none', data: { controller: 'bridge-right-button', title: 'User' } }
+    ) do %>
+    <%= svg_tag 'ellipsis-vertical' %>
+  <% end %>
+</div>
+
