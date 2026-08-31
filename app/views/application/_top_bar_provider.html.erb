@@ -3,5 +3,14 @@
     <%= svg_tag 'angle-left', kind: 'regular' %>
   <% end %>
   <div class="bar-title"><%= t('.title', default: '') %></div>
-  <i class="px-5"></i>
+  <div class="tabs is-toggle is-toggle-rounded is-small pr-3">
+    <ul>
+      <li class="<%= active_helper(dispatch: 'fetch', active: 'is-active') %>">
+        <%= link_to('打包', { dispatch: 'fetch' }, data: { turbo_action: 'replace' }) %>
+      </li>
+      <li class="<%= active_helper(dispatch: 'delivery', active: 'is-active') %>">
+        <%= link_to('外卖', { dispatch: 'delivery' }, data: { turbo_action: 'replace' }) %>
+      </li>
+    </ul>
+  </div>
 </div>
