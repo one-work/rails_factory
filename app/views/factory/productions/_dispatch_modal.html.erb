@@ -12,7 +12,7 @@
       )
     %>
     <label for="dispatch_<%= value %>" class="button is-fullwidth">
-      <p class="text-black"><%= Trade::Item.enum_i18n(:dispatch, value) %></p>
+      <span><%= Trade::Item.enum_i18n(:dispatch, value) %></span>
     </label>
   </div>
 <% end %>
