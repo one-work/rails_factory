@@ -1,5 +1,5 @@
 <div data-controller="custom" class="grid gap-2 as-actions">
-<% production.organ.dispatches.each do |value| %>
+<% (params[:dispatch] == 'fetch' ? (production.organ.dispatches & ['fetch', 'dine']) : (production.organ.dispatches & ['delivery'])).each do |value| %>
   <div class="cell is-fullwidth is-checked">
     <%=
       radio_button_tag(
