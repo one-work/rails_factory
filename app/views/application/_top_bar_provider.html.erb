@@ -1,6 +1,9 @@
 <div class="as-bar">
   <%= link_to({ controller: '/org/organs', host: Current.session.from_organ.host }, class: 'px-4') do %>
     <%= svg_tag 'angle-left', kind: 'regular' %>
+    <% if params[:dispatch] == 'delivery' && current_user.address_principal %>
+      <span class="text-grey"><%= current_user.address_principal.detail %></span>
+    <% end %>
   <% end %>
   <div class="bar-title"><%= t('.title', default: '') %></div>
   <div class="tabs is-toggle is-toggle-rounded is-small pr-3">
