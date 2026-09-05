@@ -14,8 +14,8 @@
   <div class="bar-title"><%= t('.title', default: '') %></div>
   <div class="tabs is-toggle is-toggle-rounded is-small pr-3">
     <ul>
-      <li class="<%= active_helper(dispatch: 'fetch', active: 'is-active') %>">
-        <%= link_to('打包', { dispatch: 'fetch' }, data: { turbo_action: 'replace' }) %>
+      <li class="<%= active_helper(dispatch: (['fetch', 'dine'] & [params[:fetch]]).fetch(0, 'dine'), active: 'is-active') %>">
+        <%= link_to('预点单', { dispatch: (['fetch', 'dine'] & [params[:fetch]]).fetch(0, 'dine') }, data: { turbo_action: 'replace' }) %>
       </li>
       <li class="<%= active_helper(dispatch: 'delivery', active: 'is-active') %>">
         <%= link_to('外卖', { dispatch: 'delivery' }, data: { turbo_action: 'replace' }) %>
