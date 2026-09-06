@@ -57,6 +57,7 @@ module Factory
 
       before_save :sync_from_taxon, if: -> { taxon_id_changed? }
       after_save :sync_taxon, if: -> { saved_change_to_taxon_id? }
+      after_save :process_logo!, if: -> { attachment_changes.key?('logo') }
       after_update :set_specialty, if: -> { specialty? && saved_change_to_specialty? }
       after_update :set_published, if: -> { saved_change_to_published? }
       after_save_commit :sync_position_later, if: -> { saved_change_to_position? && enable_reorder? }
@@ -117,6 +118,12 @@ module Factory
         factory_taxon_id: factory_taxon_id,
         organ_id: organ_id
       )
+    end
+
+    def process_logo!
+      productions.find_each do |p|
+        p.init_logo
+      end
     end
 
   end
