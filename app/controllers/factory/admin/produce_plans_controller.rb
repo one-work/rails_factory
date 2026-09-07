@@ -19,7 +19,7 @@ module Factory
       q_params.merge! default_params
       q_params.merge! params.permit(:taxon_id)
 
-      @productions = Production.includes(:taxon, product: { logo_attachment: :blob }).default_where(q_params).where.not(id: @production_plans.pluck(:production_id)).order(taxon_id: :desc).page(params[:page])
+      @productions = Production.includes(:taxon, :product, logo_attachment: :blob).default_where(q_params).where.not(id: @production_plans.pluck(:production_id)).order(taxon_id: :desc).page(params[:page])
     end
 
     private

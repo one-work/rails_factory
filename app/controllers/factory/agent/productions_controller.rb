@@ -27,7 +27,7 @@ module Factory
       }
       q_params.merge! default_params
 
-      @productions = Production.includes(:parts, :production_plans, product: { logo_attachment: :blob }).default_where(q_params).default.page(params[:page]).per(10)
+      @productions = Production.includes(:parts, :production_plans, :product, logo_attachment: :blob).default_where(q_params).default.page(params[:page]).per(10)
     end
 
     def produce_on
