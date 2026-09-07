@@ -52,6 +52,16 @@ module Factory
       Trade::Item.enum_i18n(:dispatch, dispatch)
     end
 
+    def dispatch_options(params)
+      if ['delivery'].include? params[:dispatch]
+        dispatches & ['delivery']
+      elsif ['fetch', 'dine'].include?(params[:dispatch])
+        dispatches & ['fetch', 'dine']
+      else
+        dispatches
+      end
+    end
+
     def name_detail
       "#{name} (#{id})"
     end
