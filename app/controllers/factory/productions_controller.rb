@@ -53,10 +53,10 @@ module Factory
         if @produce_plan.expired?
           render 'expired'
         else
-          @productions = @produce_plan.productions.includes(:organ, :parts, product: { logo_attachment: :blob }).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
+          @productions = @produce_plan.productions.includes(:organ, :parts, :product, logo_attachment: :blob).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
         end
       else
-        @productions = Production.includes(:organ, :parts, product: { logo_attachment: :blob }).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
+        @productions = Production.includes(:organ, :parts, :product, logo_attachment: :blob).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
       end
     end
 
@@ -67,7 +67,7 @@ module Factory
       q_params.merge! default_params
       q_params.merge! params.permit(:taxon_id, 'name-like')
 
-      @productions = Production.includes(:organ, :parts, product: { logo_attachment: :blob }).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
+      @productions = Production.includes(:organ, :parts, :product, logo_attachment: :blob).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
     end
 
     def produce_on
