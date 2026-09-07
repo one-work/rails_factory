@@ -1,6 +1,6 @@
 <div class="media" data-controller="common" id="production_<%= model.id %>">
   <%= link_to({ controller: '/factory/productions', action: 'dialog', id: model.id }, text: true, data: { controller: 'empty', method: 'put', action: 'common#link' }, class: 'weui-media-box__hd as-logo') do %>
-    <%= image_tag model.product.logo, class: 'image is-64x64' if model.product.logo.attached? %>
+    <%= image_tag model.logo, class: 'image is-64x64' if model.logo.attached? %>
   <% end %>
   <div class="weui-media-box__bd as-body">
     <%= link_to({ controller: '/factory/productions', action: 'show', id: model.id }, text: true, class: 'weui-media-box__title') do %>

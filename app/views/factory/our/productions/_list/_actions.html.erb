@@ -1,6 +1,6 @@
 <%= link_to({ action: 'members', production_id: model.production_id, **params.permit(:produce_on, :scene_id) }, class: 'cell has-block-space-between') do %>
   <span class="is-several">
-    <%= image_tag model.production.product.logo, class: 'image is-24x24' if model.production.product.logo.attached? %>
+    <%= image_tag model.production.logo, class: 'image is-24x24' if model.production.logo.attached? %>
     <span><%= model.production.name %></span>
     <span class="text-danger"><%= model.production.price.to_money.format.html_safe %></span>
   </span>
