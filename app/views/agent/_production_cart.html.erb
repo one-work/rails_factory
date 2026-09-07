@@ -4,7 +4,7 @@
     button_to(
       { controller: 'factory/agent/productions', action: 'show', id: model.id },
       params: {
-        dispatch: params[:dispatch].presence || current_organ.dispatch,
+        **{ dispatch: params[:dispatch].presence }.compact,
         **params.permit(:desk_id, :station_id)
       },
       class: 'button is-small is-rounded is-primary'
@@ -12,7 +12,7 @@
   %>
     <span>选规格</span>
   <% end %>
-  <% items = cart.find_items(model.product.production_ids, dispatch: params[:dispatch].presence || current_organ.dispatch, **params.permit(:produce_on, :scene_id)) %>
+  <% items = cart.find_items(model.product.production_ids, **{ dispatch: params[:dispatch].presence }.compact, **params.permit(:produce_on, :scene_id)) %>
   <% if items.present? %>
     <span class="tag is-badge is-danger"><%= items.size %></span>
   <% end %>
