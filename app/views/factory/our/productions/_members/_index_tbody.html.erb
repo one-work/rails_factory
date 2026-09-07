@@ -9,7 +9,7 @@
 <% model.cart_trade_items.each do |trade_item| %>
   <div>
     <%= form_with theme: nil, model: trade_item, url: { controller: 'trade_items', action: 'toggle', id: trade_item.id }, data: { controller: 'input' }, class: 'is-inline' do |f| %>
-      <%= f.check_box :status, value: trade_item.status_checked? ? 'checked' : 'init', checked: trade_item.status_checked?, data: { action: 'click->input#form' }, id: nil %>
+      <%= f.checkbox :status, value: trade_item.status_checked? ? 'checked' : 'init', checked: trade_item.status_checked?, data: { action: 'click->input#form' }, id: nil %>
     <% end %>
     <span><%= trade_item.good_name %></span>
     <span><%= trade_item.produce_on %></span>

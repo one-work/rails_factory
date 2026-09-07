@@ -1,6 +1,6 @@
 <div class="level-left flex-direction-row">
   <%= form_with theme: nil, model: item, url: { controller: 'trade/in/items', action: 'update', id: item.id }, data: { controller: 'input' }, class: 'is-inline level-item mb-0' do |f| %>
-    <%= f.check_box :status, { checked: item.status_checked?, data: { action: 'click->input#form' }, id: nil }, item.id %>
+    <%= f.checkbox :status, { checked: item.status_checked?, data: { action: 'click->input#form' }, id: nil }, item.id %>
   <% end %>
   <div class="level-item ml-2">
     <span><%= item.good_name %></span>

@@ -8,7 +8,7 @@
 </td>
 <td>
   <%= form_with theme: 'switch', model: model, url: { controller: 'production_plans', action: 'update', production_id: model.production_id, id: model.id }, data: { controller: 'input' } do |f| %>
-    <%= f.check_box :specialty, data: { action: 'input#submit' }, id: nil %>
+    <%= f.checkbox :specialty, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
 <td>

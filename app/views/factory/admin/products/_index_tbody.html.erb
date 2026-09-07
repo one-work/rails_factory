@@ -8,7 +8,12 @@
 </td>
 <td>
 <% model.productions[0..2].each do |production| %>
-  <p><%= production.title %></p>
+  <div>
+    <span><%= production.title %></span>
+    <%= button_to({ controller: 'productions', action: 'edit', product_id: model.id, id: production.id }) do %>
+      <%= svg_tag 'pencil' %>
+    <% end %>
+  </div>
 <% end %>
 <% if model.productions.size > 2 %>
   <%= link_to({ controller: 'productions', product_id: model.id }, text: true, class: 'display-block mt-2') do %>

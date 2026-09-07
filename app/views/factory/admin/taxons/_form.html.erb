@@ -3,4 +3,4 @@
 <%= render 'com/attachments/list_field', target: f.object.logo, f: f %>
 <%= render 'com/attachments/list_field', target: f.object.logo_color, f: f %>
 <%= f.collection_select :scene_id, @scenes, :id, :title if @scenes.present? %>
-<%= f.check_box :customizable %>
+<%= f.checkbox :customizable %>

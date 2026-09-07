@@ -3,7 +3,7 @@
   <div class="field-body">
     <div class="field has-addons">
       <div class="control">
-        <div class="button is-static"><%= @product.name %></div>
+        <div class="button is-static"><%= @production.title %></div>
       </div>
       <%= f.text_field :name, autofocus: true, label: nil, all: { normal: nil }, wrap: { input: 'control is-expanded' } %>
     </div>
@@ -14,3 +14,4 @@
 <%= f.number_field :price, data: { total_target: 'total', action: 'total#updateTotal' } %>
 <%= f.text_field :link %>
 <%= f.number_field :step %>
+<%= f.checkbox :hot %>

@@ -26,5 +26,5 @@
     ><%= ef.object.number %></div>
   <% end %>
   </td>
-  <td><%= ef.check_box '_destroy', { checked: ef.object.persisted?, include_hidden: true, data: { action: 'show#toggle' } }, '0', '1' %></td>
+  <td><%= f.checkbox '_destroy', { checked: ef.object.persisted?, include_hidden: true, data: { action: 'show#toggle' } }, '0', '1' %></td>
 <% end %>
