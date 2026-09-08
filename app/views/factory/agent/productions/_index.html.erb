@@ -1,9 +1,5 @@
-<%= button_to({ controller: '/space/desks', action: 'change', con: 'factory/agent/productions' }, class: 'media is-fullwidth', form: { class: 'is-fullwidth' }) do %>
-  <div class="media-content">
-    <%= svg_tag 'qrcode' %>
-    <span><%= t('space.desks.change.title') %></span>
+<div class="fixed-grid has-3-cols">
+  <div class="grid gap-2">
+    <%= render partial: 'space_change_desk', collection: @desks, as: :model, locals: { con: controller_path } %>
   </div>
-  <div class="media-right">
-    <%= svg_tag 'chevron-right' %>
-  </div>
-<% end %>
+</div>

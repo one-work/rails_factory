@@ -18,6 +18,10 @@ module Factory
       @productions = Production.includes(:parts, :production_plans, :taxon, product: [:productions, { logo_attachment: :blob }]).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
     end
 
+    def preview
+      @desks = Desk.where(default_params).order(id: :desc).page(params[:page])
+    end
+
     def list
       q_params = {
         production_plans: {
