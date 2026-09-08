@@ -1,11 +1,11 @@
 <div class="as-bar">
-  <i class="px-5"></i>
+  <i class="left"></i>
   <div class="bar-title"><%= @desk.name %></div>
   <%=
     button_to(
       { controller: '/space/desks', action: 'change', con: 'factory/agent/productions' },
       params: { desk_id: @desk.id },
-      form: { class: 'px-4' }
+      form: { class: 'right' }
     ) do
   %>
     <%= svg_tag 'ellipsis-vertical' %>

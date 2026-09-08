@@ -1,6 +1,18 @@
 <%= render layout: 'top_bar_left' do %>
   <div class="bar-title"><%= @desk.name %></div>
-  <%= button_to({ controller: '/space/desks', action: 'change', con: 'factory/agent/productions', station_id: @desk.room.station_id }, form: { class: 'px-4' }) do %>
-    <%= svg_tag 'ellipsis-vertical' %>
+  <%=
+    button_to(
+      {
+        controller: '/space/desks',
+        action: 'change',
+        con: 'factory/agent/productions',
+        station_id: @desk.room.station_id
+      },
+      class: 'text-link',
+      form: { class: 'right' }
+    ) do
+  %>
+    <span>选择桌台</span>
+    <%= svg_tag 'angle-right' %>
   <% end %>
 <% end %>

@@ -1,9 +1,9 @@
 <div data-controller="mini-program" class="as-bar">
-  <button data-controller="history" data-action="history#back" class="px-5">
+  <button id="history-button" data-controller="history" data-action="history#back" class="left">
     <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
   </button>
   <div class="bar-title truncate"><%= @production.title %></div>
-  <%= button_to({ action: 'actions' }, class: 'px-4') do %>
+  <%= button_to({ action: 'actions' }, form: { class: 'right' }) do %>
     <%= svg_tag 'ellipsis-vertical' %>
   <% end %>
 </div>
