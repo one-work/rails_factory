@@ -4,7 +4,7 @@
     data-controller="history"
     data-history-url-value="<%= url_for(controller: '/org/organs', host: Current.session.from_organ.host) %>"
     data-action="history#back"
-    class="px-4"
+    class="left"
   >
     <%= svg_tag 'angle-left', kind: 'regular' %>
     <% if params[:dispatch] == 'delivery' && current_user.address_principal %>
@@ -12,7 +12,7 @@
     <% end %>
   </button>
   <div class="bar-title"><%= t('.title', default: '') %></div>
-  <div class="tabs is-toggle is-toggle-rounded is-small pr-3">
+  <div class="tabs is-toggle is-toggle-rounded is-small right">
     <ul>
       <li class="<%= active_helper(dispatch: (['fetch', 'dine'] & [params[:fetch]]).fetch(0, 'dine'), active: 'is-active') %>">
         <%= link_to('预点单', { dispatch: (['fetch', 'dine'] & [params[:fetch]]).fetch(0, 'dine') }, data: { turbo_action: 'replace' }) %>
