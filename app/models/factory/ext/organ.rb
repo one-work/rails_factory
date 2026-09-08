@@ -57,6 +57,8 @@ module Factory
         dispatches & ['delivery']
       elsif ['fetch', 'dine'].include?(params[:dispatch])
         dispatches & ['fetch', 'dine']
+      elsif params[:desk_id].present?
+        dispatches & ['fetch', 'dine']
       else
         dispatches
       end
