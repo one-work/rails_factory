@@ -4,10 +4,10 @@
     button_to(
       { controller: ['factory', params.fetch(:namespace, ''), 'productions'].compact_blank.join('/'), action: 'show', id: model.id },
       params: params.permit(:dispatch, :desk_id, :station_id).compact_blank,
-      class: 'button is-small is-rounded is-primary'
+      class: 'button is-small is-primary'
     ) do
   %>
-    <span>选规格</span>
+    <%= svg_tag 'cart-plus', class: 'icon' %>
   <% end %>
   <% items = @cart&.find_items(model.product.production_ids, **params.permit(:dispatch, :produce_on, :scene_id)) %>
   <% if items.present? %>
