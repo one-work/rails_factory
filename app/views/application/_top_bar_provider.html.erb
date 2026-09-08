@@ -8,7 +8,7 @@
   >
     <%= svg_tag 'angle-left', kind: 'regular' %>
     <% if params[:dispatch] == 'delivery' && current_user.address_principal %>
-      <span class="text-grey"><%= current_user.address_principal.detail %></span>
+      <span class="size-7 text-grey"><%= current_user.address_principal.detail %></span>
     <% end %>
   </button>
   <div class="bar-title"><%= t('.title', default: '') %></div>
