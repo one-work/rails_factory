@@ -23,10 +23,8 @@ module Factory
         :taxon,
         :parts,
         :organ,
-        product: [
-          :brand,
-          { logo_attachment: { blob: { variant_records: { image_attachment: :blob } } } }
-        ]
+        product: [:brand],
+        logo_attachment: :blob
       ).list.default_where(q_params).order(position: :asc).page(params[:page]).per(params[:per])
     end
 
@@ -34,7 +32,7 @@ module Factory
       if @produce_plan.expired?
         render 'expired'
       else
-        @productions = @produce_plan.productions.includes(:organ, :parts, product: [:brand, { logo_attachment: :blob }]).page(params[:page]).per(params[:per])
+        @productions = @produce_plan.productions.includes(:organ, :parts, product: [:brand], logo_attachment: :blob).page(params[:page]).per(params[:per])
       end
     end
 
