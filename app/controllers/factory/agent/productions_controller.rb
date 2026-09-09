@@ -19,7 +19,7 @@ module Factory
     end
 
     def preview
-      @desks = Desk.where(default_params).order(id: :desc).page(params[:page])
+      @desks = Desk.where(default_params).order(id: :asc).page(params[:page])
     end
 
     def list
