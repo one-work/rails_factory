@@ -52,7 +52,7 @@ module Factory
       QrcodeUtil.code_png(enter_url, border_modules: 0, fill: 'pink')
     end
 
-    def to_cpcl(qr = BaseCpcl.new)
+    def to_esc(qr, aim: 'label')
       qr.text production.word
       qr.text code
       qr.qrcode_right(enter_url)
@@ -70,12 +70,6 @@ module Factory
         pdf.image StringIO.new(qrcode_enter_png.to_blob), fit: [60, 60], position: :right, vposition: :top
       end
       pdf
-    end
-
-    def print
-      production.organ.device.print(to_gid) do |pr|
-        to_cpcl(pr)
-      end
     end
 
     def sync_stock
