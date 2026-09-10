@@ -166,7 +166,7 @@ module Factory
 
     def to_esc(pr, aim: 'label')
       pr.text_big_center word
-      pr.qrcode_right(enter_url)
+      #pr.qrcode_right(enter_url)
       pr
     end
 
