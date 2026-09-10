@@ -17,7 +17,6 @@ module Factory
     def organ_params
       params.fetch(:organ, {}).permit(
         :name,
-        :dispatch,
         :print_note,
         :share_logo,
         :start_at,
