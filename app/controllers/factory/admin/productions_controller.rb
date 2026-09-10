@@ -55,10 +55,6 @@ module Factory
     def import
     end
 
-    def print_data
-      render json: @production.to_cpcl.render.bytes
-    end
-
     private
     def set_taxon
       @taxon = Taxon.default_where(default_params).find params[:taxon_id]

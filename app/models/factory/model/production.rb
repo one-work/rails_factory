@@ -164,8 +164,8 @@ module Factory
       )
     end
 
-    def to_cpcl(qr = BaseCpcl.new)
-      qr.text word
+    def to_esc(pr, aim: 'label')
+      qr.text_big_center word
       qr.qrcode_right(enter_url)
       qr
     end

@@ -140,7 +140,6 @@ Rails.app.routes.draw do
             patch :update_wallet
             patch :provide
             post :edit_stock
-            get :print_data
           end
         end
         resources :taxon_provides
@@ -190,7 +189,6 @@ Rails.app.routes.draw do
             patch :update_wallet
             patch :provide
             post :edit_stock
-            get :print_data
           end
         end
         resources :fits
@@ -248,7 +246,6 @@ Rails.app.routes.draw do
             patch 'delivery/:item_id' => :update_delivery
             patch :print
             get :pdf
-            get :print_data
           end
         end
         resources :rent_charges do
