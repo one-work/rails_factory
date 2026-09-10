@@ -165,9 +165,9 @@ module Factory
     end
 
     def to_esc(pr, aim: 'label')
-      qr.text_big_center word
-      qr.qrcode_right(enter_url)
-      qr
+      pr.text_big_center word
+      pr.qrcode_right(enter_url)
+      pr
     end
 
     def init_default
