@@ -5,4 +5,14 @@
     <span><%= @desk.content %></span>
   </div>
   <div class="right"></div>
+  <div class="tabs is-toggle is-toggle-rounded is-small right">
+    <ul>
+      <li class="<%= active_helper(dispatch: 'dine', active: 'is-active') %>">
+        <%= link_to('堂食', { dispatch: 'dine' }, data: { turbo_action: 'replace' }) %>
+      </li>
+      <li class="<%= active_helper(dispatch: 'fetch', active: 'is-active') %>">
+        <%= link_to('自取', { dispatch: 'fetch' }, data: { turbo_action: 'replace' }) %>
+      </li>
+    </ul>
+  </div>
 </div>
