@@ -7,10 +7,10 @@
   <div class="tabs is-toggle is-toggle-rounded is-small right">
     <ul>
       <li class="<%= active_helper(dispatch: 'dine', active: 'is-active') %>">
-        <%= link_to('堂食', { dispatch: 'dine' }, data: { turbo_action: 'replace' }) %>
+        <%= link_to('堂食', filter_params(dispatch: 'dine'), data: { turbo_action: 'replace' }) %>
       </li>
       <li class="<%= active_helper(dispatch: 'fetch', active: 'is-active') %>">
-        <%= link_to('自取', { dispatch: 'fetch' }, data: { turbo_action: 'replace' }) %>
+        <%= link_to('自取', filter_params(dispatch: 'fetch'), data: { turbo_action: 'replace' }) %>
       </li>
     </ul>
   </div>
