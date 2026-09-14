@@ -1,6 +1,6 @@
 <% if params[:station_id].present? %>
   <%= render 'top_bar_station' %>
-<% elsif params[:desk_id].present? %>
+<% elsif session[:desk_id].present? %>
   <%= render 'top_bar_desk' %>
 <% elsif Current.session.from_organ %>
   <%= render 'top_bar_provider' %>
