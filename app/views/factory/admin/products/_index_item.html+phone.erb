@@ -1,4 +1,6 @@
-<div class="text-grey"><%= model.name %></div>
+<div>
+  <strong><%= model.name %></strong>
+</div>
 <% if model.production %>
   <div class="text-danger"><%= model.production.price.to_money.format.html_safe %></div>
 <% end %>
