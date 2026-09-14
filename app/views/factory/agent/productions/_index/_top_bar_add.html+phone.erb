@@ -1,7 +1,11 @@
 <%= render layout: 'top_bar_left' do %>
   <div class="bar-title"><%= t('.title') %></div>
-  <%= button_to({ action: 'preview' }, class: 'text-link', form: { class: 'right' }) do %>
-    <span>选择桌台</span>
-    <%= svg_tag 'angle-right' %>
+  <% if current_organ.desks_count > 0 %>
+    <%= button_to({ action: 'preview' }, class: 'text-link', form: { class: 'right' }) do %>
+      <span>选择桌台</span>
+      <%= svg_tag 'angle-right', kind: 'regular' %>
+    <% end %>
+  <% else %>
+    <i class="right"></i>
   <% end %>
 <% end %>
