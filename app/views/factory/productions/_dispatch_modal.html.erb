@@ -1,11 +1,11 @@
 <div data-controller="custom" class="grid gap-2 as-actions">
-<% production.organ.dispatch_options(params).each do |value| %>
+<% production.organ.dispatch_options(**params.permit(:desk_id, :dispatch), **session.to_h.slice('desk_id')).each do |value| %>
   <div class="cell is-fullwidth is-checked">
     <%=
       radio_button_tag(
         'dispatch',
         value,
-        value.to_s == (params[:dispatch].presence || production.organ.dispatch),
+        value.to_s == params[:dispatch].presence,
         data: { action: 'custom#submit' },
         class: 'display-none',
         form: 'edit_custom'

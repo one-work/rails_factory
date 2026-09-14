@@ -52,7 +52,8 @@ module Factory
       Trade::Item.enum_i18n(:dispatch, dispatch)
     end
 
-    def dispatch_options(params)
+    def dispatch_options(**params)
+      params.symbolize_keys!
       if ['delivery'].include? params[:dispatch]
         dispatches & ['delivery']
       elsif ['fetch', 'dine'].include?(params[:dispatch])
