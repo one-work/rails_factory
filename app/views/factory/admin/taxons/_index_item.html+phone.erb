@@ -1,5 +1,5 @@
 <p class="is-several">
-  <%= image_tag model.logo, class: 'image is-32x32' if model.logo.attached? %>
+  <%= image_tag model.logo.variant(resize_to_limit: [32, 32]), class: 'image is-32x32' if model.logo.attached? %>
   <span><%= model.name %></span>
   <% if model.scene %>
     <span class="tag"><%= model.scene.title %></span>
