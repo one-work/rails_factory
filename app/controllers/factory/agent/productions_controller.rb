@@ -68,7 +68,11 @@ module Factory
     end
 
     def set_cart
-      @cart = Trade::Cart.get_cart(params, agent_id: current_member.id, **default_params)
+      @cart = Trade::Cart.get_cart(
+        params,
+        agent_id: current_member.id,
+        **default_params
+      )
     end
 
   end
