@@ -85,6 +85,13 @@ module Factory
       after_save :sync_log, if: -> { saved_change_to_stock? }
     end
 
+    def can_select?
+      product.productions_count > 1
+      || product.product_parts_count > 0
+      || taxon&.taxon_components_count.to_i > 0
+      || organ.dispatches.size > 1
+    end
+
     def init_logo
       self.logo.attach product.logo_blob unless logo.attached?
     end
