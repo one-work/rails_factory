@@ -2,9 +2,9 @@
   <% if model.can_select? %>
   <div class="media-left">
   <% if model.logo.attached? %>
-    <%= image_tag model.logo.variant(resize_to_limit: [64, 64]), class: 'image is-64x64' %>
+    <%= image_tag model.logo.variant(resize_to_limit: [64, 64]), class: 'image is-radius is-64x64' %>
   <% else %>
-    <%= image_tag 'product_default.jpg', class: 'image is-64x64' %>
+    <%= image_tag 'product_default.jpg', class: 'image is-radius is-64x64' %>
   <% end %>
   </div>
   <% end %>
@@ -12,7 +12,7 @@
     <div class="is-several">
       <% unless model.can_select? %>
         <% if model.logo.attached? %>
-          <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-24x24' %>
+          <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-radius is-24x24' %>
         <% end %>
       <% end %>
       <span><%= model.title %></span>
