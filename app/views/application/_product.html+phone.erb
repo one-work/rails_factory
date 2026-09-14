@@ -1,6 +1,6 @@
 <div id="product_<%= model.id %>" data-controller="common" class="media as-boxed">
   <%= link_to({ action: 'show', id: model.id }, text: true, data: { controller: 'empty' }, class: 'media-left as-logo') do %>
-    <%= image_tag model.logo, class: 'image is-64x64' if model.logo.attached? %>
+    <%= image_tag model.logo, class: 'image is-radius is-64x64' if model.logo.attached? %>
   <% end %>
   <div class="media-content as-body">
     <%= link_to({ action: 'show', id: model.id }, text: true, class: 'text-grey-dark') do %>

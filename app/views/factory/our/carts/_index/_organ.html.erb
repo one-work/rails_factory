@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-left">
-    <%= image_tag provider[0].logo.variant(resize_to_limit: [150, 150]), class: 'image is-64x64' if provider[0].logo.attached? %>
+    <%= image_tag provider[0].logo.variant(resize_to_limit: [150, 150]), class: 'image is-radius is-64x64' if provider[0].logo.attached? %>
   </div>
   <div class="media-content">
     <strong class="weui-media-box__title"><%= provider[0].name %></strong>

@@ -8,11 +8,11 @@
 </div>
 <div>
   <dt><%= Factory::Taxon.human_attribute_name(:logo) %></dt>
-  <dd><%= image_tag @taxon.logo, class: 'image is-64x64' if @taxon.logo.attached? %></dd>
+  <dd><%= image_tag @taxon.logo, class: 'image is-radius is-64x64' if @taxon.logo.attached? %></dd>
 </div>
 <div>
   <dt><%= Factory::Taxon.human_attribute_name(:logo_color) %></dt>
-  <dd><%= image_tag @taxon.logo_color, class: 'image is-64x64' if @taxon.logo_color.attached? %></dd>
+  <dd><%= image_tag @taxon.logo_color, class: 'image is-radius is-64x64' if @taxon.logo_color.attached? %></dd>
 </div>
 <div>
   <dt><%= Factory::Taxon.human_attribute_name(:products_count) %></dt>
