@@ -18,6 +18,8 @@ module Factory
       q_params.merge! taxon_id: taxon_ids if taxon_ids.present?
       q_params.merge! params.permit(:taxon_id, :factory_taxon_id, 'word-like')
 
+      session[:desk_id] = params[:desk_id] if params.include?(:desk_id)
+
       # json_filter_any('wallet_price', *@cart.custom_wallets.pluck(:code))
       @productions = Production.includes(
         :taxon,
@@ -157,6 +159,8 @@ module Factory
     def set_station
       if params[:desk_id]
         @desk = Space::Desk.find params[:desk_id]
+      elsif session[:desk_id]
+        @desk = Space::Desk.find session[:desk_id]
       elsif params[:station_id]
         @station = Space::Station.find params[:station_id]
       end

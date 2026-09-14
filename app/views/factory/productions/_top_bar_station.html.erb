@@ -1,10 +1,10 @@
 <div class="as-bar">
-  <i class="px-5"></i>
+  <i class="left"></i>
   <div class="bar-title">
     <%= svg_tag 'location-dot' %>
-    <span class="ml-1"><%= @station.content %></span>
+    <span><%= @station.content %></span>
   </div>
-  <div class="px-4">
+  <div class="right">
     <%= link_to({ controller: '/space/stations' }) do %>
       <%= svg_tag 'chevron-right' %>
     <% end %>
