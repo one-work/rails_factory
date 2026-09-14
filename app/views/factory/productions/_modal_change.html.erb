@@ -5,10 +5,12 @@
 >
   <div data-action="click->modal#close" class="modal-background has-animate-fade-in"></div>
   <div class="modal-card">
-    <header class="modal-card-head">
-      <span style="width: 1.25rem"></span>
-      <p class="modal-card-title"><%= @production.product.name %></p>
-      <button type="button" data-action="modal#close" class="delete"></button>
+    <header class="modal-card-head as-bar">
+      <span class="left"></span>
+      <p class="bar-title"><%= @production.product.name %></p>
+      <button type="button" data-action="modal#close" class="button is-borderless left">
+        <%= svg_tag 'xmark' %>
+      </button>
     </header>
     <div id="production_modal_body" class="modal-card-body">
       <%= yield %>
