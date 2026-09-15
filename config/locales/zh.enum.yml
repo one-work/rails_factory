@@ -29,6 +29,9 @@ zh:
         enabled:
           true: 已上架
           false: 未上架
+        hot:
+          true: 推荐展示
+          false: 取消推荐
       factory/production_provide:
         provide_config_type:
           Factory::TaxonProvide: 品类供应商

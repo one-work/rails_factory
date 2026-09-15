@@ -10,6 +10,9 @@
 <% model.productions[0..2].each do |production| %>
   <div>
     <span><%= production.title %></span>
+    <% if production.hot %>
+      <span class="tag if-info"><%= production.hot_i18n %></span>
+    <% end %>
     <%= button_to({ controller: 'productions', action: 'edit', product_id: model.id, id: production.id }) do %>
       <%= svg_tag 'pencil' %>
     <% end %>
