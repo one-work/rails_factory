@@ -2,7 +2,7 @@
   <div class="weui-panel__hd">
     <div class="level is-mobile justify-content-space-between">
       <div class="level-left is-several">
-        <%= image_tag scene.logo, class: 'image is-32x32' if scene.logo.attached? %>
+        <%= image_tag scene.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if scene.logo.attached? %>
         <span><%= scene.title %></span>
       </div>
       <div class="level-right mt-0">

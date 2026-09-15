@@ -13,7 +13,7 @@
     </p>
     <div class="text-centered pt-2">
       <div class="is-several">
-        <%= image_tag model.scene.logo, class: 'image is-32x32' if model.scene.logo.attached? %>
+        <%= image_tag model.scene.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if model.scene.logo.attached? %>
         <span><%= model.scene.title %></span>
       </div>
     </div>

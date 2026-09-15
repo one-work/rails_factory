@@ -15,7 +15,7 @@
     </p>
     <div class="pt-2">
       <div class="is-several">
-        <%= image_tag scene.logo, class: 'image is-32x32' if scene.logo.attached? %>
+        <%= image_tag scene.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if scene.logo.attached? %>
         <strong><%= scene.title %></strong>
       </div>
     </div>

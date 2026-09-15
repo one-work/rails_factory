@@ -1,7 +1,7 @@
 <div class="box">
   <div class="weui-panel__hd">
     <div class="is-several">
-      <%= image_tag @scene.logo, class: 'image is-32x32' if @scene.logo.attached? %>
+      <%= image_tag @scene.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if @scene.logo.attached? %>
       <span><%= @scene.title %></span>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <div class="media">
   <div class="media-content">
     <div class="flex justify-content-center">
-      <%= image_tag scene.logo, class: 'image is-32x32' if scene.logo.attached? %>
+      <%= image_tag scene.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if scene.logo.attached? %>
       <span><%= scene.title %></span>
     </div>
     <p class="size-7 text-centered">

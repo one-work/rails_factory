@@ -3,7 +3,7 @@
 </td>
 <td>
   <%= link_to({ controller: 'taxon/products', taxon_id: model.id }, class: 'is-several') do %>
-    <%= image_tag model.logo, class: 'image is-32x32' if model.logo.attached? %>
+    <%= image_tag model.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if model.logo.attached? %>
     <span><%= model.name %></span>
   <% end %>
   <p class="text-grey"><%= model.scene&.title %></p>

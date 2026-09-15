@@ -13,7 +13,7 @@
   <div class="flex justify-content-center">
     <div class="button is-light mt-2 pl-0">
       <span class="icon">
-        <%= image_tag scene.logo, class: 'image is-32x32' if scene.logo.attached? %>
+        <%= image_tag scene.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if scene.logo.attached? %>
       </span>
       <div class="">
         <span><%= scene.title %></span>

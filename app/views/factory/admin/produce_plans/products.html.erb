@@ -3,7 +3,7 @@
   <tr>
     <td rowspan="<%= productions.size + 1 %>">
       <div class="is-several">
-        <%= image_tag product.logo.variant(resize_to_limit: [80, 80]), class: 'image is-32x32' if product.logo.attached? %>
+        <%= image_tag product.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if product.logo.attached? %>
         <%= link_to product.name, { action: 'show', id: product.id }, text: true %>
       </div>
     </td>
@@ -17,7 +17,7 @@
     <tr>
       <td rowspan="<%= production_plans.size + 1 %>">
         <div class="is-several">
-          <%= image_tag product.logo.variant(resize_to_limit: [80, 80]), class: 'image is-32x32' if product.logo.attached? %>
+          <%= image_tag product.logo.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if product.logo.attached? %>
           <%= link_to product.name, { action: 'show', id: product.id }, text: true %>
         </div>
       </td>
