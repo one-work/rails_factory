@@ -5,7 +5,7 @@
   </div>
   <p class="text-grey"><%= model.title %></p>
 </td>
-<td class="has-inner-table">
+<td>
   <% model.parts.each do |part| %>
     <%= link_to({ controller: 'productions', action: 'show', product_id: part.product_id, id: part.id }, data: { turbo_frame: 'modal' }, class: 'tag is-info') do %>
       <span><%= part.name %></span>
