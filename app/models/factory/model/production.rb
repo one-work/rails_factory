@@ -85,11 +85,11 @@ module Factory
       after_save :sync_log, if: -> { saved_change_to_stock? }
     end
 
-    def can_select?
+    def can_select?(**options)
       product.productions_count > 1
       || product.product_parts_count > 0
       || taxon&.taxon_components_count.to_i > 0
-      || organ.dispatches.size > 1
+      || (organ.dispatches.size > 1 && options[:dispatch] != 'delivery')
     end
 
     def init_logo

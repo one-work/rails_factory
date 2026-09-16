@@ -18,7 +18,11 @@ module Factory
       q_params.merge! taxon_id: taxon_ids if taxon_ids.present?
       q_params.merge! params.permit(:taxon_id, :factory_taxon_id, 'word-like')
 
-      session[:desk_id] = params[:desk_id] if params.include?(:desk_id)
+      if params.include?(:desk_id)
+        session[:desk_id] = params[:desk_id]
+      elsif params[:dispatch] == 'delivery'
+        session.delete(:desk_id)
+      end
 
       # json_filter_any('wallet_price', *@cart.custom_wallets.pluck(:code))
       @productions = Production.includes(
