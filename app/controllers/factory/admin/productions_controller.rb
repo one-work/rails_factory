@@ -87,7 +87,8 @@ module Factory
         :automatic,
         :link,
         :stock,
-        :step
+        :step,
+        :hot
       )
     end
 

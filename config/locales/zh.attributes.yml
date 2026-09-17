@@ -54,6 +54,7 @@ zh:
         productions: 产品类型
         product_id: 产品
         specialty: 产品特性
+        hot: 推荐展示
       factory/production_part:
         part_id: 配件
         number: 数量
