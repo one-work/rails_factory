@@ -6,7 +6,7 @@
     </p>
   <% end %>
 </td>
-<% if @product.taxon.customizable %>
+<% if @product.taxon&.customizable %>
 <td>
 <div class="button_tos is-column">
   <% model.production_parts.sort_by(&:part_id).each do |production_part| %>

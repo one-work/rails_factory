@@ -17,7 +17,7 @@
         <span class="ml-1"><%= t('.productions.index.title') %></span>
       <% end %>
     </li>
-    <% if @product.taxon.customizable %>
+    <% if @product.taxon&.customizable %>
       <li class="<%= active_helper(controllers: 'product_components', active: 'is-active') %>">
         <%= link_to({ controller: 'product_components', product_id: @product.id }) do %>
           <%= svg_tag 'cubes' %>

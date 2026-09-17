@@ -1,4 +1,4 @@
-<% if @production.taxon.customizable %>
+<% if @production.taxon&.customizable %>
   <%= form_with model: @production, url: { action: 'create_dialog' }, id: 'edit_custom' do |f| %>
   <% end %>
   <%= render partial: 'dispatch_modal', locals: { production: @production } %>

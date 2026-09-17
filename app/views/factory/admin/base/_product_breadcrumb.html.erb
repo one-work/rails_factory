@@ -1,4 +1,5 @@
-<li><%= link_to t('.taxons.index.title'), { controller: 'taxons', anchor: "tr_#{@product.taxon.id}" } %></li>
+<li><%= link_to t('.taxons.index.title'), { controller: 'taxons', anchor: "tr_#{@product.taxon_id}" } %></li>
+<% if @product.taxon %>
 <li>
   <div class="px-3">
     <span><%= @product.taxon.name %></span>
@@ -8,4 +9,5 @@
   </div>
 </li>
 <li><%= link_to t('factory.admin.taxon.products.index.title'), { controller: 'taxon/products', taxon_id: @product.taxon_id } %></li>
+<% end %>
 <li></li>

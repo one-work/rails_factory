@@ -15,7 +15,7 @@
     <div id="production_modal_body" class="modal-card-body is-narrow">
       <%= yield %>
     </div>
-    <% if @production.taxon.customizable %>
+    <% if @production.taxon&.customizable %>
       <%= render partial: 'modal_foot_component', locals: { item_con: "trade/#{params[:namespace].presence || 'my'}/items" } %>
     <% else %>
       <%= render partial: 'modal_foot_brothers', locals: { item_con: "trade/#{params[:namespace].presence || 'my'}/items" } %>
