@@ -10,6 +10,13 @@
   </div>
 </td>
 <td>
+  <div class="tags">
+  <% model.dispatches.each do |dispatch| %>
+    <span class="tag"><%= Trade::Item.enum_i18n(:dispatch, dispatch) %></span>
+  <% end %>
+  </div>
+</td>
+<td>
   <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
     <%= f.checkbox :production_enabled, data: { action: 'input#submit' }, id: nil %>
   <% end %>
