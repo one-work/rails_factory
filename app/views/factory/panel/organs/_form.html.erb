@@ -1,1 +1,2 @@
 <%= f.checkbox :production_enabled %>
+<%= f.collection_check_boxes :dispatches, Trade::Item.options_i18n_for_collection(:dispatch), :value, :name %>

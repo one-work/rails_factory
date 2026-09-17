@@ -18,7 +18,8 @@ module Factory
 
     def organ_params
       params.fetch(:organ, {}).permit(
-        :production_enabled
+        :production_enabled,
+        dispatches: []
       )
     end
   end
