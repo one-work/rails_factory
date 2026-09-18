@@ -1,5 +1,5 @@
 <div id="product_cart_<%= model.product_id %>" class="level right-badge">
-  <% if @desk.ordered?(model.brother_ids) %>
+  <% if @desk&.ordered?(model.brother_ids) %>
     <span class="size-7 text-grey">已点</span>
   <% end %>
   <% if model.can_select?(**params.permit(:dispatch).to_h.to_options) %>
