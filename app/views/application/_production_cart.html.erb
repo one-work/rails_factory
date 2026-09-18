@@ -1,19 +1,22 @@
 <div id="product_cart_<%= model.product_id %>" class="level right-badge">
-<% if model.can_select?(**params.permit(:dispatch).to_h.to_options) %>
-  <%=
-    button_to(
-      { controller: ['factory', params.fetch(:namespace, ''), 'productions'].compact_blank.join('/'), action: 'show', id: model.id },
-      params: { **params.permit(:dispatch, :desk_id, :station_id).compact_blank, **session.to_h.slice('desk_id', 'station_id') },
-      class: 'button is-small is-primary'
-    ) do
-  %>
-    <%= svg_tag 'cart-plus' %>
+  <% if @desk.ordered?(model.brother_ids) %>
+    <span class="size-7 text-grey">已点</span>
   <% end %>
-  <% items = @cart&.find_items(model.product.production_ids, **params.permit(:dispatch, :produce_on, :scene_id, :desk_id, :station_id), **session.to_h.slice('desk_id', 'station_id')) %>
-  <% if items.present? %>
-    <span class="tag is-badge is-danger"><%= items.size %></span>
+  <% if model.can_select?(**params.permit(:dispatch).to_h.to_options) %>
+    <%=
+      button_to(
+        { controller: ['factory', params.fetch(:namespace, ''), 'productions'].compact_blank.join('/'), action: 'show', id: model.id },
+        params: { **params.permit(:dispatch, :desk_id, :station_id).compact_blank, **session.to_h.slice('desk_id', 'station_id') },
+        class: 'button is-small is-primary'
+      ) do
+    %>
+      <%= svg_tag 'cart-plus' %>
+    <% end %>
+    <% items = @cart&.find_items(model.brother_ids, **params.permit(:dispatch, :produce_on, :scene_id, :desk_id, :station_id), **session.to_h.slice('desk_id', 'station_id')) %>
+    <% if items.present? %>
+      <span class="tag is-badge is-danger"><%= items.size %></span>
+    <% end %>
+  <% elsif cart %>
+    <%= render partial: 'cart_item', locals: { item: cart.init_cart_item(params, good_id: model.id), cart: cart, item_con: item_con } %>
   <% end %>
-<% elsif cart %>
-  <%= render partial: 'cart_item', locals: { item: cart.init_cart_item(params, good_id: model.id), cart: cart, item_con: item_con } %>
-<% end %>
 </div>
