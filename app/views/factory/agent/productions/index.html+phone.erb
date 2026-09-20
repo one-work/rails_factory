@@ -1,10 +1,10 @@
-<%= render 'filter_bar' %>
+<%= render partial: 'filter_bar', locals: { name: 'word-like' } %>
 
 <div class="flex mb-0 flex-grow-1">
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
-    data-page-url-value="<%= url_for(action: 'index') %>"
+    data-page-url-value="<%= url_for(action: 'index', **params.permit(:taxon_id)) %>"
     class="has-page-grow ml-3 overflow-x-hidden"
   >
     <%= render partial: 'production_cart', layout: 'card', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/agent/items' } %>

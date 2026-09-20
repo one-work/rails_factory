@@ -15,7 +15,7 @@
           <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-radius is-24x24' %>
         <% end %>
       <% end %>
-      <span><%= model.title %></span>
+      <span><%= model.word %></span>
     </div>
     <p class="text-danger mt-1"><%= model.price.to_money.format.html_safe %></p>
   </div>
