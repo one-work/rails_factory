@@ -7,7 +7,15 @@
     data-page-url-value="<%= url_for(action: 'index', **params.permit(:taxon_id)) %>"
     class="has-page-grow ml-3 overflow-x-hidden"
   >
-    <%= render partial: 'production_cart', layout: 'card', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/agent/items' } %>
+    <%=
+      render(
+        partial: 'production_cart',
+        layout: 'card',
+        collection: @productions,
+        as: :model,
+        locals: { cart: @cart, item_con: 'trade/agent/items' }
+      )
+    %>
     <% if @productions.blank? %>
       <%= render 'blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
