@@ -1,7 +1,3 @@
-<%= button_to({ action: 'edit' }, class: 'cell has-column-centered') do %>
-  <%= svg_tag 'pencil', class: 'icon' %>
-  <span><%= t('.edit.title') %></span>
-<% end %>
 <%= link_to({ controller: 'productions', product_id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'clone', class: 'icon' %>
   <span>

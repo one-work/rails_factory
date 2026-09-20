@@ -1,5 +1,9 @@
 <%= render partial: 'show' %>
 
+<%= render layout: 'index_list' do %>
+  <%= render partial: 'production_item', layout: 'production_item_actions', collection: @product.productions, as: :model %>
+<% end %>
+
 <div class="fixed-grid has-3-cols as-boxed p-3">
   <div class="grid gap-2 as-actions">
     <%= render partial: 'actions', locals: { model: @product } %>

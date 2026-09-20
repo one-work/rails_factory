@@ -1,0 +1,6 @@
+<div class="buttons as-bottom">
+  <%= button_to({ controller: 'productions', action: 'new', product_id: @product.id }, class: 'button is-rounded is-fullwidth is-primary') do %>
+    <%= svg_tag 'plus' %>
+    <span><%= t('.productions.new.title') %></span>
+  <% end %>
+</div>
