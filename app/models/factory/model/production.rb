@@ -172,9 +172,15 @@ module Factory
     end
 
     def to_esc(pr, aim: 'label')
-      pr.text_big word
-      pr.text "价格：#{price.to_money.format(html_wrap: false, symbol: false)}"
-      #pr.qrcode_right(enter_url)
+      pr.text_box_left(
+        [
+          word,
+          "价格：#{price.to_money.format(html_wrap: false, symbol: false)}"
+        ],
+        y: 40,
+        width: 12
+      )
+      pr.qrcode_right(enter_url)
       pr
     end
 
