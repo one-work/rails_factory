@@ -1,4 +1,9 @@
-<%= link_to({ action: 'show', id: model.id }, class: 'truncate') do %>
+<%=
+  link_to(
+    { controller: 'productions', action: 'show', product_id: model.product_id, id: model.id },
+    class: 'truncate'
+  ) do
+%>
   <span><%= model.title %></span>
 <% end %>
 <div class="mt-1 flex">
