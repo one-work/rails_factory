@@ -172,7 +172,8 @@ module Factory
     end
 
     def to_esc(pr, aim: 'label')
-      pr.text_big_center word
+      pr.text_big word
+      pr.text price
       #pr.qrcode_right(enter_url)
       pr
     end
