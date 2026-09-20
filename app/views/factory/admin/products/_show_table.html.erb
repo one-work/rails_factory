@@ -19,7 +19,16 @@
 <div>
   <dt><%= Factory::Product.human_attribute_name(:description) %></dt>
   <dd>
-    <%= text_area_tag 'product[description]', @product.description, class: 'textarea', form: 'show-form', data: { single_input_target: 'input' } %>
+    <%=
+      text_area_tag(
+        'product[description]',
+        @product.description,
+        placeholder: '点击添加描述',
+        class: 'textarea',
+        form: 'show-form',
+        data: { single_input_target: 'input' }
+      )
+    %>
   </dd>
 </div>
 <div>
