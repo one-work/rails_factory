@@ -173,7 +173,7 @@ module Factory
 
     def to_esc(pr, aim: 'label')
       pr.text_big word
-      pr.text price
+      pr.text price.to_money.format(html_wrap: false, symbol: false)
       #pr.qrcode_right(enter_url)
       pr
     end
