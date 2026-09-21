@@ -1,5 +1,15 @@
 <div class="fixed-grid has-3-cols">
+  <p class="size-7 text-grey mb-1">选择座位</p>
   <div class="grid gap-2">
     <%= render partial: 'space_change_desk', collection: @desks, as: :model, locals: { con: controller_path } %>
   </div>
 </div>
+
+<% if @contacts.present? %>
+<div class="fixed-grids has-3-cols">
+  <p class="size-7 text-grey mb-1">选择客户</p>
+  <div class="grid gap-2">
+    <%= render partial: 'crm_change_contact', collection: @contacts, as: :model %>
+  </div>
+</div>
+<% end %>
