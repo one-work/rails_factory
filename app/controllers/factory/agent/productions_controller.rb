@@ -22,8 +22,9 @@ module Factory
     end
 
     def preview
-      @desks = Space::Desk.where(default_params).order(id: :asc).limit(6)
+      @desks = Space::Desk.where(default_params).order(id: :asc).limit(5)
       @contacts = Crm::Contact.where(default_params).order(id: :desc).limit(3)
+      @clients = Crm::Client.where(default_params).order(id: :desc).limit(3)
     end
 
     def list
