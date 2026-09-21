@@ -1,8 +1,5 @@
-
-
-
-
-  <% if params[:scene_id] || params[:produce_on] %>
+<%= render layout: 'top_bar_left' do %>
+  <div class="bar-title">
     <div>
       <span class="text-weight-semibold"><%= params[:produce_on] %></span>
       <span><%= params[:produce_on].to_date.to_fs(:week) if params[:produce_on].present? %></span>
@@ -10,6 +7,9 @@
     <div>
       <span class="text-weight-semibold"><%= @scene.title %></span>
     </div>
+  </div>
+  <%= button_to({ action: 'preview' }, params: params.permit(:contact_id), class: 'text-link', form: { class: 'right' }) do %>
+    <span>选择场景</span>
+    <%= svg_tag 'angle-right' %>
   <% end %>
-
-
+<% end %>
