@@ -3,8 +3,10 @@
   <dd class="truncate"><%= @production.name %></dd>
 </div>
 <div>
-  <dt><%= Factory::Production.human_attribute_name(:title) %></dt>
-  <dd class="truncate"><%= @production.title %></dd>
+  <dt><%= Factory::Production.human_attribute_name(:word) %></dt>
+  <dd class="truncate">
+    <span><%= @production.title %></span>
+  </dd>
 </div>
 <div>
   <dt><%= Factory::Production.human_attribute_name(:spu) %></dt>
