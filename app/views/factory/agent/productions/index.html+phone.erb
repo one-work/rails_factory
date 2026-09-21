@@ -4,7 +4,7 @@
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
-    data-page-url-value="<%= url_for(action: 'index', **params.permit(:taxon_id, :desk_id, :dispatch)) %>"
+    data-page-url-value="<%= url_for(action: 'index', **params.permit(:taxon_id, :desk_id, :dispatch, :client_id, :contact_id)) %>"
     class="has-page-grow ml-3 overflow-x-hidden"
   >
     <%=
