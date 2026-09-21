@@ -2,14 +2,20 @@
   <p class="size-7 text-grey mb-1">选择座位</p>
   <div class="grid gap-2">
     <%= render partial: 'space_change_desk', collection: @desks, as: :model, locals: { con: controller_path } %>
-    <%= button_to({ controller: 'space/desks', action: 'change' }, class: 'button is-outlined is-primary is-fullwidth is-fullheight', form: { class: 'cell has-column-centered' }) do %>
+    <%=
+      button_to(
+        { controller: 'space/desks', action: 'change' },
+        class: 'button is-outlined is-primary is-fullwidth is-fullheight',
+        form: { class: 'cell has-column-centered' }
+      ) do
+    %>
       <span>更多</span>
     <% end %>
   </div>
 </div>
 
 <% if @contacts.present? %>
-<div class="fixed-grids has-3-cols">
+<div class="fixed-grid has-3-cols">
   <p class="size-7 text-grey mb-1">选择联系人</p>
   <div class="grid gap-2">
     <%= render partial: 'crm_change_contact', collection: @contacts, as: :model %>
@@ -18,7 +24,7 @@
 <% end %>
 
 <% if @contacts.present? %>
-<div class="fixed-grids has-3-cols">
+<div class="fixed-grid has-3-cols">
   <p class="size-7 text-grey mb-1">选择客户</p>
   <div class="grid gap-2">
     <%= render partial: 'crm_change_client', collection: @clients, as: :model %>
