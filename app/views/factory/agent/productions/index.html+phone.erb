@@ -13,7 +13,7 @@
         layout: 'card',
         collection: @productions,
         as: :model,
-        locals: { cart: @cart, item_con: 'trade/agent/items' }
+        locals: { cart: @cart, item_con: 'trade/agent/items', prod_con: controller_path }
       )
     %>
     <% if @productions.blank? %>

@@ -1,4 +1,12 @@
 <%= turbo_stream.replace 'page_loading' do %>
-  <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: "trade/#{params.fetch(:namespace, 'my')}/items" } %>
+  <%=
+    render(
+      partial: 'production_cart',
+      layout: 'production',
+      collection: @productions,
+      as: :model,
+      locals: { cart: @cart, item_con: 'trade/my/items', prod_con: controller_path }
+    )
+  %>
   <%= render partial: 'page_loading', locals: { all: @productions } %>
 <% end %>

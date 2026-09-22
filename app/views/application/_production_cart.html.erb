@@ -5,14 +5,14 @@
   <% if model.can_select?(**params.permit(:dispatch).to_h.to_options) %>
     <%=
       button_to(
-        { controller: ['factory', params.fetch(:namespace, ''), 'productions'].compact_blank.join('/'), action: 'show', id: model.id },
-        params: { **params.permit(:dispatch, :desk_id, :station_id).compact_blank, **session.to_h.slice('desk_id', 'station_id') },
+        { controller: prod_con, action: 'show', id: model.id },
+        params: { **params.permit(:dispatch, :desk_id, :station_id, :client_id, :contact_id).compact_blank, **session.to_h.slice('desk_id', 'station_id') },
         class: 'button is-small is-primary'
       ) do
     %>
       <%= svg_tag 'cart-plus' %>
     <% end %>
-    <% items = @cart&.find_items(model.brother_ids, **params.permit(:dispatch, :produce_on, :scene_id, :desk_id, :station_id), **session.to_h.slice('desk_id', 'station_id')) %>
+    <% items = @cart&.find_items(model.brother_ids, **params.permit(:dispatch, :produce_on, :scene_id, :desk_id, :station_id, :client_id, :contact_id), **session.to_h.slice('desk_id', 'station_id')) %>
     <% if items.present? %>
       <span class="tag is-badge is-danger"><%= items.size %></span>
     <% end %>

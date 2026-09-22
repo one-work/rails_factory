@@ -8,14 +8,21 @@
     data-action="touchmove->page#move:passive"
     class="weui-menu-content"
   >
-    <%= render partial: 'production_cart', layout: 'card', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/in/items' } %>
+    <%=
+      render(
+        partial: 'production_cart',
+        layout: 'card',
+        collection: @productions,
+        as: :model,
+        locals: { cart: @cart, item_con: 'trade/in/items', prod_con: controller_path }
+      )
+    %>
     <% if @productions.blank? %>
       <%= render 'blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
       <%= render 'page_no_more' %>
     <% elsif @productions.total_pages > @productions.current_page %>
-      <%= render 'page_loading' %>
-      <%# render 'tip' %>
+      <%= render partial: 'page_loading', locals: { all: @productions } %>
     <% end %>
     <%= render 'paginator' %>
   </div>

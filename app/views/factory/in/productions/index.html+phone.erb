@@ -9,7 +9,15 @@
     class="flex-grow-1 ml-3"
   >
     <div>
-      <%= render partial: 'production_cart', layout: 'production', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'trade/our/items' } %>
+      <%=
+        render(
+          partial: 'production_cart',
+          layout: 'production',
+          collection: @productions,
+          as: :model,
+          locals: { cart: @cart, item_con: 'trade/our/items', prod_con: controller_path }
+        )
+      %>
       <% if @productions.blank? %>
         <%= render 'page_blank' %>
       <% else %>
