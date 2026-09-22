@@ -41,6 +41,9 @@
             "product_summary_#{@production.product_id}" => 'product_summary_component',
             "product_cart_#{@production.product_id}" => 'production_cart'
           },
+          renew_options: {
+            production_cart: { prod_con: controller_path }
+          },
           refer_options: {
             'good_id' => @production.id,
             'dispatch' => params[:dispatch].presence || current_organ.dispatch
