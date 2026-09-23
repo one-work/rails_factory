@@ -3,7 +3,7 @@
   <%=
     button_to(
       { action: 'show', id: model.id, **extra_options },
-      params: params.permit(:dispatch, :desk_id, :station_id).compact_blank,
+      params: params.permit(:dispatch, :station_id, :desk_id, :client_id, :contact_id).compact_blank,
       class: 'button is-small is-primary'
     ) do
   %>
