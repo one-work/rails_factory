@@ -2,6 +2,8 @@
   <%= render 'top_bar_desk' %>
 <% elsif params[:contact_id] %>
   <%= render 'top_bar_contact' %>
+<% elsif params[:client_id] %>
+  <%= render 'top_bar_client' %>
 <% elsif params[:scene_id] || params[:produce_on] %>
   <%= render 'top_bar_scene' %>
 <% else %>

@@ -1,7 +1,7 @@
 <%= render layout: 'top_bar_left' do %>
-  <div class="bar-title"><%= @contact.title.truncate(7) %></div>
+  <div class="bar-title"><%= @client.name.truncate(7) %></div>
   <%= button_to({ action: 'preview' }, params: params.permit(:contact_id), class: 'text-link', form: { class: 'right' }) do %>
-    <span>选择联系人</span>
+    <span>选择客户</span>
     <%= svg_tag 'angle-right' %>
   <% end %>
 <% end %>
