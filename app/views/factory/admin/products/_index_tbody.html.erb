@@ -1,6 +1,6 @@
 <td>
   <div class="is-several">
-    <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-24x24' if model.logo.attached? %>
+    <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-radius is-24x24' if model.logo.attached? %>
   </div>
   <% if model.brand %>
     <p><span class="tag is-danger"><%= model.brand.name %></span></p>

@@ -1,7 +1,7 @@
 <td>
   <%= link_to({ controller: 'production_items', production_id: model.id }) do %>
     <p class="is-several">
-      <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-24x24' if model.logo.attached? %>
+      <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-radius is-24x24' if model.logo.attached? %>
       <span><%= model.word %></span>
       <% if model.title != model.word %>
         <span>【<%= model.title %>】</span>

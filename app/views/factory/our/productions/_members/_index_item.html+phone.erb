@@ -2,7 +2,7 @@
 <div class="level is-mobile">
   <div class="level-left">
     <div class="level-item is-several">
-      <%= image_tag model.avatar.variant(resize_to_limit: [35, 35]), class: 'image is-24x24' if model.avatar.attached? %>
+      <%= image_tag model.avatar.variant(resize_to_limit: [35, 35]), class: 'image is-radius is-24x24' if model.avatar.attached? %>
       <div class="text-grey">
       <% if request.variant.any?(:work_wechat) %>
         <div data-open-data-target="tag" type="userName" openid="<%= model.name %>"></div>
