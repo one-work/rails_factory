@@ -15,7 +15,11 @@
           layout: 'production',
           collection: @productions,
           as: :model,
-          locals: { cart: @cart, item_con: 'trade/our/items', prod_con: controller_path }
+          locals: {
+            cart: @cart,
+            item_con: 'trade/our/items',
+            extra_options: { controller: controller_path }
+          }
         )
       %>
       <% if @productions.blank? %>

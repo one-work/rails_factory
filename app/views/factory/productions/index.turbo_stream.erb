@@ -5,7 +5,11 @@
       layout: 'production',
       collection: @productions,
       as: :model,
-      locals: { cart: @cart, item_con: 'trade/my/items', prod_con: controller_path }
+      locals: {
+        cart: @cart,
+        item_con: 'trade/my/items',
+        extra_options: { controller: controller_path }
+      }
     )
   %>
   <%= render partial: 'page_loading', locals: { all: @productions } %>

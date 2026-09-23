@@ -42,7 +42,7 @@
             "product_cart_#{@production.product_id}" => 'production_cart'
           },
           renew_options: {
-            production_cart: { prod_con: controller_path }
+            production_cart: { controller: controller_path, **params.permit(:client_id) }
           },
           refer_options: {
             'good_id' => @production.id,

@@ -5,7 +5,7 @@
   <% if model.can_select?(**params.permit(:dispatch).to_h.to_options) %>
     <%=
       button_to(
-        { controller: prod_con, action: 'show', id: model.id },
+        { action: 'show', id: model.id, **extra_options },
         params: { **params.permit(:dispatch, :desk_id, :station_id, :client_id, :contact_id).compact_blank, **session.to_h.slice('desk_id', 'station_id') },
         class: 'button is-small is-primary'
       ) do

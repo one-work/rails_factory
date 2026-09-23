@@ -2,7 +2,7 @@
 <% if model.can_select? %>
   <%=
     button_to(
-      { controller: prod_con, action: 'show', id: model.id },
+      { action: 'show', id: model.id, **extra_options },
       params: params.permit(:dispatch, :desk_id, :station_id).compact_blank,
       class: 'button is-small is-primary'
     ) do

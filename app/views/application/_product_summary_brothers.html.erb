@@ -24,6 +24,9 @@
               "product_summary_#{model.product_id}" => 'product_summary_brothers',
               "product_cart_#{model.product_id}" => 'production_cart'
             },
+            renew_options: {
+              production_cart: { controller: controller_path, **params.permit(:client_id) }
+            },
             refer_options: refer_options
           }
         )
