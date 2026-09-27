@@ -3,7 +3,7 @@
     render(
       partial: 'cart_item_new',
       layout: 'product_summary_brother',
-      collection: cart.find_items(model.brother_ids, good_type: model.base_class_name, **options),
+      collection: cart.find_items(model.brother_ids, good_type: model.base_class_name),
       as: :item,
       locals: {
         cart: cart,
