@@ -6,11 +6,7 @@
         model: @production,
         cart: @cart,
         item_con: item_con,
-        options: {},
-        refer_options: {
-          'good_id' => @production.id,
-          'dispatch' => params[:dispatch].presence
-        }
+        refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch] }.compact_blank
       }
     )
   %>
@@ -33,10 +29,7 @@
           renew_options: {
             production_cart: { controller: controller_path, **params.permit(:client_id) }
           },
-          refer_options: {
-            'good_id' => @production.id,
-            'dispatch' => params[:dispatch].presence
-          }
+          refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch] }.compact_blank
         }
       )
     %>
