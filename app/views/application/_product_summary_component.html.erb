@@ -1,42 +1,25 @@
-<dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth p-0 is-interval">
-<% cart.find_items(model.brother_ids, good_type: model.base_class_name, **options).each do |item| %>
-  <div
-    data-id="<%= item.id %>"
-    class="radius-small px-2"
-    style="background-color: <%= item.attributes.slice('good_id', 'dispatch') == refer_options.slice('good_id', 'dispatch') ? '#eee' : 'auto' %>"
-  >
-    <dt class="truncate flex-shrink-1">
-      <ul class="media-info display-inline-flex">
-        <% item.good.production_parts.includes(:part).each do |production_part| %>
-          <li>
-            <span><%= production_part.part.word %></span>
-            <span>x</span>
-            <span><%= production_part.number %></span>
-          </li>
-        <% end %>
-        <li class="text-danger"><%= item.dispatch_i18n %></li>
-      </ul>
-    </dt>
-    <dd class="text-right flex-shrink-0">
-      <%=
-        render(
-          partial: 'cart_item_new',
-          locals: {
-            item: @cart.init_cart_item(params.permit(:xx), dispatch: item.dispatch, good_id: item.good_id),
-            cart: @cart,
-            item_con: item_con,
-            renew: {
-              "product_summary_#{model.product_id}" => 'product_summary_component',
-              "product_cart_#{model.product_id}" => 'production_cart'
-            },
-            renew_options: {
-              production_cart: { controller: controller_path, **params.permit(:client_id) }
-            },
-            refer_options: refer_options
-          }
-        )
-      %>
-    </dd>
-  </div>
-<% end %>
+<dl
+  id="product_summary_<%= model.product_id %>"
+  class="as-show is-fullwidth p-0 is-interval"
+>
+  <%=
+    render(
+      partial: 'cart_item_new',
+      layout: 'product_component',
+      collection: cart.find_items(model.brother_ids, good_type: model.base_class_name, **options),
+      locals: {
+        item: @cart.init_cart_item(params.permit(:xx), dispatch: item.dispatch, good_id: item.good_id),
+        cart: @cart,
+        item_con: item_con,
+        renew: {
+          "product_summary_#{model.product_id}" => 'product_summary_component',
+          "product_cart_#{model.product_id}" => 'production_cart'
+        },
+        renew_options: {
+          production_cart: { controller: controller_path, **params.permit(:client_id) }
+        },
+        refer_options: refer_options
+      }
+    )
+  %>
 </dl>
