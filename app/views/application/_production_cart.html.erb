@@ -1,4 +1,4 @@
-<% items = @cart&.find_items(model.brother_ids, **params.permit(:dispatch, :produce_on, :scene_id, :desk_id, :station_id, :client_id, :contact_id), **session.to_h.slice('desk_id', 'station_id')) %>
+<% items = cart&.find_items(model.brother_ids, **params.permit(:dispatch, :produce_on, :scene_id, :desk_id, :station_id, :client_id, :contact_id), **session.to_h.slice('desk_id', 'station_id')) %>
 
 <div id="product_cart_<%= model.product_id %>" class="level right-badge">
   <% if @desk&.ordered?(model.brother_ids) %>
