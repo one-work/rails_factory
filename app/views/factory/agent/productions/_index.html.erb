@@ -19,6 +19,15 @@
   <p class="size-7 text-grey mb-1">选择联系人</p>
   <div class="grid gap-2">
     <%= render partial: 'crm_change_contact', collection: @contacts, as: :model %>
+    <%=
+      button_to(
+        { controller: 'crm/admin/contacts', action: 'change' },
+        class: 'button is-outlined is-primary is-fullwidth is-fullheight',
+        form: { class: 'cell has-column-centered' }
+      ) do
+    %>
+      <span>更多</span>
+    <% end %>
   </div>
 </div>
 <% end %>
@@ -28,6 +37,15 @@
   <p class="size-7 text-grey mb-1">选择客户</p>
   <div class="grid gap-2">
     <%= render partial: 'crm_change_client', collection: @clients, as: :model %>
+    <%=
+      button_to(
+        { controller: 'crm/admin/clients', action: 'change' },
+        class: 'button is-outlined is-primary is-fullwidth is-fullheight',
+        form: { class: 'cell has-column-centered' }
+      ) do
+    %>
+      <span>更多</span>
+    <% end %>
   </div>
 </div>
 <% end %>
