@@ -1,7 +1,8 @@
 <dl id="product_summary_<%= model.product_id %>" class="as-show is-fullwidth p-0 is-interval">
   <%=
     render(
-      partial: 'product_summary_brother',
+      partial: 'cart_item_new',
+      layout: 'product_summary_brother',
       collection: cart.find_items(model.brother_ids, good_type: model.base_class_name, **options),
       as: :item,
       locals: {
