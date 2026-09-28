@@ -8,7 +8,7 @@
     <%=
       button_to(
         { action: 'show', id: model.id, **extra_options },
-        params: { **params.permit(:dispatch, :desk_id, :station_id, :client_id, :contact_id).compact_blank, **session.to_h.slice('desk_id', 'station_id') },
+        params: defined?(cart_options) ? cart_options : {},
         class: 'button is-small is-primary'
       ) do
     %>
