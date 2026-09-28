@@ -10,7 +10,7 @@
         item_con: item_con,
         order_con: 'trade/my/orders',
         renew: {
-          "product_cart_#{model.product_id}" => 'production_cart'
+          "product_cart_#{model.product_id}" => { 'partial' => 'production_cart' }
         },
         renew_options: {
           production_cart: { controller: controller_path, **params.permit(:client_id) }

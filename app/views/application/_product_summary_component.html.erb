@@ -12,8 +12,8 @@
         cart: @cart,
         item_con: item_con,
         renew: {
-          "product_summary_#{model.product_id}" => 'product_summary_component',
-          "product_cart_#{model.product_id}" => 'production_cart'
+          "product_summary_#{model.product_id}" => { 'partial' => 'product_summary_component' },
+          "product_cart_#{model.product_id}" => { 'partial' => 'production_cart' }
         },
         renew_options: {
           production_cart: { controller: controller_path, **params.permit(:client_id) }

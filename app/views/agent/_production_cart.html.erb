@@ -21,7 +21,7 @@
         item: cart.init_cart_item(params, good_id: model.id),
         cart: cart,
         item_con: item_con,
-        renew: { "product_cart_#{model.product_id}" => 'production_cart' }
+        renew: { "product_cart_#{model.product_id}" => { 'partial' => 'production_cart' } }
       }
     )
   %>
