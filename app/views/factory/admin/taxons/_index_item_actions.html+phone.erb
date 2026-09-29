@@ -1,4 +1,12 @@
-<div id="tr_<%= model.id %>" class="media">
+<div
+  id="tr_<%= model.id %>"
+  data-id="<%= model.id %>"
+  data-url="<%= url_for(action: 'reorder', id: model.id) %>"
+  class="media"
+>
+  <div class="media-left">
+    <%= svg_tag 'bars', class: 'icon is-small text-grey is-drawable' %>
+  </div>
   <%= link_to({ controller: 'taxon/products', taxon_id: model.id }, class: 'media-content') do %>
     <%= yield %>
   <% end %>
