@@ -3,10 +3,10 @@
   class="px-2 radius-small"
   style="background-color: <%= item.attributes.slice('good_id', 'dispatch').compact == refer_options.slice('good_id', 'dispatch') ? '#eee' : 'auto' %>"
 >
-  <dt class="truncate flex-shrink-1">
+  <dt class="align-self-center truncate flex-shrink-1">
     <span><%= item.good.name %></span>
     <% if item.dispatch.present? %>
-      <span class="tag is-info"><%= item.dispatch_i18n %></span>
+      <span class="tag is-small is-info"><%= item.dispatch_i18n %></span>
     <% end %>
   </dt>
   <dd class="text-right flex-shrink-0">

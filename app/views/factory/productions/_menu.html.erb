@@ -9,7 +9,7 @@
         ) do
       %>
         <% if taxon.logo.attached? %>
-          <figure class="image is-radius is-24x24 display-inline-block">
+          <figure class="image is-24x24 display-inline-block">
             <%= image_tag taxon.logo.variant(resize_to_limit: [24, 24]), loading: 'lazy' %>
           </figure>
         <% end %>

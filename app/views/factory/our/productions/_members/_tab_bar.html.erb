@@ -10,7 +10,7 @@
   </div>
   <div class="level-right mt-0 pr-4">
     <div data-controller="check" data-check-name-value="trade_item[status]" class="level-item">
-      <%= link_to({ controller: 'trade/our/orders', action: 'cart', current_cart_id: @cart.id }, class: 'button is-small is-primary is-radius') do %>
+      <%= link_to({ controller: 'trade/our/orders', action: 'cart', current_cart_id: @cart.id }, class: 'button is-small is-primary radius') do %>
         <%= svg_tag 'credit-card' %>
         <span class="ml-1"><%= t('.pay') %></span>
       <% end %>
