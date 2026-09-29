@@ -1,9 +1,8 @@
 <div class="as-bar">
   <button
     id="history-button"
-    data-controller="history"
-    data-history-url-value="<%= url_for(controller: '/org/organs', host: Current.session.from_organ.host) %>"
-    data-action="history#back"
+    data-controller="history-back"
+    data-history-back-url-value="<%= url_for(controller: '/org/organs', host: Current.session.from_organ.host) %>"
     class="left"
   >
     <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
