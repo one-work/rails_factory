@@ -18,6 +18,15 @@
       <span class="tag is-badge is-danger"><%= items.size %></span>
     <% end %>
   <% elsif cart %>
-    <%= render partial: 'cart_item', locals: { item: cart.init_cart_item(params, good_id: model.id), cart: cart, item_con: item_con } %>
+    <%=
+      render(
+        partial: 'cart_item',
+        locals: {
+          item: cart.init_cart_item(params, good_id: model.id),
+          cart: cart,
+          item_con: item_con
+        }
+      )
+    %>
   <% end %>
 </div>
