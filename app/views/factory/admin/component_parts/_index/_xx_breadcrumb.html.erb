@@ -1,7 +1,5 @@
-<div class="breadcrumb">
-  <ul>
-    <li><%= link_to t('.taxon_components.index.title'), { controller: 'taxon_components', taxon_id: @component.taxon_id } %></li>
-    <li><span class="mx-3"><%= @component.name %></span></li>
-    <li class="is-active"><%= t('.title') %></li>
-  </ul>
-</div>
+<ul class="breadcrumb">
+  <li><%= link_to t('.taxon_components.index.title'), { controller: 'taxon_components', taxon_id: @component.taxon_id } %></li>
+  <li><span class="mx-3"><%= @component.name %></span></li>
+  <li class="is-active"><%= t('.title') %></li>
+</ul>
