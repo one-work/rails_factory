@@ -8,7 +8,6 @@ Rails.app.routes.draw do
         get :members
         post :scene
         post :produce_on
-        post :change_dispatch
       end
       member do
         post :list

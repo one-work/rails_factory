@@ -11,8 +11,6 @@ zh:
         title: 在线下单
       show:
         add: 加入购物车
-      change_dispatch:
-        title: 切换
     product_plans:
       index:
         title: 产品批次
