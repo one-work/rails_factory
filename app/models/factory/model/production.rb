@@ -189,7 +189,7 @@ module Factory
     end
 
     def init_hot
-      self.hot = true if self.class.where(organ_id: organ_id).count <= 4
+      self.hot = true if self.class.where(organ_id: organ_id).count < 4
     end
 
     def set_default
