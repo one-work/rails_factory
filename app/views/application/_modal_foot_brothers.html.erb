@@ -1,4 +1,4 @@
-<footer id="production_modal_foot" class="modal-card-foot flex-direction-column">
+<footer id="production_modal_foot" class="modal-card-foot flex-direction-column p-0">
   <%=
     render(
       partial: 'product_summary_brothers',
@@ -10,7 +10,7 @@
       }
     )
   %>
-  <div class="flex justify-content-space-between align-items-center is-fullwidth mt-3">
+  <div class="flex justify-content-space-between align-items-center is-fullwidth px-4 py-3">
     <div>
       <span class="text-grey"><%= @production.name %></span>
       <span class="text-danger ml-1"><%= @production.price.to_money.format.html_safe %></span>
