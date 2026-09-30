@@ -1,5 +1,5 @@
-<td><%= button_to model.part.name, { controller: 'products', action: 'show', id: model.part_id }, text: true %></td>
-<td><%= model.part.name %></td>
+<td><%= button_to model.part.word, { controller: 'products', action: 'show', id: model.part_id }, text: true %></td>
+<td><%= model.part.price.to_money.format.html_safe %></td>
 <td>
   <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
     <%= f.checkbox :default, data: { action: 'input#submit' }, id: nil %>
