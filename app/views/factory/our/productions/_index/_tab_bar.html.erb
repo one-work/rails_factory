@@ -4,6 +4,6 @@
     locals: { cart: @cart, cart_con: 'trade/our/carts', order_con: 'trade/our/orders' }
   ) if @cart
 %>
-<div class="tabs as-bottom">
+<div data-controller="tabs" class="tabs as-bottom">
   <%= render 'tab_bar_item' %>
 </div>
