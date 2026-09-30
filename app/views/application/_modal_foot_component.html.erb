@@ -7,10 +7,7 @@
         cart: @cart,
         item_con: item_con,
         options: {},
-        refer_options: {
-          'good_id' => @production.id,
-          'dispatch' => params[:dispatch].presence || current_organ.dispatch
-        }
+        refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch] }.compact_blank
       }
     )
   %>
@@ -34,7 +31,7 @@
       render(
         partial: 'cart_item_add',
         locals: {
-          item: @cart.init_cart_item(params, good_id: @production.id),
+          item: @cart.init_cart_item(params, good_id: @production.id, **{ desk_id: params[:desk_id] || session[:desk_id], dispatch: params[:dispatch] }),
           cart: @cart,
           item_con: item_con,
           renew: {
@@ -44,10 +41,7 @@
           renew_options: {
             production_cart: { controller: controller_path, **params.permit(:client_id) }
           },
-          refer_options: {
-            'good_id' => @production.id,
-            'dispatch' => params[:dispatch].presence || current_organ.dispatch
-          }
+          refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch] }.compact_blank
         }
       )
     %>

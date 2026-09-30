@@ -1,6 +1,6 @@
 <dl
   id="product_summary_<%= model.product_id %>"
-  class="as-show is-fullwidth p-0 is-interval"
+  class="as-show is-fullwidth is-interval px-4"
 >
   <%=
     render(
@@ -8,7 +8,7 @@
       layout: 'product_component',
       collection: cart.find_items(model.brother_ids, good_type: model.base_class_name, **options),
       locals: {
-        item: @cart.init_cart_item(params.permit(:xx), dispatch: item.dispatch, good_id: item.good_id),
+        item: @cart.init_cart_item(params.permit(:xx), good_id: model.id, **{ dispatch: params[:dispatch] }),
         cart: @cart,
         item_con: item_con,
         renew: {
