@@ -19,7 +19,7 @@
       render(
         partial: 'cart_item_add',
         locals: {
-          item: @cart.init_cart_item(params, good_id: @production.id, **{ desk_id: params[:session_id] || session[:desk_id] }.compact_blank),
+          item: @cart.init_cart_item(params, good_id: @production.id, **{ desk_id: params[:desk_id] || session[:desk_id] }.compact_blank),
           cart: @cart,
           item_con: item_con,
           renew: {
