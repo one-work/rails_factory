@@ -1,4 +1,4 @@
-<footer id="production_modal_foot" class="modal-card-foot flex-direction-column">
+<footer id="production_modal_foot" class="modal-card-foot flex-direction-column p-0">
   <%=
     render(
       partial: 'product_summary_component',
@@ -11,7 +11,7 @@
       }
     )
   %>
-  <div class="flex justify-content-space-between align-items-center is-fullwidth">
+  <div class="flex justify-content-space-between align-items-center is-fullwidth p-3">
     <div>
       <p class="text-danger"><%= @production.price.to_money.format.html_safe %></p>
       <% if @production.production_parts.present? %>
