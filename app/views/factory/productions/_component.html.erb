@@ -5,11 +5,25 @@
   </div>
   <% if component.multiple %>
     <div data-controller="custom" class="no-disabled">
-      <%= render partial: 'component_part_number', collection: component_parts, as: :component_part, locals: { component: component } %>
+      <%=
+        render(
+          partial: 'component_part_number',
+          collection: component_parts,
+          as: :component_part,
+          locals: { component: component }
+        )
+      %>
     </div>
   <% else %>
     <div data-controller="custom" class="buttons are-small no-disabled mt-3">
-      <%= render partial: 'component_part', collection: component_parts, as: :component_part, locals: { component: component } %>
+      <%=
+        render(
+          partial: 'component_part',
+          collection: component_parts,
+          as: :component_part,
+          locals: { component: component }
+        )
+      %>
     </div>
   <% end %>
 </div>
