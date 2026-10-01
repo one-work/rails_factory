@@ -163,6 +163,10 @@ module Factory
       self.save!
     end
 
+    def xxx(component, component_part)
+      part_ids.include?(component_part.part_id) && component.disabled?(part_ids, component_part.part_id)
+    end
+
     def enter_url
       Rails.app.routes.url_for(
         controller: 'factory/productions',
