@@ -34,7 +34,7 @@ module Factory
     end
 
     def new
-      @product.productions.build(enabled: true)
+      @product.productions.build(enabled: @taxon.enabled)
     end
 
     def edit
