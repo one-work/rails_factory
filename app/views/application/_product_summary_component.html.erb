@@ -7,8 +7,8 @@
       partial: 'cart_item_new',
       layout: 'product_component',
       collection: cart.find_items(model.brother_ids, good_type: model.base_class_name, **options),
+      as: :item,
       locals: {
-        item: @cart.init_cart_item(params.permit(:xx), good_id: model.id, **{ dispatch: params[:dispatch] }),
         cart: @cart,
         item_con: item_con,
         renew: {
