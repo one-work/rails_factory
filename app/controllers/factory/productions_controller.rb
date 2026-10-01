@@ -109,6 +109,10 @@ module Factory
         @production.compute_cost_price
         @production.save!
       end
+
+      @component = Component.find params[:component_id]
+      @component_parts = @production.same_component_parts.where(component_id: @component.id)
+
       logger.debug "\e[35m  Production: #{@production.id}  \e[0m"
     end
 

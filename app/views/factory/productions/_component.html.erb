@@ -1,6 +1,7 @@
 <div
+  data-controller="custom"
+  data-custom-component-value="<%= component.id %>"
   id="component_<%= component.id %>"
-  data-id="<%= component.id %>"
   class="box is-narrow"
 >
   <div class="text-grey">
@@ -8,7 +9,7 @@
     <span class="size-7"><%= component.select_str %></span>
   </div>
   <% if component.multiple %>
-    <div data-controller="custom" class="no-disabled">
+    <div class="no-disabled">
       <%=
         render(
           partial: 'component_part_number',
@@ -19,7 +20,7 @@
       %>
     </div>
   <% else %>
-    <div data-controller="custom" class="buttons are-small no-disabled mt-3">
+    <div class="buttons are-small no-disabled mt-3">
       <%=
         render(
           partial: 'component_part',

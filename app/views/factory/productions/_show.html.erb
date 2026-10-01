@@ -3,6 +3,7 @@
     <% params.permit(:desk_id, :station_id, :client_id, :contact_id).each do |k, v| %>
       <%= f.hidden_field k, value: v %>
     <% end %>
+    <%= hidden_field_tag :component_id %>
   <% end %>
   <%= render partial: 'dispatch_modal', locals: { production: @production } %>
   <%= render partial: 'card_component', locals: { production: @production } %>

@@ -1,14 +1,21 @@
 <%=
-  turbo_stream.update(
-    'production_modal_body',
-    partial: 'card_component',
-    locals: { production: @production }
+  turbo_stream.replace(
+    "component_#{@component.id}",
+    partial: 'component',
+    locals: {
+      production: @production,
+      component: @component,
+      component_parts: @component_parts
+    }
   )
 %>
 <%=
   turbo_stream.replace(
     'production_modal_foot',
     partial: 'modal_foot_component',
-    locals: { production: @production, item_con: 'trade/agent/items' }
+    locals: {
+      production: @production,
+      item_con: 'trade/agent/items'
+    }
   )
 %>
