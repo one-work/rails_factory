@@ -16,7 +16,7 @@ module Factory
       q_params.merge! default_params
       q_params.merge! params.permit(:product_plan_id)
 
-      @productions = @product.productions.includes(:parts).default_where(q_params).order(id: :asc).page(params[:page])
+      @productions = @product.productions.with_attached_logo.includes(:parts).default_where(q_params).order(id: :asc).page(params[:page])
     end
 
     def search

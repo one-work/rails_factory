@@ -1,0 +1,8 @@
+<% if @product.taxon.customizable %>
+  <p>定制产品，无须手动添加规格</p>
+<% else %>
+  <%= button_to({ action: 'new', **request.GET.except(:id) }, class: 'button is-rounded is-info') do %>
+    <%= svg_tag 'plus' %>
+    <span><%= t('.new.title') %></span>
+  <% end %>
+<% end %>
