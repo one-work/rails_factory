@@ -167,6 +167,10 @@ module Factory
       part_ids.include?(component_part.part_id) && component.disabled?(part_ids, component_part.part_id)
     end
 
+    def is_checked?(component_part)
+      part_ids.include?(component_part.part_id) || component_part.default
+    end
+
     def enter_url
       Rails.app.routes.url_for(
         controller: 'factory/productions',

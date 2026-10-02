@@ -1,6 +1,6 @@
 <div data-controller="custom" class="grid gap-2 as-actions">
 <% production.organ.dispatch_options(**params.permit(:desk_id, :dispatch), **session.to_h.slice('desk_id')).each do |value| %>
-  <div class="cell is-fullwidth is-checked">
+  <label for="dispatch_<%= value %>" class="cell button is-fullwidth is-checked">
     <%=
       radio_button_tag(
         'dispatch',
@@ -11,9 +11,7 @@
         form: 'edit_custom'
       )
     %>
-    <label for="dispatch_<%= value %>" class="button is-fullwidth">
-      <p><%= Trade::Item.enum_i18n(:dispatch, value) %></p>
-    </label>
-  </div>
+    <p><%= Trade::Item.enum_i18n(:dispatch, value) %></p>
+  </label>
 <% end %>
 </div>

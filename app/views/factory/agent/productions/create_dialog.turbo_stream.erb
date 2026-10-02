@@ -7,7 +7,7 @@
       component: @component,
       component_parts: @component_parts
     }
-  )
+  ) if params[:component_id].present?
 %>
 <%=
   turbo_stream.replace(

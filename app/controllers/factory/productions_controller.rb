@@ -110,8 +110,10 @@ module Factory
         @production.save!
       end
 
-      @component = Component.find params[:component_id]
-      @component_parts = @production.same_component_parts.where(component_id: @component.id)
+      if params[:component_id].present?
+        @component = Component.find params[:component_id]
+        @component_parts = @production.same_component_parts.where(component_id: @component.id)
+      end
 
       logger.debug "\e[35m  Production: #{@production.id}  \e[0m"
     end

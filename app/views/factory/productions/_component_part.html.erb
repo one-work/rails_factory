@@ -1,5 +1,5 @@
 <label
-  class="button overflow-x-hidden <%= @production.part_ids.include?(component_part.part_id) ? 'is-success' : 'is-light' %>"
+  class="button overflow-x-hidden is-checked"
   for="part_<%= component_part.part_id %>"
   <%= component.disabled?(@production.part_ids, component_part.part_id) ? ' disabled' : '' %>
 >
@@ -25,7 +25,7 @@
       radio_button_tag(
         'production_parts_attributes[][part_id]',
         component_part.part_id,
-        @production.part_ids.include?(component_part.part_id),
+        @production.is_checked?(component_part),
         data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id },
         class: 'display-none',
         id: "part_#{component_part.part_id}",
@@ -46,7 +46,7 @@
       check_box_tag(
         'production_parts_attributes[][part_id]',
         component_part.part_id,
-        @production.part_ids.include?(component_part.part_id),
+        @production.is_checked?(component_part),
         disabled: component.disabled?(@production.part_ids, component_part.part_id),
         data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id },
         class: 'display-none',
