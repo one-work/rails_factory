@@ -45,6 +45,7 @@ module Factory
         taxon.products.each do |product|
           prod = self.class.change_default_production(product, production_params)
           prod.default = true
+          prod.enabled = true
           prod.save
         end
       end
