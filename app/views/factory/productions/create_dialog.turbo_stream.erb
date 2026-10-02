@@ -1,9 +1,13 @@
 <%=
   turbo_stream.update(
-    'production_modal_body',
-    partial: 'card_component',
-    locals: { production: @production }
-  )
+    "component_#{@component.id}",
+    partial: 'component',
+    locals: {
+      production: @production,
+      component: @component,
+      component_parts: @component_parts
+    }
+  ) if params[:component_id].present?
 %>
 <%=
   turbo_stream.replace(
