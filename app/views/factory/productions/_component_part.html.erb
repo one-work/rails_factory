@@ -1,4 +1,5 @@
 <label
+  data-action="click->custom#tip"
   for="part_<%= component_part.part_id %>"
   class="button overflow-x-hidden is-checked"
 >
@@ -26,7 +27,7 @@
         component_part.part_id,
         @production.is_checked?(component_part),
         data: {
-          action: 'click->custom#toggle',
+          action: 'custom#toggle',
           part_taxon_id: component.part_taxon_id,
           disabled: component.disabled?(@production.part_ids, component_part.part_id)
         },
@@ -50,8 +51,11 @@
         'production_parts_attributes[][part_id]',
         component_part.part_id,
         @production.is_checked?(component_part),
+        data: {
+          action: 'custom#toggle',
+          part_taxon_id: component.part_taxon_id
+        },
         disabled: component.disabled?(@production.part_ids, component_part.part_id),
-        data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id },
         class: 'display-none',
         id: "part_#{component_part.part_id}",
         form: 'edit_custom'
