@@ -1,7 +1,7 @@
 <label
-  class="button overflow-x-hidden is-checked"
+  data-action="click->custom#tip"
   for="part_<%= component_part.part_id %>"
-  <%= component.disabled?(@production.part_ids, component_part.part_id) ? ' disabled' : '' %>
+  class="button overflow-x-hidden is-checked"
 >
   <span class="truncate"><%= component_part.part.word %></span>
   <span class="flex-shrink-0">
@@ -29,7 +29,8 @@
         data: { action: 'custom#toggle', part_taxon_id: component.part_taxon_id },
         class: 'display-none',
         id: "part_#{component_part.part_id}",
-        form: 'edit_custom'
+        form: 'edit_custom',
+        disabled: component.disabled?(@production.part_ids, component_part.part_id)
       )
     %>
   <% else %>
