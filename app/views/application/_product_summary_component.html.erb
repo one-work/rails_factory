@@ -17,7 +17,8 @@
         renew_options: {
           production_cart: { controller: controller_path, **params.permit(:client_id) }
         },
-        refer_options: refer_options
+        refer_options: refer_options,
+        remove: 'product_component'
       }
     )
   %>
