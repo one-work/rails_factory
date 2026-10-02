@@ -1,5 +1,5 @@
 <%= f.fields :production_parts, model: @production.production_parts.find_or_initialize_by(part_id: part.id) do |ef| %>
-  <td><%= ef.object.part.name %></td>
+  <td><%= ef.object.part.word %></td>
   <td><%= ef.object.part.price.to_money.format.html_safe %></td>
   <td>
   <% if ef.object.persisted? %>
