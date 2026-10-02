@@ -8,7 +8,6 @@ module Factory
       attribute :min_select, :integer, default: 1
       attribute :max_select, :integer
       attribute :component_parts_count, :integer, default: 0
-      attribute :multiple, :boolean, default: false
 
       belongs_to :part_taxon, class_name: 'Taxon'
       belongs_to :taxon, counter_cache: :taxon_components_count
@@ -18,7 +17,6 @@ module Factory
 
       validates :min_select, numericality: { only_integer: true, less_than_or_equal_to: -> (o) { o.max_select } }
       #validates :max_select, numericality: { only_integer: true, less_than_or_equal_to: -> (o) { o.component_parts_count } }
-
     end
 
     def select_str
@@ -40,13 +38,13 @@ module Factory
     def disabled?(production_part_ids, part_id)
       select_ids = part_ids & production_part_ids
 
-      return select_ids.all?(part_id) if only_one?
+      if only_one?
+        return select_ids.all?(part_id)
+      end
+
+
       if select_ids.size == min_select && select_ids.include?(part_id)
-        if multiple
-          return false
-        else
-          return true
-        end
+        return true
       end
 
       if select_ids.size == max_select && select_ids.exclude?(part_id)
