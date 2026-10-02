@@ -168,7 +168,7 @@ module Factory
     end
 
     def is_checked?(component_part)
-      part_ids.include?(component_part.part_id) || component_part.default
+      part_ids.include?(component_part.part_id)
     end
 
     def enter_url
