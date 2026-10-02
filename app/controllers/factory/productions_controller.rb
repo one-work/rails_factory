@@ -100,15 +100,8 @@ module Factory
 
     def create_dialog
       from_production = Production.find params[:id]
-      temp_production = from_production.product.productions.build(production_params)
-      temp_production.compute_part_str
-      @production = from_production.product.productions.find_by(str_part_ids: temp_production.str_part_ids)
-
-      unless @production
-        @production = temp_production
-        @production.compute_cost_price
-        @production.save!
-      end
+      @production = ComponentPart.change_default_production(from_production.product, production_params)
+      @production.save!
 
       if params[:component_id].present?
         @component = Component.find params[:component_id]
