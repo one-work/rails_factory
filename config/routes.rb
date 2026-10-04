@@ -169,6 +169,7 @@ Rails.app.routes.draw do
       resources :products do
         collection do
           get :buy
+          get :template
           post :scan
           post :manual
         end

@@ -95,6 +95,8 @@ zh:
           title: 产品图片
         scan:
           title: 条形码识别
+        template:
+          title: 模板导入
       product_components:
         index:
           title: 产品组成
