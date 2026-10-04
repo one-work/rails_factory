@@ -31,6 +31,9 @@ zh:
       home:
         index:
           title: 进销存/生产
+      logos:
+        search:
+          title: 搜索
       organs:
         show:
           title: 系统设置

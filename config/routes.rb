@@ -260,6 +260,11 @@ Rails.app.routes.draw do
           end
         end
       end
+      resources :logos, only: [] do
+        collection do
+          post :search
+        end
+      end
     end
 
     namespace :me, defaults: { namespace: 'me' } do
