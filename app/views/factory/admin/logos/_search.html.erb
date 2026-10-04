@@ -8,6 +8,7 @@
     <div
       data-action="click->picture-select#select"
       data-value="<%= logo.media.blob.signed_id %>"
+      data-url="<%= logo.media.blob.url %>"
       class="card-image"
     >
       <%= image_tag logo.media.variant(resize_to_limit: [32, 32]), class: 'image is-32x32' %>
