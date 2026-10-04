@@ -36,7 +36,7 @@ module Factory
     end
 
     def new
-      @product.productions.build(enabled: @product.taxon.enabled)
+      @product.productions.build(enabled: true)
       @product.taxon ||= Taxon.default_where(default_params).new
     end
 
