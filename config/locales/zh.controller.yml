@@ -267,6 +267,9 @@ zh:
       home:
         index:
           title: 产品管理
+      logos:
+        index:
+          title: 默认图片
       organs:
         index:
           title: 门店

@@ -40,3 +40,13 @@
     <span><%= t('factory.panel.organs.index.title') %></span>
   <% end %>
 </div>
+<div class="grid">
+  <%=
+    link_to(
+      { controller: 'factory/panel/logos' },
+      data: { turbo_frame: 'panel', action: 'menu-popup#enter' },
+      class: active_helper(controllers: ['logos'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')
+    ) do %>
+  <span><%= t('factory.panel.logos.index.title') %></span>
+  <% end %>
+</div>

@@ -1,0 +1,2 @@
+<td><%= model.title %></td>
+<td><%= image_tag model.media.variant(resize_to_limit: [32, 32]), class: 'image is-32x32' if model.media.attached? %></td>

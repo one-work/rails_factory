@@ -306,6 +306,7 @@ Rails.app.routes.draw do
         resources :serials
       end
       resources :unifiers
+      resources :logos
     end
   end
 
