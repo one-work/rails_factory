@@ -1,0 +1,5 @@
+<% @logos.each do |logo| %>
+  <div class="card">
+  <%= image_tag logo.media.variant(resize_to_limit: [32, 32]), class: 'image is-32x32' %>
+  </div>
+<% end %>
