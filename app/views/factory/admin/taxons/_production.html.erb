@@ -1,8 +1,10 @@
 <td>
   <div class="is-several pl-4">
     <span><%= model.word %></span>
-    <span class="text-danger ml-1"><%= model.price.to_money.format.html_safe %></span>
   </div>
+</td>
+<td>
+  <span class="text-danger ml-1"><%= model.price.to_money.format.html_safe %></span>
 </td>
 <td>
   <div class="tags">
