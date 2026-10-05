@@ -7,6 +7,7 @@ module Factory
       attribute :default, :boolean
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
+      belongs_to :provider, class_name: 'Org::Organ', optional: true
 
       belongs_to :provide
       belongs_to :taxon
@@ -21,7 +22,7 @@ module Factory
 
       has_many :brothers, class_name: self.name, primary_key: :upstream_product_id, foreign_key: :upstream_product_id, validate: false
 
-      #before_validation :sync_from_upstream, if: :new_record?
+      before_validation :sync_from_upstream, if: :new_record?
       before_validation :sync_from_production, if: -> { production_id_changed? }
       before_validation :sync_from_product, if: -> { product_id_changed? }
       #after_destroy :prune
