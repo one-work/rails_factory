@@ -55,9 +55,9 @@ module Factory
       q_params.merge! params.permit(:organ_id) if @taxon.provider_ids.map(&:to_s).include? params[:organ_id]
 
       if @taxon.factory_taxon
-        @products = @taxon.factory_taxon.products.default_where(q_params).page(params[:page])
+        @products = @taxon.factory_taxon.products.includes(productions: { production_parts: :part }).default_where(q_params).page(params[:page])
       else
-        @products = Product.default_where(q_params).page(params[:page])
+        @products = Product.includes(productions: { production_parts: :part }).default_where(q_params).page(params[:page])
       end
 
       product_ids = @products.pluck(:id)
