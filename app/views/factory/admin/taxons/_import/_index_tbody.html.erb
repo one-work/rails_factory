@@ -22,6 +22,6 @@
 <% if @select_ids.include?(model.id) %>
   <%= svg_tag 'check', class: 'icon is-small text-success' %>
 <% else %>
-  <i class="fa-solid fa-times text-gery"></i>
+  <%= svg_tag 'xmark' %>
 <% end %>
 </td>

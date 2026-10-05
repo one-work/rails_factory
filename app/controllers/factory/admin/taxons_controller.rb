@@ -136,7 +136,7 @@ module Factory
     end
 
     def set_production
-      @production = Production.where(organ_id: @taxon.provider_ids).find params[:production_id]
+      @production = Production.find params[:production_id]
     end
 
     def set_providers
