@@ -9,7 +9,11 @@
   <table class="table is-borderless">
   <% model.parts.each do |part| %>
     <tr>
-      <td><span class="tag"><%= link_to part.name, { controller: 'products', action: 'show', taxon_id: part.taxon_id, id: part.id } %></span></td>
+      <td>
+        <span class="tag">
+          <%= link_to part.word, { controller: 'products', action: 'show', taxon_id: part.taxon_id, id: part.id } %>
+        </span>
+      </td>
     </tr>
   <% end %>
   </table>
