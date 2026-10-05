@@ -5,18 +5,13 @@
   </div>
 </td>
 <td>
-  <table class="table is-borderless">
+  <div class="tags">
   <% model.parts.each do |part| %>
-    <tr>
-      <td>
-        <span class="tag">
-          <%= link_to part.word, { controller: 'products', action: 'show', taxon_id: part.taxon_id, id: part.id } %>
-        </span>
-      </td>
-      <td><%= part.price %></td>
-    </tr>
+    <span class="tag">
+      <%= link_to part.word, { controller: 'products', action: 'show', taxon_id: part.taxon_id, id: part.id } %>
+    </span>
   <% end %>
-  </table>
+  </div>
 </td>
 <td>
 <% if @imported_production_ids.include?(model.id) %>
