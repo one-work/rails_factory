@@ -32,8 +32,13 @@ module Factory
       @factory_taxons = FactoryTaxon.where.not(id: @taxons.pluck(:factory_taxon_id)).order(position: :asc)
     end
 
-    def template
+    def templates
       @factory_taxons = FactoryTaxon.page(params[:page])
+    end
+
+    def template
+      @factory_taxon = FactoryTaxon.find params[:factory_taxon_id]
+
     end
 
     def import
