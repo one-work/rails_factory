@@ -9,7 +9,7 @@ module Factory
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :provider, class_name: 'Org::Organ', optional: true
 
-      belongs_to :provide
+      belongs_to :provide, optional: true
       belongs_to :taxon
       belongs_to :product
       belongs_to :production
@@ -25,7 +25,7 @@ module Factory
       before_validation :sync_from_upstream, if: :new_record?
       before_validation :sync_from_production, if: -> { production_id_changed? }
       before_validation :sync_from_product, if: -> { product_id_changed? }
-      before_create :init_product
+      before_validation :init_product
       #after_destroy :prune
       after_save_commit :set_default, if: -> { default? && saved_change_to_default? }
     end
