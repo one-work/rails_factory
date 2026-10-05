@@ -2,6 +2,12 @@
   <dt><%= Factory::Taxon.human_attribute_name(:name) %></dt>
   <dd><%= @taxon.name %></dd>
 </div>
+<% if @taxon.factory_taxon %>
+<div>
+  <dt><%= Factory::Taxon.human_attribute_name(:factory_taxon_id) %></dt>
+  <dd><%= @taxon.factory_taxon.name %></dd>
+</div>
+<% end %>
 <div>
   <dt><%= Factory::Taxon.human_attribute_name(:position) %></dt>
   <dd><%= @taxon.position %></dd>
