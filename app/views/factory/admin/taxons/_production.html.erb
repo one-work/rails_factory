@@ -23,7 +23,7 @@
       { action: 'prune' },
       method: :delete,
       params: { production_id: model.id },
-      aria: { label: t('factory.in.taxons.prune.title') },
+      aria: { label: t('.prune.title') },
       class: 'button is-small is-borderless'
     ) do
   %>
@@ -34,7 +34,7 @@
     button_to(
       { action: 'copy' },
       params: { production_id: model.id },
-      aria: { label: t('factory.in.taxons.copy.title') },
+      aria: { label: t('.copy.title') },
       class: 'button is-small is-borderless'
     ) do
   %>
