@@ -32,6 +32,10 @@ module Factory
       @factory_taxons = FactoryTaxon.where.not(id: @taxons.pluck(:factory_taxon_id)).order(position: :asc)
     end
 
+    def template
+      @factory_taxons = FactoryTaxon.page(params[:page])
+    end
+
     def import
       q_params = {
         organ_id: @taxon.provider_ids

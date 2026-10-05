@@ -97,6 +97,7 @@ Rails.app.routes.draw do
       resources :taxons do
         collection do
           get :all
+          get :template
         end
         member do
           patch :reorder
