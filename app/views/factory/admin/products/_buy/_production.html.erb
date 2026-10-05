@@ -1,3 +1,9 @@
-<td rowspan="<%= model.production_provides.size + 2 %>"><span class="<%= model.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>"><%= model.title %></span></td>
-<td rowspan="<%= model.production_provides.size + 2 %>"><p class="text-grey"><%= model.price.to_money.format.html_safe %></p></td>
-<td rowspan="<%= model.production_provides.size + 2 %>"><p class="text-danger"><%= model.cost_price.to_money.format.html_safe %></p></td>
+<td rowspan="<%= model.production_provides.size + 2 %>">
+  <span class="<%= model.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>"><%= model.title %></span>
+</td>
+<td rowspan="<%= model.production_provides.size + 2 %>">
+  <p class="text-grey"><%= model.price.to_money.format.html_safe %></p>
+</td>
+<td rowspan="<%= model.production_provides.size + 2 %>">
+  <p class="text-danger"><%= model.cost_price.to_money.format.html_safe %></p>
+</td>

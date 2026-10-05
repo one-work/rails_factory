@@ -1,5 +1,5 @@
 <td>
   <%= render partial: 'purchase_cart', locals: { item_con: 'trade/in/items', cart: @cart, item: @cart.init_cart_item(params, provide_id: pp.provide_id, purchase_id: model.id, good_id: pp.upstream_production_id) } %>
 </td>
-<td><%= pp.provide.name %></td>
+<td><%= pp.provide&.name %></td>
 <td><%= pp.cost_price.to_money.format.html_safe %></td>

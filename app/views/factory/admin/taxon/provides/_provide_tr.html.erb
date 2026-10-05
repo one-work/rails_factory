@@ -5,7 +5,8 @@
       action: url_for(controller: 'taxon_provides', action: 'create'),
       params: { taxon_provide: { provide_id: model.id } },
       icon: 'cart-flatbed',
-      title: t('.taxon_provides.create.title')
+      title: t('.taxon_provides.create.title'),
+      position: 0
     },
     icons: ['show']
   ) { yield }

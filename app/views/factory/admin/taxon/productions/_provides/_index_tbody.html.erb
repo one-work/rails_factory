@@ -1,9 +1,9 @@
-<td><%= model.name %></td>
+<td><%= model.word %></td>
 <td>
   <% model.parts.each do |part| %>
     <%= button_to({ controller: 'productions', action: 'show', product_id: part.product_id, id: part.id }, class: 'tag is-info') do %>
-      <span><%= part.name %></span>
-      <span class="pl-1"><%= part.price.to_money.format.html_safe %></span>
+      <span><%= part.word %></span>
+      <span class="ml-1"><%= part.price.to_money.format.html_safe %></span>
     <% end %>
   <% end %>
 </td>
@@ -12,7 +12,7 @@
     <tbody id="production_<%= model.id %>">
     <% model.production_provides.each do |production_provide| %>
       <tr>
-        <td><%= production_provide.provide.name %></td>
+        <td><%= production_provide.provide&.name %></td>
         <td><%= production_provide.cost_price.to_money.format.html_safe %></td>
       </tr>
     <% end %>
@@ -21,7 +21,12 @@
 </td>
 <td>
   <div data-show-target="item" class="visibility-hidden">
-    <%= button_to({ controller: 'production_provides', action: 'new', production_id: model.id }, class: 'button is-small is-borderless') do %>
+    <%=
+      button_to(
+        { controller: 'production_provides', action: 'new', production_id: model.id },
+        class: 'button is-small is-borderless'
+      ) do
+    %>
       <%= svg_tag 'pencil' %>
       <span class="ml-1"><%= t('.production_provides.new.title') %></span>
     <% end %>
