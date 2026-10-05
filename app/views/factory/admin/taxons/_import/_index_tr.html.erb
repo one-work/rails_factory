@@ -1,15 +1,6 @@
 <%=
   tr_tag(
     model,
-    {
-      action: url_for(controller: 'products', action: 'show', id: model.id),
-      icon: 'eye',
-      title: t('.products.show.title'),
-      data: {
-        controller: 'show tree-remote',
-        tree_remote_target: 'item'
-      }
-    },
     icons: []
   ) { yield }
 %>
