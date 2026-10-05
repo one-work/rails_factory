@@ -1,8 +1,15 @@
-<div
-  id="tr_<%= model.id %>"
-  class="media"
->
-  <%= link_to({ controller: 'taxon/products', taxon_id: model.id }, class: 'media-content') do %>
+<div id="tr_<%= model.id %>" class="media">
+  <% if model.logo.attached? %>
+    <div class="media-left">
+      <%= image_tag model.logo.variant(resize_to_limit: [64, 64]), class: 'image is-64x64' %>
+    </div>
+  <% end %>
+  <%= link_to({ action: 'show', id: model.id }, text: true, class: 'media-content') do %>
     <%= yield %>
   <% end %>
+  <div class="media-right">
+    <%= button_to({ action: 'actions', id: model.id }, class: 'button is-borderless') do %>
+      <%= svg_tag 'ellipsis-vertical' %>
+    <% end %>
+  </div>
 </div>
