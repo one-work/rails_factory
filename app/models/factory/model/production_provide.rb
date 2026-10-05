@@ -25,6 +25,7 @@ module Factory
       before_validation :sync_from_upstream, if: :new_record?
       before_validation :sync_from_production, if: -> { production_id_changed? }
       before_validation :sync_from_product, if: -> { product_id_changed? }
+      before_create :init_product
       #after_destroy :prune
       after_save_commit :set_default, if: -> { default? && saved_change_to_default? }
     end
@@ -40,7 +41,9 @@ module Factory
     def sync_from_upstream
       self.upstream_product = upstream_production.product
       self.provider_id = upstream_production.organ_id
+    end
 
+    def init_product
       if product.nil? && brothers.present?
         self.product = brothers.find(&:product).product
       else
