@@ -121,6 +121,10 @@ zh:
           title: 添加分类
         import:
           title: 从上游导入
+        copy:
+          title: 上架
+        prune:
+          title: 下架
       production_spaces:
         index:
           title: 上料台管理
@@ -229,10 +233,6 @@ zh:
           title: 从供应商上架
         productions:
           provide: 进货
-        copy:
-          title: 上架
-        prune:
-          title: 下架
       productions:
         index:
           title: 进货
