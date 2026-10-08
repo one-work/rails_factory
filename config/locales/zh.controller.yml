@@ -66,7 +66,7 @@ zh:
           title: 旗下品牌
       factory_taxons:
         index:
-          title: 平台商品分类
+          title: 模板导入
         show:
           title: 供应链
       scenes:
@@ -95,8 +95,6 @@ zh:
           title: 产品图片
         scan:
           title: 条形码识别
-        template:
-          title: 模板导入
       product_components:
         index:
           title: 产品组成
@@ -123,8 +121,6 @@ zh:
           title: 从上游导入
         copy:
           title: 上架
-        prune:
-          title: 下架
       production_spaces:
         index:
           title: 上料台管理

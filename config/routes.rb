@@ -94,6 +94,7 @@ Rails.app.routes.draw do
         get :share_code
       end
       resources :brands
+      resources :factory_taxons
       resources :taxons do
         collection do
           get :all
@@ -171,7 +172,6 @@ Rails.app.routes.draw do
       resources :products do
         collection do
           get :buy
-          get :template
           post :scan
           post :manual
         end

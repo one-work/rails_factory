@@ -18,9 +18,9 @@
       <%= svg_tag 'ellipsis', class: 'icon is-small text-primary' %>
       <span class="text-primary mt-1"><%= t('.taxons.index.title') %></span>
     <% end %>
-    <%= link_to({ action: 'template' }, class: 'menu-item has-column-centered display-flex background-white') do %>
+    <%= link_to({ controller: 'factory_taxons' }, class: 'menu-item has-column-centered display-flex background-white') do %>
       <%= svg_tag 'list', class: 'icon is-small text-primary' %>
-      <span class="text-primary mt-1"><%= t('.template.title') %></span>
+      <span class="text-primary mt-1"><%= t('.factory_taxons.index.title') %></span>
     <% end %>
     <div class="background-white flex-grow-1"></div>
   </div>
