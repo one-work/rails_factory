@@ -8,8 +8,10 @@
     <%= yield %>
   <% end %>
   <div class="media-right">
-    <%= button_to({ action: 'actions', id: model.id }, class: 'button is-borderless') do %>
-      <%= svg_tag 'ellipsis-vertical' %>
-    <% end %>
+  <% if @select_ids.include?(model.id) %>
+    <%= svg_tag 'check', class: 'icon is-small text-success' %>
+  <% else %>
+    <%= svg_tag 'xmark' %>
+  <% end %>
   </div>
 </div>

@@ -94,7 +94,9 @@ Rails.app.routes.draw do
         get :share_code
       end
       resources :brands
-      resources :factory_taxons
+      resources :factory_taxons do
+        resources :products, controller: 'factory_taxon/products'
+      end
       resources :taxons do
         collection do
           get :all
