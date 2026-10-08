@@ -19,8 +19,6 @@ module Factory
     def copy
       @product = Product.find params[:product_id]
       downstream_provide = @product.downstream_provides.find_or_initialize_by(organ_id: current_organ.id)
-      #downstream_provide.taxon = @taxon
-      binding.b
       downstream_provide.save
     end
 

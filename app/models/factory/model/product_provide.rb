@@ -24,7 +24,10 @@ module Factory
 
     def init_product
       build_product
-      #product.taxon = taxon
+      if upstream_product.taxon
+        taxon = Taxon.where(organ_id: organ_id).find_or_create_by(name: upstream_product.taxon.name)
+      end
+      product.taxon = taxon
       product.name = upstream_product.name
       product.logo.attach upstream_product.logo_blob
     end
