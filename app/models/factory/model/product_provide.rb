@@ -30,6 +30,13 @@ module Factory
       product.taxon = taxon
       product.name = upstream_product.name
       product.logo.attach upstream_product.logo_blob
+      
+      upstream_product.productions.each do |upstream_production|
+        product.productions.build(
+          name: upstream_production.name,
+          price: upstream_production.price
+        )
+      end
     end
 
     def automatic_production_provide
