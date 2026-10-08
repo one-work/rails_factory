@@ -17,6 +17,13 @@ module Factory
       @imported_production_ids = ProductionProvide.default_where(default_params).distinct(:upstream_production_id).pluck(:upstream_production_id)
     end
 
+    def copy
+      @production = Production.find params[:production_id]
+      downstream_provide = @production.downstream_provides.find_or_initialize_by(organ_id: current_organ.id)
+      #downstream_provide.taxon = @taxon
+      downstream_provide.save
+    end
+
     private
     def set_factory_taxon
       @factory_taxon = FactoryTaxon.find params[:id]

@@ -98,8 +98,6 @@ Rails.app.routes.draw do
       resources :taxons do
         collection do
           get :all
-          get :templates
-          get 'template/:factory_taxon_id' => :template
         end
         member do
           patch :reorder
