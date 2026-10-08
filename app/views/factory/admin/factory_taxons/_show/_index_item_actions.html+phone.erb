@@ -4,7 +4,7 @@
       <%= image_tag model.logo.variant(resize_to_limit: [64, 64]), class: 'image is-64x64' %>
     </div>
   <% end %>
-  <%= link_to({ action: 'show', id: model.id }, text: true, class: 'media-content') do %>
+  <%= link_to({ controller: 'products', action: 'show', id: model.id }, text: true, class: 'media-content') do %>
     <%= yield %>
   <% end %>
   <div class="media-right">
