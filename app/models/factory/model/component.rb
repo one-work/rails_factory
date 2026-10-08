@@ -39,10 +39,13 @@ module Factory
     def disabled?(production_part_ids, part_id)
       select_ids = part_ids & production_part_ids
 
+      if select_ids.blank?
+        return false
+      end
+
       if only_one?
         return select_ids.all?(part_id)
       end
-
 
       if select_ids.size == min_select && select_ids.include?(part_id)
         return true
