@@ -17,8 +17,8 @@ module Factory
     end
 
     def copy
-      @production = Production.find params[:production_id]
-      downstream_provide = @production.downstream_provides.find_or_initialize_by(organ_id: current_organ.id)
+      @product = Product.find params[:product_id]
+      downstream_provide = @product.downstream_provides.find_or_initialize_by(organ_id: current_organ.id)
       #downstream_provide.taxon = @taxon
       downstream_provide.save
     end

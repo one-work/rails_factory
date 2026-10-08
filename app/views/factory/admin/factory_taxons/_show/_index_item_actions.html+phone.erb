@@ -9,9 +9,21 @@
   <% end %>
   <div class="media-right">
   <% if @select_ids.include?(model.id) %>
-    <%= svg_tag 'check', class: 'icon is-small text-success' %>
+    <%=
+      button_to(
+        { action: 'copy' },
+        params: { product_id: model.id },
+        aria: { label: t('.copy.title') },
+        class: 'button is-small is-borderless'
+      ) do
+    %>
+      <%= svg_tag 'tractor' %>
+    <% end %>
   <% else %>
-    <%= svg_tag 'xmark' %>
+    <span>
+     <%= svg_tag 'check', class: 'icon is-small text-success' %>
+     <span>已导入</span>
+    </span>
   <% end %>
   </div>
 </div>

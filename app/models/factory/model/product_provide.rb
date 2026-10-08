@@ -8,6 +8,8 @@ module Factory
       attribute :default, :boolean
       attribute :ref, :string, comment: '用于数据迁移'
 
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+
       belongs_to :upstream_product, class_name: 'Product'
       belongs_to :provide, counter_cache: true
       belongs_to :product

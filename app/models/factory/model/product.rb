@@ -42,6 +42,8 @@ module Factory
       has_many :fits, dependent: :destroy_async
       has_many :production_plans
 
+      has_many :downstream_provides, class_name: 'ProductProvide', foreign_key: :upstream_product_id
+
       accepts_nested_attributes_for :product_components, reject_if: :all_blank, allow_destroy: true
       accepts_nested_attributes_for :productions
 
