@@ -69,6 +69,8 @@ zh:
           title: 模板导入
         show:
           title: 供应链
+        copy:
+          title: 导入
       scenes:
         index:
           title: 场景
