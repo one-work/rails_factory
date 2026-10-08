@@ -11,14 +11,22 @@ module Factory
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
       belongs_to :upstream_product, class_name: 'Product'
-      belongs_to :provide, counter_cache: true
+      belongs_to :provide, counter_cache: true, optional: true
       belongs_to :product
 
       has_many :productions, primary_key: :product_id, foreign_key: :product_id
       has_many :production_provides, as: :provide_config
 
+      before_validation :init_product, if: -> { upstream_product.present? && product.blank? }
       after_create_commit :automatic_production_provide
       after_save_commit :automatic_as_default, if: -> { default? && saved_change_to_default? }
+    end
+
+    def init_product
+      build_product
+      #product.taxon = taxon
+      product.name = upstream_product.name
+      product.logo.attach upstream_product.logo_blob
     end
 
     def automatic_production_provide

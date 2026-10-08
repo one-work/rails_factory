@@ -96,6 +96,9 @@ Rails.app.routes.draw do
       resources :brands
       resources :factory_taxons do
         resources :products, controller: 'factory_taxon/products'
+        member do
+          post :copy
+        end
       end
       resources :taxons do
         collection do
