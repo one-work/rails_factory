@@ -17,18 +17,10 @@
 </td>
 <td>
 <% if @imported_production_ids.include?(model.id) %>
-  <%= svg_tag 'check', class: 'icon is-small text-success' %>
-  <%=
-    button_to(
-      { action: 'prune' },
-      method: :delete,
-      params: { production_id: model.id },
-      aria: { label: t('.prune.title') },
-      class: 'button is-small is-borderless'
-    ) do
-  %>
-    <%= svg_tag 'xmark', class: 'icon is-small text-danger' %>
-  <% end %>
+  <span>
+    <%= svg_tag 'check', class: 'icon is-small text-success' %>
+    <span>已导入</span>
+  </span>
 <% else %>
   <%=
     button_to(

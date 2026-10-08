@@ -2,7 +2,7 @@ module Factory
   class Admin::TaxonsController < Admin::BaseController
     before_action :set_taxon, only: [
       :show, :productions, :edit, :update, :reorder, :destroy,
-      :import, :copy, :prune
+      :import, :copy
     ]
     before_action :set_factory_taxons, only: [:index, :new, :edit, :edit, :update]
     before_action :set_scenes, only: [:index, :new, :edit]
@@ -10,7 +10,7 @@ module Factory
     before_action :set_new_taxon, only: [:new, :create]
     before_action :set_taxons, only: [:new, :create]
     before_action :set_own_taxons, only: [:edit, :update]
-    before_action :set_production, only: [:copy, :prune]
+    before_action :set_production, only: [:copy]
     before_action :set_providers, only: [:import, :productions]
     before_action :set_count_hash, only: [:update]
 
@@ -69,11 +69,6 @@ module Factory
       downstream_provide = @production.downstream_provides.find_or_initialize_by(organ_id: current_organ.id)
       downstream_provide.taxon = @taxon
       downstream_provide.save
-    end
-
-    def prune
-      production = @production.downstream_provides.find_by(organ_id: current_organ.id)
-      production.destroy
     end
 
     private
