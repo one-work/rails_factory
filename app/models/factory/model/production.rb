@@ -55,7 +55,7 @@ module Factory
       has_many :same_parts, -> { distinct }, through: :same_production_parts, source: :part
       has_many :same_part_taxons, -> { distinct }, through: :same_production_parts, source: :part_taxon
 
-      has_many :production_provides, dependent: :destroy_all
+      has_many :production_provides, dependent: :delete_all
       has_many :all_provides, class_name: 'ProductionProvide', primary_key: []
       has_many :downstream_provides, class_name: 'ProductionProvide', foreign_key: :upstream_production_id
 
