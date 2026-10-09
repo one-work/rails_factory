@@ -4,7 +4,7 @@
       <%=
         link_to(
           taxon.name,
-          { controller: 'products', taxon_id: taxon.id },
+          { taxon_id: taxon.id },
           data: { turbo_action: 'replace' },
           class: active_helper(taxon_id: taxon.id, item: 'menu-item', active: 'menu-item is-active')
         )
