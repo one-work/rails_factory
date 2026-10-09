@@ -84,7 +84,7 @@ module Factory
     def set_cart
       @cart = Trade::Cart.get_cart(
         params,
-        agent_id: current_member.id,
+        agent_id: current_member&.id,  # 管理员mock 进来的时候没有 member 报错
         **default_params
       )
     end
