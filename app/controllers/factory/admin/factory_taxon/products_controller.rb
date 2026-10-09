@@ -4,7 +4,6 @@ module Factory
 
     def index
       q_params = {}
-      q_params.merge! default_params
       q_params.merge! params.permit(:taxon_id, 'name-like')
 
       @taxons = @factory_taxon.taxons
