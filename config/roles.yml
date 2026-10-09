@@ -1,7 +1,7 @@
 Org::Organ: &org
   factory/admin/organs: all
   factory/admin/taxons: all
-  factroy/admin/factory_taxons: all
+  factory/admin/factory_taxons: all
   factory/admin/products: all
   factory/admin/productions: all
   factory/admin/taxon/products: all
