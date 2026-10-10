@@ -1,5 +1,5 @@
-<%= render partial: 'com/attachments/list_field_xx', locals: { target: f.object.logo, f: f } %>
 <%= f.text_field :name, required: true %>
+<%= render partial: 'com/attachments/list_field_xx', locals: { target: f.object.logo, f: f } %>
 <%= f.collection_select :brand_id, @brands, :id, :name, include_blank: true if @brands.present? %>
 <%=
   f.fields(
