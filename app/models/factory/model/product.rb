@@ -61,6 +61,7 @@ module Factory
       after_save :sync_taxon, if: -> { saved_change_to_taxon_id? }
       after_save :process_logo!, if: -> { attachment_changes.key?('logo') }
       after_save :sync_name_to_productions, if: -> { saved_change_to_name? }
+      after_save :sync_price_to_productions, if: -> { saved_change_to_base_price? }
       after_update :set_specialty, if: -> { specialty? && saved_change_to_specialty? }
       after_update :set_published, if: -> { saved_change_to_published? }
       after_save_commit :sync_position_later, if: -> { saved_change_to_position? && enable_reorder? }
@@ -92,6 +93,13 @@ module Factory
     def sync_name_to_productions
       productions.each do |prod|
         prod.sync_word
+        prod.save
+      end
+    end
+
+    def sync_price_to_productions
+      productions.each do |prod|
+        prod.compute_cost_price
         prod.save
       end
     end
