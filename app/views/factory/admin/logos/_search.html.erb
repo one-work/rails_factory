@@ -11,7 +11,7 @@
       data-url="<%= logo.media.blob.url %>"
       class="card-image"
     >
-      <%= image_tag logo.media, class: 'image' %>
+      <%= image_tag logo.media.variant(resize_to_limit: [128, 128]), class: 'image is-128x128' %>
     </div>
   </div>
 <% end %>
