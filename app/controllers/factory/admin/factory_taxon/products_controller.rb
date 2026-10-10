@@ -22,6 +22,8 @@ module Factory
       @product = Product.find params[:product_id]
       downstream_provide = @product.downstream_provides.find_or_initialize_by(organ_id: current_organ.id)
       downstream_provide.save
+
+      @select_ids = [@product.id]
     end
 
     private

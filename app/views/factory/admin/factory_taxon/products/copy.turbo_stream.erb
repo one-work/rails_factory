@@ -1,1 +1,10 @@
-<%= turbo_stream.visit %>
+<%=
+  turbo_stream.replace(
+    "tr_#{params[:id]}",
+    partial: 'index_item',
+    layout: 'index_item_actions',
+    locals: {
+      model: @product
+    }
+  )
+%>
