@@ -26,7 +26,7 @@ module Factory
       elsif max_select == min_select && component_parts_count == max_select
         "必选 #{max_select}"
       elsif max_select.to_i > min_select.to_i
-        "可选 #{min_select} - #{max_select}"
+        "请选择 #{min_select} - #{max_select}"
       else
         ''
       end
