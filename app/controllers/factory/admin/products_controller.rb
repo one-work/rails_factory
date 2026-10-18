@@ -19,7 +19,7 @@ module Factory
         :product_components,
         logo_attachment: :blob,
         covers_attachments: :blob
-      ).default_where(q_params).order(taxon_id: :asc).page(params[:page])
+      ).default_where(q_params).order(taxon_id: :asc).page(params[:page]).per(params[:per])
     end
 
     def buy
