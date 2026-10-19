@@ -1,13 +1,11 @@
 <%=
   link_to(
     { controller: 'productions', action: 'show', product_id: model.product_id, id: model.id },
-    class: 'truncate'
+    class: 'truncate display-block'
   ) do
 %>
   <span><%= model.title %></span>
-<% end %>
-<div class="mt-1 flex">
-  <div class="tags">
+  <div class="tags display-inline-flex">
   <% if model.default %>
     <span class="tag"><%= model.default_i18n %></span>
   <% end %>
@@ -17,5 +15,11 @@
     <span class="tag is-danger"><%= model.enabled_i18n %></span>
   <% end %>
   </div>
+<% end %>
+<div class="mt-1">
+  <span class="text-danger"><%= model.price.to_money.format.html_safe %></span>
+  <span class="text-grey">
+    <span><%= Factory::Production.human_attribute_name(:stock) %>:</span>
+    <span><%= model.stock %></span>
+  </span>
 </div>
-<p class="text-danger mt-1"><%= model.price.to_money.format.html_safe %></p>

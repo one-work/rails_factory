@@ -2,6 +2,10 @@
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
+<%= button_to({ action: 'edit_stock', id: model.id }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'pencil' %>
+  <span><%= t('.edit_stock.title') %></span>
+<% end %>
 <%= link_to({ controller: 'production_plans', production_id: model.id }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'clock' %>
   <span><%= t('.production_plans.index.title') %></span>
