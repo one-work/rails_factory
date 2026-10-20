@@ -1,7 +1,7 @@
 <%= form_with theme: 'modal', model: @production, url: { action: 'update' } do |f| %>
   <%= render 'modal_header' %>
   <section id="modal-card-body" class="modal-card-body">
-    <%= f.number_field :stock, step: f.object.step %>
+    <%= f.number_field :stock, step: f.object.step, autofocus: true %>
   </section>
   <%= f.submit %>
 <% end %>

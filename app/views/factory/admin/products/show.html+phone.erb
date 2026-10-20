@@ -1,5 +1,12 @@
 <%= render partial: 'show' %>
 
 <%= render layout: 'index_list' do %>
-  <%= render partial: 'production_item', layout: 'production_item_actions', collection: @product.productions, as: :model %>
+  <%=
+    render(
+      partial: 'production_item',
+      layout: 'production_item_actions',
+      collection: @product.productions,
+      as: :model
+    )
+  %>
 <% end %>
