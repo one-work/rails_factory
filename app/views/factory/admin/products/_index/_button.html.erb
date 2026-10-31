@@ -7,7 +7,7 @@
   <%= svg_tag 'plus' %>
   <span><%= t('.scan.title') %></span>
 </div>
-<%= button_to({ action: 'new' }, params: { 'product[taxon_id]': params[:taxon_id] }, class: 'button is-rounded is-info') do %>
+<%= button_to({ action: 'new' }, params: { 'product[taxon_id]': params[:taxon_id] }, class: 'button is-rounded is-primary') do %>
   <%= svg_tag 'plus' %>
   <span><%= t('.new.title') %></span>
 <% end %>
