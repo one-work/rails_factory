@@ -312,6 +312,7 @@ Rails.app.routes.draw do
             post :search
           end
         end
+        resources :taxons
       end
       resources :scenes
       resources :brands do

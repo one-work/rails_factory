@@ -2,26 +2,19 @@ module Factory
   class Panel::FactoryTaxonsController < Panel::BaseController
     before_action :set_factory_taxon, only: [:show, :edit, :update, :destroy]
     before_action :set_scenes, only: [:new, :create, :edit, :update]
+    before_action :set_new_factory_taxon, only: [:new, :create]
 
     def index
       @factory_taxons = FactoryTaxon.order(id: :asc).page(params[:page])
     end
 
-    def new
-      @factory_taxon = FactoryTaxon.new
-    end
-
-    def create
-      @factory_taxon = FactoryTaxon.new(factory_taxon_params)
-
-      unless @factory_taxon.save
-        render :new, locals: { model: @factory_taxon }, status: :unprocessable_entity
-      end
-    end
-
     private
     def set_factory_taxon
       @factory_taxon = FactoryTaxon.find(params[:id])
+    end
+
+    def set_new_factory_taxon
+      @factory_taxon = FactoryTaxon.new(factory_taxon_params)
     end
 
     def set_scenes

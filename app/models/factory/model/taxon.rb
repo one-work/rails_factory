@@ -13,7 +13,8 @@ module Factory
       attribute :provides_count, :integer, default: 0
       attribute :taxon_components_count, :integer, default: 0
 
-      belongs_to :organ, optional: true
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+
       belongs_to :factory_taxon, optional: true
       belongs_to :scene, optional: true
 

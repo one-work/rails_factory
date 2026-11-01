@@ -293,6 +293,9 @@ zh:
       scenes:
         index:
           title: 场景
+      taxons:
+        index:
+          title: 分类
       unifiers:
         index:
           title: 平台命名
