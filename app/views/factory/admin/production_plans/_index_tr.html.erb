@@ -2,7 +2,7 @@
   tr_tag(
     model,
     {
-      href: url_for(controller: 'productions', product_plan_id: model.id),
+      href: url_for(controller: 'productions', action: 'index', product_id: model.production.product_id, product_plan_id: model.id),
       icon: 'cubes'
     }
   ) { yield }
