@@ -4,7 +4,6 @@ module Factory
 
     included do
       attribute :produce_on, :date, comment: '对接生产管理'
-      attribute :purchase_id, :integer
 
       enum :purchase_status, {
         init: 'init',
