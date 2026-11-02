@@ -25,7 +25,7 @@ module Factory
       before_validation :sync_from_upstream, if: :new_record?
       before_validation :sync_from_production, if: -> { production_id_changed? }
       before_validation :sync_from_product, if: -> { product_id_changed? }
-      before_validation :init_product
+      before_validation :init_product, if: -> { product.nil? }
       #after_destroy :prune
       after_save_commit :set_default, if: -> { default? && saved_change_to_default? }
     end
@@ -39,19 +39,24 @@ module Factory
     end
 
     def sync_from_upstream
-      self.upstream_product = upstream_production.product
-      self.provider_id = upstream_production.organ_id
+      if upstream_production
+        self.upstream_product = upstream_production.product
+        self.provider_id = upstream_production.organ_id
+      end
     end
 
     def init_product
       if product.nil? && brothers.present?
         self.product = brothers.find(&:product).product
       else
-        build_product
+        product || build_product
       end
       product.taxon = taxon
-      product.name = upstream_product.name
-      product.logo.attach upstream_product.logo_blob
+
+      if upstream_product
+        product.name = upstream_product.name
+        product.logo.attach upstream_product.logo_blob
+      end
 
       production || build_production
       production.product = product
