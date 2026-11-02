@@ -1,6 +1,6 @@
 <td><%= model.name %></td>
 <td>
-  <%= link_to({ controller: 'organs', action: 'mock', id: model.organ_id }) do %>
+  <%= link_to({ controller: 'organs', action: 'mock', id: model.organ_id }, target: '_blank') do %>
     <span><%= model.organ.name %></span>
   <% end %>
 </td>
