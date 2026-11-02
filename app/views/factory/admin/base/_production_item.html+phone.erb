@@ -18,6 +18,9 @@
 <% end %>
 <div class="mt-1">
   <span class="text-danger"><%= model.price.to_money.format.html_safe %></span>
+</div>
+<div class="mt-1">
+  <%= link_to({  }) %>
   <span class="text-grey">
     <span><%= Factory::Production.human_attribute_name(:stock) %>:</span>
     <span><%= model.stock %></span>
