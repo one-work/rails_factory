@@ -1,0 +1,41 @@
+<div>
+  <dt><%= Factory::Product.human_attribute_name(:name) %></dt>
+  <dd>
+    <%= text_field_tag 'product[name]', @product.name, class: 'input', form: 'show-form', data: { single_input_target: 'input' } %>
+  </dd>
+</div>
+<div>
+  <dt><%= Factory::Product.human_attribute_name(:logo) %></dt>
+  <dd><%= image_tag @product.logo, class: 'image is-64x64' if @product.logo.attached? %></dd>
+</div>
+<div>
+  <dt><%= Factory::Product.human_attribute_name(:description) %></dt>
+  <dd>
+    <%=
+      text_area_tag(
+        'product[description]',
+        @product.description,
+        placeholder: '点击添加描述',
+        class: 'textarea',
+        form: 'show-form',
+        data: { single_input_target: 'input' }
+      )
+    %>
+  </dd>
+</div>
+<div>
+  <dt><%= Factory::Product.human_attribute_name(:covers) %></dt>
+  <dd>
+    <div class="flex">
+      <%= render 'com/attachments/list', target: @product.covers %>
+    </div>
+  </dd>
+</div>
+<div>
+  <dt><%= Factory::Product.human_attribute_name(:images) %></dt>
+  <dd>
+    <div class="flex">
+      <%= render 'com/attachments/list', target: @product.images %>
+    </div>
+  </dd>
+</div>
