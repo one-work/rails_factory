@@ -137,6 +137,7 @@ module Factory
       self.taxon_id = product.taxon_id
       self.organ_id = product.organ_id
       self.spu = product.spu
+      self.position = product.position
     end
 
     def parts_hash
