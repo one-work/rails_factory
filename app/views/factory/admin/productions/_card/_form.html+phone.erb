@@ -1,0 +1,8 @@
+<%= form_with theme: 'phone_modal', model: @production, url: { action: 'update_card' } do |f| %>
+  <%= render 'modal_header' %>
+  <section id="modal-card-body" class="modal-card-body">
+    <%= render 'error_messages', target: f.object %>
+    <%= render partial: 'common_card_form', collection: @card_templates, as: :card_template, locals: { f: f } %>
+  </section>
+  <%= f.submit %>
+<% end %>

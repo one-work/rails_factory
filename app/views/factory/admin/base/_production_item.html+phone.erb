@@ -18,6 +18,14 @@
 <% end %>
 <div class="mt-1">
   <span class="text-danger"><%= model.price.to_money.format.html_safe %></span>
+  <div class="tags-group display-inline-block">
+  <% model.card_price.each do |key, value| %>
+    <div class="tags has-addons is-tag-price control mb-0">
+      <div class="tag is-success"><%= key %></div>
+      <div class="tag is-light"><%= value.to_money.format.html_safe %></div>
+    </div>
+  <% end %>
+  </div>
 </div>
 <div class="mt-1">
   <%= link_to({ controller: 'stock_logs', production_id: model.id }) do %>
