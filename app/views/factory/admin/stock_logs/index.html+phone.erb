@@ -1,0 +1,7 @@
+<%= render partial: 'filter_bar', locals: { name: 'remark-like' } %>
+
+<%= render layout: 'index_list' do %>
+  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @stock_logs, as: :model %>
+<% end %>
+
+<%= paginate @stock_logs %>
