@@ -1,5 +1,5 @@
 <% if @production.taxon&.customizable %>
-  <%= form_with model: @production, url: { action: 'create_dialog' }, id: 'edit_custom' do |f| %>
+  <%= form_with model: @production, scope: '', url: { action: 'create_dialog' }, id: 'edit_custom' do |f| %>
     <% params.permit(:desk_id, :station_id, :client_id, :contact_id).each do |k, v| %>
       <%= f.hidden_field k, value: v %>
     <% end %>
