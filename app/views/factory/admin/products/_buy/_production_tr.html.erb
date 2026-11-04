@@ -5,9 +5,8 @@
   render(
     partial: 'item_tbody',
     layout: 'item_tr',
-    collection: @cart.init_provide_items(model, purchase_id: model.id),
-    as: :item,
-    locals: { model: model }
+    collection: @cart.init_provide_items(model),
+    as: :item
   )
 %>
 <%=

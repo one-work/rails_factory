@@ -7,13 +7,14 @@ module Factory
       has_many :productions, through: :production_carts
     end
 
-    def init_provide_items(production, params, **options)
-      items = find_items(purchase_id: production.id, **params, **options)
-      new_items = model.available_provides.each do |production_provide|
+    def init_provide_items(production, **options)
+      items = find_items(purchase_id: production.id, **options)
+      new_items = []
+      production.available_provides.map do |production_provide|
         unless items.pluck(:provide_id).include?(production_provide.provide_id)
-          items.build(
-            params,
+          new_items << items.build(
             provide_id: production_provide.provide_id,
+            purchase_id: production.id,
             good_type: 'Factory::Production',
             good_id: production_provide.upstream_production_id,
             **options
