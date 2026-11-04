@@ -3,18 +3,9 @@
 </tr>
 <%=
   render(
-    partial: 'production_provide',
+    partial: 'item_tbody',
     layout: 'item_tr',
-    collection: model.available_provides,
-    as: :pp,
-    locals: { model: model }
-  )
-%>
-<%=
-  render(
-    partial: 'production_item',
-    layout: 'item_tr',
-    collection: @cart.find_items_except_provide(model.available_provides.pluck(:provide_id), purchase_id: model.id, good_id: nil),
+    collection: @cart.init_provide_items(model, purchase_id: model.id),
     as: :item,
     locals: { model: model }
   )
