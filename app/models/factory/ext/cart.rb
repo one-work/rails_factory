@@ -8,10 +8,11 @@ module Factory
     end
 
     def init_provide_items(production, params, **options)
-      provide_ids = model.available_provides.pluck(:provide_id) - items.pluck(:provide_id)
       items = find_items(purchase_id: production.id, **params, **options)
 
-      provide_ids.map do |production_provide|
+      provide_ids = model.available_provides.except(items.pluck(:provide_id))
+
+      new_items = provide_ids.map do |production_provide|
         items.build(
           params,
           provide_id: production_provide.provide_id,
@@ -20,6 +21,8 @@ module Factory
           **options
         )
       end
+
+      items + new_items
     end
 
   end
