@@ -1,27 +1,9 @@
 <td>
-  <%=
-    render(
-      partial: 'purchase_cart',
-      locals: {
-        item_con: 'trade/in/items',
-        cart: @cart,
-        item: @cart.init_cart_item(params, provide_id: pp.provide_id)
-      }
-    )
-  %>
-</td>
-<td>
-  <span><%= pp.provide.name %></span>
-  <span class="tag">默认供应商</span>
-</td>
-<td><%= pp.cost_price.to_money.format.html_safe %></td>
-
-
-<td>
   <%= render partial: 'purchase_cart', locals: { item_con: 'trade/in/items', cart: @cart, item: item } %>
 </td>
 <td>
   <span><%= item.provide&.name %></span>
   <span class="tag">临时供应商</span>
+  <span class="tag">默认供应商</span>
 </td>
 <td><%= item.single_price.to_money.format.html_safe %></td>
