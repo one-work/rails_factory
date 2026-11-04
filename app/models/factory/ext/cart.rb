@@ -8,11 +8,10 @@ module Factory
     end
 
     def init_provide_items(production, **options)
-      items = find_items(purchase_id: production.id, **options)
-      new_items = []
+      provide_items = find_items(purchase_id: production.id, **options)
       production.available_provides.map do |production_provide|
-        unless items.pluck(:provide_id).include?(production_provide.provide_id)
-          new_items << items.build(
+        unless provide_items.pluck(:provide_id).include?(production_provide.provide_id)
+          provide_items << items.build(
             provide_id: production_provide.provide_id,
             purchase_id: production.id,
             good_type: 'Factory::Production',
@@ -22,7 +21,7 @@ module Factory
         end
       end
 
-      items.chain new_items
+      provide_items
     end
 
   end
