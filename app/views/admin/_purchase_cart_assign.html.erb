@@ -3,17 +3,17 @@
   <td data-controller="modify" data-modify-submit-value="true" >
     <div class="has-inline-centered">
       <%= button_to({ controller: 'factory/in/items', action: 'destroy', id: item.id }, method: :delete, params: { current_cart_id: @cart&.id }, class: 'mr-1') do %>
-        <i class="fa-solid fa-xl fa-circle-xmark text-dark-grey"></i>
+        <%= svg_tag 'circle-xmark', class: 'icon' %>
       <% end %>
       <button data-action="modify#minus" class="button_to mr-1"<%= 'disabled' if item.number <= 1 %>>
-        <i class="fa-solid fa-xl fa-circle-minus <%= item.number <= 1 ? 'text-grey' : 'text-dark-grey' %>"></i>
+        <%= svg_tag 'circle-minus', class: 'icon' %>
       </button>
-      <%= form_with(theme: nil, scope: :item, url: { controller: 'factory/in/items', action: 'update', id: item.id }, method: :patch, data: { controller: 'input' }) do |f| %>
+      <%= form_with(theme: nil, scope: '', url: { controller: 'factory/in/items', action: 'update', id: item.id }, method: :patch, data: { controller: 'input' }) do |f| %>
         <%= f.hidden_field :current_cart_id, value: cart.id %>
-        <%= f.number_field :number, value: item.number.to_human, data: { action: 'change->input#form', modify_target: 'input' }, class: 'background-light text-centered', style: 'width: 30px' %>
+        <%= f.text_field :number, value: item.number.to_human, data: { action: 'change->input#form', modify_target: 'input' }, class: 'background-light text-centered', style: 'width: 3em' %>
       <% end %>
       <button data-action="modify#plus" class="button_to ml-1">
-        <i class="fa-solid fa-xl fa-circle-plus text-dark-grey"></i>
+        <%= svg_tag 'circle-plus', class: 'icon' %>
       </button>
     </div>
   </td>
@@ -27,8 +27,8 @@
       </div>
     <% end %>
     <%= button_to({ controller: 'factory/in/items', action: 'edit_assign', id: item.id }, class: 'button is-small') do %>
-      <i class="fa-solid fa-hand-point-right text-info"></i>
-      <span class="ml-1"><%= t('factory.in.items.edit_assign.title') %></span>
+      <%= svg_tag 'hand-point-right' %>
+      <span><%= t('factory.in.items.edit_assign.title') %></span>
     <% end %>
   </td>
 </tr>
