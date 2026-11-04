@@ -1,8 +1,8 @@
-<div class="level box sticky-bottom">
+<div class="level box sticky-bottom mt-3">
   <div class="level-left">
     <%= link_to({ controller: 'trade/in/carts', action: 'show', id: @cart.id }, id: 'cart_nav', class: 'button is-primary') do %>
       <%= svg_tag 'cart-shopping' %>
-      <span class="ml-1"><%= @cart.amount.to_money.format.html_safe %></span>
+      <span><%= @cart.amount.to_money.format.html_safe %></span>
     <% end %>
   </div>
   <div class="level-right">
