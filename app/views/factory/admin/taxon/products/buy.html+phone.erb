@@ -1,0 +1,9 @@
+
+
+<%= render layout: 'index_list' do %>
+  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @products, as: :model %>
+<% end %>
+
+<%= paginate @products %>
+
+<%= render 'index_tfoot' %>
