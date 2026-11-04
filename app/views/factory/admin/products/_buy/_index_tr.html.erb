@@ -2,4 +2,4 @@
   <%= tr_tag(model, icons: [], class: 'background-light') { yield } %>
 <% end %>
 
-<%= render partial: 'production', layout: 'production_tr', collection: model.productions, as: :model %>
+<%= render partial: 'production_tbody', layout: 'production_tr', collection: model.productions, as: :model %>

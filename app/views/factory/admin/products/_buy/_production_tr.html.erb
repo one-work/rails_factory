@@ -14,7 +14,7 @@
   render(
     partial: 'production_item',
     layout: 'item_tr',
-    collection: @cart.find_items_except_provide(model.production_provides.pluck(:provide_id), purchase_id: model.id, good_id: nil),
+    collection: @cart.find_items_except_provide(model.available_provides.pluck(:provide_id), purchase_id: model.id, good_id: nil),
     as: :item,
     locals: { model: model }
   )

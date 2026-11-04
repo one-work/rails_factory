@@ -10,5 +10,8 @@
     )
   %>
 </td>
-<td><%= pp.provide&.name %></td>
+<td>
+  <span><%= pp.provide.name %></span>
+  <span class="tag">默认供应商</span>
+</td>
 <td><%= pp.cost_price.to_money.format.html_safe %></td>

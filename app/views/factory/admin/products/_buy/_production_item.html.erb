@@ -1,5 +1,8 @@
 <td>
   <%= render partial: 'purchase_cart', locals: { item_con: 'trade/in/items', cart: @cart, item: item } %>
 </td>
-<td><%= item.provide&.name %></td>
+<td>
+  <span><%= item.provide&.name %></span>
+  <span class="tag">临时供应商</span>
+</td>
 <td><%= item.single_price.to_money.format.html_safe %></td>
