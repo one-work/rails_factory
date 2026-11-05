@@ -3,6 +3,7 @@ module Factory
     extend ActiveSupport::Concern
 
     included do
+      attr_accessor :available_provide  # 由于标记是否是临时供应商，在界面上显示
       attribute :produce_on, :date, comment: '对接生产管理'
 
       enum :purchase_status, {

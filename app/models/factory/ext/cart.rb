@@ -11,13 +11,16 @@ module Factory
       provide_items = find_items(purchase_id: production.id, **options)
       production.available_provides.map do |production_provide|
         unless provide_items.pluck(:provide_id).include?(production_provide.provide_id)
-          provide_items << items.build(
+          item = items.build(
             provide_id: production_provide.provide_id,
             purchase_id: production.id,
             good_type: 'Factory::Production',
             good_id: production_provide.upstream_production_id,
             **options
           )
+          item.available_provide = true
+
+          provide_items << item
         end
       end
 

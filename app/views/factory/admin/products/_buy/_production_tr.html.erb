@@ -1,11 +1,21 @@
+<% items = @cart.init_provide_items(model) %>
+
 <tr id="tr_<%= model.product_id %>_<%= model.id %>">
-  <%= yield %>
+  <td rowspan="<%= items.size + 2 %>">
+    <span class="<%= model.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>"><%= model.title %></span>
+  </td>
+  <td rowspan="<%= items.size + 2 %>">
+    <p class="text-grey"><%= model.price.to_money.format.html_safe %></p>
+  </td>
+  <td rowspan="<%= items.size + 2 %>">
+    <p class="text-danger"><%= model.cost_price.to_money.format.html_safe %></p>
+  </td>
 </tr>
 <%=
   render(
     partial: 'item_tbody',
     layout: 'item_tr',
-    collection: @cart.init_provide_items(model),
+    collection: items,
     as: :item
   )
 %>
