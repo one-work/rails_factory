@@ -13,7 +13,7 @@
   </span>
   <%=
     hidden_field_tag(
-      'production_parts_attributes[][component_id]',
+      "production_parts_attributes[#{component.id}][component_id]",
       component_part.component_id,
       form: 'edit_custom',
       id: nil
@@ -38,7 +38,7 @@
   <% else %>
     <%=
       hidden_field_tag(
-        'production_parts_attributes[][part_id]',
+        "production_parts_attributes[#{component.id}][part_id]",
         component_part.part_id,
         form: 'edit_custom',
         data: { part_taxon_id: component_part.part.taxon_id },
@@ -47,7 +47,7 @@
     %>
     <%=
       check_box_tag(
-        'production_parts_attributes[][part_id]',
+        "production_parts_attributes[#{component.id}][part_id]",
         component_part.part_id,
         @production.is_checked?(component_part),
         data: {

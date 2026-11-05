@@ -167,8 +167,9 @@ module Factory
     end
 
     def production_params
-      params.permit(
-        production_parts_attributes: [:part_id, :component_id, :number]
+      params.permit(production_parts_attributes: {
+          
+        }
       )
     end
 
