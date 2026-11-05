@@ -9,8 +9,15 @@ module Factory
 
     def init_provide_items(production, **options)
       provide_items = find_items(purchase_id: production.id, **options)
+      _items = provide_items.each_with_object({}) do |item, h|
+        h.merge! item.provide_id => item
+      end
+
       production.available_provides.map do |production_provide|
-        unless provide_items.pluck(:provide_id).include?(production_provide.provide_id)
+        provide_item = _items[production_provide.provide_id]
+        if provide_item
+          provide_item.available_provide = true
+        else
           item = items.build(
             provide_id: production_provide.provide_id,
             purchase_id: production.id,
