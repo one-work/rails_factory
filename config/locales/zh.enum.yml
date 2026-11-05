@@ -1,6 +1,10 @@
 zh:
   activerecord:
     enum:
+      factory/component:
+        multiple:
+          true: 支持填写数量
+          false: 仅选择
       factory/product:
         published:
           true: 已上架

@@ -6,6 +6,7 @@
 </td>
 <td class="text-grey"><%= model.select_str %></td>
 <td><%= link_to model.component_parts_count, { controller: 'component_parts', component_id: model.id } %></td>
+<td><%= model.multiple_i18n %></td>
 <td>
 <% model.component_parts.each do |product_part| %>
   <p>

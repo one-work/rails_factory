@@ -6,6 +6,7 @@
     <%= f.collection_select :part_taxon_id, @part_taxons, :id, :name %>
     <%= f.number_field :min_select, step: 1, data: { action: 'equal#update' } %>
     <%= f.number_field :max_select, step: 1, data: { equal_target: 'goal' } %>
+    <%= f.checkbox :multiple %>
   </section>
   <%= f.submit %>
 <% end %>
