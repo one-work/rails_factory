@@ -8,6 +8,7 @@ module Factory
 
       enum :purchase_status, {
         init: 'init',
+        part_received: 'part_received',
         received: 'received'
       }, prefix: true, default: 'init'
 
@@ -17,13 +18,9 @@ module Factory
       belongs_to :purchase, polymorphic: true, foreign_type: :good_type, optional: true
       belongs_to :production_provide, class_name: 'Factory::ProductionProvide', foreign_key: [:purchase_id, :provide_id], primary_key: [:production_id, :provide_id], optional: true
 
-      has_many :stock_logs, class_name: 'Factory::StockLog', as: :source
-
       after_initialize :sync_from_purchase, if: -> { new_record? && order.present? }
       before_validation :sync_from_purchase, if: -> { purchase_id.present? && purchase_id_changed? }
       before_validation :sync_from_produce_plan, if: -> { respond_to?(:produce_plan) && produce_plan }
-      after_save :increment_stock, if: -> { saved_change_to_purchase_status? && purchase_status == 'received' && ['init', nil].include?(purchase_status_before_last_save) }
-      after_save :decrement_stock, if: -> { saved_change_to_purchase_status? && purchase_status != 'received' && ['received'].include?(purchase_status_before_last_save) }
     end
 
     def sync_from_produce_plan
@@ -41,28 +38,6 @@ module Factory
       else
         self.single_price ||= purchase.cost_price
       end
-    end
-
-    def increment_stock
-      purchase.stock = purchase.stock.to_d + number
-      purchase.last_stock_log = {
-        amount: number,
-        title: '收货',
-        source_type: self.base_class_name,
-        source_id: id
-      }
-      purchase.save
-    end
-
-    def decrement_stock
-      purchase.stock = purchase.stock.to_d - number
-      purchase.last_stock_log = {
-        amount: -number,
-        title: '取消收货',
-        source_type: self.base_class_name,
-        source_id: id
-      }
-      purchase.save
     end
 
   end
