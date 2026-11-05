@@ -4,10 +4,10 @@
 <td>
   <% if item.provide && item.available_provide %>
     <span><%= item.provide.name %></span>
-    <span class="tag">默认供应商</span>
+    <span class="tag is-primary">默认供应商</span>
   <% elsif item.provide %>
-    <div class="tags has-addons display-inline-flex mb-0">
-      <span class="tag"><%= item.provide.name %></span>
+    <div class="display-inline-flex">
+      <span><%= item.provide.name %></span>
       <span class="tag">临时供应商</span>
       <%=
         button_to(
