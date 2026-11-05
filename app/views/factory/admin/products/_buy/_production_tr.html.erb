@@ -1,13 +1,13 @@
 <% items = @cart.init_provide_items(model) %>
 
 <tr id="tr_<%= model.product_id %>_<%= model.id %>" data-id="<%= model.id %>">
-  <td rowspan="<%= items.size + 2 %>">
+  <td rowspan="<%= items.size + 1 %>">
     <span class="<%= model.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>"><%= model.title %></span>
   </td>
-  <td rowspan="<%= items.size + 2 %>">
+  <td rowspan="<%= items.size + 1 %>">
     <p class="text-grey"><%= model.price.to_money.format.html_safe %></p>
   </td>
-  <td rowspan="<%= items.size + 2 %>">
+  <td rowspan="<%= items.size + 1 %>">
     <p class="text-danger"><%= model.cost_price.to_money.format.html_safe %></p>
   </td>
 </tr>
@@ -17,15 +17,5 @@
     layout: 'item_tr',
     collection: items,
     as: :item
-  )
-%>
-<%=
-  render(
-    partial: 'purchase_cart_assign',
-    locals: {
-      model: model,
-      cart: @cart,
-      item: @cart.init_cart_item(params, provide_id: nil, purchase_id: model.id, good_id: nil)
-    }
   )
 %>

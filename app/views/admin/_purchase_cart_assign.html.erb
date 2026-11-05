@@ -1,5 +1,4 @@
 <% if item.persisted? %>
-<tr id="<%= item.cart_identity %>" class="left-border">
   <td data-controller="modify" data-modify-submit-value="true" >
     <div class="has-inline-centered">
       <%= button_to({ controller: 'factory/in/items', action: 'destroy', id: item.id }, method: :delete, params: { current_cart_id: @cart&.id }, class: 'mr-1') do %>
@@ -18,33 +17,17 @@
     </div>
   </td>
   <td colspan="2">
-    <% if item.provide_id.present? %>
-      <div class="tags has-addons display-inline-flex mb-0">
-        <span class="tag"><%= item.provide.name %></span>
-        <%= button_to({ controller: 'factory/in/items', action: 'update', id: item.id }, method: :patch, params: { item: { organ_id: nil, provide_id: nil } }, form: { class: 'tag is-danger' }) do %>
-          <%= svg_tag 'xmark' %>
-        <% end %>
-      </div>
-    <% end %>
-    <%= button_to({ controller: 'factory/in/items', action: 'edit_assign', id: item.id }, class: 'button is-small') do %>
-      <%= svg_tag 'hand-point-right' %>
-      <span><%= t('factory.in.items.edit_assign.title') %></span>
-    <% end %>
+
   </td>
-</tr>
 <% else %>
-<tr id="<%= item.cart_identity %>" class="left-border">
-  <td colspan="3">
-    <%= form_with theme: nil, model: item, scope: '', url: { controller: 'factory/in/items', action: 'create' }, class: 'button_to' do |f| %>
-      <%= f.hidden_field :current_cart_id, value: cart.id %>
-      <%= f.hidden_field :good_type %>
-      <%= f.hidden_field :purchase_id %>
-      <%= f.hidden_field :good_id %>
-      <%= f.hidden_field :provide_id %>
-      <%= button_tag do %>
-        <%= svg_tag 'circle-plus', class: 'icon' %>
-      <% end %>
+  <%= form_with theme: nil, model: item, scope: '', url: { controller: 'factory/in/items', action: 'create' }, class: 'button_to' do |f| %>
+    <%= f.hidden_field :current_cart_id, value: cart.id %>
+    <%= f.hidden_field :good_type %>
+    <%= f.hidden_field :purchase_id %>
+    <%= f.hidden_field :good_id %>
+    <%= f.hidden_field :provide_id %>
+    <%= button_tag do %>
+      <%= svg_tag 'circle-plus', class: 'icon' %>
     <% end %>
-  </td>
-</tr>
+  <% end %>
 <% end %>

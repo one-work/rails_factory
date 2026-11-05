@@ -31,6 +31,16 @@ module Factory
         end
       end
 
+      if _items[nil]
+      else
+        provide_items << items.build(
+          provide_id: nil,
+          purchase_id: production.id,
+          good_type: 'Factory::Production',
+          good_id: nil
+        )
+      end
+
       provide_items
     end
 
