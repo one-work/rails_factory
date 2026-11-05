@@ -9,7 +9,7 @@
 <td>
 <% model.component_parts.each do |product_part| %>
   <p>
-    <span><%= product_part.part.name %></span>
+    <span><%= product_part.part.word %></span>
     <% if product_part.default %>
       <%= svg_tag 'check', class: 'icon is-small text-success' %>
     <% end %>

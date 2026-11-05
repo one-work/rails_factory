@@ -168,7 +168,7 @@ module Factory
 
     def production_params
       params.permit(production_parts_attributes: {
-          
+
         }
       )
     end
