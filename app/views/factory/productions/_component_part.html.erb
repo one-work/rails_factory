@@ -22,7 +22,7 @@
   <% if component.only_one? %>
     <%=
       radio_button_tag(
-        'production_parts_attributes[][part_id]',
+        "production_parts_attributes[#{component.id}][part_id]",
         component_part.part_id,
         @production.is_checked?(component_part),
         data: {
