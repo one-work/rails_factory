@@ -3,6 +3,8 @@ module Factory
     extend ActiveSupport::Concern
 
     included do
+      attribute :status, :string
+
       has_many :stock_logs, class_name: 'Factory::StockLog', as: :source
 
       enum :status, {
