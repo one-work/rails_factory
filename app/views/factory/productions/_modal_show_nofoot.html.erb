@@ -15,6 +15,6 @@
     <div id="production_modal_body" class="modal-card-body">
       <%= yield %>
     </div>
-    <%= render partial: 'modal_foot_component', locals: { item_con: "trade/#{params[:namespace].presence || 'my'}/items" } %>
+    <%= render partial: 'modal_foot_component', locals: { item_con: item_con } %>
   </div>
 </div>
