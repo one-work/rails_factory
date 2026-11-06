@@ -2,7 +2,7 @@
   for="part_<%= component_part.part_id %>"
   class="button overflow-x-hidden is-checked"
 >
-  <span class="truncate"><%= component_part.part.word %></span>
+  <span class="truncate"><%= component_part.part.title_short %></span>
   <span class="flex-shrink-0">
     <% if component_part.part.price.to_d > 0 %>
       <span class="text-danger ml-1"><%= component_part.part.price.to_money.format.html_safe %></span>

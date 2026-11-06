@@ -100,6 +100,10 @@ module Factory
       self.word = title
     end
 
+    def title_short
+      name.presence || product.name
+    end
+
     def title
       return unless product
       if name.present?
