@@ -52,7 +52,7 @@
       </label>
     <% end %>
     <%=
-      number_field_tag(
+      text_field_tag(
         "production_parts_attributes[#{component_part.id}][number]",
         @production.parts_hash[component_part.part_id].number,
         data: { action: 'change->input#form focus->input#blank', modify_target: 'input' },
