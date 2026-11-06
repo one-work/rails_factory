@@ -36,3 +36,9 @@
     <span><%= t('factory.admin.organs.show.title') %></span>
   <% end %>
 </div>
+<p class="size-7 text-grey mb-1">开单</p>
+<div class="grid">
+  <%= link_to({ controller: 'factory/agent/productions' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth flex-direction-column') do %>
+    <span><%= t('factory.agent.productions.index.title') %></span>
+  <% end %>
+</div>
