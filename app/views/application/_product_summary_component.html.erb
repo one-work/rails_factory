@@ -9,7 +9,7 @@
       collection: cart.find_good_items(model.brother_ids, good_type: model.base_class_name),
       as: :item,
       locals: {
-        cart: @cart,
+        cart: cart,
         item_con: item_con,
         renew: {
           "product_summary_#{model.product_id}" => { 'partial' => 'product_summary_component' },
