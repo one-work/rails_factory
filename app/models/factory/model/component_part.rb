@@ -61,6 +61,7 @@ module Factory
           production
         else
           temp_production.compute_cost_price
+          temp_production.save!
           temp_production
         end
       end
