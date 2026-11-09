@@ -52,6 +52,8 @@ module Factory
     end
 
     class_methods do
+
+      # 如果符合存入系统的条件，则存入；不符合存入条件，则仅用来计算；
       def change_default_production(product, production_params)
         temp_production = product.productions.build(production_params)
         temp_production.compute_part_str
