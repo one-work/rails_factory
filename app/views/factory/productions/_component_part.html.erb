@@ -11,15 +11,15 @@
       <%= svg_tag 'xmark', class: 'icon is-small ml-1' %>
     <% end %>
   </span>
-  <%=
-    hidden_field_tag(
-      "production_parts_attributes[#{component.id}][component_id]",
-      component_part.component_id,
-      form: 'edit_custom',
-      id: nil
-    )
-  %>
   <% if component.only_one? %>
+    <%=
+      hidden_field_tag(
+        "production_parts_attributes[#{component.id}][component_id]",
+        component_part.component_id,
+        form: 'edit_custom',
+        id: nil
+      )
+    %>
     <%=
       radio_button_tag(
         "production_parts_attributes[#{component.id}][part_id]",
@@ -38,7 +38,15 @@
   <% else %>
     <%=
       hidden_field_tag(
-        "production_parts_attributes[#{component.id}][part_id]",
+        "production_parts_attributes[#{component_part.id}][component_id]",
+        component_part.component_id,
+        form: 'edit_custom',
+        id: nil
+      )
+    %>
+    <%=
+      hidden_field_tag(
+        "production_parts_attributes[#{component_part.id}][part_id]",
         component_part.part_id,
         form: 'edit_custom',
         data: { part_taxon_id: component_part.part.taxon_id },
@@ -47,7 +55,7 @@
     %>
     <%=
       check_box_tag(
-        "production_parts_attributes[#{component.id}][part_id]",
+        "production_parts_attributes[#{component_part.id}][part_id]",
         component_part.part_id,
         @production.is_checked?(component_part),
         data: {
