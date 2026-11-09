@@ -8,6 +8,7 @@
       <% end %>
     </p>
   <% end %>
+  <p class="size-7 text-grey"><time data-controller="time"><%= model.created_at.to_fs(:rfc8601) %></time></p>
 </td>
 <% if @product.taxon&.customizable %>
 <td>
