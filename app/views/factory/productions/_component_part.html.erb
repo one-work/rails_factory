@@ -51,7 +51,7 @@
         form: 'edit_custom',
         data: { part_taxon_id: component_part.part.taxon_id },
         id: nil
-      ) if @production.xxx(component, component_part)
+      ) if @production.no_cancel(component, component_part)
     %>
     <%=
       check_box_tag(

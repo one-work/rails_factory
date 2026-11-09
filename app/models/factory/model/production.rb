@@ -168,7 +168,7 @@ module Factory
       self.save!
     end
 
-    def xxx(component, component_part)
+    def no_cancel(component, component_part)
       part_ids.include?(component_part.part_id) && component.disabled?(part_ids, component_part.part_id)
     end
 
