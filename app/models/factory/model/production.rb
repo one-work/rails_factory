@@ -176,7 +176,7 @@ module Factory
 
     # @return [Boolean]
     def reach_limit?
-      coms_hash = production_parts.includes(:component).group_by(&:component_id)
+      coms_hash = production_parts.group_by(&:component_id)
       all_hash = product.components.each_with_object({}) do |component, h|
         h.merge! component => coms_hash.fetch(component.id, [])
       end
