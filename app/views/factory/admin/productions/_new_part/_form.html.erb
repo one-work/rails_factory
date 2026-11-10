@@ -1,4 +1,4 @@
-<%= form_with theme: 'inline', model: @production, url: { action: 'update_part' }, class: 'modal-card' do |f| %>
+<%= form_with theme: 'inline', model: @production, url: { action: 'create' }, class: 'modal-card' do |f| %>
   <%= render 'modal_header' %>
   <section id="modal-card-body" class="modal-card-body">
     <%= render 'error_messages', target: f.object %>

@@ -5,7 +5,7 @@ module Factory
       :show, :edit, :update, :refresh, :destroy, :actions,
       :price, :card, :update_card, :wallet, :update_wallet, :edit_stock, :print_data
     ]
-    before_action :set_new_production, only: [:new, :create]
+    before_action :set_new_production, only: [:new, :new_part, :create]
     before_action :set_taxon, only: [:taxon]
     after_action only: [:update, :update_card, :update_wallet] do
       mark_audits(instance: :@production)
