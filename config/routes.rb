@@ -185,8 +185,6 @@ Rails.app.routes.draw do
         resources :product_components
         resources :productions do
           member do
-            match :part, via: [:get, :post]
-            patch :update_part
             match :price, via: [:get, :post]
             match :cost, via: [:get, :post]
             match :card, via: [:get, :post]
