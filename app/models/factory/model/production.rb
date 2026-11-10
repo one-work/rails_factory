@@ -174,7 +174,11 @@ module Factory
 
     # @return [Boolean]
     def reach_limit?
-      production_parts.includes(:component).group_by(&:component).all? do |component, _production_parts|
+      coms_hash = production_parts.includes(:component).group_by(&:component_id)
+      all_hash = product.components.each_with_object({}) do |component, h|
+        h.merge! component => coms_hash.fetch(component.id, [])
+      end
+      all_hash.all? do |component, _production_parts|
         _production_parts.size >= component.min_select
       end
     end
