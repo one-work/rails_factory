@@ -12,9 +12,6 @@
       <span class="pl-1"><%= part.price.to_money.format.html_safe %></span>
     <% end %>
   <% end %>
-  <%= button_to({ action: 'part', product_id: model.product_id, id: model.id }, data: { show_target: 'item' }, aria: { label: t('factory.admin.productions.part.title') }, class: 'visibility-hidden') do %>
-    <%= svg_tag 'cubes' %>
-  <% end %>
 </td>
 <td style="--money-width: <%= model.max_indent %>ch">
   <div>
