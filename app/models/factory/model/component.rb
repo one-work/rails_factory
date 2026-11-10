@@ -36,7 +36,8 @@ module Factory
       max_select == min_select && max_select == 1 && component_parts_count > max_select
     end
 
-    def no_cancel?(production_part_ids, part_id)
+    def no_cancel?(production_parts, part_id)
+      production_part_ids = production_parts.pluck(:part_id)
       select_ids = part_ids & production_part_ids
 
       if select_ids.blank?
@@ -58,7 +59,8 @@ module Factory
       false
     end
 
-    def cancelable?(production_part_ids, part_id)
+    def cancelable?(production_parts, part_id)
+      production_part_ids = production_parts.pluck(:part_id)
       select_ids = part_ids & production_part_ids
 
       return false if only_one?

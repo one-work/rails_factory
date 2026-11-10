@@ -21,7 +21,7 @@
     %>
   </div>
   <div class="has-v-centered">
-  <% if @production.part_ids.include?(component_part.part_id) %>
+  <% if @production.production_parts.pluck(:part_id).include?(component_part.part_id) %>
     <% if @production.parts_hash[component_part.part_id].number > 1 %>
       <button data-action="modify#minus" class="button_to mr-1">
         <%= svg_tag 'minus', class: 'icon text-grey' %>
