@@ -169,7 +169,14 @@ module Factory
     end
 
     def no_cancel(component, component_part)
-      part_ids.include?(component_part.part_id) && component.disabled?(part_ids, component_part.part_id)
+      part_ids.include?(component_part.part_id) && component.no_cancel?(part_ids, component_part.part_id)
+    end
+
+    # @return [Boolean]
+    def reach_limit?
+      production_parts.includes(:component).group_by(&:component).all? do |component, _production_parts|
+        _production_parts.size >= component.min_select
+      end
     end
 
     def is_checked?(component_part)

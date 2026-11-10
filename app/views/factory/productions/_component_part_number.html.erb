@@ -1,4 +1,4 @@
-<% disabled = component.disabled?(@production.part_ids, component_part.part_id) %>
+<% disabled = component.no_cancel?(@production.part_ids, component_part.part_id) %>
 
 <div
   data-controller="modify"

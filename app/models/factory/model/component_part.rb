@@ -57,13 +57,17 @@ module Factory
       def change_default_production(product, production_params)
         temp_production = product.productions.build(production_params)
         temp_production.compute_part_str
-        production = product.productions.find_by(str_part_ids: temp_production.str_part_ids)
-
-        if production
-          production
+        if temp_production.reach_limit?
+          production = product.productions.find_by(str_part_ids: temp_production.str_part_ids)
+          if production
+            production
+          else
+            temp_production.compute_cost_price
+            temp_production.save!
+            temp_production
+          end
         else
           temp_production.compute_cost_price
-          temp_production.save!
           temp_production
         end
       end

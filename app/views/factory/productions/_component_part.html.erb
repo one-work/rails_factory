@@ -28,7 +28,7 @@
         data: {
           action: 'custom#toggle click->custom#tip',
           part_taxon_id: component.part_taxon_id,
-          disabled: component.disabled?(@production.part_ids, component_part.part_id)
+          disabled: component.no_cancel?(@production.part_ids, component_part.part_id)
         },
         class: 'display-none',
         id: "part_#{component_part.part_id}",
@@ -62,7 +62,7 @@
           action: 'custom#toggle',
           part_taxon_id: component.part_taxon_id
         },
-        disabled: component.disabled?(@production.part_ids, component_part.part_id),
+        disabled: component.no_cancel?(@production.part_ids, component_part.part_id),
         class: 'display-none',
         id: "part_#{component_part.part_id}",
         form: 'edit_custom'

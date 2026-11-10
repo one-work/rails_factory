@@ -36,7 +36,7 @@ module Factory
       max_select == min_select && max_select == 1 && component_parts_count > max_select
     end
 
-    def disabled?(production_part_ids, part_id)
+    def no_cancel?(production_part_ids, part_id)
       select_ids = part_ids & production_part_ids
 
       if select_ids.blank?
