@@ -87,6 +87,10 @@ module Factory
       )
     end
 
+    def production_parts_params
+      params.permit(production_parts_attributes: {})
+    end
+
     def card_price_params
       p = params.fetch(:production, {}).permit(card_price: {})
       p[:card_price].to_h.each_with_object({}) do |(_, v), h|

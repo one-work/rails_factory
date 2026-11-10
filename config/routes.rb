@@ -137,7 +137,6 @@ Rails.app.routes.draw do
             get :provides
           end
           member do
-            match :part, via: [:get, :post]
             match :price, via: [:get, :post]
             match :cost, via: [:get, :post]
             match :card, via: [:get, :post]
@@ -184,6 +183,9 @@ Rails.app.routes.draw do
         end
         resources :product_components
         resources :productions do
+          collection do
+            post :new_part
+          end
           member do
             match :price, via: [:get, :post]
             match :cost, via: [:get, :post]
