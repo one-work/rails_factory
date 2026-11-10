@@ -170,7 +170,8 @@ module Factory
     end
 
     def no_cancel(component, component_part)
-      part_ids.include?(component_part.part_id) && component.no_cancel?(part_ids, component_part.part_id)
+      _part_ids = production_parts.pluck(:part_id)
+      _part_ids.include?(component_part.part_id) && component.no_cancel?(production_parts, component_part.part_id)
     end
 
     # @return [Boolean]
