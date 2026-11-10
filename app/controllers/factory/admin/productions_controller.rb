@@ -3,7 +3,7 @@ module Factory
     before_action :set_product, except: [:taxon], if: -> { params[:product_id].present? }
     before_action :set_production, only: [
       :show, :edit, :update, :refresh, :destroy, :actions,
-      :part, :update_part, :price, :card, :update_card, :wallet, :update_wallet, :edit_stock, :print_data
+      :price, :card, :update_card, :wallet, :update_wallet, :edit_stock, :print_data
     ]
     before_action :set_new_production, only: [:new, :create]
     before_action :set_taxon, only: [:taxon]
@@ -27,11 +27,6 @@ module Factory
     end
 
     def detect
-    end
-
-    def update_part
-      @production.assign_attributes part_params
-      @production.compute_part_str!
     end
 
     def card
@@ -89,12 +84,6 @@ module Factory
         :stock,
         :step,
         :hot
-      )
-    end
-
-    def part_params
-      params.fetch(:production, {}).permit(
-        production_parts_attributes: [:part_id, :component_id, :number, :id, :_destroy]
       )
     end
 

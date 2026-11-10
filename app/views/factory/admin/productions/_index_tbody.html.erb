@@ -21,10 +21,6 @@
       <span class="ml-1"><%= production_part.part.price.to_money.format.html_safe %></span>
     <% end %>
   <% end %>
-  <%= button_to({ action: 'part', id: model.id }, data: { show_target: 'item' }, class: 'visibility-hidden') do %>
-    <%= svg_tag 'cubes' %>
-    <span class="text-grey size-7 ml-1"><%= t('.productions.part.title') %></span>
-  <% end %>
 </div>
 </td>
 <% end %>
