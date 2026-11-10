@@ -60,10 +60,12 @@ module Factory
         if temp_production.reach_limit?
           production = product.productions.find_by(str_part_ids: temp_production.str_part_ids)
           if production
+            logger.debug "\e[35m  Production: #{production.id}  \e[0m"
             production
           else
             temp_production.compute_cost_price
             temp_production.save!
+            logger.debug "\e[35m  New Production: #{temp_production.id}  \e[0m"
             temp_production
           end
         else

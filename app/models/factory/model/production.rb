@@ -72,8 +72,9 @@ module Factory
 
       validates :str_part_ids, uniqueness: { scope: :product_id }, allow_blank: true
 
+      after_initialize :sync_from_product, if: -> { new_record? && product }
       before_validation :sync_word, if: -> { name_changed? || new_record? }
-      before_save :sync_from_product, if: -> { product_id_changed? || (new_record? && product) }
+      before_save :sync_from_product, if: -> { product_id_changed? }
       before_save :compute_profit_price, if: -> { (changes.keys & ['cost_price']).present? }
       before_save :compute_price, if: -> { (changes.keys & ['cost_price', 'profit_price']).present? }
       before_create :init_default
@@ -184,7 +185,7 @@ module Factory
     end
 
     def is_checked?(component_part)
-      part_ids.include?(component_part.part_id)
+      production_parts.pluck(:part_id).include?(component_part.part_id)
     end
 
     def enter_url
