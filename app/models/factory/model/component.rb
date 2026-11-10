@@ -48,6 +48,7 @@ module Factory
         return select_ids.all?(part_id)
       end
 
+      # 比如 3 选 2，如果剩下的选项小于 2 -1, 则提示不可取消
       if select_ids.size == (min_select - 1) && select_ids.include?(part_id)
         return true
       end
