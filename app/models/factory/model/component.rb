@@ -48,7 +48,7 @@ module Factory
         return select_ids.all?(part_id)
       end
 
-      if select_ids.size == min_select && select_ids.include?(part_id)
+      if select_ids.size == (min_select - 1) && select_ids.include?(part_id)
         return true
       end
 
