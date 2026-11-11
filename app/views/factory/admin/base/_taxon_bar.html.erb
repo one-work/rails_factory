@@ -50,10 +50,10 @@
         <span class="ml-1"><%= t('factory.admin.taxon.provides.index.title') %></span>
       <% end %>
     </li>
-    <li class="<%= active_helper(controller: 'taxon/productions', action: 'provides', taxon_id: @taxon.id, active: 'is-active') %>">
-      <%= link_to({ controller: 'taxon/productions', action: 'provides', taxon_id: @taxon.id }) do %>
+    <li class="<%= active_helper(controller: 'taxon/production_provides', taxon_id: @taxon.id, active: 'is-active') %>">
+      <%= link_to({ controller: 'taxon/production_provides', taxon_id: @taxon.id }) do %>
         <%= svg_tag 'eye' %>
-        <span class="ml-1"><%= t('factory.admin.taxon.productions.provides.title') %></span>
+        <span class="ml-1"><%= t('factory.admin.taxon.production_provides.index.title') %></span>
       <% end %>
     </li>
   </ul>

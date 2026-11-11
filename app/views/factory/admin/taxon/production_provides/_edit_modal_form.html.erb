@@ -1,0 +1,8 @@
+<%= form_with theme: 'modal', model: @production_provide, url: { action: 'update' } do |f| %>
+  <%= render 'modal_header' %>
+  <section id="modal-card-body" class="modal-card-body">
+    <%= render 'error_messages', target: f.object %>
+    <%= f.number_field :cost_price, autofocus: true %>
+  </section>
+  <%= f.submit %>
+<% end %>

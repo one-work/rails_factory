@@ -1,0 +1,11 @@
+<%=
+  turbo_stream.replace(
+    "production_provide_#{params[:id]}",
+    partial: 'production_provide_tr',
+    locals: {
+      production_provide: @production_provide,
+      model: @production_provide.production
+    }
+  )
+%>
+<%= turbo_stream.remove 'modal_form' %>

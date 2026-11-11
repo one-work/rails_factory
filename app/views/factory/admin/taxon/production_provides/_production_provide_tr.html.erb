@@ -1,0 +1,14 @@
+<tr id="production_provide_<%= production_provide.id %>">
+  <td><%= production_provide.provide&.name %></td>
+  <td><%= production_provide.cost_price.to_money.format.html_safe %></td>
+  <td>
+    <%=
+      button_to(
+        { controller: 'taxon/production_provides', action: 'edit', taxon_id: model.taxon_id, id: production_provide.id },
+        class: 'button is-small is-borderless'
+      ) do
+    %>
+      <%= svg_tag 'pencil' %>
+    <% end %>
+  </td>
+</tr>

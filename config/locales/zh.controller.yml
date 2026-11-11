@@ -53,6 +53,9 @@ zh:
         provides:
           index:
             title: 品类供应商
+        production_provides:
+          index:
+            title: 供应商
       product:
         provides:
           index:
