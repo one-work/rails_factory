@@ -3,10 +3,10 @@
 <%= render 'index_actions' %>
 
 <%= render layout: 'index_table' do %>
-  <tbody id="tbody">
-    <%= render partial: 'index_tbody', layout: 'index_tr', collection: @product_provides, as: :model %>
+  <tbody id="product_provide_tbody">
+    <%= render partial: 'product_provide_tbody', layout: 'product_provide_tr', collection: @product_provides, as: :model %>
   </tbody>
-  <tbody>
+  <tbody id="provide_tbody">
     <%= render partial: 'provide_tbody', layout: 'provide_tr', collection: @provides, as: :model %>
   </tbody>
 <% end %>
