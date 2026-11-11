@@ -1,9 +1,9 @@
 <%=
   turbo_stream.append(
-    'tbody',
-    partial: 'taxon_provide_tbody',
-    layout: 'taxon_provide_tr',
-    locals: { model: @taxon_provide }
+    'provide_tbody',
+    partial: 'provide_tbody',
+    layout: 'provide_tr',
+    locals: { model: @taxon_provide.provide }
   )
 %>
 <%= turbo_stream.remove "tr_#{@taxon_provide.id}" %>
