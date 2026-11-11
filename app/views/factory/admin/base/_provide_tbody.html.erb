@@ -6,9 +6,9 @@
     <span><%= model.provider.name %></span>
   </div>
 <% else %>
-  <%= button_to({ action: 'invite', id: model.id }, class: 'button is-small is-borderless') do %>
+  <%= button_to({ controller: 'taxon/provides', action: 'invite', id: model.id }, class: 'button is-small is-borderless') do %>
     <%= svg_tag 'user-plus' %>
-    <span class="ml-1"><%= t('.invite.title') %></span>
+    <span><%= t('.taxon.provides.invite.title') %></span>
   <% end %>
 <% end %>
 </td>
