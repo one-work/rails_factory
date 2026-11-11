@@ -7,6 +7,7 @@
     <% end %>
   <% end %>
 </td>
+<td><%= model.price.to_money.format.html_safe %></td>
 <td>
   <table>
     <tbody id="production_<%= model.id %>">
@@ -14,6 +15,17 @@
       <tr>
         <td><%= production_provide.provide&.name %></td>
         <td><%= production_provide.cost_price.to_money.format.html_safe %></td>
+        <td>
+          <%=
+            button_to(
+              { controller: 'production_provides', action: 'edit', production_id: model.id, id: production_provide.id },
+              class: 'button is-small is-borderless'
+            ) do
+          %>
+            <%= svg_tag 'pencil' %>
+            <span class="ml-1"><%= t('.production_provides.edit.title') %></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
     </tbody>
