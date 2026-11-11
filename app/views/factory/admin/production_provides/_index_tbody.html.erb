@@ -1,13 +1,20 @@
-<td><%= model.provide.name %></td>
+<td><%= model.provide&.name %></td>
 <td>
-<% if model.provide.provider %>
-  <%= model.provide.provider.name %>
+<% if model.provide %>
+  <%= model.provide.name %>
 <% end %>
 </td>
 <td><%= model.cost_price.to_money.format.html_safe %></td>
 <td><%= model.provide_config_type_i18n %></td>
 <td>
-  <%= form_with theme: 'switch', model: model, url: { controller: 'production_provides', action: 'refresh', id: model.id }, data: { controller: 'input' } do |f| %>
+  <%=
+    form_with(
+      theme: 'switch',
+      model: model,
+      url: { controller: 'production_provides', action: 'refresh', id: model.id },
+      data: { controller: 'input' }
+    ) do |f|
+  %>
     <%= f.checkbox :default, data: { action: 'input#submit' }, id: nil %>
   <% end %>
 </td>
