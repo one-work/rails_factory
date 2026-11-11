@@ -1,9 +1,9 @@
 <td><%= model.word %></td>
 <td>
-  <% model.parts.each do |part| %>
-    <%= button_to({ controller: 'productions', action: 'show', product_id: part.product_id, id: part.id }, class: 'tag is-info') do %>
-      <span><%= part.word %></span>
-      <span class="ml-1"><%= part.price.to_money.format.html_safe %></span>
+  <% model.production_parts.each do |production_part| %>
+    <%= button_to({ controller: 'productions', action: 'show', product_id: production_part.product_id, id: production_part.part_id }, class: 'tag is-info') do %>
+      <span><%= production_part.part.word %></span>
+      <span class="ml-1"><%= production_part.part.price.to_money.format.html_safe %></span>
     <% end %>
   <% end %>
 </td>
