@@ -30,18 +30,6 @@ module Factory
       end
     end
 
-    def update
-      @part_provider.assign_attributes(part_provider_params)
-
-      unless @part_provider.save
-        render :edit, locals: { model: @part_provider }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @part_provider.destroy
-    end
-
     private
     def set_production
       @production = Production.find params[:production_id]

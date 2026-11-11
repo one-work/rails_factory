@@ -1,0 +1,18 @@
+<div id="tr_<%= member.id %>" class="card is-middle">
+  <div class="card-image">
+    <%= image_tag member.organ.logo.variant(resize_to_limit: [150, 150]), class: 'image' if member.organ.logo.attached? %>
+  </div>
+  <div class="card-content has-v-end">
+    <strong><%= member.organ.name %></strong>
+  </div>
+  <div class="card-footer">
+    <% if @provide.provider_id == member.organ_id %>
+      <span>已绑定</span>
+    <% else %>
+      <%= button_to({ action: 'bind', id: member.organ_id }, method: :patch, class: 'button is-small is-link') do %>
+        <%= svg_tag 'handshake' %>
+        <span><%= t('.bind.title') %></span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
