@@ -1,6 +1,8 @@
-<td><%= model.provide.name %></td>
 <td>
-<% if model.provide.provider %>
+  <%= model.provide&.name %>
+</td>
+<td>
+<% if model.provide %>
   <%= model.provide.provider.name %>
 <% end %>
 </td>
