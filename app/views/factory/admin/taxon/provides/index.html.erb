@@ -3,10 +3,10 @@
 <%= render 'index_actions' %>
 
 <%= render layout: 'index_table' do %>
-  <tbody id="tbody">
+  <tbody id="taxon_provide_tbody">
     <%= render partial: 'taxon_provide_tbody', layout: 'taxon_provide_tr', collection: @taxon_provides, as: :model %>
   </tbody>
-  <tbody>
+  <tbody id="provide_tbody">
     <%= render partial: 'provide_tbody', layout: 'provide_tr', collection: @provides, as: :model %>
   </tbody>
 <% end %>
