@@ -147,6 +147,7 @@ Rails.app.routes.draw do
             post :edit_stock
           end
         end
+        resources :production_provides, controller: 'taxon/production_provides'
         resources :taxon_provides
       end
       resources :provides do
