@@ -1,1 +1,9 @@
-<%= tr_tag(model) { yield } %>
+<%=
+  tr_tag(
+    model,
+    param: {
+      controller: 'taxon_provides',
+      id: model.id
+    }
+  ) { yield }
+%>
