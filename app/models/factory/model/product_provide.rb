@@ -20,6 +20,7 @@ module Factory
       before_validation :init_product, if: -> { upstream_product.present? && product.blank? }
       after_create_commit :automatic_production_provide
       after_save_commit :automatic_as_default, if: -> { default? && saved_change_to_default? }
+      after_destroy_commit :automatic_clear
     end
 
     def init_product
@@ -55,6 +56,10 @@ module Factory
       product.production_provides.where(provide_config_type: self.class.name).update_all(
         provide_id: provide_id, provide_config_id: self.id
       )
+    end
+
+    def automatic_clear
+      production_provides.destroy_all
     end
 
   end
