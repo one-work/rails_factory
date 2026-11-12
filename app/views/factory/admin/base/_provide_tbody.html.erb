@@ -1,5 +1,5 @@
 <td><%= model.name %></td>
-<td>
+<td colspan="2">
 <% if model.provider %>
   <div class="is-several">
     <%= image_tag model.provider.logo, class: 'image is-rounded is-24x24' if model.provider.logo.attached? %>

@@ -62,5 +62,9 @@ module Factory
       production_provides.destroy_all
     end
 
+    def check?
+      production_provides.count
+    end
+
   end
 end

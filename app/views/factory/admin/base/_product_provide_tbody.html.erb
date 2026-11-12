@@ -1,9 +1,17 @@
 <td>
-  <%= model.provide&.name %>
+<% if model.provide %>
+  <%= model.provide.name %>
+<% else %>
+<% end %>
 </td>
 <td>
 <% if model.provide %>
   <%= model.provide.provider.name %>
+<% end %>
+</td>
+<td>
+<% if model.upstream_product %>
+  <span><%= model.upstream_product.name %></span>
 <% end %>
 </td>
 <td>
