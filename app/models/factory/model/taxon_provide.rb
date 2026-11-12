@@ -10,7 +10,7 @@ module Factory
       belongs_to :provide
       belongs_to :taxon
 
-      has_many :production_provides, as: :provide_config
+      has_many :production_provides, as: :provide_config, dependent: :delete_all
 
       after_create_commit :automatic_production_provide
       after_save_commit :automatic_as_default, if: -> { default? && saved_change_to_default? }
@@ -19,7 +19,14 @@ module Factory
 
     def automatic_production_provide
       missing_provides = taxon.productions.where.missing(:available_provides).map do |i|
-        { production_id: i.id, product_id: i.product_id, taxon_id: i.taxon_id, provide_id: provide_id, default: true }
+        {
+          provide_id: provide_id,
+          production_id: i.id,
+          product_id: i.product_id,
+          taxon_id: i.taxon_id,
+          cost_price: i.cost_price,
+          default: true
+        }
       end
 
       production_provides.insert_all(missing_provides)
@@ -33,7 +40,7 @@ module Factory
     end
 
     def auto_clear
-      production_provides.destroy_all
+      production_provides.delete_all
     end
 
   end
