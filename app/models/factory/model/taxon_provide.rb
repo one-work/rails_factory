@@ -18,7 +18,7 @@ module Factory
     end
 
     def automatic_production_provide
-      missing_provides = taxon.productions.where.missing(:production_provides).map do |i|
+      missing_provides = taxon.productions.where.missing(:available_provides).map do |i|
         { production_id: i.id, product_id: i.product_id, taxon_id: i.taxon_id, provide_id: provide_id, default: true }
       end
 
