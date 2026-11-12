@@ -1,5 +1,9 @@
-<td><%= model.provide.name %></td>
 <td>
+<% if model.provide %>
+  <%= model.provide.name %>
+<% end %>
+</td>
+<td colspan="2">
 <% if model.provide.provider %>
   <%= model.provide.provider.name %>
 <% end %>
