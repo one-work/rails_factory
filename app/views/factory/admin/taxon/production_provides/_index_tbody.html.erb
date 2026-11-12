@@ -1,4 +1,6 @@
-<td><%= model.word %></td>
+<td>
+  <%= button_to model.word, { controller: 'productions', action: 'show', product_id: model.product_id, id: model.id } %>
+</td>
 <td>
   <% model.production_parts.each do |production_part| %>
     <%= button_to({ controller: 'productions', action: 'show', product_id: production_part.product_id, id: production_part.part_id }, class: 'tag is-info') do %>
