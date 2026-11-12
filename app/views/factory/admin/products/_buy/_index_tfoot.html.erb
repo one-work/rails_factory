@@ -1,11 +1,6 @@
 <div class="level box sticky-bottom mt-3 background-grey-light">
   <div class="level-left">
-    <%=
-      render(
-        partial: 'cart_nav_purchase',
-        locals: { cart: @cart }
-      )
-    %>
+    <%= render partial: 'cart_nav_purchase', locals: { cart: @cart } %>
   </div>
   <div class="level-right">
     <%=

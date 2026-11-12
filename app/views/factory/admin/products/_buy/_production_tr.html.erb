@@ -3,13 +3,7 @@
 <tr id="tr_<%= model.product_id %>_<%= model.id %>" data-id="<%= model.id %>">
   <td rowspan="<%= items.size + 1 %>">
     <span class="<%= model.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>">
-    <% if model.taxon.customizable %>
-      <% model.production_parts.includes(:part).each do |production_part| %>
-        <span class="tag"><%= production_part.part.title_short %></span>
-      <% end %>
-    <% else %>
       <%= model.title %>
-    <% end %>
     </span>
   </td>
   <td rowspan="<%= items.size + 1 %>">
