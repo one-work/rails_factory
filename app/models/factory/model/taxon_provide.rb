@@ -14,7 +14,7 @@ module Factory
 
       after_create_commit :automatic_production_provide
       after_save_commit :automatic_as_default, if: -> { default? && saved_change_to_default? }
-      after_destroy :auto_clear
+      after_destroy_commit :auto_clear
     end
 
     def automatic_production_provide
