@@ -27,7 +27,7 @@ module Factory
 
       @products = @taxon.products.includes(
         :brand,
-        productions: { available_provides: :provide },
+        productions: { available_provides: :provide, production_parts: :part },
         logo_attachment: :blob,
         covers_attachments: :blob
       ).default_where(q_params).order(position: :asc).page(params[:page])
