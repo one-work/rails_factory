@@ -1,6 +1,6 @@
 <tr>
   <td rowspan="<%= model.productions.size + 1 %>">
-    <span><%= model.name %></span>
+    <strong><%= model.name %></strong>
   </td>
 </tr>
 <%= render partial: 'index_tbody', layout: 'index_tr', collection: model.productions, as: :model %>
