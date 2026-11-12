@@ -3,7 +3,7 @@
 </td>
 <td>
   <% model.production_parts.each do |production_part| %>
-    <%= button_to({ controller: 'productions', action: 'show', product_id: production_part.product_id, id: production_part.part_id }, class: 'tag is-info') do %>
+    <%= button_to({ controller: 'productions', action: 'show', product_id: production_part.part.product_id, id: production_part.part_id }, class: 'tag is-info') do %>
       <span><%= production_part.part.word %></span>
       <span class="ml-1"><%= production_part.part.price.to_money.format.html_safe %></span>
     <% end %>
@@ -13,9 +13,9 @@
 <td>
   <table>
     <tbody id="production_<%= model.id %>">
-    <% model.production_provides.each do |production_provide| %>
+    <% model.available_provides.each do |production_provide| %>
       <tr id="production_provide_<%= production_provide.id %>">
-        <td><%= production_provide.provide&.name %></td>
+        <td><%= production_provide.provide.name %></td>
         <td><%= production_provide.cost_price.to_money.format.html_safe %></td>
         <td>
           <%=
@@ -41,7 +41,7 @@
       ) do
     %>
       <%= svg_tag 'pencil' %>
-      <span class="ml-1"><%= t('.production_provides.new.title') %></span>
+      <span><%= t('.production_provides.new.title') %></span>
     <% end %>
   </div>
 </td>

@@ -5,7 +5,7 @@ module Factory
   end
 
   def self.table_name_prefix
-    'factory_'
+    'factory_'.freeze
   end
 
 end

@@ -4,7 +4,7 @@ module Factory
 
     def index
       @products = @taxon.products.includes(
-        productions: [:production_provides, production_parts: :part],
+        productions: [:available_provides, production_parts: :part],
         logo_attachment: :blob
       ).order(id: :asc).page(params[:page])
     end
