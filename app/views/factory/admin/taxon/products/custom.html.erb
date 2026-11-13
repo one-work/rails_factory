@@ -1,0 +1,10 @@
+<%= render 'taxon_bar' %>
+<%= render 'index_bar' %>
+
+<%= render layout: 'index_table' do %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @products, as: :model %>
+<% end %>
+
+<%= paginate @products %>
+
+<%= render 'index_tfoot' %>
