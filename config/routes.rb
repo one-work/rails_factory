@@ -189,6 +189,7 @@ Rails.app.routes.draw do
         resources :productions do
           collection do
             post :new_part
+            post :create_dialog
           end
           member do
             match :price, via: [:get, :post]

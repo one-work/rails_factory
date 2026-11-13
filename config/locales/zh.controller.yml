@@ -96,8 +96,6 @@ zh:
           title: 手动添加
         show:
           title: 产品详情
-        custom:
-          title: 采购
         edit_image:
           title: 产品图片
         scan:
@@ -181,6 +179,8 @@ zh:
           title: 蓝牙打印标签
         new:
           title: 添加规格
+        new_part:
+          title: 添加规格
       production_parts:
         index:
           title: 物料清单
@@ -229,13 +229,11 @@ zh:
       home:
         index:
           title: 采购
-      taxons:
+      products:
         index:
-          title: 进货
-        import:
-          title: 从供应商上架
-        productions:
-          provide: 进货
+          title: 采购
+        custom:
+          title: 采购
       productions:
         index:
           title: 进货
