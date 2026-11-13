@@ -7,9 +7,9 @@
 <div class="tabs is-centered mb-3">
   <ul>
     <li class="<%= active_helper(taxons: ['show', 'edit'], active: 'is-active') %>">
-      <%= link_to({ controller: 'taxons', action: 'show', id: @taxon.id }) do %>
+      <%= link_to({ controller: 'factory/admin/taxons', action: 'show', id: @taxon.id }) do %>
         <%= svg_tag 'circle-info' %>
-        <span><%= t('.taxons.show.title') %></span>
+        <span><%= t('factory.admin.taxons.show.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(products: ['index'], active: 'is-active') %>">
