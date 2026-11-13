@@ -4,7 +4,6 @@ module Factory
     before_action :set_product, only: [:show, :edit, :update, :destroy, :reorder, :actions, :part, :edit_image]
     before_action :set_new_product, only: [:new, :create, :scan, :manual]
     before_action :set_taxons, only: [:index, :buy, :new, :create, :edit, :update]
-    before_action :set_cart, only: [:buy]
 
     def index
       q_params = {}
@@ -20,32 +19,6 @@ module Factory
         logo_attachment: :blob,
         covers_attachments: :blob
       ).default_where(q_params).order(taxon_id: :asc, position: :asc).page(params[:page]).per(params[:per])
-    end
-
-    def buy
-      q_params = {}
-      q_params.merge! default_params
-      q_params.merge! params.permit(:taxon_id, :name)
-
-      @products = Product.includes(
-        :brand,
-        productions: { available_provides: :provide },
-        logo_attachment: :blob,
-        covers_attachments: :blob
-      ).default_where(q_params).order(position: :asc).page(params[:page])
-    end
-
-    def custom
-      q_params = {}
-      q_params.merge! default_params
-      q_params.merge! params.permit(:taxon_id, :name)
-
-      @products = Product.includes(
-        :brand,
-        productions: { available_provides: :provide },
-        logo_attachment: :blob,
-        covers_attachments: :blob
-      ).default_where(q_params).order(position: :asc).page(params[:page])
     end
 
     def new
@@ -90,10 +63,6 @@ module Factory
 
     def set_brands
       @brands = Brand.default_where(default_params)
-    end
-
-    def set_cart
-      @cart = Trade::Cart.get_cart(params, member_organ_id: current_organ.id, purchasable: true)
     end
 
     def filter_columns

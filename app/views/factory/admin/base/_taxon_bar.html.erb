@@ -39,9 +39,9 @@
       </li>
     <% else %>
       <li class="<%= active_helper(products: ['buy'], active: 'is-active') %>">
-        <%= link_to({ controller: 'taxon/products', action: 'buy', taxon_id: @taxon.id }) do %>
+        <%= link_to({ controller: 'factory/in/products', taxon_id: @taxon.id }) do %>
           <%= svg_tag 'store' %>
-          <span><%= t('.products.buy.title') %></span>
+          <span><%= t('factory.in.products.index.title') %></span>
         <% end %>
       </li>
     <% end %>

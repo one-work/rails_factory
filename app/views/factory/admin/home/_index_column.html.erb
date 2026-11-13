@@ -4,11 +4,27 @@
     <span class="text-grey"><%= @taxon_count %></span>
     <span><%= t('factory.admin.taxons.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'factory/admin/products' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: active_helper(controllers: ['products', 'taxons', 'taxon_components', 'productions', 'part_providers', 'production_plans', 'production_items'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+  <%=
+    link_to(
+      { controller: 'factory/admin/products' },
+      data: { turbo_frame: 'panel', action: 'menu-popup#enter' },
+      class: active_helper(
+        controllers: ['products', 'taxons', 'taxon_components', 'productions', 'part_providers', 'production_plans', 'production_items'],
+        item: 'cell button is-fullwidth',
+        active: 'cell button is-fullwidth is-active'
+      )
+    ) do
+  %>
     <span><%= t('factory.admin.products.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: 'factory/admin/products', action: 'buy' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
-    <span><%= t('factory.admin.products.buy.title') %></span>
+  <%=
+    link_to(
+      { controller: 'factory/in/products' },
+      data: { turbo_frame: 'panel', action: 'menu-popup#enter' },
+      class: 'cell button is-fullwidth'
+    ) do
+  %>
+    <span><%= t('factory.in.products.buy.title') %></span>
   <% end %>
 </div>
 <p class="size-7 text-grey mb-1">生产</p>
