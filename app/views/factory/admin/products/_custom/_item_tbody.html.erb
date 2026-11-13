@@ -1,0 +1,29 @@
+<td>
+  <%= render partial: 'purchase_cart', locals: { item_con: 'trade/in/items', cart: @cart, item: item } %>
+</td>
+<td>
+  <% if item.provide && item.available_provide %>
+    <span><%= item.provide.name %></span>
+    <span class="tag is-primary">默认供应商</span>
+  <% elsif item.provide %>
+    <div class="display-inline-flex">
+      <span><%= item.provide.name %></span>
+      <span class="tag">临时供应商</span>
+      <%=
+        button_to(
+          { controller: 'factory/in/items', action: 'update', id: item.id },
+          method: :patch,
+          params: { item: { organ_id: nil, provide_id: nil } },
+          form: { class: 'tag is-danger' }
+        ) do
+      %>
+        <%= svg_tag 'xmark', class: 'icon' %>
+      <% end %>
+    </div>
+  <% elsif item.persisted? %>
+    <%= button_to({ controller: 'factory/in/items', action: 'edit_assign', id: item.id }, class: 'button is-small') do %>
+      <%= svg_tag 'hand-point-right' %>
+      <span><%= t('factory.in.items.edit_assign.title') %></span>
+    <% end %>
+  <% end %>
+</td>
