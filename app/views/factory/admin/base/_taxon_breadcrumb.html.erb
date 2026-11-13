@@ -1,10 +1,16 @@
 <li><%= link_to t('factory.admin.taxons.index.title'), { controller: 'factory/admin/taxons' } %></li>
 <li>
   <div class="navbar-item has-dropdown is-hoverable">
-    <%= link_to @taxon.name, { controller: 'taxons' }, class: 'navbar-link' %>
+    <%= link_to @taxon.name, { controller: 'factory/admin/taxons' }, class: 'navbar-link' %>
     <div class="navbar-dropdown is-right">
       <% @taxon.brothers.each do |taxon| %>
-        <%= link_to taxon.name, { taxon_id: taxon.id }, class: active_helper(taxon_id: taxon.id, item: 'navbar-item', active: 'navbar-item is-active') %>
+        <%=
+          link_to(
+            taxon.name,
+            { taxon_id: taxon.id },
+            class: active_helper(taxon_id: taxon.id, item: 'navbar-item', active: 'navbar-item is-active')
+          )
+        %>
       <% end %>
     </div>
   </div>
