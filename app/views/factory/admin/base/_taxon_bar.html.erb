@@ -32,13 +32,13 @@
         <% end %>
       </li>
       <li class="<%= active_helper(products: ['custom'], active: 'is-active') %>">
-        <%= link_to({ controller: 'taxon/products', action: 'custom', taxon_id: @taxon.id }) do %>
+        <%= link_to({ controller: 'factory/in/taxon/products', action: 'custom', taxon_id: @taxon.id }) do %>
           <%= svg_tag 'store' %>
-          <span><%= t('.products.custom.title') %></span>
+          <span><%= t('factory.in.taxon.products.custom.title') %></span>
         <% end %>
       </li>
     <% else %>
-      <li class="<%= active_helper(products: ['buy'], active: 'is-active') %>">
+      <li class="<%= active_helper(controller: 'factory/in/taxon/products', active: 'is-active') %>">
         <%= link_to({ controller: 'factory/in/taxon/products', taxon_id: @taxon.id }) do %>
           <%= svg_tag 'store' %>
           <span><%= t('factory.in.taxon.products.index.title') %></span>
