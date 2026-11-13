@@ -49,16 +49,12 @@ Rails.app.routes.draw do
     namespace :in, defaults: { namespace: 'in' } do
       concerns :productive
       root 'home#index'
-      resources :taxons do
-        member do
-          post :productions
-        end
+      resources :taxons, only: [] do
         resources :products, controller: 'taxon/products' do
           collection do
             get :custom
           end
         end
-        resources :provides, controller: 'taxon/provides'
       end
       resources :products do
         get :custom
