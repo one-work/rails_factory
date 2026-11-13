@@ -31,13 +31,20 @@
           <span><%= t('.taxon_components.index.title') %></span>
         <% end %>
       </li>
+      <li class="<%= active_helper(products: ['custom'], active: 'is-active') %>">
+        <%= link_to({ controller: 'taxon/products', action: 'custom', taxon_id: @taxon.id }) do %>
+          <%= svg_tag 'store' %>
+          <span><%= t('.products.custom.title') %></span>
+        <% end %>
+      </li>
+    <% else %>
+      <li class="<%= active_helper(products: ['buy'], active: 'is-active') %>">
+        <%= link_to({ controller: 'taxon/products', action: 'buy', taxon_id: @taxon.id }) do %>
+          <%= svg_tag 'store' %>
+          <span><%= t('.products.buy.title') %></span>
+        <% end %>
+      </li>
     <% end %>
-    <li class="<%= active_helper(products: ['buy'], active: 'is-active') %>">
-      <%= link_to({ controller: 'taxon/products', action: 'buy', taxon_id: @taxon.id }) do %>
-        <%= svg_tag 'store' %>
-        <span><%= t('.products.buy.title') %></span>
-      <% end %>
-    </li>
     <li class="<%= active_helper(taxons: ['import'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxons', action: 'import', id: @taxon.id }) do %>
         <%= svg_tag 'right-to-bracket' %>

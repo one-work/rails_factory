@@ -114,6 +114,7 @@ Rails.app.routes.draw do
         resources :products, controller: 'taxon/products' do
           collection do
             get :buy
+            get :custom
             get :publish
           end
           member do
@@ -176,6 +177,7 @@ Rails.app.routes.draw do
       resources :products do
         collection do
           get :buy
+          get :custom
           post :scan
           post :manual
         end

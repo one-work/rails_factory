@@ -5,7 +5,7 @@ module Factory
     before_action :set_product, only: [:show, :edit, :update, :destroy, :reorder, :actions, :part, :edit_image]
     before_action :set_new_product, only: [:new, :create]
     before_action :set_taxons, only: [:index, :edit, :update]
-    before_action :set_cart, only: [:buy]
+    before_action :set_cart, only: [:buy, :custom]
 
     def index
       q_params = {}
