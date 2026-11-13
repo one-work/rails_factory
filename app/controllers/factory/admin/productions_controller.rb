@@ -44,12 +44,13 @@ module Factory
 
       if params[:component_id].present?
         @component = Component.find params[:component_id]
-        @component_parts = @production.same_component_parts.where(component_id: @component.id)
+        @component_parts = @production.same_component_parts.includes(:part).where(component_id: @component.id)
       end
     end
 
     def custom_create
       @production = @product.productions.build(production_parts_params)
+      @production.compute_part_str
       @production.save!
     end
 

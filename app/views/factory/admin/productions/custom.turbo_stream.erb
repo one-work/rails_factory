@@ -10,6 +10,10 @@
   ) if params[:component_id].present?
 %>
 
-<% turbo_stream.update 'alert', partial: 'alert' if @production.persisted? %>
+<% if @production.persisted? %>
+  <%= turbo_stream.update 'new_part_alert', partial: 'alert' %>
+<% else %>
+  <%= turbo_stream.update 'new_part_alert', '' %>
+<% end %>
 
 <%= turbo_stream.replace 'production_custom_button', partial: 'production_custom_button' %>

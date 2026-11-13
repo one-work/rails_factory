@@ -6,7 +6,7 @@
     form: 'edit_custom',
     id: 'production_custom_button',
     class: 'button is-rounded is-primary',
-    disabled: !@production.reach_limit?
+    disabled: !@production.reach_limit? || @production.persisted?
   ) do
 %>
   <span>保存</span>
