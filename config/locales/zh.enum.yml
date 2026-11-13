@@ -41,6 +41,10 @@ zh:
         provide_config_type:
           Factory::TaxonProvide: 品类供应商
           Factory::ProductProvide: 产品供应商
+      factory/taxon:
+        customizable:
+          true: 可定制
+          false: 非定制
       org/organ:
         production_enabled:
           true: 已上线

@@ -1,6 +1,7 @@
 <h2 class="title text-centered">
   <%= svg_tag 'folder-tree', class: 'icon is-medium text-primary' %>
   <span><%= @taxon.name %></span>
+  <span class="tag is-primary"><%= @taxon.customizable_i18n %></span>
 </h2>
 
 <div class="tabs is-centered mb-3">
@@ -8,7 +9,7 @@
     <li class="<%= active_helper(taxons: ['show', 'edit'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxons', action: 'show', id: @taxon.id }) do %>
         <%= svg_tag 'circle-info' %>
-        <span class="ml-1"><%= t('.taxons.show.title') %></span>
+        <span><%= t('.taxons.show.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(products: ['index'], active: 'is-active') %>">
@@ -20,40 +21,39 @@
     <li class="<%= active_helper(controller: 'taxon/productions', action: 'index', taxon_id: @taxon.id, active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/productions', action: 'index', taxon_id: @taxon.id }) do %>
         <%= svg_tag 'eye' %>
-        <span class="ml-1"><%= t('factory.admin.taxon.productions.index.title') %></span>
+        <span><%= t('factory.admin.taxon.productions.index.title') %></span>
       <% end %>
     </li>
     <% if @taxon.customizable %>
       <li class="<%= active_helper(controllers: 'taxon_components', active: 'is-active') %>">
         <%= link_to({ controller: 'taxon_components', taxon_id: @taxon.id }) do %>
           <%= svg_tag 'cubes' %>
-          <span class="ml-1"><%= t('.taxon_components.index.title') %></span>
+          <span><%= t('.taxon_components.index.title') %></span>
         <% end %>
       </li>
     <% end %>
     <li class="<%= active_helper(products: ['buy'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/products', action: 'buy', taxon_id: @taxon.id }) do %>
         <%= svg_tag 'store' %>
-        <span class="ml-1"><%= t('.products.buy.title') %></span>
+        <span><%= t('.products.buy.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(taxons: ['import'], active: 'is-active') %>">
       <%= link_to({ controller: 'taxons', action: 'import', id: @taxon.id }) do %>
         <%= svg_tag 'right-to-bracket' %>
-        <span class="ml-1"><%= t('factory.admin.taxons.import.title') %></span>
+        <span><%= t('factory.admin.taxons.import.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'provides', active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/provides', taxon_id: @taxon.id }) do %>
-        <i class="fa-solid fa-building"></i>
         <%= svg_tag 'building' %>
-        <span class="ml-1"><%= t('factory.admin.taxon.provides.index.title') %></span>
+        <span><%= t('factory.admin.taxon.provides.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controller: 'taxon/production_provides', taxon_id: @taxon.id, active: 'is-active') %>">
       <%= link_to({ controller: 'taxon/production_provides', taxon_id: @taxon.id }) do %>
         <%= svg_tag 'eye' %>
-        <span class="ml-1"><%= t('factory.admin.taxon.production_provides.index.title') %></span>
+        <span><%= t('factory.admin.taxon.production_provides.index.title') %></span>
       <% end %>
     </li>
   </ul>
