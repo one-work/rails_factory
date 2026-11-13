@@ -1,0 +1,13 @@
+<%=
+  button_tag(
+    type: 'submit',
+    formaction: url_for(action: 'custom_create'),
+    formmethod: 'post',
+    form: 'edit_custom',
+    id: 'production_custom_button',
+    class: 'button is-rounded is-primary',
+    disabled: !@production.reach_limit?
+  ) do
+%>
+  <span>保存</span>
+<% end %>

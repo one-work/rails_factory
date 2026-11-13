@@ -7,16 +7,6 @@
     <%= render partial: 'production_card_components', locals: { production: @production } %>
   </section>
   <footer class="modal-card-foot">
-    <%=
-      button_tag(
-        type: 'submit',
-        formaction: url_for(action: 'custom_create'),
-        formmethod: 'post',
-        form: 'edit_custom',
-        class: 'button is-rounded is-primary'
-      ) do
-    %>
-      <span>保存</span>
-    <% end %>
+    <%= render 'production_custom_button' %>
   </footer>
 </div>

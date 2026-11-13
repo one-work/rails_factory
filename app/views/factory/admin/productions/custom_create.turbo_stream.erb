@@ -1,11 +1,1 @@
-<%=
-  turbo_stream.replace(
-    "component_#{@component.id}",
-    partial: 'production_component',
-    locals: {
-      production: @production,
-      component: @component,
-      component_parts: @component_parts
-    }
-  ) if params[:component_id].present?
-%>
+<%= turbo_stream.remove 'modal_form' %>

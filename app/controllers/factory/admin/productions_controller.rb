@@ -43,7 +43,7 @@ module Factory
 
     def custom_create
       @production = @product.productions.build(production_parts_params)
-      @production.save!
+      #@production.save!
     end
 
     def detect

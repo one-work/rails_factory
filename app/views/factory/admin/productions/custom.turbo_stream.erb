@@ -9,3 +9,10 @@
     }
   ) if params[:component_id].present?
 %>
+
+<%=
+  turbo_stream.replace(
+    'production_custom_button',
+    partial: 'production_custom_button'
+  )
+%>
