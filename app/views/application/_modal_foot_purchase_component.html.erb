@@ -1,0 +1,51 @@
+<footer id="production_modal_foot" class="modal-card-foot flex-direction-column px-0">
+  <%=
+    render(
+      partial: 'product_summary_component',
+      locals: {
+        model: @production,
+        cart: @cart,
+        item_con: item_con,
+        refer_options: { 'good_id' => @production.id, 'dispatch' => params[:dispatch] }.compact_blank
+      }
+    )
+  %>
+  <div class="flex justify-content-space-between align-items-center is-fullwidth p-3">
+    <div>
+      <p class="text-danger"><%= @production.price.to_money.format.html_safe %></p>
+      <% if @production.production_parts.present? %>
+        <ul class="media-info display-inline-flex text-grey">
+        <% @production.production_parts.includes(:part).each do |production_part| %>
+          <li>
+            <span><%= production_part.part.title_short %></span>
+            <% if production_part.number.to_i > 1 %>
+              <span>x <%= production_part.number %></span>
+            <% end %>
+          </li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <%=
+      render(
+        partial: 'purchase_cart',
+        locals: {
+          item: @cart.init_cart_item(params, purchase_id: @production.id),
+          cart: @cart,
+          item_con: item_con,
+          renew: {
+            "product_summary_#{@production.product_id}" => { 'partial' => 'product_summary_component' },
+            "product_cart_#{@production.product_id}" => { 'partial' => 'production_cart' }
+          },
+          renew_options: {
+            production_cart: { controller: controller_path, **params.permit(:client_id) }
+          },
+          refer_options: { 'purchase_id' => @production.id, 'dispatch' => params[:dispatch] }.compact_blank
+        }
+      )
+    %>
+  </div>
+  <div class="flex justify-content-center align-items-center is-fullwidth">
+    <button data-action="click->modal#close" class="button is-rounded is-light">完成</button>
+  </div>
+</footer>

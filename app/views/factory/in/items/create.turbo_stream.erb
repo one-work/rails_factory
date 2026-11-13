@@ -1,12 +1,8 @@
 <%=
   turbo_stream.replace(
-    'cart_nav',
-    partial: 'cart_nav',
-    locals: {
-      cart: @item.current_cart,
-      cart_con: 'factory/in/carts',
-      order_con: 'factory/in/orders'
-    }
+    'cart_nav_purchase',
+    partial: 'cart_nav_purchase',
+    locals: { cart: @item.current_cart }
   )
 %>
 <%=
