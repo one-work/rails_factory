@@ -98,6 +98,8 @@ zh:
           title: 产品详情
         buy:
           title: 采购
+        custom:
+          title: 采购
         edit_image:
           title: 产品图片
         scan:

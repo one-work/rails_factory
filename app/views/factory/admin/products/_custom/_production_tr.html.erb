@@ -15,12 +15,6 @@
     <p class="text-danger"><%= model.cost_price.to_money.format.html_safe %></p>
   </td>
 </tr>
-
-<%=
-  render(
-    partial: 'item_tbody',
-    layout: 'item_tr',
-    collection: items,
-    as: :item
-  )
-%>
+<tr class="left-border">
+  <td colspan="2"></td>
+</tr>
