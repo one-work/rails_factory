@@ -54,7 +54,7 @@ module Factory
 
     private
     def set_production
-      @production = Production.find params[:id]
+      @production = Production.includes(production_parts: :part).find params[:id]
     end
 
     def set_scene
