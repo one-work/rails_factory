@@ -27,23 +27,30 @@ module Factory
     end
 
     def custom
-      @production = @product.productions.build(production_parts_params)
-      @production.compute_part_str
+      temp_production = @product.productions.build(production_parts_params)
+      temp_production.compute_part_str
+      if temp_production.reach_limit?
+        prod = @product.productions.find_by(str_part_ids: temp_production.str_part_ids)
+        if prod
+          @production = prod
+        else
+          temp_production.compute_cost_price
+          @production = temp_production
+        end
+      else
+        temp_production.compute_cost_price
+        @production = temp_production
+      end
 
       if params[:component_id].present?
         @component = Component.find params[:component_id]
         @component_parts = @production.same_component_parts.where(component_id: @component.id)
       end
-
-      if @production.reach_limit?
-        production = @product.productions.find_by(str_part_ids: @production.str_part_ids)
-      end
-      @production.compute_cost_price
     end
 
     def custom_create
       @production = @product.productions.build(production_parts_params)
-      #@production.save!
+      @production.save!
     end
 
     def detect

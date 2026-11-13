@@ -1,6 +1,7 @@
 <div class="modal-card">
   <%= render 'modal_header' %>
   <section id="modal-card-body" class="modal-card-body">
+    <div id="alert"></div>
     <%= form_with theme: nil, model: @production, scope: '', url: { action: 'custom' }, id: 'edit_custom' do |f| %>
       <%= hidden_field_tag :component_id, id: nil %>
     <% end %>
