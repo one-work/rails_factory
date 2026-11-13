@@ -1,9 +1,15 @@
 <tr id="tr_<%= model.product_id %>_<%= model.id %>" data-id="<%= model.id %>">
   <td colspan="6">
-    <span class="<%= model.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>">
-      <% model.production_parts.includes(:part).each do |production_part| %>
-        <span class="tag"><%= production_part.part.title_short %></span>
+    <div id="product_cart_<%= model.product_id %>" class="right-badge">
+      <%=
+        button_to(
+          { controller: 'factory/agent/productions', action: 'show', id: model.id },
+          class: 'button is-small is-primary'
+        ) do
+      %>
+        <%= svg_tag 'cart-plus', class: 'icon' %>
+        <span>定制产品</span>
       <% end %>
-    </span>
+    </div>
   </td>
 </tr>
