@@ -26,7 +26,7 @@ module Factory
       @productions = Production.default_where(q_params)
     end
 
-    def create_dialog
+    def custom
       @production = @product.productions.build(production_parts_params)
       @production.compute_part_str
 
@@ -34,6 +34,16 @@ module Factory
         @component = Component.find params[:component_id]
         @component_parts = @production.same_component_parts.where(component_id: @component.id)
       end
+
+      if @production.reach_limit?
+        production = @product.productions.find_by(str_part_ids: @production.str_part_ids)
+      end
+      @production.compute_cost_price
+    end
+
+    def custom_create
+      @production = @product.productions.build(production_parts_params)
+      @production.save!
     end
 
     def detect

@@ -1,13 +1,21 @@
 <div class="modal-card">
   <%= render 'modal_header' %>
   <section id="modal-card-body" class="modal-card-body">
-    <%= form_with theme: nil, model: @production, scope: '', url: { action: 'create_dialog' }, id: 'edit_custom' do |f| %>
+    <%= form_with theme: nil, model: @production, scope: '', url: { action: 'custom' }, id: 'edit_custom' do |f| %>
       <%= hidden_field_tag :component_id, id: nil %>
     <% end %>
     <%= render partial: 'production_card_components', locals: { production: @production } %>
   </section>
   <footer class="modal-card-foot">
-    <%= button_tag type: 'submit', formaction: url_for(action: 'new_part'), formmethod: 'post', form: 'edit_custom', class: 'button is-rounded is-primary' do %>
+    <%=
+      button_tag(
+        type: 'submit',
+        formaction: url_for(action: 'custom_create'),
+        formmethod: 'post',
+        form: 'edit_custom',
+        class: 'button is-rounded is-primary'
+      ) do
+    %>
       <span>保存</span>
     <% end %>
   </footer>
