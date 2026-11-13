@@ -11,15 +11,7 @@ module Factory
     end
 
     def set_cart
-      options = {
-        member_organ_id: current_organ.id,
-        purchasable: false,
-        user_id: nil,
-        member_id: nil
-      }
-      options.merge! client_id: nil, contact_id: nil if defined? RailsCrm
-
-      @cart = Trade::Cart.get_cart(params, **options)
+      @cart = Trade::Cart.get_cart(params, member_organ_id: current_organ.id, purchasable: true)
     end
 
   end

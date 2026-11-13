@@ -5,21 +5,21 @@
     <% end %>
     <%= hidden_field_tag :component_id, id: nil %>
   <% end %>
-  <%= render partial: 'dispatch_modal', locals: { production: @production } %>
-  <%= render partial: 'card_component', locals: { production: @production } %>
+  <%= render partial: 'production_dispatch_modal', locals: { production: @production } %>
+  <%= render partial: 'production_card_components', locals: { production: @production } %>
 <% elsif @production.brothers.enabled.count > 1 %>
   <%= form_with model: @production, scope: '', url: { action: 'dialog' }, id: 'edit_custom' do |f| %>
     <% params.permit(:desk_id, :station_id, :client_id, :contact_id).each do |k, v| %>
       <%= f.hidden_field k, value: v %>
     <% end %>
   <% end %>
-  <%= render partial: 'dispatch_modal', locals: { production: @production } %>
-  <%= render partial: 'card_brothers', locals: { production: @production } %>
+  <%= render partial: 'production_dispatch_modal', locals: { production: @production } %>
+  <%= render partial: 'production_card_brothers', locals: { production: @production } %>
 <% else %>
   <%= form_with model: @production, scope: '', url: { action: 'dialog' }, id: 'edit_custom' do |f| %>
     <% params.permit(:desk_id, :station_id, :client_id, :contact_id).each do |k, v| %>
       <%= f.hidden_field k, value: v %>
     <% end %>
   <% end %>
-  <%= render partial: 'dispatch_modal', locals: { production: @production } %>
+  <%= render partial: 'production_dispatch_modal', locals: { production: @production } %>
 <% end %>

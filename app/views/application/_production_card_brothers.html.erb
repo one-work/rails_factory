@@ -3,6 +3,6 @@
     <span class="size-7 text-grey">规格</span>
   </div>
   <div id="card_brothers" data-controller="custom" class="card-content grid gap-2">
-    <%= render partial: 'card_brother', collection: @production.brothers.enabled, as: :brother %>
+    <%= render partial: 'production_card_brother', collection: @production.brothers.enabled, as: :brother %>
   </div>
 </div>

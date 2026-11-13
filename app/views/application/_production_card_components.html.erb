@@ -1,3 +1,3 @@
 <% production.same_component_parts.includes(:component, :part).group_by(&:component).each do |component, component_parts| %>
-  <%= render partial: 'component', locals: { component: component, component_parts: component_parts } %>
+  <%= render partial: 'production_component', locals: { component: component, component_parts: component_parts } %>
 <% end %>

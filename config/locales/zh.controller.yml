@@ -96,8 +96,6 @@ zh:
           title: 手动添加
         show:
           title: 产品详情
-        buy:
-          title: 采购
         custom:
           title: 采购
         edit_image:
@@ -255,6 +253,12 @@ zh:
         success:
           title: 你的订单已支付成功！
           tip: 我们会尽快处理您的订单。
+      taxon:
+        products:
+          index:
+            title: 采购
+          custom:
+            title: 采购
     our:
       produce_plans:
         overview:
