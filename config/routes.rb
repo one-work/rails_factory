@@ -53,10 +53,16 @@ Rails.app.routes.draw do
         member do
           post :productions
         end
-        resources :products, controller: 'taxon/products'
+        resources :products, controller: 'taxon/products' do
+          collection do
+            get :custom
+          end
+        end
         resources :provides, controller: 'taxon/provides'
       end
-      resources :products
+      resources :products do
+        get :custom
+      end
       resources :items do
         member do
           post :edit_assign
@@ -116,8 +122,6 @@ Rails.app.routes.draw do
         end
         resources :products, controller: 'taxon/products' do
           collection do
-            get :buy
-            get :custom
             get :publish
           end
           member do
@@ -179,8 +183,6 @@ Rails.app.routes.draw do
       end
       resources :products do
         collection do
-          get :buy
-          get :custom
           post :scan
           post :manual
         end
