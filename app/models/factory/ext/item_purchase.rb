@@ -32,6 +32,7 @@ module Factory
       return unless purchase
 
       self.good_name = purchase.word
+      self.collect_id = purchase.product_id
       self.extra = Hash(self.extra).merge purchase.item_extra
       if production_provide
         self.single_price ||= production_provide.cost_price

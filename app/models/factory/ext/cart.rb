@@ -44,5 +44,18 @@ module Factory
       provide_items
     end
 
+    def cart_purchase_items
+      r = purchase_items.select(&:persisted?)
+      ActiveRecord::Associations::Preloader.new(records: r, associations: [:item_promotes, :purchase]).call
+      r.sort_by! { |i| i.id }
+      r
+    end
+
+    def find_purchase_items(purchase_ids, **options)
+      args = attr_options(**options)
+      logger.debug "\e[35m  Find Purchase Items, Cart: #{id}, Options: #{options}, Args: #{args}  \e[0m"
+      cart_purchase_items.select { |i| i.attributes.slice(*args.keys) == args && purchase_ids.include?(i.purchase_id) }
+    end
+
   end
 end
