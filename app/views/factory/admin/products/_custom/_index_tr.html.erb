@@ -5,7 +5,7 @@
 <%=
   render(
     partial: 'production_tr',
-    collection: model.productions,
+    collection: @cart.find_purchase_items(model.id),
     as: :model
   )
 %>
