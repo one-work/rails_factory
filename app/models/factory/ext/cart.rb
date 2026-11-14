@@ -25,6 +25,7 @@ module Factory
           item = items.build(
             provide_id: production_provide.provide_id,
             purchase_id: production.id,
+            collect_id: production.product_id,
             good_type: 'Factory::Production',
             good_id: production_provide.upstream_production_id,
             **options
@@ -40,6 +41,7 @@ module Factory
         provide_items << items.build(
           provide_id: nil,
           purchase_id: production.id,
+          collect_id: production.product_id,
           good_type: 'Factory::Production',
           good_id: nil
         )
