@@ -1,9 +1,9 @@
 <div data-controller="custom" class="grid gap-2 as-actions">
 <% production.available_provides.each do |production_provide| %>
-  <label for="dispatch_<%= value %>" class="cell button is-fullwidth is-checked">
+  <label for="provide_id_<%= production_provide.provide_id %>" class="cell button is-fullwidth is-checked">
     <%=
       radio_button_tag(
-        'dispatch',
+        :provide_id,
         production_provide.provide_id,
         production_provide.provide_id == params[:provide_id].presence,
         data: { action: 'custom#submit' },
