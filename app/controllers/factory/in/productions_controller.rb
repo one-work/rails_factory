@@ -28,7 +28,7 @@ module Factory
 
     private
     def set_production
-      @production = Production.find params[:id]
+      @production = Production.includes(production_parts: :part, available_provides: :provide).find params[:id]
     end
 
     def set_factory_taxon
