@@ -52,9 +52,11 @@ module Factory
       r = purchase_items.where(collect_id: collect_id).select(&:persisted?)
       ActiveRecord::Associations::Preloader.new(records: r, associations: [:item_promotes, :purchase]).call
       r.sort_by! { |i| i.id }
-      r.group_by(&:purchase).each do |purchase, items|
+      result = r.group_by(&:purchase)
+      result.each do |purchase, items|
         init_provide_items_inner(purchase, items, **options)
       end
+      result
     end
 
   end
