@@ -62,6 +62,7 @@ module Factory
     def find_purchase_items(purchase, **options)
       r = purchase_items.where(purchase_id: purchase.id).select(&:persisted?)
       ActiveRecord::Associations::Preloader.new(records: r, associations: [:item_promotes, :purchase]).call
+      r.sort_by! { |i| i.id }
       init_provide_items_inner(purchase, r, **options)
     end
 
