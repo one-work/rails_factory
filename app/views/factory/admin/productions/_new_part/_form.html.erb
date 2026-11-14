@@ -2,7 +2,7 @@
   <%= render 'modal_header' %>
   <section id="modal-card-body" class="modal-card-body">
     <div id="new_part_alert"></div>
-    <%= form_with theme: nil, model: @production, scope: '', url: { action: 'custom' }, id: 'edit_custom' do |f| %>
+    <%= form_with theme: nil, model: @production, scope: '', url: { action: 'custom' }, id: 'edit_custom' do |_| %>
       <%= hidden_field_tag :component_id, id: nil %>
     <% end %>
     <%= render partial: 'production_card_components', locals: { production: @production } %>
