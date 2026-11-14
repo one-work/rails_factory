@@ -1,26 +1,15 @@
-<% items = @cart.init_provide_items(item.purchase) %>
-
-<tr id="tr_<%= item.purchase.product_id %>_<%= item.purchase_id %>" data-id="<%= item.purchase_id %>">
-  <td rowspan="<%= items.size + 1 %>">
-    <span class="<%= item.purchase.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>">
-      <% item.purchase.production_parts.includes(:part).each do |production_part| %>
+<tr id="tr_<%= purchase.product_id %>_<%= purchase.id %>" data-id="<%= purchase.id %>">
+  <td rowspan="<%= size %>">
+    <span class="<%= purchase.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>">
+      <% purchase.production_parts.includes(:part).each do |production_part| %>
         <span class="tag"><%= production_part.part.title_short %></span>
       <% end %>
     </span>
   </td>
-  <td rowspan="<%= items.size + 1 %>">
-    <p class="text-grey"><%= item.purchase.price.to_money.format.html_safe %></p>
+  <td rowspan="<%= size %>">
+    <p class="text-grey"><%= purchase.price.to_money.format.html_safe %></p>
   </td>
-  <td rowspan="<%= items.size + 1 %>">
-    <p class="text-danger"><%= item.purchase.cost_price.to_money.format.html_safe %></p>
+  <td rowspan="<%= size %>">
+    <p class="text-danger"><%= purchase.cost_price.to_money.format.html_safe %></p>
   </td>
 </tr>
-
-<%=
-  render(
-    partial: 'item_tbody',
-    layout: 'item_tr',
-    collection: items,
-    as: :item
-  )
-%>

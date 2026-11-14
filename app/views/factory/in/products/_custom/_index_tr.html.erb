@@ -2,6 +2,9 @@
   <%= tr_tag(model, icons: [], class: 'background-light') { yield } %>
 <% end %>
 
-<%= render partial: 'production_item', collection: @cart.find_purchase_items(model.id), as: :item %>
+<% @cart.find_purchase_items(model.id).each do |purchase, items| %>
+  <%= render partial: 'production_item', locals: { purchase: purchase, size: items.size } %>
+  <%= render partial: 'item_tbody', layout: 'item_tr', collection: items, as: :item %>
+<% end %>
 
 <%= render partial: 'production_tr', locals: { model: model.production } %>
