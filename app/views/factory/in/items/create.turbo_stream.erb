@@ -8,7 +8,7 @@
 <%=
   turbo_stream.replace(
     @item.cart_identity,
-    partial: 'purchase_cart_assign',
+    partial: 'item_purchase_tbody',
     locals: {
       cart: @item.current_cart,
       item: @item,

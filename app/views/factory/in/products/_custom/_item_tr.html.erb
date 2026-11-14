@@ -1,3 +1,9 @@
 <tr id="tr_<%= item.cart_identity %>" class="left-border">
-  <%= yield %>
+  <td>
+    <%= render partial: 'purchase_cart', locals: { item_con: 'trade/in/items', cart: @cart, item: item } %>
+  </td>
+  <td>
+    <%= yield %>
+  </td>
+  <td></td>
 </tr>

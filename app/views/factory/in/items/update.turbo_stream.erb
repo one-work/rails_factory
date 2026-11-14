@@ -1,2 +1,18 @@
-<%= turbo_stream.replace 'cart_nav', partial: 'cart_nav', locals: { cart: @item.current_cart, cart_con: controller_path.sub('items', 'carts'), order_con: controller_path.sub('items', 'orders') } %>
-<%= turbo_stream.replace @item.cart_identity, partial: 'purchase_cart_assign', locals: { cart: @item.current_cart, item: @item, item_con: controller_path } %>
+<%=
+  turbo_stream.replace(
+    'cart_nav_purchase',
+    partial: 'cart_nav_purchase',
+    locals: { cart: @item.current_cart }
+  )
+%>
+<%=
+  turbo_stream.replace(
+    @item.cart_identity,
+    partial: 'item_purchase_tbody',
+    locals: {
+      cart: @item.current_cart,
+      item: @item,
+      item_con: controller_path
+    }
+  )
+%>

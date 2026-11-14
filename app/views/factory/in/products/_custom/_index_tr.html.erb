@@ -4,7 +4,7 @@
 
 <% @cart.find_purchase_items(model.id).each do |purchase, items| %>
   <%= render partial: 'production_item', locals: { purchase: purchase, size: items.size + 1 } %>
-  <%= render partial: 'item_tbody', layout: 'item_tr', collection: items, as: :item %>
+  <%= render partial: 'item_purchase_tbody', layout: 'item_tr', collection: items, as: :item %>
 <% end %>
 
 <%= render partial: 'production_tr', locals: { model: model.production } %>

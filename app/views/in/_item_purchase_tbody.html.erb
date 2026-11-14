@@ -1,0 +1,32 @@
+<% if item.provide && item.available_provide %>
+  <div id="<%= item.cart_identity %>">
+    <span><%= item.provide.name %></span>
+    <span class="tag is-primary">默认供应商</span>
+  </div>
+<% elsif item.provide %>
+  <div id="<%= item.cart_identity %>" class="display-inline-flex">
+    <span><%= item.provide.name %></span>
+    <span class="tag">临时供应商</span>
+    <%=
+      button_to(
+        { controller: 'factory/in/items', action: 'update_assign', id: item.id },
+        method: :patch,
+        params: { item: { organ_id: nil, provide_id: nil } },
+        form: { class: 'tag' }
+      ) do
+    %>
+      <%= svg_tag 'xmark', class: 'icon' %>
+    <% end %>
+  </div>
+<% elsif item.persisted? %>
+  <%=
+    button_to(
+      { controller: 'factory/in/items', action: 'edit_assign', id: item.id },
+      class: 'button is-small',
+      form: { id: "#{item.cart.identity}" }
+    ) do
+  %>
+    <%= svg_tag 'hand-point-right' %>
+    <span><%= t('factory.in.items.edit_assign.title') %></span>
+  <% end %>
+<% end %>
