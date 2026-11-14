@@ -38,7 +38,8 @@ module Factory
 
     def organ_item_params
       params.fetch(:item, {}).permit(
-        :provide_id
+        :provide_id,
+        :organ_id
       )
     end
 

@@ -11,10 +11,10 @@
       <span class="tag">临时供应商</span>
       <%=
         button_to(
-          { controller: 'factory/in/items', action: 'update', id: item.id },
+          { controller: 'factory/in/items', action: 'update_assign', id: item.id },
           method: :patch,
           params: { item: { organ_id: nil, provide_id: nil } },
-          form: { class: 'tag is-danger' }
+          form: { class: 'tag' }
         ) do
       %>
         <%= svg_tag 'xmark', class: 'icon' %>
