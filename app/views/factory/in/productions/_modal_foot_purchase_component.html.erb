@@ -30,7 +30,7 @@
       render(
         partial: 'purchase_cart_big',
         locals: {
-          item: @cart.init_cart_item(params, purchase_id: @production.id),
+          item: @cart.init_cart_item(params, provide_id: params[:provide_id].presence, purchase_id: @production.id),
           cart: @cart,
           item_con: item_con,
           renew: {

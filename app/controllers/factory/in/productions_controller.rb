@@ -36,7 +36,9 @@ module Factory
     end
 
     def production_params
-      params.permit(production_parts_attributes: {})
+      params.permit(
+        production_parts_attributes: {}
+      )
     end
 
   end
