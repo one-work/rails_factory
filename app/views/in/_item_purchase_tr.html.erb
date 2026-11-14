@@ -1,4 +1,4 @@
-<tr id="tr_<%= item.cart_identity %>" class="left-border">
+<tr id="tr_<%= item.cart_identity %>" data-product-id="<%= item.collect_id %>" class="left-border">
   <td>
     <%= render partial: 'purchase_cart', locals: { item_con: 'trade/in/items', cart: @cart, item: item } %>
   </td>

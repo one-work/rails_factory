@@ -1,4 +1,4 @@
-<tr id="tr_<%= purchase.product_id %>_<%= purchase.id %>" data-id="<%= purchase.id %>">
+<tr id="tr_<%= purchase.product_id %>_<%= purchase.id %>" data-product-id="<%= purchase.product_id %>">
   <td rowspan="<%= size %>">
     <span class="<%= purchase.product.productions_count > 1 ? 'ml-4' : 'ml-0' %>">
       <% purchase.production_parts.includes(:part).each do |production_part| %>

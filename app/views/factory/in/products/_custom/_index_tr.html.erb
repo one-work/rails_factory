@@ -3,8 +3,8 @@
     <%= tr_tag(model, icons: [], class: 'background-light') { yield } %>
   <% end %>
   <% @cart.find_collect_items(model.id).each do |purchase, items| %>
-    <%= render partial: 'production_item', locals: { purchase: purchase, size: items.size + 1 } %>
-    <%= render partial: 'item_purchase_tbody', layout: 'item_tr', collection: items, as: :item %>
+    <%= render partial: 'production_item_purchase', locals: { purchase: purchase, size: items.size + 1 } %>
+    <%= render partial: 'item_purchase_tbody', layout: 'item_purchase_tr', collection: items, as: :item %>
   <% end %>
   <%= render partial: 'production_tr', locals: { model: model.production } %>
 </tbody>
