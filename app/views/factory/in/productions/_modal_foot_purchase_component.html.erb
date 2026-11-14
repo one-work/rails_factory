@@ -28,7 +28,7 @@
     </div>
     <%=
       render(
-        partial: 'purchase_cart',
+        partial: 'purchase_cart_big',
         locals: {
           item: @cart.init_cart_item(params, purchase_id: @production.id),
           cart: @cart,
