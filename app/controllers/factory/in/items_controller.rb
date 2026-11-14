@@ -20,6 +20,8 @@ module Factory
     def update_assign
       @item.assign_attributes organ_item_params
       @item.save
+
+      @items = @cart.find_purchase_items(@item.purchase)
     end
 
     private

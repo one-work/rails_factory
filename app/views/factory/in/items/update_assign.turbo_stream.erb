@@ -1,12 +1,4 @@
-<%=
-  turbo_stream.replace(
-    @item.cart_identity,
-    partial: 'item_purchase_tbody',
-    locals: {
-      cart: @item.current_cart,
-      item: @item,
-      item_con: controller_path
-    }
-  )
-%>
+<%= render partial: 'production_item', locals: { purchase: @item.purchase, size: @items.size + 1 } %>
+<%= render partial: 'item_purchase_tbody', layout: 'item_tr', collection: @items, as: :item %>
+
 <%= turbo_stream.remove 'modal_form' %>

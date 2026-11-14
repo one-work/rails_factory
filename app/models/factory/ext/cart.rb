@@ -7,7 +7,7 @@ module Factory
       has_many :productions, through: :production_carts
     end
 
-    def init_provide_itemss(production, **options)
+    def init_provide_items(production, **options)
       provide_items = find_items(purchase_id: production.id, **options)
       init_provide_items_inner(production, provide_items, **options)
     end
@@ -48,15 +48,19 @@ module Factory
       provide_items
     end
 
-    def find_purchase_items(collect_id, **options)
+    def find_collect_items(collect_id, **options)
       r = purchase_items.where(collect_id: collect_id).select(&:persisted?)
       ActiveRecord::Associations::Preloader.new(records: r, associations: [:item_promotes, :purchase]).call
       r.sort_by! { |i| i.id }
-      result = r.group_by(&:purchase)
-      result.each do |purchase, items|
+      r.group_by(&:purchase).each do |purchase, items|
         init_provide_items_inner(purchase, items, **options)
       end
-      result
+    end
+
+    def find_purchase_items(purchase, **options)
+      r = purchase_items.where(purchase_id: purchase.id).select(&:persisted?)
+      ActiveRecord::Associations::Preloader.new(records: r, associations: [:item_promotes, :purchase]).call
+      init_provide_items_inner(purchase, r, **options)
     end
 
   end
