@@ -23,7 +23,7 @@
     button_to(
       { controller: 'factory/in/items', action: 'edit_assign', id: item.id },
       class: 'button is-small',
-      form: { id: "#{item.cart.identity}" }
+      form: { id: "#{item.cart_identity}" }
     ) do
   %>
     <%= svg_tag 'hand-point-right' %>
