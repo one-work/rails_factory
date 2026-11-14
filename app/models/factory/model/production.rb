@@ -170,13 +170,13 @@ module Factory
     end
 
     def no_cancel(component, component_part)
-      _part_ids = production_parts.pluck(:part_id)
+      _part_ids = production_parts.load.pluck(:part_id)
       _part_ids.include?(component_part.part_id) && component.no_cancel?(production_parts, component_part.part_id)
     end
 
     # @return [Boolean]
     def reach_limit?
-      coms_hash = production_parts.group_by(&:component_id)
+      coms_hash = production_parts.load.group_by(&:component_id)
       all_hash = product.components.each_with_object({}) do |component, h|
         h.merge! component => coms_hash.fetch(component.id, [])
       end
@@ -186,7 +186,7 @@ module Factory
     end
 
     def is_checked?(component_part)
-      production_parts.pluck(:part_id).include?(component_part.part_id)
+      production_parts.load.pluck(:part_id).include?(component_part.part_id)
     end
 
     def enter_url
