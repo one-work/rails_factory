@@ -6,7 +6,7 @@
       <button type="button" data-action="modal#close" class="delete"></button>
     </header>
     <div id="production_modal_body" class="modal-card-body">
-      <%= form_with model: @production, scope: '', url: { action: 'create_dialog' }, id: 'edit_custom' do |f| %>
+      <%= form_with theme: nil, model: @production, scope: '', url: { action: 'create_dialog' }, id: 'edit_custom' do |f| %>
         <%= hidden_field_tag :component_id, id: nil %>
       <% end %>
       <%= render partial: 'production_card_components', locals: { production: @production } %>
