@@ -15,7 +15,7 @@
       <p class="text-danger"><%= @production.price.to_money.format.html_safe %></p>
       <% if @production.production_parts.present? %>
         <ul class="media-info display-inline-flex text-grey">
-        <% @production.production_parts.includes(:part).each do |production_part| %>
+        <% @production.production_parts.each do |production_part| %>
           <li>
             <span><%= production_part.part.title_short %></span>
             <% if production_part.number.to_i > 1 %>
