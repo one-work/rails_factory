@@ -24,6 +24,11 @@ module Factory
       @items = @cart.find_purchase_items(@item.purchase)
     end
 
+    def destroy
+      @item.destroy
+      @items = @cart.find_purchase_items(@item.purchase)
+    end
+
     private
     def item_params
       params.permit(
