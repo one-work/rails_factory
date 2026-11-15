@@ -1,7 +1,9 @@
 <tr>
   <td rowspan="<%= size %>">
   <% if taxon %>
-    <%= link_to taxon.name, { controller: 'taxon/products', taxon_id: taxon.id } %>
+    <%= link_to({ controller: 'taxon/products', taxon_id: taxon.id }) do %>
+      <strong><%= taxon.name %></strong>
+    <% end %>
   <% end %>
   </td>
 </tr>
