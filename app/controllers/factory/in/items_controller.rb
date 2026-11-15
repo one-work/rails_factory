@@ -12,6 +12,12 @@ module Factory
     ]
     before_action :set_new_item, only: [:create]
 
+    def create
+      super
+      binding.b
+      @items = @cart.find_purchase_items(@item.purchase)
+    end
+
     def edit_assign
       upstream_provide_ids = @item.purchase.production_provides.pluck(:provide_id)
       @provides = current_organ.provides.where.not(id: upstream_provide_ids)
@@ -25,7 +31,7 @@ module Factory
     end
 
     def destroy
-      @item.destroy
+      super
       @items = @cart.find_purchase_items(@item.purchase)
     end
 

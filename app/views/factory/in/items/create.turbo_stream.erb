@@ -5,14 +5,9 @@
     locals: { cart: @item.current_cart }
   )
 %>
-<%=
-  turbo_stream.replace(
-    @item.cart_identity,
-    partial: 'item_purchase_tbody',
-    locals: {
-      cart: @item.current_cart,
-      item: @item,
-      item_con: controller_path
-    }
-  )
-%>
+
+<%= turbo_stream.remove_all "[data-product-id='#{@item.collect_id}']" %>
+<%= turbo_stream.after "tr_#{@item.collect_id}" do %>
+  <%= render partial: 'production_item_purchase', locals: { purchase: @item.purchase, size: @items.size + 1 } %>
+  <%= render partial: 'item_purchase_tbody', layout: 'item_purchase_tr', collection: @items, as: :item %>
+<% end %>
