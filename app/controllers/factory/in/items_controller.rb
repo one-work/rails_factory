@@ -13,9 +13,13 @@ module Factory
     before_action :set_new_item, only: [:create]
 
     def create
-      super
-      binding.b
-      @items = @cart.find_purchase_items(@item.purchase)
+      if @item.save
+        @items = @cart.find_purchase_items(@item.purchase)
+        render :create, locals: { model: @item }, status: :created
+      else
+        logger.debug "\e[35m  #{@item.error_text}  \e[0m"
+        render :new, locals: { model: @item }, status: :unprocessable_entity
+      end
     end
 
     def edit_assign
