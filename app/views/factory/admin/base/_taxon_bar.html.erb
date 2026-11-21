@@ -25,7 +25,7 @@
       <% end %>
     </li>
     <% if @taxon.customizable %>
-      <li class="<%= active_helper(controllers: 'factory/admin/taxon_components', active: 'is-active') %>">
+      <li class="<%= active_helper(controllers: ['factory/admin/taxon_components', 'factory/admin/component_parts'], active: 'is-active') %>">
         <%= link_to({ controller: 'factory/admin/taxon_components', taxon_id: @taxon.id }) do %>
           <%= svg_tag 'cubes' %>
           <span><%= t('factory.admin.taxon_components.index.title') %></span>
