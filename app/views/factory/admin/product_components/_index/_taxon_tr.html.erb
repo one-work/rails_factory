@@ -1,7 +1,10 @@
-<%
+<%=
   tr_tag(
     model,
-    param: { controller: 'taxon_components' },
-    icons: [:show]
+    param: {
+      controller: 'taxon_components',
+      taxon_id: model.taxon_id
+    },
+    icons: ['show']
   ) { yield }
 %>
